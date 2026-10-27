@@ -675,3 +675,131 @@ button.risk-cola-fila { cursor: pointer; }
 .risk-cola--ahora .risk-cola-tropas b { color: #fff; }
 .risk-cola .risk-volvio { margin-right: 8px; }
 .risk-cola-pista { text-align: center; font-size: .78rem; }
+
+/* Finalizar y Nueva partida: botones visibles al final del tablero */
+.risk-fin-botones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; margin-top: 6px; }
+.risk-fin-botones .boton { padding: 12px 10px; font-size: .92rem; font-weight: 600; }
+
+/* Fin: elegir al ganador */
+.risk-fin .risk-subtitulo { text-align: center; margin-bottom: 0; }
+.risk-fin-equipos li { padding: 0 !important; background: none !important; border: 0 !important; display: block !important; }
+.risk-fin-equipo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  text-align: left;
+  color: var(--texto);
+  border-radius: 14px;
+  border: 2px solid transparent;
+  border-left: 6px solid var(--equipo);
+  background: rgba(0, 0, 0, .25);
+  cursor: pointer;
+}
+.risk-fin-equipo-texto { flex: 1; display: grid; gap: 1px; }
+.risk-fin-equipo-texto small { color: var(--texto-suave); font-size: .78rem; }
+.risk-fin-equipo-marca { flex: none; padding: 6px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; border: 1px solid rgba(255, 246, 213, .35); }
+.risk-fin-equipo--gano { border-color: var(--oro); background: linear-gradient(90deg, color-mix(in srgb, var(--equipo) 45%, transparent), rgba(0, 0, 0, .2)); box-shadow: 0 0 22px color-mix(in srgb, var(--equipo) 50%, transparent); }
+.risk-fin-equipo--gano .risk-fin-equipo-marca { background: var(--oro); color: var(--noche); border-color: var(--oro); }
+
+/* Registro de ganadores */
+.risk-ganadores { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.risk-ganadores li { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: rgba(0, 0, 0, .25); border-left: 6px solid var(--equipo); }
+.risk-ganadores-trofeo { font-size: 1.6rem; }
+.risk-ganadores-texto { flex: 1; min-width: 0; display: grid; gap: 1px; }
+.risk-ganadores-texto small { color: var(--texto-suave); font-size: .76rem; }
+.risk-ganadores-borrar { flex: none; min-width: 36px; height: 36px; padding: 0 8px; font: inherit; font-size: .8rem; border-radius: 999px; border: 1px solid rgba(255, 246, 213, .3); background: none; color: var(--texto-suave); cursor: pointer; }
+.risk-ganadores-vacio { text-align: center; padding: 30px 10px; color: var(--texto-suave); line-height: 1.5; }
+.risk-ganadores-vacio div { font-size: 4rem; }
+
+/* Escuela: cómo ganar */
+.risk-ganar-conts { display: flex; flex-wrap: wrap; gap: 6px; }
+.risk-ganar-conts .chip { font-size: .82rem; }
+
+/* La barra de Risk lleva 4 botones: un poco más angostos */
+body[data-juego="risk"] .accion-juego .boton-icono { width: 36px; font-size: 1.3rem; }
+
+.risk-ganadores-datos { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 2px 0; font-size: .8rem; color: var(--texto); }
+.risk-ganadores-datos b { color: var(--oro-claro); font-family: var(--serif); font-size: 1rem; font-weight: normal; }
+
+/* ---------- Preparar partida con el estilo de la pantalla final: oscuro, bordes del color de cada equipo ---------- */
+.risk .risk-preparar {
+  background: rgba(0, 0, 0, .22);
+  color: var(--texto);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 246, 213, .14);
+}
+.risk-preparar .carta-titulo { color: var(--oro-claro); }
+.risk-preparar .risk-subtitulo { color: var(--oro); }
+.risk-preparar .risk-subtitulo small { color: var(--texto-suave); }
+.risk-preparar .chip { color: var(--texto); border-color: rgba(255, 246, 213, .3); }
+.risk-preparar .chip--activo { color: var(--noche); background: var(--oro); border-color: var(--oro); }
+
+/* Colores: 2 por fila, como los equipos de la pantalla final */
+.risk-preparar .risk-colores { grid-template-columns: 1fr 1fr; }
+.risk-preparar .risk-color {
+  color: var(--texto);
+  background: rgba(0, 0, 0, .25);
+  border: 2px solid transparent;
+  border-left: 6px solid var(--equipo);
+  opacity: 1;
+}
+.risk-preparar .risk-color:not(.risk-color--elegido) { color: var(--texto-suave); }
+.risk-preparar .risk-color--elegido {
+  color: #fff;
+  border-color: var(--oro);
+  border-left-color: var(--equipo);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--equipo) 45%, transparent), rgba(0, 0, 0, .2));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--equipo) 45%, transparent);
+}
+
+/* Orden de los turnos: filas oscuras */
+.risk-preparar .risk-orden-fila { background: rgba(0, 0, 0, .25); border: 2px solid transparent; border-left: 6px solid var(--equipo); }
+.risk-preparar .risk-orden-fila.risk-lista--empieza { border-color: var(--oro); border-left-color: var(--equipo); background: linear-gradient(90deg, color-mix(in srgb, var(--equipo) 35%, transparent), rgba(0, 0, 0, .2)); }
+.risk-preparar .risk-orden-num { color: var(--oro-claro); }
+.risk-preparar .risk-orden-mover .boton-icono { color: var(--texto); background: rgba(255, 255, 255, .08); }
+.risk-preparar .risk-orden-linea .risk-nombre { color: var(--texto); background: rgba(255, 255, 255, .08); border-color: rgba(255, 246, 213, .25); }
+.risk-preparar .risk-orden-quitar { color: var(--coral); }
+.risk-preparar .risk-sorteo { color: var(--oro-claro); }
+.risk-preparar .boton--secundario { color: var(--oro-claro); background: rgba(255, 255, 255, .08); border-color: rgba(255, 246, 213, .3); }
+.risk-preparar .risk-nota-oscura, .risk-preparar .risk-preparar-mapa, .risk-preparar .risk-antes { color: var(--texto-suave); }
+.risk-preparar .risk-preparar-mapa b, .risk-preparar .risk-antes summary { color: var(--texto); }
+
+/* Escuela: tabla fichas → dados */
+.risk-tabla-dados { display: grid; margin: 8px 0 4px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(44, 33, 64, .2); font-size: .88rem; }
+.risk-tabla-dados div { display: grid; grid-template-columns: 1fr 1fr; }
+.risk-tabla-dados div + div { border-top: 1px solid rgba(44, 33, 64, .12); }
+.risk-tabla-dados span, .risk-tabla-dados b { padding: 6px 10px; text-align: center; }
+.risk-tabla-dados div:first-child { background: var(--oro); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; font-weight: 700; }
+.risk-tabla-dados b:last-child { color: #8a3b2e; }
+
+/* Escuela: poderes (sin animación al cambiar el ejemplo) */
+.risk-poder { margin: 4px 0 14px; padding: 16px 16px 14px; border-radius: 20px; background: var(--papel); color: var(--tinta); line-height: 1.5; font-size: .95rem;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .35), inset 0 0 0 6px var(--papel), inset 0 0 0 7.5px var(--oro); }
+.risk-poder h3 { margin: 0; font-family: var(--serif); font-weight: normal; font-size: 1.4rem; display: flex; align-items: center; gap: 8px; }
+.risk-poder h3 span { font-size: 1.6rem; }
+.risk-poder-coste { margin: 2px 0 8px; font-size: .82rem; color: var(--tinta-suave); }
+.risk-poder .risk-nota { color: var(--tinta-suave); }
+.risk-poder .risk-nota b { color: var(--tinta); }
+.risk-poder .chip { color: var(--tinta); border-color: rgba(44, 33, 64, .25); }
+.risk-poder .chip--activo { color: var(--noche); border-color: var(--oro); }
+.risk-poder .chips { justify-content: flex-start; margin: 6px 0; }
+
+/* Poderes: tiradas de ejemplo del Filo */
+.risk-filo-coste { margin: 8px 0 4px; font-size: .85rem; color: #8a3b2e; }
+.risk-filo-tiradas { display: grid; gap: 8px; margin-top: 8px; }
+.risk-filo-tirada { padding: 10px; border-radius: 14px; background: rgba(44, 33, 64, .06); border: 1px solid rgba(44, 33, 64, .12); }
+.risk-filo-titulo { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: #8a3b2e; }
+.risk-filo-dados { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin: 6px 0; }
+.risk-filo-dados i { font-style: normal; font-size: .75rem; margin: 0 6px; color: var(--tinta-suave); }
+.risk-filo-perdidas { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: .8rem; }
+.risk-filo-perdidas span { display: grid; padding: 6px 8px; border-radius: 10px; background: #fff; }
+.risk-filo-perdidas b { font-family: var(--serif); font-size: 1.5rem; font-weight: normal; line-height: 1.1; }
+.risk-filo-perdidas small { color: var(--tinta-suave); font-size: .7rem; }
+
+.risk-lider-mas { font-size: .7rem; font-weight: 700; color: #8a3b2e; margin: 0 4px 0 -2px; }
+
+.risk-lider-parejas { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; gap: 3px; font-size: .8rem; }
+.risk-lider-parejas li { padding: 4px 8px; border-radius: 8px; background: #fff; border-left: 4px solid var(--tinta-suave); }
+.risk-lider-parejas .risk-explica--atq { border-left-color: var(--sangre); }

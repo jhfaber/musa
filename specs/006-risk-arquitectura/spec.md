@@ -121,6 +121,36 @@ Paño verde con borde dorado, tropas en un círculo dorado y cada fuente de trop
 - **Colores de la pantalla**: el rojo brasa se cambió por un fondo oscuro neutro que toma **un matiz del color del
   equipo en turno** (azul, verde, amarillo…); sin partida queda gris azulado.
 
+- **↶** vuelve al turno anterior (deshacer). Al final del tablero: **🏁 Finalizar partida** (va a la pantalla final
+  aunque falten rondas; ↶ regresa) y **✦ Nueva partida**, ambos como botones visibles con confirmación de doble toque.
+- Corregido: en la cola un equipo que recuperaba su turno salía dos veces y dejaba fuera a otro; ahora cada equipo sale una vez.
+
+## Ganadores y cómo ganar (pedido el 27-oct-2026)
+
+- La app no sabe quién ganó (depende de territorios y continentes en el tablero). En la pantalla final, **¿Quién
+  ganó?**: se toca el equipo y aparece "¡Ganó el Equipo X!"; tocar otro lo corrige.
+- **Registro 🏆 Ganadores** (botón en la barra y en la pantalla final): los últimos **10** con fecha, rondas, rivales,
+  **tropas reclamadas y turnos** del ganador y **los continentes que tenía al final**; cada uno se borra con doble toque. Se guarda aparte: `musa.risk.ganadores.v1` ("Nueva partida" no lo borra).
+- **Escuela → 🏆 Cómo ganar**: 1 punto por territorio + los puntos de cada continente completo (los mismos que da en
+  tropas), y una calculadora para sumarlo. Gana quien sume más, no quien reclamó más tropas.
+
+- **Nada configurable va escrito a mano en los textos**: tropas por turno, tiempo del turno, segundos de la cuenta,
+  tiempo extra, rondas y valor de cada continente salen siempre de ⚙ (lecciones, ejemplos, botones). El tiempo extra
+  al equipo anterior es ahora un ajuste (20 s por defecto). Los porcentajes se calculan. Las reglas fijas del juego
+  (dados, unidades, cartas por territorio) se quedan como texto.
+
+- **Cartas por conquista**: 1 por territorio conquistado hasta un máximo que se configura en ⚙ (5 por defecto,
+  según las reglas que acuerde la mesa); la escuela lo explica con una tabla que sale de ese ajuste.
+
+- **Escuela → ⚡ Poderes**: Doble/Triple Filo (coste: Doble 1 unidad, Triple 2 unidades, cada baja ×2/×3 para ambos lados, no se desactiva
+  en el turno, equidad de pérdidas; ejemplo con ×1/×2/×3) y Alianza entre facciones (pozo de cartas como garantía).
+  Confirmado por John (cambió de parecer): Doble cuesta 1 unidad y Triple 2, sacrificadas al declararlo. El ejemplo
+  muestra tres tiradas (gana el atacante, uno y uno, gana el defensor) con las pérdidas de cada lado.
+
+- **Poder del Líder** (pedido por John): se compra con unidades (⚙: 10 por defecto) y cada equipo tiene hasta
+  ⚙ (2 por defecto) líderes; suma +1 al dado más alto **solo al atacar desde el territorio donde está**; se pierde si
+  le conquistan ese territorio. La escuela lo explica con un ejemplo (5-3 contra 5-4, sin y con líder).
+
 ## Venta de cartas (tabla del reglamento, pedida el 27-oct-2026)
 
 | ★ estrellas | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |

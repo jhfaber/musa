@@ -25,8 +25,9 @@ No toca la red de la casa ni ningún dispositivo: es solo HTML/CSS/JS estático.
 - Reglamento de la casa *Risk Relámpago*; mapa normal y mapas propios en ⚙ (el LOTR puede ser otro mapa).
 - Flujo en una sola dirección: vistas → acción → `almacen.despachar` → `logica/reglas.js` (puro) → guardar → pintar.
   Las reglas no tocan el DOM ni `Date.now()`; las vistas no cambian la partida. Los relojes son datos de la partida.
+- Lo que se configura en ⚙ nunca se escribe fijo en textos ni ejemplos: se lee de los ajustes (pedido de John).
 - Al cambiar reglas o dados: `node herramientas/probar-risk.mjs` (pruebas sin navegador).
-- Se guardan aparte: `musa.risk.partida.v2` y `musa.risk.ajustes.v1` (con los mapas).
+- Se guardan aparte: `musa.risk.partida.v2`, `musa.risk.ajustes.v1` (con los mapas) y `musa.risk.ganadores.v1`.
 - Archivos nuevos de Risk se agregan a `juegos/juegos.json` (el service worker los guarda de ahí).
 
 ## Probar

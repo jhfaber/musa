@@ -26,6 +26,7 @@ function cargarPartida() {
   // Partidas guardadas antes del orden con regresos
   if (p.cursor === undefined) p.cursor = p.turno;
   if (!Array.isArray(p.pendientes)) p.pendientes = [];
+  if (!p.creada) p.creada = Date.now();
   return p;
 }
 

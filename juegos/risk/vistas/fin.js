@@ -1,26 +1,37 @@
 // Fin de la partida: celebración con fuegos artificiales y estrellas en los colores de los equipos.
-import { continentesDeEquipo } from '../logica/reglas.js';
+// La app no sabe quién ganó (depende de territorios y continentes en el tablero): se toca el ganador y queda
+// en el registro 🏆.
+import { continentesDeEquipo, equipoPorId } from '../logica/reglas.js';
 import { esc, punto, resumenEquipo } from './piezas.js';
 
 let animacion = 0;
 
 export function pintarFin(p, aj) {
+  const ganador = p.ganador && equipoPorId(p, p.ganador);
   return `
-    <div class="risk risk-fin">
+    <div class="risk risk-fin" ${ganador ? `style="--equipo-ganador: ${ganador.color}"` : ''}>
       <canvas class="risk-fuegos" aria-hidden="true"></canvas>
       <div class="risk-fin-titulo">
         <div class="risk-fin-trofeo" aria-hidden="true">🏆</div>
-        <h3>¡Fin de la partida!</h3>
-        <p>Se jugaron las ${aj.rondas} rondas. Cuenten sus territorios en el tablero: ¡que gane el mejor!</p>
+        <h3>${ganador ? `¡Ganó el ${esc(ganador.nombre)}!` : '¡Fin de la partida!'}</h3>
+        <p>${p.finalizada ? `Terminó en la ronda ${p.ronda} de ${aj.rondas}.` : `Se jugaron las ${aj.rondas} rondas.`}
+          ${ganador ? 'Quedó en el registro de ganadores 🏆.' : 'Cuenten territorios y continentes (🎓 → Cómo ganar) y toquen al ganador.'}</p>
       </div>
+      <div class="risk-subtitulo">¿Quién ganó?</div>
       <ul class="risk-fin-equipos">
         ${p.equipos.map(eq => {
           const suyos = continentesDeEquipo(p, aj, eq);
-          return `<li style="--equipo: ${eq.color}">${punto(eq.color)} <b>${esc(eq.nombre)}</b>
-            <small>${resumenEquipo(eq)}</small>
-            <small>${suyos.length ? suyos.map(c => `${c.simbolo} ${esc(c.nombre)}`).join(' · ') : 'Sin continentes'}</small></li>`;
+          const gano = eq === ganador;
+          return `<li><button class="risk-fin-equipo ${gano ? 'risk-fin-equipo--gano' : ''}" data-accion="ganador" data-equipo="${eq.id}"
+              aria-pressed="${gano}" style="--equipo: ${eq.color}">
+            <span class="risk-fin-equipo-texto">${punto(eq.color)} <b>${esc(eq.nombre)}</b>
+              <small>${resumenEquipo(eq)}</small>
+              <small>${suyos.length ? suyos.map(c => `${c.simbolo} ${esc(c.nombre)}`).join(' · ') : 'Sin continentes'}</small></span>
+            <span class="risk-fin-equipo-marca">${gano ? '🏆 Ganó' : 'Ganó'}</span>
+          </button></li>`;
         }).join('')}
       </ul>
+      <button class="boton boton--secundario risk-ancho" data-ui="ganadores">🏆 Ver registro de ganadores</button>
       <div class="controles">
         <button class="boton-icono boton-redondo" data-accion="deshacer" aria-label="Volver a la última ronda">↶</button>
         <button class="boton boton--principal" data-ui="nueva">✦ Nueva partida</button>

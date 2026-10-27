@@ -23,6 +23,10 @@ export const AJUSTES_BASE = {
   rondas: 6,              // el reglamento dice de 6 a 9
   turno: 135,             // un solo reloj por turno: 2:15
   cuenta: 10,             // segundos para que el siguiente equipo se prepare
+  maxCartas: 5,
+  costoLider: 10,         // unidades que cuesta comprar un líder
+  maxLideres: 2,          // líderes que puede tener cada equipo           // cartas máximas que se reclaman al final de un turno por territorios conquistados
+  prorroga: 20,           // segundos extra que se le pueden dar al equipo anterior desde la cuenta regresiva
   mapa: MAPA_NORMAL,      // mapa con el que empieza la próxima partida
   vista: 'arena',
   sonido: true,
@@ -34,7 +38,10 @@ export const AJUSTES_BASE = {
 export const VENTA_CARTAS = { 2: 2, 3: 4, 4: 7, 5: 10, 6: 13, 7: 17, 8: 21, 9: 25, 10: 30 };
 export const tropasPorEstrellas = estrellas => VENTA_CARTAS[estrellas] || 0;
 
-export const LIMITES = { tropas: [1, 30], rondas: [1, 15], cuenta: [3, 30] };
+export const LIMITES = { tropas: [1, 30], rondas: [1, 15], cuenta: [3, 30], prorroga: [5, 120], maxCartas: [1, 10], costoLider: [1, 30], maxLideres: [1, 3] };
+
+// Cartas al final del turno: 1 por territorio conquistado, hasta el máximo acordado (en la última ronda, ninguna)
+export const cartasPorConquista = (territorios, aj) => Math.min(territorios, aj.maxCartas);
 
 // ---------- Consultas (no cambian nada) ----------
 
@@ -43,10 +50,9 @@ export const equipoPorId = (p, id) => p.equipos.find(e => e.id === id);
 export const esUltimaRonda = (p, aj) => p.ronda >= aj.rondas;
 export const continentes = (p, aj) => continentesDe(aj, p.mapa);
 export const bono = (p, aj, contId) => (continentes(p, aj).find(c => c.id === contId) || { bono: 0 }).bono;
-export const PRORROGA = 20; // segundos extra que se le pueden dar al equipo anterior desde la cuenta regresiva
 
 export function duracion(p, aj) {
-  return p.prorroga ? PRORROGA : aj.turno;
+  return p.prorroga ? aj.prorroga : aj.turno;
 }
 
 export function restanteReloj(p, aj, ahora) {
@@ -114,16 +120,18 @@ export const quienSigue = (p, aj) => ordenTurnos(p, aj)[1] || null;
 
 // Los próximos turnos en orden, empezando por el que juega (incluye a los que vuelven y deben su turno).
 // Se calcula jugando en una copia, así que siempre coincide con lo que de verdad va a pasar.
+// Cada equipo sale una sola vez, en su próximo turno.
 export function ordenTurnos(p, aj) {
   const copia = structuredClone({ ...p, deshacer: [] });
-  const orden = [equipoActual(copia)];
+  const orden = [equipoActual(copia).id];
   const presentes = p.equipos.filter(e => !e.ausente).length;
-  for (let i = 1; i < presentes; i++) {
+  for (let paso = 0; orden.length < presentes && paso < p.equipos.length * 2; paso++) {
     avanzar(copia, aj);
     if (copia.terminada) break;
-    orden.push(equipoActual(copia));
+    const id = equipoActual(copia).id;
+    if (!orden.includes(id)) orden.push(id);
   }
-  return orden.map(e => equipoPorId(p, e.id));
+  return orden.map(id => equipoPorId(p, id));
 }
 
 // ---------- Cambios internos (trabajan sobre una copia) ----------
@@ -269,13 +277,29 @@ function tocarReloj(p, aj, ahora) {
   return p;
 }
 
-// Desde la cuenta regresiva: el equipo anterior vuelve a su turno con 20 s más (para reubicar o si algo pasó).
+// Terminar antes de las rondas: va a la pantalla final. Si el equipo en turno ya estaba jugando, su turno cuenta.
+// Se puede volver con ↶.
+function finalizar(p, aj) {
+  guardarDeshacer(p);
+  const e = equipoActual(p);
+  if (!p.cuenta && p.reloj.estado !== 'espera') {
+    e.jugados = (e.jugados || 0) + 1;
+    e.reclamadas = (e.reclamadas || 0) + totalReclamo(p, aj);
+  }
+  p.terminada = true;
+  p.finalizada = true;
+  p.cuenta = null;
+  p.reloj = { estado: 'fin', terminaEn: 0, restante: 0 };
+  return p;
+}
+
+// Desde la cuenta regresiva: el equipo anterior vuelve a su turno con unos segundos más (ajuste prorroga) (para reubicar o si algo pasó).
 // Al acabarse, sigue la cuenta del siguiente como siempre.
 function darProrroga(p, aj, ahora) {
   if (!p.cuenta || !p.cuenta.anterior || !p.deshacer.length) return p;
   const anterior = volverAtras(p, aj);
   anterior.prorroga = true;
-  anterior.reloj = { estado: 'corre', terminaEn: ahora + PRORROGA * 1000, restante: null };
+  anterior.reloj = { estado: 'corre', terminaEn: ahora + aj.prorroga * 1000, restante: null };
   return anterior;
 }
 
@@ -313,7 +337,7 @@ function noLoTenia(p, contId) {
 
 export function crearPartida({ equipos, inicio = 0, mapa = MAPA_NORMAL }, aj, ahora) {
   const p = {
-    v: 2, mapa, equipos: equipos.map(e => ({ ...e, ausente: false, debe: null, jugados: 0, reclamadas: 0 })), inicio, turno: inicio, cursor: inicio,
+    v: 2, creada: ahora, mapa, equipos: equipos.map(e => ({ ...e, ausente: false, debe: null, jugados: 0, reclamadas: 0 })), inicio, turno: inicio, cursor: inicio,
     ronda: 1, pendientes: [], terminada: false, dominio: {}, deshacer: [], cuenta: null
   };
   prepararTurno(p, aj);
@@ -346,7 +370,9 @@ export function aplicar(partida, accion, aj) {
     case 'ausente': return equipoPorId(p, accion.equipo).ausente ? volver(p, accion.equipo) : irse(p, aj, ahora, accion.equipo);
     case 'volvio': return volver(p, accion.equipo);
     case 'renombrar': { const e = equipoPorId(p, accion.equipo); if (accion.nombre.trim()) e.nombre = accion.nombre.trim(); return p; }
-    case 'deshacer': return p.deshacer.length ? volverAtras(p, aj) : p;
+    case 'deshacer': return p.deshacer.length ? { ...volverAtras(p, aj), finalizada: false } : p;
+    case 'finalizar': return p.terminada ? p : finalizar(p, aj);
+    case 'ganador': if (p.terminada) p.ganador = p.ganador === accion.equipo ? null : accion.equipo; return p;
     default: return partida;
   }
 }

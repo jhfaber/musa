@@ -31,7 +31,7 @@ function clic(e) {
   const { tiempo, numero, paso, vista, mapa, ui, cont } = b.dataset;
   if (tiempo) cambiar({ [tiempo]: Musa.reloj.ajustarSegundos(aj[tiempo] + Number(paso)) });
   else if (numero === 'bono') cambiarMapas(m => Mapas.editarContinente(m, mapaVisto, cont, { bono: m[mapaVisto].continentes.find(c => c.id === cont).bono + Number(paso) }));
-  else if (numero) cambiar({ [numero]: aj[numero] + Number(paso) });
+  else if (numero) cambiar({ [numero]: aj[numero] + Number(paso) * (numero === 'prorroga' ? 5 : 1) });
   else if (vista) cambiar({ vista });
   else if (mapa) { mapaVisto = mapa; cambiar({ mapa }); }
   else if (ui === 'nuevo-mapa') {
@@ -95,12 +95,21 @@ export function pintarAjustes() {
       <h3 class="catalogo-subtitulo">Partida</h3>
       <div class="ajuste-titulo">Tropas por turno</div>${ui.numero(aj.tropas, 'tropas', 'tropas', 'Tropas por turno')}
       <div class="ajuste-titulo">Rondas</div>${ui.numero(aj.rondas, 'rondas', 'rondas', 'Rondas')}
-      <p class="ajustes-desc">El reglamento dice de 6 a 9 rondas.</p>
+      <p class="ajustes-desc">Ahora: ${aj.rondas} rondas (el reglamento sugiere de 6 a 9).</p>
+      <div class="ajuste-titulo">Máximo de cartas por turno</div>${ui.numero(aj.maxCartas, 'maxCartas', 'cartas', 'Máximo de cartas por turno')}
+      <p class="ajustes-desc">Por territorios conquistados: 1 → 1 carta, 2 → 2… hasta este máximo.</p>
     </section>
     <section class="ajuste">
       <h3 class="catalogo-subtitulo">Tiempos</h3>
       <div class="ajuste-titulo">Turno normal</div>${ui.tiempo(aj.turno, 'turno')}
       <div class="ajuste-titulo">Cuenta para el siguiente equipo</div>${ui.numero(aj.cuenta, 'cuenta', 'segundos', 'Cuenta entre turnos')}
+      <div class="ajuste-titulo">Tiempo extra al equipo anterior</div>${ui.numero(aj.prorroga, 'prorroga', 'segundos', 'Tiempo extra al equipo anterior')}
+      <p class="ajustes-desc">El botón de la cuenta regresiva para darle unos segundos más al que acaba de jugar.</p>
+    </section>
+    <section class="ajuste">
+      <h3 class="catalogo-subtitulo">⚡ Poderes</h3>
+      <div class="ajuste-titulo">Costo de un líder</div>${ui.numero(aj.costoLider, 'costoLider', 'unidades', 'Costo de un líder')}
+      <div class="ajuste-titulo">Líderes por equipo</div>${ui.numero(aj.maxLideres, 'maxLideres', 'como máximo', 'Líderes por equipo')}
     </section>
     <section class="ajuste">
       <h3 class="catalogo-subtitulo">🗺️ Mapa y continentes</h3>

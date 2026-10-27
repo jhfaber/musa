@@ -44,7 +44,7 @@ export function pintarTablero(p, aj) {
   return `
     <div class="risk">
       <div class="ronda">Ronda ${p.ronda} de ${aj.rondas}
-        ${p.prorroga ? '<span class="risk-marca">+0:20 de tiempo extra</span>'
+        ${p.prorroga ? `<span class="risk-marca">+${Musa.reloj.formato(aj.prorroga)} de tiempo extra</span>`
           : esUltimaRonda(p, aj) ? '<span class="risk-marca risk-marca--fin">¡Última ronda!</span>'
           : `<span class="risk-quedan">· quedan ${quedan}</span>`}</div>
 
@@ -69,7 +69,10 @@ export function pintarTablero(p, aj) {
       </div>
       ${colaTurnos(p, aj, { tocable: true })}
 
-      <button class="boton boton--texto" data-ui="nueva">✦ Nueva partida</button>
+      <div class="risk-fin-botones">
+        <button class="boton boton--secundario" data-ui="finalizar">🏁 Finalizar partida</button>
+        <button class="boton boton--secundario" data-ui="nueva">✦ Nueva partida</button>
+      </div>
     </div>`;
 }
 

@@ -13,8 +13,10 @@ export const tirar = (na, nd) => resolver(Array.from({ length: na }, dadoAlAzar)
 export const dadosAtaque = fichas => Math.max(0, Math.min(3, fichas - 1)); // siempre se queda 1 defendiendo
 export const dadosDefensa = fichas => Math.max(0, Math.min(2, fichas));
 
-export function resolver(ataque, defensa) {
+// bonoAtaque: lo que se suma al dado más alto del atacante (p. ej. +1 con un líder en el territorio que ataca)
+export function resolver(ataque, defensa, bonoAtaque = 0) {
   const a = [...ataque].sort((x, y) => y - x);
+  if (a.length) a[0] += bonoAtaque;
   const d = [...defensa].sort((x, y) => y - x);
   const parejas = [];
   for (let i = 0; i < Math.min(a.length, d.length); i++) {

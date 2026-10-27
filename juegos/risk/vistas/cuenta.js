@@ -1,5 +1,5 @@
 // Cuenta regresiva entre turnos: toda la pantalla con el color del equipo que sigue (10, 9, 8…).
-import { equipoActual, equipoPorId, esUltimaRonda, totalReclamo, restanteCuenta, PRORROGA } from '../logica/reglas.js';
+import { equipoActual, equipoPorId, esUltimaRonda, totalReclamo, restanteCuenta } from '../logica/reglas.js';
 import { esc, punto, colaTurnos } from './piezas.js';
 
 let capa = null;
@@ -28,7 +28,7 @@ function html(p, aj, ahora) {
       </div>`}
     ${anterior && p.deshacer.length ? `
       <button class="boton boton--secundario risk-cuenta-extra" data-accion="prorroga" style="--equipo: ${anterior.color}">
-        ${punto(anterior.color)} +${PRORROGA} s al ${esc(anterior.nombre)} <small>Usalos sabiamente</small>
+        ${punto(anterior.color)} +${aj.prorroga} s al ${esc(anterior.nombre)} <small>Usalos sabiamente</small>
       </button>` : ''}
     ${colaTurnos(p, aj, { desde: 1, titulo: 'Después juegan' })}`;
 }

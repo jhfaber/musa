@@ -12,6 +12,7 @@ import { abrirEquipo, pintarEquipo } from './vistas/equipo.js';
 import { abrirEscuela } from './vistas/escuela.js';
 import { abrirSimulador } from './vistas/simulador.js';
 import { abrirAjustes, pintarAjustes } from './vistas/ajustes.js';
+import { abrirGanadores, guardarGanador } from './vistas/ganadores.js';
 
 const almacen = crearAlmacen();
 let contenedor = null;
@@ -48,8 +49,9 @@ function pintar() {
   pintarAjustes();
 }
 
-almacen.escuchar((p, antes) => {
+almacen.escuchar((p, antes, accion) => {
   efectos.alCambiar(p, antes, almacen.ajustes);
+  if (accion.tipo === 'ganador') guardarGanador(p, almacen.ajustes);
   pintar();
 });
 
@@ -71,24 +73,27 @@ setInterval(() => {
 const irEscuela = pestaña => abrirEscuela(() => almacen.ajustes, abrirSimulador, pestaña);
 const irAjustes = () => abrirAjustes(almacen, { escuela: () => irEscuela('aprender'), nueva: () => almacen.despachar({ tipo: 'nueva' }) });
 
-// Nueva partida con confirmación dentro de la app: el primer toque pregunta, el segundo borra
+// Confirmación dentro de la app: el primer toque pregunta, el segundo hace la acción
 let confirmar = 0;
-function pedirNueva(boton) {
+function conConfirmacion(boton, pregunta, tipo) {
   if (!boton.dataset.seguro) {
+    const texto = boton.textContent;
     boton.dataset.seguro = '1';
-    boton.textContent = '¿Seguro? Toca otra vez para borrar la partida';
+    boton.textContent = pregunta;
     clearTimeout(confirmar);
-    confirmar = setTimeout(() => { boton.dataset.seguro = ''; boton.textContent = '✦ Nueva partida'; }, 4000);
+    confirmar = setTimeout(() => { boton.dataset.seguro = ''; boton.textContent = texto; }, 4000);
     return;
   }
-  almacen.despachar({ tipo: 'nueva' });
+  almacen.despachar({ tipo });
 }
 
 // Botones de pantalla (data-ui): abren paneles o cambian lo que se ve, no la partida
 const accionesUi = {
   equipo: b => abrirEquipo(almacen, b.dataset.equipo),
-  nueva: pedirNueva,
+  nueva: b => conConfirmacion(b, '¿Seguro? Toca otra vez para borrarla', 'nueva'),
+  finalizar: b => conConfirmacion(b, '¿Terminar ya? Toca otra vez', 'finalizar'),
   ajustes: irAjustes,
+  ganadores: () => abrirGanadores(),
   empezar: () => almacen.despachar({ tipo: 'empezar', ...datosPartida(almacen.ajustes) })
 };
 
@@ -111,7 +116,9 @@ function abrir(elemento, barra) {
   barra.innerHTML = `
     <button class="boton-icono" data-menu="simulador" aria-label="Simulador de dados">🎲</button>
     <button class="boton-icono" data-menu="escuela" aria-label="Escuela: aprender a jugar">🎓</button>
+    <button class="boton-icono" data-menu="ganadores" aria-label="Registro de ganadores">🏆</button>
     <button class="boton-icono" data-menu="ajustes" aria-label="Ajustes">⚙</button>`;
+  barra.querySelector('[data-menu="ganadores"]').onclick = () => abrirGanadores();
   barra.querySelector('[data-menu="simulador"]').onclick = () => abrirSimulador();
   barra.querySelector('[data-menu="escuela"]').onclick = () => irEscuela();
   barra.querySelector('[data-menu="ajustes"]').onclick = irAjustes;
