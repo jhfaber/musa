@@ -1,5 +1,5 @@
 // Servidor estático solo para probar Musa en la red de la casa (no se usa en producción).
-// Uso: node musa/herramientas/servidor.js   → http://<IP del PC>:8095
+// Uso: node herramientas/servidor.js   → http://<IP del PC>:8095
 const http = require('http');
 const fs = require('fs');
 const path = require('path');

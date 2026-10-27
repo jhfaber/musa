@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "musa",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["herramientas/servidor.js"],
+      "port": 8095
+    }
+  ]
+}

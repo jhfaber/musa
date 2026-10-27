@@ -1,5 +1,5 @@
 // Genera los íconos PNG de Musa (luna creciente y estrellas, arte propio) sin dependencias.
-// Uso: node musa/herramientas/generar-iconos.js
+// Uso: node herramientas/generar-iconos.js
 const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
