@@ -1,0 +1,19 @@
+{
+  // F5 arranca el servidor de Musa y abre http://localhost:8095/#dixit en el navegador.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Musa",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/herramientas/servidor.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Musa en (http://localhost:[0-9]+)",
+        "uriFormat": "%s/#dixit"
+      }
+    }
+  ]
+}

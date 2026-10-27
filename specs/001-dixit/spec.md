@@ -35,8 +35,8 @@ y de vez en cuando salta a otro tema (onomatopeyas, películas, canciones…).
     el lente de sonido solo va con Animales, Naturaleza y Algo cercano.
   - **Tranquilo congelado (26-oct-2026)**: Lo que te hace sentir, La película de esta carta, Algo cercano,
     Un plato con su momento, Una situación mágica e Historia: antes o después. No se modifica sin pedirlo John.
-  - Categorías "Si la carta fuera…" (animal, personaje, textura, oficio; solo Normal y Caótico): su primer lente es
-    siempre una 🌡️ **escala** al estilo Wavelength ("Qué tan peligrosa es", del 1 al 10, sin decir el número).
+  - Categorías relacionadas (un animal, un personaje o un oficio relacionado, y "Si la carta fuera una textura"; solo Normal y Caótico): su primer lente es
+    siempre una 🌡️ **escala de dos polos** al estilo Wavelength (De tierna a peligrosa, De antigua a moderna, De diminuta a enorme…); en Caótico, dos escalas distintas ("Qué tan peligrosa es", del 1 al 10; el número se dice con la pista: "un tiburón, 8").
   - Las categorías no se repiten hasta pasadas 3 rondas; los lentes suelen seguir la familia del anterior.
   - Cada carta trae 5 ejemplos variados. Reto opcional: +1 por la categoría y +1 por lente usado.
   - Botones: nueva ronda, otra categoría, cambiar lentes, rondas anteriores/siguientes.

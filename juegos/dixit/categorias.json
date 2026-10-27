@@ -17,7 +17,8 @@
         "epoca",
         "hora-dia",
         "momento-vida",
-        "contrario"
+        "contrario",
+        "su-sonido"
       ]
     },
     {
@@ -32,12 +33,21 @@
         "Dormirse en el carro de vuelta del paseo",
         "El regaño por llegar tarde"
       ],
-      "lentes_permitidos": [],
-      "sin_lentes": true,
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
       "niveles": [
         "normal",
         "caotico"
-      ]
+      ],
+      "lente_principal": "escala"
     },
     {
       "id": "peliculas",
@@ -51,14 +61,15 @@
         "\"Houston, tenemos un problema\"",
         "Stranger Things, cuando se apagan las luces"
       ],
-      "lentes_permitidos": [],
-      "sin_lentes": true
+      "lentes_permitidos": [
+        "su-sonido"
+      ]
     },
     {
       "id": "personajes",
-      "nombre": "Si la carta fuera un personaje",
+      "nombre": "Un personaje relacionado",
       "simbolo": "🦸",
-      "descripcion": "Imagina que la carta es alguien de la ficción, la historia o los cuentos: ¿quién sería?",
+      "descripcion": "Alguien de la ficción, la historia o los cuentos que tenga que ver con la carta sin estar dibujado en ella.",
       "ejemplos": [
         "Caperucita Roja",
         "Don Quijote",
@@ -67,20 +78,21 @@
         "Gandalf"
       ],
       "lentes_permitidos": [
-        "escala-peligro",
-        "escala-calma",
-        "escala-ternura",
-        "escala-rapidez",
-        "escala-tristeza",
-        "escala-misterio",
-        "epoca",
-        "contrario"
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
       ],
       "niveles": [
         "normal",
         "caotico"
       ],
-      "lente_principal": "escala"
+      "lente_principal": "escala",
+      "relacionado": true
     },
     {
       "id": "musica",
@@ -94,12 +106,21 @@
         "Heavy metal",
         "Los Beatles"
       ],
-      "lentes_permitidos": [],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
       "niveles": [
         "normal",
         "caotico"
       ],
-      "sin_lentes": true
+      "lente_principal": "escala"
     },
     {
       "id": "cercano",
@@ -135,14 +156,14 @@
         "Algodón de azúcar pegajoso"
       ],
       "lentes_permitidos": [
-        "escala-peligro",
-        "escala-calma",
-        "escala-ternura",
-        "escala-rapidez",
-        "escala-tristeza",
-        "escala-misterio",
-        "su-sonido",
-        "contrario"
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
       ],
       "niveles": [
         "normal",
@@ -152,30 +173,32 @@
     },
     {
       "id": "animales",
-      "nombre": "Si la carta fuera un animal",
+      "nombre": "Un animal relacionado",
       "simbolo": "🐾",
-      "descripcion": "Imagina que la carta es un animal, real o fantástico: ¿cuál sería?",
+      "descripcion": "Un animal, real o fantástico, que tenga que ver con la carta sin estar dibujado en ella.",
       "ejemplos": [
-        "Un perro viejo esperando en la puerta",
-        "Un colibrí",
-        "Un búho",
-        "Una tortuga centenaria",
-        "Un dragón dormido"
+        "El perro que espera afuera",
+        "Un búho que lo vio todo",
+        "La tortuga que llegó tarde",
+        "El colibrí del jardín",
+        "Un dragón dormido debajo"
       ],
       "lentes_permitidos": [
-        "escala-peligro",
-        "escala-calma",
-        "escala-ternura",
-        "escala-rapidez",
-        "escala-tristeza",
-        "escala-misterio",
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
         "su-sonido"
       ],
       "niveles": [
         "normal",
         "caotico"
       ],
-      "lente_principal": "escala"
+      "lente_principal": "escala",
+      "relacionado": true
     },
     {
       "id": "comidas",
@@ -193,37 +216,37 @@
         "epoca",
         "hora-dia",
         "momento-vida",
-        "contrario",
         "su-sonido"
       ]
     },
     {
       "id": "oficios",
-      "nombre": "Si la carta fuera un oficio",
+      "nombre": "Un oficio relacionado",
       "simbolo": "🧭",
-      "descripcion": "Imagina que la carta es un trabajo o una actividad: ¿cuál sería?",
+      "descripcion": "Un trabajo o una actividad que tenga que ver con la carta sin que se vea en ella.",
       "ejemplos": [
         "Farolero",
+        "Cartero de un pueblo",
         "Astronauta",
         "Equilibrista",
-        "Cartero de un pueblo",
         "Jugador de ajedrez"
       ],
       "lentes_permitidos": [
-        "escala-peligro",
-        "escala-calma",
-        "escala-ternura",
-        "escala-rapidez",
-        "escala-tristeza",
-        "escala-misterio",
-        "epoca",
-        "contrario"
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
       ],
       "niveles": [
         "normal",
         "caotico"
       ],
-      "lente_principal": "escala"
+      "lente_principal": "escala",
+      "relacionado": true
     },
     {
       "id": "fantasia",
@@ -237,8 +260,9 @@
         "Un hechizo para volverse invisible",
         "Un dragón que guarda un tesoro"
       ],
-      "lentes_permitidos": [],
-      "sin_lentes": true
+      "lentes_permitidos": [
+        "su-sonido"
+      ]
     },
     {
       "id": "antes-despues",
@@ -253,8 +277,9 @@
         "Mañana todo vuelve a empezar"
       ],
       "relacionado": true,
-      "lentes_permitidos": [],
-      "sin_lentes": true
+      "lentes_permitidos": [
+        "su-sonido"
+      ]
     }
   ],
   "lentes": [
@@ -262,60 +287,62 @@
       "id": "escala",
       "nombre": "Escala",
       "simbolo": "🌡️",
-      "descripcion": "Decide en tu cabeza qué tanto, del 1 al 10, y elige según eso. No digas el número.",
+      "descripcion": "Ubica la carta entre los dos extremos, del 1 al 10, y di el número con tu pista.",
       "lentes": [
         {
-          "id": "escala-peligro",
-          "titulo": "Qué tan peligrosa es",
+          "id": "escala-tierna-peligrosa",
+          "titulo": "De tierna a peligrosa",
           "ejemplos": [
-            "1: un gatito dormido",
-            "5: un perro que ladra",
-            "10: un tiburón"
+            "1 = lo más tierna",
+            "10 = lo más peligrosa"
           ]
         },
         {
-          "id": "escala-calma",
-          "titulo": "Qué tan tranquila es",
+          "id": "escala-tranquila-caotica",
+          "titulo": "De tranquila a caótica",
           "ejemplos": [
-            "1: un colibrí",
-            "5: un gato en la ventana",
-            "10: un perezoso"
+            "1 = lo más tranquila",
+            "10 = lo más caótica"
           ]
         },
         {
-          "id": "escala-ternura",
-          "titulo": "Qué tan tierna es",
+          "id": "escala-triste-alegre",
+          "titulo": "De triste a alegre",
           "ejemplos": [
-            "1: un cocodrilo",
-            "5: un loro",
-            "10: un pollito"
+            "1 = lo más triste",
+            "10 = lo más alegre"
           ]
         },
         {
-          "id": "escala-rapidez",
-          "titulo": "Qué tan rápida es",
+          "id": "escala-antigua-moderna",
+          "titulo": "De antigua a moderna",
           "ejemplos": [
-            "1: un caracol",
-            "5: un caballo",
-            "10: un guepardo"
+            "1 = lo más antigua",
+            "10 = lo más moderna"
           ]
         },
         {
-          "id": "escala-tristeza",
-          "titulo": "Qué tan triste es",
+          "id": "escala-cotidiana-extraordinaria",
+          "titulo": "De cotidiana a extraordinaria",
           "ejemplos": [
-            "1: un delfín jugando",
-            "5: un pájaro enjaulado",
-            "10: un perro esperando a su dueño"
+            "1 = lo más cotidiana",
+            "10 = lo más extraordinaria"
           ]
         },
         {
-          "id": "escala-misterio",
-          "titulo": "Qué tan misteriosa es",
+          "id": "escala-fria-calida",
+          "titulo": "De fría a cálida",
           "ejemplos": [
-            "1: una gallina",
-            "5: un gato negro",
-            "10: un búho de noche"
+            "1 = lo más fría",
+            "10 = lo más cálida"
+          ]
+        },
+        {
+          "id": "escala-diminuta-enorme",
+          "titulo": "De diminuta a enorme",
+          "ejemplos": [
+            "1 = lo más diminuta",
+            "10 = lo más enorme"
           ]
         }
       ]
@@ -370,13 +397,12 @@
         {
           "id": "contrario",
           "titulo": "Lo contrario",
-          "descripcion": "Di el opuesto de algo: de la carta, de la categoría o del otro lente.",
+          "descripcion": "Piensa la pista que darías y di lo contrario.",
           "ejemplos": [
-            "Desierto → un bosque",
-            "Arena → mar → lava",
-            "Lo que pasó → lo que jamás pasaría ahí",
-            "Silencio → un estadio lleno",
-            "Nostalgia → la emoción de estrenar"
+            "Ibas a decir \"desierto\" → dices \"un bosque\"",
+            "Ibas a decir \"el mar\" → dices \"lava\"",
+            "Ibas a decir \"silencio\" → dices \"un estadio lleno\"",
+            "Ibas a decir \"nostalgia\" → dices \"la emoción de estrenar\""
           ]
         }
       ]
@@ -396,7 +422,8 @@
             "Plic, plic, plic",
             "Fiuuu",
             "¡Crac!"
-          ]
+          ],
+          "descripcion": "Un sonido u onomatopeya de algo que pase en la carta."
         }
       ]
     }

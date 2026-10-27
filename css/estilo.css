@@ -97,7 +97,9 @@ body {
 .pie { margin-top: 40px; text-align: center; font-size: .75rem; color: var(--texto-suave); opacity: .7; line-height: 1.6; }
 
 /* Barra del juego */
-.barra { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+/* Tres columnas: el título queda centrado aunque a la derecha haya dos botones (⚙ y ☰) */
+.barra { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin-bottom: 8px; }
+.barra > :first-child { justify-self: start; }
 .barra h2 { font-family: var(--serif); font-weight: normal; font-size: 1.4rem; margin: 0; color: var(--oro-claro); }
 
 .boton-icono {
@@ -362,7 +364,7 @@ body {
 }
 
 /* Botón de la barra que pone cada juego (☰ en Dixit) */
-.accion-juego { width: 44px; height: 44px; display: grid; place-items: center; }
+.accion-juego { justify-self: end; min-width: 44px; height: 44px; display: flex; align-items: center; }
 
 /* Catálogo: panel con las categorías y lentes de cada nivel */
 body.sin-scroll { overflow: hidden; }
@@ -398,6 +400,99 @@ body.sin-scroll { overflow: hidden; }
 .cat-familia { display: block; }
 .cat-familia + .cat-familia { margin-top: 4px; }
 .cat-desc { color: var(--tinta-suave); }
+.cat-cuenta { display: inline-block; margin: 3px 4px 0 0; padding: 1px 8px; border-radius: 999px; font-size: .7rem; font-weight: 700; background: var(--oro); color: var(--tinta); }
 .cat-nivel { display: inline-block; margin-top: 3px; padding: 1px 8px; border-radius: 999px; font-size: .68rem; font-weight: 600; background: rgba(122, 90, 158, .16); color: var(--violeta); }
 
 @media (prefers-reduced-motion: reduce) { .catalogo-panel { animation: none; } }
+
+/* Catálogo: botón de cada lente que muestra con qué categorías se asocia */
+.cat-ver {
+  display: block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 600;
+  border: 1px solid var(--violeta);
+  border-radius: 999px;
+  background: none;
+  color: var(--violeta);
+  cursor: pointer;
+}
+.cat-ver[aria-expanded="true"] { background: var(--violeta); color: var(--papel); }
+.cat-asociadas td { background: rgba(122, 90, 158, .08); }
+.cat-chip { display: inline-block; margin: 3px 4px 3px 0; padding: 3px 9px; border-radius: 999px; font-size: .78rem; background: #fff; border: 1px solid rgba(44, 33, 64, .15); }
+
+/* Favoritos: estrella en la esquina de la carta (no la hace crecer) */
+.carta-fav {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--tinta-suave);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.carta-fav--activa { color: #d9a21b; }
+.boton--principal:disabled { opacity: .45; }
+
+/* Reloj para pensar la pista: botón centrado en la carta y cómo se ve pasar el tiempo */
+.reloj-boton {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--oro);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--oro-claro), #f6dc9c);
+  color: var(--tinta);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(44, 33, 64, .18);
+  cursor: pointer;
+}
+.reloj-boton:active { transform: translateY(1px); }
+.reloj-cuenta { font-variant-numeric: tabular-nums; padding-left: 8px; border-left: 1px solid rgba(44, 33, 64, .2); }
+
+.reloj-velo, .reloj-borde { display: none; }
+.reloj-velo { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+.reloj-arena { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: rgba(242, 196, 107, .22); transition: background .4s; }
+.reloj-vista-arena .reloj-velo { display: block; }
+
+.reloj-borde { position: absolute; inset: -5px; width: calc(100% + 10px); height: calc(100% + 10px); pointer-events: none; overflow: visible; }
+.reloj-borde rect { fill: none; stroke: var(--oro); stroke-width: 4; stroke-linecap: round; transition: stroke .4s; }
+.reloj-vista-borde .reloj-borde { display: block; }
+
+/* Últimos 10 segundos: coral y un latido suave; al terminar, contorno coral */
+.reloj--poco .reloj-boton { border-color: var(--coral); }
+.reloj--poco .reloj-arena { background: rgba(233, 138, 122, .25); }
+.reloj--poco .reloj-borde rect { stroke: var(--coral); }
+.mesa .carta.reloj--poco { animation: latido 1s ease-in-out infinite; }
+@keyframes latido { 50% { transform: scale(1.012); } }
+.carta.reloj--fin { box-shadow: 0 0 0 4px var(--coral), 0 18px 40px rgba(10, 5, 30, .45), inset 0 0 0 6px var(--papel), inset 0 0 0 7.5px var(--oro); }
+@media (prefers-reduced-motion: reduce) { .mesa .carta.reloj--poco { animation: none; } }
+
+/* Menú ⚙ Ajustes */
+.ajuste { color: var(--texto); }
+.ajuste .catalogo-subtitulo { margin-top: 4px; }
+.ajuste-titulo { margin: 18px 0 8px; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--oro); }
+.ajuste .chips { justify-content: flex-start; }
+.ajuste .ajustes-desc { margin: 8px 0 0; color: var(--texto-suave); font-size: .85rem; }
+.ajuste-fila { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(255, 246, 213, .12); cursor: pointer; }
+.ajuste-fila b { display: block; font-weight: 600; }
+.ajuste-fila small { display: block; margin-top: 2px; color: var(--texto-suave); font-size: .8rem; line-height: 1.35; }
+.ajuste-interruptor { flex: none; width: 22px; height: 22px; accent-color: var(--oro); }
+.ajuste-tiempo { display: flex; gap: 12px; margin-bottom: 10px; }
+.ajuste-paso { flex: 1; display: flex; align-items: center; justify-content: space-between; padding: 4px; border-radius: 999px; background: rgba(255, 246, 213, .08); border: 1px solid rgba(255, 246, 213, .2); }
+.ajuste-paso span { font-size: .9rem; color: var(--texto-suave); }
+.ajuste-paso b { font-family: var(--serif); font-size: 1.5rem; font-weight: normal; color: var(--oro-claro); font-variant-numeric: tabular-nums; }

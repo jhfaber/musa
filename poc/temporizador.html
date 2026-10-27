@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PoC — Tiempo en la carta</title>
+<!-- Usa los estilos reales de Musa: las cartas se ven igual que en la app; solo se agrega el reloj -->
+<link rel="stylesheet" href="../css/estilo.css">
+<style>
+  .poc { max-width: 480px; margin: 0 auto; padding: 14px 16px 28px; }
+  .poc-titulo { font-family: var(--serif); font-weight: normal; font-size: 1.15rem; text-align: center; color: var(--oro-claro); margin: 4px 0 2px; }
+  .poc-nota { text-align: center; font-size: .8rem; color: var(--texto-suave); margin: 0 0 10px; }
+  .poc .chips { margin-bottom: 8px; }
+  .poc .chip { font-size: .8rem; padding: 6px 11px; }
+
+  /* La carta de la categoría va dentro de .reloj-carta para dibujarle el reloj alrededor o encima */
+  .reloj-carta { position: relative; }
+
+  /* A · Borde: el borde dorado de la carta se va consumiendo */
+  .borde { position: absolute; inset: -5px; width: calc(100% + 10px); height: calc(100% + 10px); pointer-events: none; overflow: visible; display: none; }
+  .borde rect { fill: none; stroke: var(--oro); stroke-width: 4; stroke-linecap: round; transition: stroke .4s; }
+  .v-borde .borde { display: block; }
+
+  /* C · Arena: un velo dorado que baja por la carta */
+  .arena { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 0 0 22px 22px; background: rgba(242, 196, 107, .22); pointer-events: none; display: none; }
+  .v-arena .arena { display: block; }
+  .v-arena .reloj-carta .carta { overflow: hidden; }
+
+  /* B · Botón reloj junto a Nueva ronda */
+  .reloj { display: none; position: relative; overflow: hidden; }
+  .reloj i { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(242, 196, 107, .45); transition: background .4s; }
+  .reloj b { position: relative; font-size: .78rem; font-variant-numeric: tabular-nums; }
+  .v-reloj .reloj { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* Botón del reloj dentro de la carta (A y C): centrado abajo o en la esquina inferior derecha */
+  .tocar {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 8px; margin: 14px auto 0; padding: 8px 16px;
+    border: 1.5px solid var(--oro); border-radius: 999px; cursor: pointer;
+    background: linear-gradient(180deg, var(--oro-claro), #f6dc9c); color: var(--tinta);
+    font: inherit; font-size: .9rem; font-weight: 600; box-shadow: 0 3px 10px rgba(44, 33, 64, .18);
+  }
+  .tocar:active { transform: translateY(1px); }
+  .tocar b { font-variant-numeric: tabular-nums; padding-left: 8px; border-left: 1px solid rgba(44, 33, 64, .2); }
+  .poco .tocar { border-color: var(--coral); }
+  .v-reloj .tocar { display: none; }
+  .pos-esquina .reloj-carta .carta { padding-bottom: 62px; }
+  .pos-esquina .tocar { position: absolute; right: 14px; bottom: 14px; margin: 0; }
+
+  /* Últimos 10 segundos y final */
+  .poco .borde rect { stroke: var(--coral); }
+  .poco .reloj i { background: rgba(233, 138, 122, .6); }
+  .poco .arena { background: rgba(233, 138, 122, .25); }
+  .poco .reloj-carta .carta { animation: latido 1s ease-in-out infinite; }
+  @keyframes latido { 50% { transform: scale(1.012); } }
+  .fin .reloj-carta .carta { box-shadow: 0 0 0 4px var(--coral), 0 18px 40px rgba(0, 0, 0, .35); }
+
+  .poc-ajustes { margin-top: 14px; font-size: .8rem; color: var(--texto-suave); display: grid; gap: 6px; }
+  .poc-ajustes label { display: flex; gap: 8px; align-items: center; }
+</style>
+</head>
+<body>
+<div class="cielo" aria-hidden="true"></div>
+<main class="poc">
+  <h1 class="poc-titulo">Tiempo en la carta — PoC</h1>
+  <p class="poc-nota">Las cartas son las de Musa; solo se agrega un reloj para pensar la pista.</p>
+
+  <div class="chips" id="variantes">
+    <button class="chip" data-v="borde">A · Borde</button>
+    <button class="chip" data-v="reloj">B · Botón reloj</button>
+    <button class="chip chip--activo" data-v="arena">C · Arena</button>
+  </div>
+  <div class="chips" id="posiciones">
+    <button class="chip chip--activo" data-p="centro">Botón al centro</button>
+    <button class="chip" data-p="esquina">Botón en la esquina</button>
+  </div>
+  <div class="chips" id="duraciones">
+    <button class="chip" data-s="5">5 s (probar el final)</button>
+    <button class="chip" data-s="30">30 s</button>
+    <button class="chip chip--activo" data-s="60">60 s</button>
+    <button class="chip" data-s="90">90 s</button>
+  </div>
+
+  <div class="dixit v-arena pos-centro" id="mesa">
+    <div class="ronda">Ronda 3</div>
+    <div class="mesa">
+      <div class="reloj-carta">
+        <div class="carta">
+          <div class="arena" id="arena"></div>
+          <button class="carta-fav" aria-label="Guardar en favoritos">☆</button>
+          <div class="carta-cadena">Categoría <span class="reto">Reto +2</span></div>
+          <div class="carta-simbolo" aria-hidden="true">🧒</div>
+          <h3 class="carta-titulo">Un recuerdo de infancia</h3>
+          <p class="carta-descripcion">Algo que viviste o imaginaste de niño y que la carta te trae a la mente.</p>
+          <p class="carta-ejemplo"><span>Ejemplos</span><em>El primer día de clases</em><em>La casa de la abuela</em><em>Esconderse bajo la mesa</em></p>
+          <button class="tocar" id="tocar"><span id="tocar-texto">⏳ Pensar</span><b id="cuenta-carta">1:00</b></button>
+        </div>
+        <svg class="borde" id="borde" preserveAspectRatio="none"><rect id="rect" rx="24" ry="24"></rect></svg>
+      </div>
+      <div class="sello" aria-hidden="true">✕</div>
+      <div class="lente">
+        <div class="lente-simbolo" aria-hidden="true">🌡️</div>
+        <div class="lente-texto">
+          <div class="lente-cabeza">Lente · Escala</div>
+          <h4 class="lente-titulo">De tranquila a caótica</h4>
+          <p class="lente-descripcion">Ubica la carta entre los dos extremos, del 1 al 10, y di el número con tu pista.</p>
+          <p class="lente-ejemplos"><em>1 = lo más tranquila</em><em>10 = lo más caótica</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controles">
+      <button class="boton-icono boton-redondo" aria-label="Ronda anterior">‹</button>
+      <button class="boton boton--principal" id="nueva">✦ Nueva ronda</button>
+      <button class="boton-icono boton-redondo reloj" id="reloj" aria-label="Reloj"><i id="reloj-arena"></i><b id="cuenta-reloj">1:00</b></button>
+    </div>
+  </div>
+
+  <div class="poc-ajustes">
+    <label><input type="checkbox" id="sonido" checked> Campanita suave al terminar</label>
+    <label><input type="checkbox" id="vibrar" checked> Vibrar al terminar (solo Android)</label>
+  </div>
+</main>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const mesa = $('mesa');
+  // El tiempo se calcula contra la hora de término (no contando cuadros): si el celular frena la página
+  // o se apaga la pantalla, al volver el reloj marca lo que de verdad queda.
+  let total = 60, restante = 60, corriendo = false, terminaEn = 0, intervalo = 0;
+
+  const texto = s => { const c = Math.ceil(s); return `${Math.floor(c / 60)}:${String(c % 60).padStart(2, '0')}`; };
+
+  // El borde: un rectángulo redondeado cuyo trazo se acorta con el tiempo
+  function medirBorde() {
+    const svg = $('borde'), r = $('rect');
+    const w = svg.clientWidth, h = svg.clientHeight;
+    if (w < 10 || h < 10) return; // oculto (otra variante): se mide al volver a mostrarlo
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    r.setAttribute('x', 2); r.setAttribute('y', 2);
+    r.setAttribute('width', w - 4); r.setAttribute('height', h - 4);
+    const largo = r.getTotalLength();
+    r.style.strokeDasharray = largo;
+    r.dataset.largo = largo;
+  }
+
+  function pintar() {
+    const p = restante / total; // 1 = lleno, 0 = vacío
+    $('rect').style.strokeDashoffset = (1 - p) * Number($('rect').dataset.largo || 0);
+    $('reloj-arena').style.width = `${p * 100}%`;
+    $('arena').style.height = `${p * 100}%`;
+    $('cuenta-carta').textContent = texto(restante);
+    $('cuenta-reloj').textContent = texto(restante);
+    $('tocar-texto').textContent = corriendo ? '⏸ Pausar'
+      : restante <= 0 ? '↻ Otra vez' : restante < total ? '▶ Seguir' : '⏳ Pensar';
+    mesa.classList.toggle('poco', corriendo && restante <= 10 && restante > 0);
+    mesa.classList.toggle('fin', restante <= 0);
+  }
+
+  function paso() {
+    if (!corriendo) return;
+    restante = Math.max(0, (terminaEn - Date.now()) / 1000);
+    if (restante <= 0) { detener(); terminar(); }
+    pintar();
+  }
+
+  function detener() { corriendo = false; clearInterval(intervalo); }
+
+  function alternar() {
+    if (corriendo) { paso(); detener(); pintar(); return; }
+    if (restante <= 0) restante = total;
+    corriendo = true;
+    terminaEn = Date.now() + restante * 1000;
+    clearInterval(intervalo);
+    intervalo = setInterval(paso, 100);
+    pintar();
+  }
+
+  function reiniciar() { detener(); restante = total; pintar(); }
+
+  function terminar() {
+    if ($('vibrar').checked && navigator.vibrate) navigator.vibrate([120, 80, 120]);
+    if (!$('sonido').checked) return;
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      [880, 1320].forEach((f, i) => {
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.frequency.value = f; o.type = 'sine';
+        const t0 = ctx.currentTime + i * 0.18;
+        g.gain.setValueAtTime(0.0001, t0);
+        g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.2);
+        o.connect(g).connect(ctx.destination); o.start(t0); o.stop(t0 + 1.3);
+      });
+    } catch (e) { /* sin sonido */ }
+  }
+
+  $('tocar').onclick = alternar;
+  $('reloj').onclick = alternar;
+  $('nueva').onclick = reiniciar; // en la app, una ronda nueva reinicia el reloj
+  document.addEventListener('visibilitychange', paso);
+
+  $('variantes').onclick = e => {
+    const b = e.target.closest('button'); if (!b) return;
+    document.querySelectorAll('#variantes .chip').forEach(x => x.classList.toggle('chip--activo', x === b));
+    mesa.classList.remove('v-borde', 'v-reloj', 'v-arena');
+    mesa.classList.add(`v-${b.dataset.v}`);
+    medirBorde(); pintar();
+  };
+  $('posiciones').onclick = e => {
+    const b = e.target.closest('button'); if (!b) return;
+    document.querySelectorAll('#posiciones .chip').forEach(x => x.classList.toggle('chip--activo', x === b));
+    mesa.classList.remove('pos-centro', 'pos-esquina');
+    mesa.classList.add(`pos-${b.dataset.p}`);
+    medirBorde(); pintar();
+  };
+  $('duraciones').onclick = e => {
+    const b = e.target.closest('button'); if (!b) return;
+    document.querySelectorAll('#duraciones .chip').forEach(x => x.classList.toggle('chip--activo', x === b));
+    total = Number(b.dataset.s); reiniciar();
+  };
+
+  addEventListener('resize', () => { medirBorde(); pintar(); });
+  medirBorde(); pintar();
+</script>
+</body>
+</html>

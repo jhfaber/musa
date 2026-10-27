@@ -1,6 +1,6 @@
 // Guarda toda la app en el celular para que funcione sin Internet.
 // Si cambia la lista de archivos, sube la versión.
-const VERSION = 'musa-v26';
+const VERSION = 'musa-v38';
 const ARCHIVOS = [
   './',
   'index.html',

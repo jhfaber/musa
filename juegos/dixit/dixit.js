@@ -5,14 +5,18 @@
   const NIVELES = [
     { id: 'tranquilo', nombre: 'Tranquilo', lentes: 0, salto: 0, desc: 'Solo la categoría.' },
     { id: 'normal', nombre: 'Normal', lentes: 1, salto: 0.3, desc: 'La categoría y un lente.' },
-    { id: 'caotico', nombre: 'Caótico', lentes: 2, salto: 0.6, desc: 'La categoría y dos lentes.' }
+    { id: 'caotico', nombre: 'Caótico', lentes: 2, salto: 0.6, desc: 'La categoría y dos lentes.' },
+    { id: 'favoritos', nombre: '⭐ Favoritos', lentes: 0, salto: 0, desc: 'Repite las rondas que marcaste con ⭐.' }
   ];
+  const CLAVE_FAVORITOS = 'musa.dixit.favoritos.v1'; // aparte de la partida: "Nueva partida" no las borra
   const SIN_REPETIR = 3;   // una categoría no vuelve hasta que pasen 3 rondas
   const MAX_SEGUIDAS = 4;  // un lente cambia de familia después de 4 seguidos
 
   let categorias = [];
   let lentes = [];         // planos, cada uno con su familia
   let estado = null;
+  let favoritos = null;    // [{ categoria, lentes, nivel, fecha }]
+  let ajustes = null;      // menú ⚙ (ver "Ajustes y reloj")
   let contenedor = null;
 
   const azar = lista => lista[Math.floor(Math.random() * lista.length)];
@@ -35,6 +39,187 @@
   function guardarEstado() {
     try { localStorage.setItem(CLAVE, JSON.stringify(estado)); } catch (e) { /* ignorar */ }
   }
+
+  // ---------- Favoritos: combinaciones exactas (categoría + lentes) que se quieren repetir ----------
+
+  const enFavoritos = () => estado.nivel === 'favoritos';
+  const claveRonda = r => `${r.categoria}|${r.lentes.join(',')}`;
+  const esFavorita = r => favoritos.some(f => claveRonda(f) === claveRonda(r));
+
+  function cargarFavoritos() {
+    try {
+      const guardados = JSON.parse(localStorage.getItem(CLAVE_FAVORITOS));
+      if (Array.isArray(guardados)) {
+        // Se descartan las que usan categorías o lentes que ya no existen
+        return guardados.filter(f => categoria(f.categoria) && Array.isArray(f.lentes) && f.lentes.every(id => lente(id)));
+      }
+    } catch (e) { /* sin almacenamiento: favoritos en memoria */ }
+    return [];
+  }
+
+  function guardarFavoritos() {
+    try { localStorage.setItem(CLAVE_FAVORITOS, JSON.stringify(favoritos)); } catch (e) { /* ignorar */ }
+  }
+
+  function alternarFavorita() {
+    const ronda = estado.historial[estado.indice];
+    if (!ronda) return;
+    if (esFavorita(ronda)) favoritos = favoritos.filter(f => claveRonda(f) !== claveRonda(ronda));
+    else favoritos.push({ categoria: ronda.categoria, lentes: [...ronda.lentes], nivel: ronda.nivel || estado.nivel, fecha: Date.now() });
+    guardarFavoritos();
+    pintar(false);
+  }
+
+  function quitarFavorita(i) {
+    favoritos.splice(i, 1);
+    guardarFavoritos();
+    pintar(false);
+  }
+
+  // Una favorita al azar que no haya salido en las últimas N − 1 rondas: una vuelta completa sin repetir.
+  // "Otra categoría" evita además la que está en pantalla (evitar), si hay otra para elegir.
+  function armarFavorita(hasta, evitar = null) {
+    const recientes = anteriores(hasta).slice(-(favoritos.length - 1) || favoritos.length).map(claveRonda);
+    let opciones = favoritos.filter(f => !recientes.includes(claveRonda(f)));
+    if (!opciones.length) opciones = favoritos;
+    const sinEvitar = opciones.filter(f => !evitar || claveRonda(f) !== claveRonda(evitar));
+    const f = azar(sinEvitar.length ? sinEvitar : opciones);
+    return { categoria: f.categoria, lentes: [...f.lentes], nivel: f.nivel };
+  }
+
+  // ---------- Ajustes (menú ⚙) y reloj para pensar la pista ----------
+
+  const CLAVE_AJUSTES = 'musa.dixit.ajustes.v1';
+  const AJUSTES_BASE = { reloj: true, segundos: 60, vista: 'arena', sonido: true, vibrar: true };
+  const VISTAS = [
+    { id: 'arena', nombre: 'Arena', desc: 'Un velo dorado baja por la carta.' },
+    { id: 'borde', nombre: 'Borde', desc: 'El borde dorado de la carta se va consumiendo.' },
+    { id: 'numero', nombre: 'Solo el número', desc: 'Sin animación: solo cuenta el botón.' }
+  ];
+  const ATAJOS = [30, 60, 90, 120];
+  const MIN_SEGUNDOS = 10;
+  const MAX_SEGUNDOS = 9 * 60 + 55;
+
+  const ajustarSegundos = s => Math.min(MAX_SEGUNDOS, Math.max(MIN_SEGUNDOS, Math.round(s / 5) * 5));
+  const formatoTiempo = s => { const c = Math.ceil(s); return `${Math.floor(c / 60)}:${String(c % 60).padStart(2, '0')}`; };
+
+  function cargarAjustes() {
+    let guardados = null;
+    try { guardados = JSON.parse(localStorage.getItem(CLAVE_AJUSTES)); } catch (e) { /* valores por defecto */ }
+    const a = { ...AJUSTES_BASE, ...(guardados || {}) };
+    a.segundos = ajustarSegundos(Number(a.segundos) || AJUSTES_BASE.segundos);
+    if (!VISTAS.some(v => v.id === a.vista)) a.vista = AJUSTES_BASE.vista;
+    return a;
+  }
+
+  function guardarAjustes() {
+    try { localStorage.setItem(CLAVE_AJUSTES, JSON.stringify(ajustes)); } catch (e) { /* ignorar */ }
+  }
+
+  // El tiempo se calcula contra la hora de término (no contando cuadros): si el celular frena la página
+  // o se apaga la pantalla, al volver marca lo que de verdad queda. Vive fuera de la carta, así que
+  // repintarla (p. ej. al marcar ⭐) no lo detiene.
+  const reloj = { restante: null, corriendo: false, terminaEn: 0, intervalo: 0 };
+  const relojRestante = () => (reloj.restante === null ? ajustes.segundos : reloj.restante);
+
+  function detenerReloj() {
+    reloj.corriendo = false;
+    clearInterval(reloj.intervalo);
+  }
+
+  // Cada vez que cambia la ronda en pantalla, el reloj vuelve a la duración completa
+  function reiniciarReloj() {
+    detenerReloj();
+    reloj.restante = null;
+  }
+
+  function pasoReloj() {
+    if (!reloj.corriendo) return;
+    reloj.restante = Math.max(0, (reloj.terminaEn - Date.now()) / 1000);
+    if (reloj.restante <= 0) {
+      detenerReloj();
+      avisarFin();
+    }
+    pintarReloj();
+  }
+
+  function alternarReloj() {
+    if (reloj.corriendo) {
+      pasoReloj();
+      detenerReloj();
+    } else {
+      if (relojRestante() <= 0) reloj.restante = ajustes.segundos;
+      reloj.restante = relojRestante();
+      reloj.corriendo = true;
+      reloj.terminaEn = Date.now() + reloj.restante * 1000;
+      clearInterval(reloj.intervalo);
+      reloj.intervalo = setInterval(pasoReloj, 100);
+    }
+    pintarReloj();
+  }
+
+  // Campanita suave (dos notas) y vibración corta
+  function avisarFin() {
+    if (ajustes.vibrar && navigator.vibrate) navigator.vibrate([120, 80, 120]);
+    if (!ajustes.sonido) return;
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      [880, 1320].forEach((frecuencia, i) => {
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.value = frecuencia;
+        const t0 = ctx.currentTime + i * 0.18;
+        g.gain.setValueAtTime(0.0001, t0);
+        g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.2);
+        o.connect(g).connect(ctx.destination);
+        o.start(t0);
+        o.stop(t0 + 1.3);
+      });
+    } catch (e) { /* sin sonido */ }
+  }
+
+  // Lo que el reloj agrega dentro de la carta de la categoría: el velo de arena, el borde y el botón
+  const htmlReloj = () => `
+    <div class="reloj-velo" aria-hidden="true"><div class="reloj-arena"></div></div>
+    <svg class="reloj-borde" aria-hidden="true" preserveAspectRatio="none"><rect rx="24" ry="24"></rect></svg>
+    <button class="reloj-boton" data-accion="reloj"><span class="reloj-estado"></span><b class="reloj-cuenta"></b></button>`;
+
+  // El borde es un rectángulo redondeado cuyo trazo se acorta con el tiempo; se mide al pintar la carta
+  function medirBorde() {
+    const svg = contenedor && contenedor.querySelector('.reloj-borde');
+    if (!svg) return;
+    const w = svg.clientWidth;
+    const h = svg.clientHeight;
+    if (w < 10 || h < 10) return;
+    const rect = svg.querySelector('rect');
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    rect.setAttribute('x', 2);
+    rect.setAttribute('y', 2);
+    rect.setAttribute('width', w - 4);
+    rect.setAttribute('height', h - 4);
+    const largo = rect.getTotalLength();
+    rect.style.strokeDasharray = largo;
+    rect.dataset.largo = largo;
+  }
+
+  function pintarReloj() {
+    const carta = contenedor && contenedor.querySelector('.carta--reloj');
+    if (!carta) return;
+    const restante = relojRestante();
+    const lleno = restante / ajustes.segundos; // 1 = lleno, 0 = vacío
+    carta.querySelector('.reloj-arena').style.height = `${lleno * 100}%`;
+    const rect = carta.querySelector('.reloj-borde rect');
+    rect.style.strokeDashoffset = (1 - lleno) * Number(rect.dataset.largo || 0);
+    carta.querySelector('.reloj-cuenta').textContent = formatoTiempo(restante);
+    carta.querySelector('.reloj-estado').textContent = reloj.corriendo ? '⏸ Pausar'
+      : restante <= 0 ? '↻ Otra vez' : restante < ajustes.segundos ? '▶ Seguir' : '⏳ Pensar';
+    carta.classList.toggle('reloj--poco', reloj.corriendo && restante <= 10 && restante > 0);
+    carta.classList.toggle('reloj--fin', restante <= 0);
+  }
+
+  document.addEventListener('visibilitychange', pasoReloj);
 
   // Cada categoría lista los lentes que le cuadran (lentes_permitidos); los demás nunca le salen.
   const choca = (c, l) => !c.lentes_permitidos.includes(l.id);
@@ -60,7 +245,10 @@
     let racha = 0;
     for (let i = usados.length - 1; i >= 0 && lente(usados[i]).familia.id === ultima; i--) racha++;
 
-    const validos = lentes.filter(l => !choca(c, l) && !familiasRonda.includes(l.familia.id) &&
+    // La familia principal de la categoría (las escalas) puede repetirse en la ronda: en Caótico salen dos
+    // escalas distintas, como un mapa de dos ejes, o una escala y un sonido. Las demás familias no se repiten.
+    const validos = lentes.filter(l => !choca(c, l) && !enRonda.includes(l.id) &&
+      (l.familia.id === c.lente_principal || !familiasRonda.includes(l.familia.id)) &&
       (!soloFamilia || l.familia.id === soloFamilia));
     if (!validos.length) return null;
     const recientes = usados.slice(-lentes.length + 2);
@@ -90,12 +278,18 @@
     return lista;
   }
 
-  function armarRonda(hasta) {
+  function armarRonda(hasta, evitar = null) {
+    if (enFavoritos()) return armarFavorita(hasta, evitar);
     const c = elegirCategoria(hasta);
-    return { categoria: c.id, lentes: lentesPara(c, hasta) };
+    return { categoria: c.id, lentes: lentesPara(c, hasta), nivel: estado.nivel };
   }
 
+  // En Favoritos sin ninguna guardada no hay de dónde repartir
+  const sinRepartir = () => enFavoritos() && !favoritos.length;
+
   function nuevaRonda() {
+    reiniciarReloj();
+    if (sinRepartir()) return pintar(false);
     estado.historial.push(armarRonda(estado.historial.length));
     estado.indice = estado.historial.length - 1;
     guardarEstado();
@@ -103,7 +297,9 @@
   }
 
   function otraCategoria() {
-    estado.historial[estado.indice] = armarRonda(estado.indice);
+    reiniciarReloj();
+    if (sinRepartir()) return pintar(false);
+    estado.historial[estado.indice] = armarRonda(estado.indice, estado.historial[estado.indice]);
     guardarEstado();
     pintar(true);
   }
@@ -116,6 +312,7 @@
   }
 
   function mover(paso) {
+    reiniciarReloj();
     estado.indice = Math.max(0, Math.min(estado.historial.length - 1, estado.indice + paso));
     guardarEstado();
     pintar(false);
@@ -123,6 +320,7 @@
 
   function nuevaPartida() {
     if (estado.historial.length && !confirm('¿Empezar una partida nueva? Se borran las rondas jugadas.')) return;
+    reiniciarReloj();
     estado = estadoNuevo(estado.nivel);
     guardarEstado();
     pintar(false);
@@ -142,6 +340,14 @@
 
   function pintarCarta() {
     const ronda = estado.historial[estado.indice];
+    if (sinRepartir()) {
+      return `
+        <div class="carta carta--dorso">
+          <div class="carta-dorso-arte" aria-hidden="true">☆</div>
+          <p class="carta-dorso-texto">Aún no tienes favoritas.<br>Cuando una ronda salga muy buena, toca la <b>☆</b>
+          de la carta para guardarla y aquí podrás repetirla.</p>
+        </div>`;
+    }
     if (!ronda) {
       return `
         <div class="carta carta--dorso">
@@ -164,13 +370,16 @@
         </div>`;
     }).join('<div class="sello" aria-hidden="true">✕</div>');
     return `
-      <div class="carta">
+      <div class="carta ${ajustes.reloj ? `carta--reloj reloj-vista-${ajustes.vista}` : ''}">
+        <button class="carta-fav ${esFavorita(ronda) ? 'carta-fav--activa' : ''}" data-accion="fav"
+          aria-pressed="${esFavorita(ronda)}" aria-label="${esFavorita(ronda) ? 'Quitar de favoritos' : 'Guardar en favoritos'}">${esFavorita(ronda) ? '★' : '☆'}</button>
         <div class="carta-cadena">Categoría <span class="reto">Reto +${1 + ronda.lentes.length}</span></div>
         <div class="carta-simbolo" aria-hidden="true">${c.simbolo}</div>
         <h3 class="carta-titulo">${c.nombre}</h3>
         <p class="carta-descripcion">${c.descripcion}</p>
         ${c.relacionado ? '<p class="carta-aviso">No vale lo que se ve en la carta</p>' : ''}
         <p class="carta-ejemplo"><span>Ejemplos</span>${ejemplos(c.ejemplos)}</p>
+        ${ajustes.reloj ? htmlReloj() : ''}
       </div>
       ${fichas ? `<div class="sello" aria-hidden="true">✕</div>${fichas}` : ''}`;
   }
@@ -187,15 +396,15 @@
 
         <div class="controles">
           <button class="boton-icono boton-redondo" data-accion="atras" ${estado.indice > 0 ? '' : 'disabled'} aria-label="Ronda anterior">‹</button>
-          ${enUltima
-            ? `<button class="boton boton--principal" data-accion="nueva">✦ Nueva ronda</button>`
+          ${enUltima || sinRepartir()
+            ? `<button class="boton boton--principal" data-accion="nueva" ${sinRepartir() ? 'disabled' : ''}>✦ Nueva ronda</button>`
             : `<button class="boton boton--principal" data-accion="ultima">Volver a la ronda ${total}</button>`}
           <button class="boton-icono boton-redondo" data-accion="adelante" ${enUltima ? 'disabled' : ''} aria-label="Ronda siguiente">›</button>
         </div>
-        ${hay && enUltima ? `
+        ${hay && enUltima && !sinRepartir() ? `
           <div class="cambios">
-            <button class="boton boton--texto" data-accion="otra">↻ Otra categoría</button>
-            ${ronda.lentes.length ? '<button class="boton boton--texto" data-accion="lentes">↻ Otros lentes</button>' : ''}
+            <button class="boton boton--texto" data-accion="otra">↻ ${enFavoritos() ? 'Otra favorita' : 'Otra categoría'}</button>
+            ${ronda.lentes.length && !enFavoritos() ? '<button class="boton boton--texto" data-accion="lentes">↻ Otros lentes</button>' : ''}
           </div>` : ''}
 
         <section class="ajustes">
@@ -205,7 +414,7 @@
               <button class="chip ${n.id === estado.nivel ? 'chip--activo' : ''}" role="radio"
                 aria-checked="${n.id === estado.nivel}" data-nivel="${n.id}">${n.nombre}</button>`).join('')}
           </div>
-          <p class="ajustes-desc">${nivel().desc}</p>
+          <p class="ajustes-desc">${nivel().desc}${enFavoritos() ? ` Tienes ${favoritos.length}.` : ''}</p>
           <button class="boton boton--texto" data-accion="partida">Nueva partida</button>
         </section>
 
@@ -224,6 +433,8 @@
       if (boton.dataset.nivel) return cambiarNivel(boton.dataset.nivel);
       const acciones = {
         nueva: nuevaRonda,
+        fav: alternarFavorita,
+        reloj: alternarReloj,
         otra: otraCategoria,
         lentes: otrosLentes,
         atras: () => mover(-1),
@@ -234,6 +445,8 @@
       const accion = acciones[boton.dataset.accion];
       if (accion) accion();
     };
+    medirBorde();
+    pintarReloj();
   }
 
   // ---------- Catálogo (menú ☰): qué categorías y lentes hay en cada nivel ----------
@@ -243,21 +456,56 @@
   // Lentes que pueden acompañar a una categoría (mismas reglas que al repartir)
   const lentesPosibles = c => lentes.filter(l => !choca(c, l));
 
+  // Cuántos lentes trae de verdad una categoría en un nivel: lo que pide el nivel, limitado por lo que la
+  // categoría admite (dos lentes deben ser de familias distintas, salvo las que solo usan escalas).
+  function lentesQueTrae(c, n) {
+    const posibles = lentesPosibles(c);
+    const principales = posibles.filter(l => l.familia.id === c.lente_principal).length;
+    const otrasFamilias = new Set(posibles.filter(l => l.familia.id !== c.lente_principal).map(l => l.familia.id)).size;
+    return Math.min(lentesEnNivel(c, n), principales + otrasFamilias);
+  }
+
   let panel = null;
 
+  function pintarFavoritosCatalogo() {
+    const nombreNivel = id => (NIVELES.find(x => x.id === id) || {}).nombre || '';
+    const filas = favoritos.map((f, i) => {
+      const c = categoria(f.categoria);
+      const fichas = f.lentes.map(id => { const l = lente(id); return `<span class="cat-familia"><b>${l.familia.simbolo}</b> ${l.titulo}</span>`; }).join('');
+      return `
+        <tr>
+          <th scope="row"><span class="cat-simbolo">${c.simbolo}</span> ${c.nombre}
+            ${f.nivel ? `<small class="cat-cuenta">Salió en ${nombreNivel(f.nivel)}</small>` : ''}
+            <button class="cat-ver" data-quitar="${i}">Quitar</button></th>
+          <td>${fichas || '<span class="cat-desc">Sin lentes</span>'}</td>
+        </tr>`;
+    }).join('');
+    panel.querySelector('.catalogo-cuerpo').innerHTML = favoritos.length ? `
+      <p class="catalogo-resumen"><b>${favoritos.length} ${favoritos.length === 1 ? 'favorita' : 'favoritas'}</b> · se guardan en este celular</p>
+      <table class="catalogo-tabla">
+        <thead><tr><th>Categoría</th><th>Lentes</th></tr></thead>
+        <tbody>${filas}</tbody>
+      </table>` : '<p class="catalogo-resumen">Aún no tienes favoritas. Toca la <b>☆</b> de una carta para guardarla.</p>';
+  }
+
   function pintarCatalogo(nivelId) {
+    panel.querySelectorAll('[data-catalogo]').forEach(b => {
+      b.classList.toggle('chip--activo', b.dataset.catalogo === nivelId);
+      b.setAttribute('aria-selected', b.dataset.catalogo === nivelId);
+    });
+    if (nivelId === 'favoritos') return pintarFavoritosCatalogo();
     const n = NIVELES.find(x => x.id === nivelId);
     const lista = categoriasDe(n);
     const filas = lista.map(c => {
       const posibles = lentesPosibles(c);
       const porFamilia = [...new Set(posibles.map(l => l.familia))].map(f =>
         `<span class="cat-familia"><b>${f.simbolo}</b> ${posibles.filter(l => l.familia === f).map(l => l.titulo).join(', ')}</span>`).join('');
+      const trae = lentesQueTrae(c, n);
       return `
         <tr>
           <th scope="row"><span class="cat-simbolo">${c.simbolo}</span> ${c.nombre}
-            ${n.lentes && c.sin_lentes ? '<small class="cat-nivel">Siempre sola</small>'
-              : n.lentes && c.min_lentes > n.lentes ? `<small class="cat-nivel">Siempre ${c.min_lentes} lentes</small>`
-              : n.lentes && !saleEn(c, NIVELES[0]) ? '<small class="cat-nivel">No sale en Tranquilo</small>' : ''}
+            ${n.lentes ? `<small class="cat-cuenta">${trae ? `${trae} ${trae === 1 ? 'lente' : 'lentes'}` : 'Sin lentes'}</small>` : ''}
+            ${n.lentes && !saleEn(c, NIVELES[0]) ? '<small class="cat-nivel">No sale en Tranquilo</small>' : ''}
             ${c.relacionado ? '<small class="cat-marca">No vale lo que se ve</small>' : ''}</th>
           ${n.lentes ? `<td>${porFamilia || '<span class="cat-desc">Sin lentes: se explica sola</span>'}</td>` : `<td class="cat-desc">${c.descripcion}</td>`}
         </tr>`;
@@ -273,65 +521,177 @@
         <h3 class="catalogo-subtitulo">Todos los lentes</h3>
         <table class="catalogo-tabla">
           <thead><tr><th>Lente</th><th>Ejemplos</th></tr></thead>
-          <tbody>${familias.map(f => f.lentes.map(l => `
-            <tr><th scope="row"><span class="cat-simbolo">${f.simbolo}</span> ${l.titulo}<small class="cat-familia-nombre">${f.nombre}</small></th>
-              <td class="cat-desc">${(l.ejemplos || []).join(' · ')}</td></tr>`).join('')).join('')}
+          <tbody>${familias.map(f => f.lentes.map(l => {
+            // Categorías de este nivel con las que puede salir el lente (las mismas reglas que al repartir)
+            const conQuien = lista.filter(c => lentesQueTrae(c, n) && !choca(c, lente(l.id)));
+            return `
+            <tr><th scope="row"><span class="cat-simbolo">${f.simbolo}</span> ${l.titulo}<small class="cat-familia-nombre">${f.nombre}</small>
+                <button class="cat-ver" data-asociar="${l.id}" aria-expanded="false">Con qué categorías (${conQuien.length})</button></th>
+              <td class="cat-desc">${(l.ejemplos || []).join(' · ')}</td></tr>
+            <tr class="cat-asociadas" data-asociadas="${l.id}" hidden><td colspan="2">
+              ${conQuien.length ? conQuien.map(c => `<span class="cat-chip">${c.simbolo} ${c.nombre}</span>`).join('') : '<span class="cat-desc">Ninguna en este nivel</span>'}
+            </td></tr>`;
+          }).join('')).join('')}
           </tbody>
         </table>` : ''}`;
-    panel.querySelectorAll('[data-catalogo]').forEach(b => {
-      b.classList.toggle('chip--activo', b.dataset.catalogo === nivelId);
-      b.setAttribute('aria-selected', b.dataset.catalogo === nivelId);
-    });
   }
+
+  // Panel lateral (catálogo ☰ y ajustes ⚙): fondo oscuro, cabecera con ✕ y un cuerpo que pinta cada uno
+  function crearPanel(titulo, etiqueta, antesDelCuerpo = '') {
+    const p = document.createElement('div');
+    p.className = 'catalogo';
+    p.hidden = true;
+    p.innerHTML = `
+      <div class="catalogo-fondo" data-cerrar></div>
+      <aside class="catalogo-panel" role="dialog" aria-modal="true" aria-label="${etiqueta}">
+        <header class="catalogo-cabeza">
+          <h2>${titulo}</h2>
+          <button class="boton-icono" data-cerrar aria-label="Cerrar">✕</button>
+        </header>
+        ${antesDelCuerpo}
+        <div class="catalogo-cuerpo"></div>
+      </aside>`;
+    document.body.appendChild(p);
+    return p;
+  }
+
+  function mostrarPanel(p) {
+    p.hidden = false;
+    document.body.classList.add('sin-scroll');
+    p.querySelector('[data-cerrar].boton-icono').focus();
+  }
+
+  function cerrarPanel(p) {
+    p.hidden = true;
+    document.body.classList.remove('sin-scroll');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.catalogo:not([hidden])').forEach(cerrarPanel);
+  });
 
   function abrirCatalogo() {
     if (!panel) {
-      panel = document.createElement('div');
-      panel.className = 'catalogo';
-      panel.hidden = true;
-      panel.innerHTML = `
-        <div class="catalogo-fondo" data-cerrar></div>
-        <aside class="catalogo-panel" role="dialog" aria-modal="true" aria-label="Categorías y lentes por nivel">
-          <header class="catalogo-cabeza">
-            <h2>Categorías por nivel</h2>
-            <button class="boton-icono" data-cerrar aria-label="Cerrar">✕</button>
-          </header>
-          <div class="chips" role="tablist">
-            ${NIVELES.map(x => `<button class="chip" role="tab" data-catalogo="${x.id}">${x.nombre}</button>`).join('')}
-          </div>
-          <div class="catalogo-cuerpo"></div>
-        </aside>`;
-      document.body.appendChild(panel);
+      panel = crearPanel('Categorías por nivel', 'Categorías y lentes por nivel', `
+        <div class="chips" role="tablist">
+          ${NIVELES.map(x => `<button class="chip" role="tab" data-catalogo="${x.id}">${x.nombre}</button>`).join('')}
+        </div>`);
       panel.addEventListener('click', e => {
-        if (e.target.closest('[data-cerrar]')) return cerrarCatalogo();
+        if (e.target.closest('[data-cerrar]')) return cerrarPanel(panel);
+        const quitar = e.target.closest('[data-quitar]');
+        if (quitar) {
+          quitarFavorita(Number(quitar.dataset.quitar));
+          return pintarFavoritosCatalogo();
+        }
+        const ver = e.target.closest('[data-asociar]');
+        if (ver) {
+          const fila = panel.querySelector(`[data-asociadas="${ver.dataset.asociar}"]`);
+          fila.hidden = !fila.hidden;
+          ver.setAttribute('aria-expanded', String(!fila.hidden));
+          return;
+        }
         const b = e.target.closest('[data-catalogo]');
         if (b) pintarCatalogo(b.dataset.catalogo);
       });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) cerrarCatalogo(); });
     }
     pintarCatalogo(estado.nivel);
-    panel.hidden = false;
-    document.body.classList.add('sin-scroll');
-    panel.querySelector('[data-cerrar].boton-icono').focus();
+    mostrarPanel(panel);
   }
 
-  function cerrarCatalogo() {
-    panel.hidden = true;
-    document.body.classList.remove('sin-scroll');
+  // ---------- Menú ⚙: reloj (duración en minutos y segundos, cómo se ve, campanita y vibración) ----------
+
+  let panelAjustes = null;
+
+  const interruptor = (clave, titulo, desc) => `
+    <label class="ajuste-fila">
+      <span><b>${titulo}</b><small>${desc}</small></span>
+      <input type="checkbox" class="ajuste-interruptor" data-ajuste="${clave}" ${ajustes[clave] ? 'checked' : ''}>
+    </label>`;
+
+  function pintarAjustes() {
+    const min = Math.floor(ajustes.segundos / 60);
+    const seg = ajustes.segundos % 60;
+    panelAjustes.querySelector('.catalogo-cuerpo').innerHTML = `
+      <section class="ajuste">
+        <h3 class="catalogo-subtitulo">Reloj para pensar la pista</h3>
+        ${interruptor('reloj', 'Mostrar el reloj', 'Un botón en la carta para contar el tiempo del narrador.')}
+      </section>
+      <section class="ajuste" ${ajustes.reloj ? '' : 'hidden'}>
+        <div class="ajuste-titulo">Duración</div>
+        <div class="ajuste-tiempo">
+          <div class="ajuste-paso">
+            <button class="boton-icono" data-paso="-60" aria-label="Un minuto menos">−</button>
+            <span><b>${min}</b> min</span>
+            <button class="boton-icono" data-paso="60" aria-label="Un minuto más">+</button>
+          </div>
+          <div class="ajuste-paso">
+            <button class="boton-icono" data-paso="-5" aria-label="Cinco segundos menos">−</button>
+            <span><b>${String(seg).padStart(2, '0')}</b> s</span>
+            <button class="boton-icono" data-paso="5" aria-label="Cinco segundos más">+</button>
+          </div>
+        </div>
+        <div class="chips">
+          ${ATAJOS.map(s => `<button class="chip ${s === ajustes.segundos ? 'chip--activo' : ''}" data-atajo="${s}">${formatoTiempo(s)}</button>`).join('')}
+        </div>
+
+        <div class="ajuste-titulo">Cómo se ve el tiempo</div>
+        <div class="chips">
+          ${VISTAS.map(v => `<button class="chip ${v.id === ajustes.vista ? 'chip--activo' : ''}" data-vista="${v.id}">${v.nombre}</button>`).join('')}
+        </div>
+        <p class="ajustes-desc">${VISTAS.find(v => v.id === ajustes.vista).desc}</p>
+
+        <div class="ajuste-titulo">Al terminar</div>
+        ${interruptor('sonido', 'Campanita suave', 'Dos notas cortas cuando se acaba el tiempo.')}
+        ${interruptor('vibrar', 'Vibrar', 'Solo en Android: el iPhone no deja vibrar desde una web.')}
+      </section>`;
+  }
+
+  // Guarda, repinta el menú y la carta de atrás. Si cambia la duración, el reloj vuelve a empezar.
+  function cambiarAjuste(cambio, reiniciar = false) {
+    Object.assign(ajustes, cambio);
+    guardarAjustes();
+    if (reiniciar) reiniciarReloj();
+    pintarAjustes();
+    pintar(false);
+  }
+
+  function abrirAjustes() {
+    if (!panelAjustes) {
+      panelAjustes = crearPanel('Ajustes', 'Ajustes de Dixit');
+      panelAjustes.addEventListener('click', e => {
+        if (e.target.closest('[data-cerrar]')) return cerrarPanel(panelAjustes);
+        const b = e.target.closest('button');
+        if (!b) return;
+        if (b.dataset.paso) cambiarAjuste({ segundos: ajustarSegundos(ajustes.segundos + Number(b.dataset.paso)) }, true);
+        else if (b.dataset.atajo) cambiarAjuste({ segundos: Number(b.dataset.atajo) }, true);
+        else if (b.dataset.vista) cambiarAjuste({ vista: b.dataset.vista });
+      });
+      panelAjustes.addEventListener('change', e => {
+        const clave = e.target.dataset.ajuste;
+        if (clave) cambiarAjuste({ [clave]: e.target.checked }, clave === 'reloj');
+      });
+    }
+    pintarAjustes();
+    mostrarPanel(panelAjustes);
   }
 
   async function abrir(elemento, accion) {
     contenedor = elemento;
     if (accion) {
-      accion.innerHTML = '<button class="boton-icono" aria-label="Ver categorías y lentes por nivel">☰</button>';
-      accion.querySelector('button').onclick = abrirCatalogo;
+      accion.innerHTML = `
+        <button class="boton-icono" data-menu="ajustes" aria-label="Ajustes">⚙</button>
+        <button class="boton-icono" data-menu="catalogo" aria-label="Ver categorías y lentes por nivel">☰</button>`;
+      accion.querySelector('[data-menu="ajustes"]').onclick = abrirAjustes;
+      accion.querySelector('[data-menu="catalogo"]').onclick = abrirCatalogo;
     }
+    ajustes = ajustes || cargarAjustes();
     if (!categorias.length) {
       const datos = await (await fetch('juegos/dixit/categorias.json')).json();
       categorias = datos.categorias;
       lentes = datos.lentes.flatMap(familia => familia.lentes.map(l => ({ ...l, familia })));
     }
     estado = estado || limpiarEstado(cargarEstado());
+    favoritos = favoritos || cargarFavoritos();
     pintar(false);
   }
 
