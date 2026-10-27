@@ -1,0 +1,232 @@
+
+<div class="cielo" aria-hidden="true"></div>
+<main class="pantalla">
+  <header>
+    <h1 class="marca">Musa <span>✦</span></h1>
+    <span class="etiqueta-poc">Prueba · categorías y lentes</span>
+  </header>
+  <p class="intro">Cada ronda propone una <b>categoría</b> para inspirar la pista. A veces llega con un <b>lente</b>: otra época, otra clase de historia o un sonido. Las categorías más difíciles traen dos.</p>
+
+  <div class="modos">
+    <div class="modos-fila" role="radiogroup" aria-label="Modo de juego" id="modos"></div>
+    <p class="modo-desc" id="modo-desc"></p>
+  </div>
+
+  <article class="carta" aria-live="polite" id="carta"></article>
+
+  <div class="acciones">
+    <button class="boton principal" id="nueva">Nueva ronda</button>
+    <button class="boton" id="lente">＋ Ponerle lente</button>
+    <button class="boton" id="otra">↻ Otra categoría</button>
+  </div>
+
+  <div class="historial" id="historial" aria-label="Rondas anteriores"></div>
+
+  <section class="como">
+    <h2>Categorías y lentes</h2>
+    <p>Las <b>categorías</b> son amplias a propósito: dicen por dónde buscar, no qué decir. Hay <span id="n-categorias"></span>. Las marcadas con dos lentes son demasiado abstractas solas, así que siempre llegan con dos y no salen en modo Tranquilo.</p>
+    <ul class="familias" id="categorias"></ul>
+    <p>Los <b>lentes</b> son pistas extra: cada uno puede describir la carta o modificar a la categoría o al otro lente. En un desierto, <i>Emociones</i> puede ser "desolación" y <i>Lo contrario</i> "un bosque". Se encadenan entre rondas: después de una época suele venir otro lente de tiempo.</p>
+    <ul class="familias" id="familias"></ul>
+    <table class="tabla-modos">
+      <thead><tr><th>Modo</th><th>Rondas con lente</th><th>Lente cambia de familia</th></tr></thead>
+      <tbody id="tabla-modos"></tbody>
+    </table>
+    <p style="margin-top:12px">Reto opcional: el narrador gana +1 si usa la categoría y +1 más por cada lente que use, aunque nadie adivine. La mesa decide si lo cumplió.</p>
+  </section>
+</main>
+
+<script>
+  const DATOS = __DATOS__;
+
+  const MODOS = {
+    // segundo: probabilidad de un segundo lente en las categorías que lo admiten
+    tranquilo: { nombre: 'Tranquilo', lente: 0, segundo: 0, salto: 0.15, desc: 'Solo categorías, sin lentes.' },
+    normal: { nombre: 'Normal', lente: 0.3, segundo: 0.3, salto: 0.3, desc: 'Más o menos 1 de cada 3 rondas trae un lente; algunas, dos.' },
+    caotico: { nombre: 'Caótico', lente: 0.6, segundo: 0.55, salto: 0.6, desc: 'Más de la mitad de las rondas traen lente, y muchas traen dos.' },
+  };
+  const SIN_REPETIR = 3;      // una categoría no vuelve hasta que pasen 3 rondas
+  const MAX_SEGUIDAS = 4;     // un lente cambia de familia después de 4 seguidos
+
+  const categorias = DATOS.categorias;
+  const categoria = Object.fromEntries(categorias.map((c) => [c.id, c]));
+  const lentes = [];
+  for (const f of DATOS.lentes) for (const l of f.lentes) lentes.push({ ...l, familia: f });
+  const lente = Object.fromEntries(lentes.map((l) => [l.id, l]));
+
+  let modo = 'normal';
+  let rondas = [];            // { categoria: id, lentes: [id] }
+  const lentesUsados = new Set();
+
+  const azar = (lista) => lista[Math.floor(Math.random() * lista.length)];
+  const lentesDe = (c) => c.lentes || 0;               // cuántos lentes exige la categoría (0 = opcional)
+  const maxLentes = (c) => Math.max(1, lentesDe(c), c.max_lentes || 0);
+
+  // Un lente no va con una categoría si diría lo mismo (excluye), si es solo para otras categorías (solo_para)
+  // o si la categoría solo acepta ciertas familias (las difíciles: lentes que anclan, como tiempo, lugar o sonido)
+  function choca(c, l) {
+    if (c.excluye && (c.excluye.includes(l.id) || c.excluye.includes(l.familia.id))) return true;
+    if (c.familias && !c.familias.includes(l.familia.id)) return true;
+    return Boolean(l.solo_para && !l.solo_para.includes(c.id));
+  }
+
+  function elegirCategoria(lentesActuales = []) {
+    const recientes = rondas.slice(-SIN_REPETIR).map((r) => r.categoria);
+    return azar(categorias.filter((c) =>
+      !recientes.includes(c.id) &&
+      !(MODOS[modo].lente === 0 && lentesDe(c)) &&
+      !lentesActuales.some((id) => choca(c, lente[id]))));
+  }
+
+  // Sigue la familia del último lente usado o salta a otra; no repite familia dentro de la misma ronda
+  function elegirLente(c, yaEnRonda = [], soloFamilia = null) {
+    const familiasRonda = yaEnRonda.map((id) => lente[id].familia.id);
+    const historia = rondas.flatMap((r) => r.lentes);
+    const ultima = historia.length ? lente[historia[historia.length - 1]].familia.id : null;
+    let racha = 0;
+    for (let i = historia.length - 1; i >= 0 && lente[historia[i]].familia.id === ultima; i--) racha++;
+
+    const validos = lentes.filter((l) => !choca(c, l) && !familiasRonda.includes(l.familia.id) &&
+      (!soloFamilia || l.familia.id === soloFamilia));
+    if (!validos.length) return null;
+    let libres = validos.filter((l) => !lentesUsados.has(l.id));
+    if (libres.length < 2) libres = validos;
+    if (ultima && !familiasRonda.includes(ultima) && racha < MAX_SEGUIDAS && Math.random() >= MODOS[modo].salto) {
+      const misma = libres.filter((l) => l.familia.id === ultima);
+      if (misma.length) return azar(misma);
+    }
+    const otras = libres.filter((l) => l.familia.id !== ultima);
+    return azar(otras.length ? otras : libres);
+  }
+
+  // Completa los lentes de una ronda: los que exige la categoría, o uno al azar según el modo
+  function lentesPara(c, base = []) {
+    const lista = base.filter((id) => !choca(c, lente[id])).slice(0, maxLentes(c));
+    let meta = lentesDe(c) || (lista.length ? lista.length : (Math.random() < MODOS[modo].lente ? 1 : 0));
+    if (!lentesDe(c) && meta === 1 && !base.length && maxLentes(c) > 1 && Math.random() < MODOS[modo].segundo) meta = 2;
+    while (lista.length < meta) {
+      const l = elegirLente(c, lista);
+      if (!l) break;
+      lista.push(l.id);
+    }
+    return lista;
+  }
+
+  function apuntar(ids) { ids.forEach((id) => lentesUsados.add(id)); if (lentesUsados.size > lentes.length - 2) lentesUsados.clear(); }
+
+  function nuevaRonda() {
+    const c = elegirCategoria();
+    const ids = lentesPara(c);
+    apuntar(ids);
+    rondas.push({ categoria: c.id, lentes: ids });
+    pintar();
+  }
+
+  // ---------- Pintado ----------
+  const $ = (id) => document.getElementById(id);
+
+  function pintarModos() {
+    $('modos').innerHTML = Object.entries(MODOS).map(([id, m]) =>
+      `<button class="modo" role="radio" aria-checked="${id === modo}" data-modo="${id}">${m.nombre}</button>`).join('');
+    $('modo-desc').textContent = MODOS[modo].desc;
+  }
+
+  function pintarCarta() {
+    const ronda = rondas[rondas.length - 1];
+    const c = categoria[ronda.categoria];
+    // Categoría y lentes como cartas separadas, unidas por el sello: cada quien las mezcla a su manera
+    const piezaCategoria = `
+        <div class="pieza">
+          <div class="simbolo" aria-hidden="true">${c.simbolo}</div>
+          <div class="pieza-texto">
+            <div class="cadena">Categoría${lentesDe(c) ? ' · con dos lentes' : c.max_lentes ? ' · hasta dos lentes' : ''}</div>
+            <h3>${c.nombre}</h3>
+            <p>${c.descripcion}</p>
+            <div class="ejemplo">Ej.: ${c.ejemplos.join(' · ')}</div>
+            ${c.relacionado ? '<div class="aviso-literal">No vale lo que se ve en la carta</div>' : ''}
+          </div><span></span>
+        </div>`;
+    const piezasLente = ronda.lentes.map((id, i) => {
+      const l = lente[id];
+      return `
+        <div class="sello" aria-hidden="true">✕</div>
+        <div class="pieza lente">
+          <div class="simbolo" aria-hidden="true">${l.familia.simbolo}</div>
+          <div class="pieza-texto">
+            <div class="cadena">Lente · ${l.familia.nombre}</div>
+            <h3>${l.titulo}</h3>
+            <p>${l.descripcion || l.familia.descripcion}</p>
+            ${l.ejemplos ? `<div class="ejemplo">Ej.: ${l.ejemplos.join(' · ')}</div>` : ''}
+          </div>
+          <button class="quitar" data-quitar="${i}" aria-label="Quitar el lente ${l.titulo}">✕</button>
+        </div>`;
+    }).join('');
+    $('carta').innerHTML = `
+      <div class="carta-cabeza">
+        <span class="ronda">Ronda <b>${rondas.length}</b></span>
+        <span class="reto" title="Punto extra si el narrador la usa">Reto +${1 + ronda.lentes.length}</span>
+      </div>
+      <div class="piezas">${piezaCategoria}${piezasLente}</div>`;
+    const lleno = ronda.lentes.length >= maxLentes(c);
+    $('lente').textContent = lleno ? '↻ Otro lente' : '＋ Ponerle lente';
+  }
+
+  function pintarHistorial() {
+    $('historial').innerHTML = rondas.slice(0, -1).slice(-8).reverse().map((ronda, i) => {
+      const c = categoria[ronda.categoria];
+      const extra = ronda.lentes.map((id) => ` ✕ ${lente[id].familia.simbolo} ${lente[id].titulo}`).join('');
+      return `<span class="mini"><b>${rondas.length - 1 - i}</b>${c.simbolo} ${c.nombre}${extra}</span>`;
+    }).join('');
+  }
+
+  function pintarAyuda() {
+    $('n-categorias').textContent = categorias.length;
+    $('categorias').innerHTML = categorias.map((c) => `<li><b>${c.simbolo} ${c.nombre}</b>${lentesDe(c) ? 'siempre con dos lentes' : c.max_lentes ? 'hasta dos lentes' : ''}</li>`).join('');
+    $('familias').innerHTML = DATOS.lentes.map((f) =>
+      `<li><b>${f.simbolo} ${f.nombre}</b>${f.lentes.slice(0, 3).map((l) => l.titulo.toLowerCase()).join(', ')}${f.lentes.length > 3 ? '…' : ''}</li>`).join('');
+    const pct = (x) => `${Math.round(x * 100)} %`;
+    $('tabla-modos').innerHTML = Object.values(MODOS).map((m) =>
+      `<tr><td>${m.nombre}</td><td>${pct(m.lente)}</td><td>${m.lente ? pct(m.salto) : '—'}</td></tr>`).join('');
+  }
+
+  function pintar() { pintarModos(); pintarCarta(); pintarHistorial(); }
+
+  // ---------- Acciones ----------
+  $('nueva').addEventListener('click', nuevaRonda);
+  $('otra').addEventListener('click', () => {
+    const ronda = rondas.pop();
+    const c = elegirCategoria(ronda.lentes);
+    ronda.categoria = c.id;
+    ronda.lentes = lentesPara(c, ronda.lentes);
+    apuntar(ronda.lentes);
+    rondas.push(ronda);
+    pintar();
+  });
+  $('lente').addEventListener('click', () => {
+    const ronda = rondas.pop();          // el lente sigue el hilo de las rondas anteriores, no de la actual
+    const c = categoria[ronda.categoria];
+    if (ronda.lentes.length >= maxLentes(c)) ronda.lentes.pop();   // lleno: cambia el último
+    const l = elegirLente(c, ronda.lentes);
+    if (l) { ronda.lentes.push(l.id); apuntar([l.id]); }
+    rondas.push(ronda);
+    pintarCarta();
+  });
+  $('carta').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-quitar]');
+    if (!b) return;
+    rondas[rondas.length - 1].lentes.splice(Number(b.dataset.quitar), 1);
+    pintarCarta();
+  });
+  $('modos').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-modo]');
+    if (!b) return;
+    modo = b.dataset.modo;
+    pintarModos();
+  });
+
+  // Abre con tu ejemplo: pasó un tigre hace mil años y sonó ¡pummm!
+  rondas = [{ categoria: 'animales', lentes: ['epoca', 'su-sonido'] }];
+  apuntar(['epoca', 'su-sonido']);
+  pintarAyuda();
+  pintar();
+</script>

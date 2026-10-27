@@ -1,0 +1,415 @@
+<title>Musa Combinaciones</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Diseño: el cielo nocturno de Musa; la ronda es una carta de papel donde las reglas combinadas
+     se apilan como fragmentos unidos por un sello dorado. Un solo tema oscuro, igual que la app. */
+  :root {
+    --noche: #1b1446;
+    --violeta: #3a2a6e;
+    --malva: #7a5a9e;
+    --oro: #f2c46b;
+    --oro-claro: #fff6d5;
+    --papel: #fbf3e4;
+    --papel-borde: #e8d9bd;
+    --tinta: #2c2140;
+    --tinta-suave: #6b5f7d;
+    --coral: #e98a7a;
+    --texto: #f5efff;
+    --texto-suave: #c9bde3;
+    --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--texto);
+    background: linear-gradient(170deg, var(--noche) 0%, var(--violeta) 55%, var(--malva) 100%) fixed, var(--noche);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cielo {
+    position: fixed; inset: 0; pointer-events: none; opacity: .7;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 28% 72%, #fff 50%, transparent 51%),
+      radial-gradient(2px 2px at 64% 12%, var(--oro-claro) 50%, transparent 51%),
+      radial-gradient(1px 1px at 82% 38%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 46% 46%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 90% 84%, #fff 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 8% 92%, var(--oro-claro) 50%, transparent 51%),
+      radial-gradient(1px 1px at 72% 64%, #fff 50%, transparent 51%);
+    animation: titilar 6s ease-in-out infinite alternate;
+  }
+  @keyframes titilar { to { opacity: .35; } }
+
+  .pantalla {
+    position: relative; max-width: 520px; margin: 0 auto;
+    padding-block: 20px 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: flex; flex-direction: column; gap: 18px;
+  }
+
+  header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .marca { font-family: var(--serif); font-size: 2rem; font-style: italic; color: var(--oro-claro); margin: 0; letter-spacing: .01em; }
+  .marca span { color: var(--oro); }
+  .etiqueta-poc { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--texto-suave);
+    border: 1px solid rgba(201, 189, 227, .4); border-radius: 999px; padding: 4px 10px; }
+  .intro { margin: 0; color: var(--texto-suave); line-height: 1.5; font-size: .95rem; }
+
+  /* Modos */
+  .modos { display: flex; flex-direction: column; gap: 8px; }
+  .modos-fila { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .modo {
+    font: inherit; font-weight: 600; font-size: .92rem; color: var(--texto);
+    background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .16); border-radius: 14px;
+    padding: 10px 8px; cursor: pointer; transition: background .2s, border-color .2s, color .2s;
+  }
+  .modo:hover { background: rgba(255, 255, 255, .12); }
+  .modo[aria-checked="true"] { background: var(--oro); border-color: var(--oro); color: var(--tinta); }
+  .modo:focus-visible, .boton:focus-visible, .quitar:focus-visible { outline: 3px solid var(--oro-claro); outline-offset: 2px; }
+  .modo-desc { margin: 0; font-size: .85rem; color: var(--texto-suave); min-height: 2.6em; line-height: 1.4; }
+
+  /* Carta de la ronda */
+  .carta {
+    background: var(--papel); color: var(--tinta); border-radius: 22px; padding: 18px 18px 16px;
+    box-shadow: 0 18px 40px rgba(10, 6, 30, .55), inset 0 0 0 1px var(--papel-borde);
+    display: flex; flex-direction: column; gap: 14px; position: relative; overflow: hidden;
+  }
+  .carta::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at 90% -10%, rgba(242, 196, 107, .35), transparent 45%);
+  }
+  .carta-cabeza { display: flex; justify-content: space-between; align-items: center; gap: 10px; position: relative; }
+  .ronda { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); font-weight: 600; }
+  .ronda b { color: var(--tinta); font-variant-numeric: tabular-nums; }
+  .reto {
+    font-family: var(--serif); font-weight: 700; font-size: .95rem; color: var(--tinta);
+    background: var(--oro); border-radius: 999px; padding: 4px 12px; white-space: nowrap;
+    box-shadow: 0 2px 0 rgba(44, 33, 64, .25);
+  }
+  .tipo-ronda { font-family: var(--serif); font-size: 1.35rem; margin: 0; text-wrap: balance; position: relative; }
+
+  .piezas { display: flex; flex-direction: column; position: relative; }
+  .pieza {
+    display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: start;
+    background: #fff; border: 1px solid var(--papel-borde); border-radius: 16px; padding: 12px 12px 12px 10px;
+    animation: entrar .45s cubic-bezier(.2, .8, .3, 1) both;
+  }
+  .pieza:nth-child(3) { animation-delay: .12s; }
+  .pieza:nth-child(5) { animation-delay: .24s; }
+  @keyframes entrar { from { opacity: 0; transform: translateY(14px) rotate(-1.5deg); } }
+  .simbolo {
+    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 1.45rem;
+    background: linear-gradient(160deg, #f6ead2, #efdcb8);
+  }
+  .pieza-texto { min-width: 0; }
+  .cadena { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-suave); font-weight: 600; }
+  .pieza h3 { font-family: var(--serif); font-size: 1.2rem; margin: 2px 0 4px; text-wrap: balance; }
+  .pieza p { margin: 0; font-size: .92rem; line-height: 1.4; color: var(--tinta); }
+  .ejemplo { margin-top: 6px; font-size: .85rem; color: var(--tinta-suave); font-style: italic; }
+  .quitar {
+    font: inherit; border: 0; background: transparent; color: var(--tinta-suave); cursor: pointer;
+    width: 28px; height: 28px; border-radius: 50%; font-size: 1rem; line-height: 1;
+  }
+  .quitar:hover { background: #f1e6d0; color: var(--tinta); }
+
+  .sello {
+    align-self: center; width: 34px; height: 34px; margin: -8px 0; z-index: 1; border-radius: 50%;
+    display: grid; place-items: center; font-family: var(--serif); font-weight: 700; font-size: 1.05rem;
+    background: var(--oro); color: var(--tinta); box-shadow: 0 0 0 4px var(--papel), 0 4px 10px rgba(44, 33, 64, .25);
+    animation: sello .4s .18s cubic-bezier(.3, 1.6, .5, 1) both;
+  }
+  @keyframes sello { from { transform: scale(0) rotate(-90deg); } }
+
+  .mezcla {
+    border-top: 1px dashed var(--papel-borde); padding-top: 12px; position: relative;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .mezcla .titulo { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-suave); font-weight: 600; }
+  .mezcla .frase { font-family: var(--serif); font-size: 1.1rem; line-height: 1.35; }
+  .libre { font-size: .85rem; color: var(--tinta-suave); margin: 0; position: relative; }
+
+  /* Acciones */
+  .acciones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .boton {
+    font: inherit; font-weight: 600; cursor: pointer; border-radius: 16px; padding: 14px 12px;
+    border: 1px solid rgba(255, 255, 255, .2); background: rgba(255, 255, 255, .08); color: var(--texto);
+    transition: transform .08s, background .2s;
+  }
+  .boton:hover { background: rgba(255, 255, 255, .14); }
+  .boton:active { transform: scale(.97); }
+  .boton:disabled { opacity: .45; cursor: not-allowed; }
+  .boton.principal {
+    grid-column: 1 / -1; font-family: var(--serif); font-size: 1.3rem; padding: 18px;
+    background: linear-gradient(180deg, #f6d38b, var(--oro)); color: var(--tinta); border-color: var(--oro);
+    box-shadow: 0 10px 24px rgba(242, 196, 107, .25);
+  }
+
+  /* Historial */
+  .historial { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+  .historial:empty::before { content: "Las rondas jugadas aparecen aquí."; color: var(--texto-suave); font-size: .85rem; }
+  .mini {
+    flex: none; font-size: .82rem; padding: 6px 10px; border-radius: 999px; white-space: nowrap;
+    background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .14); color: var(--texto-suave);
+  }
+  .mini b { color: var(--texto); font-variant-numeric: tabular-nums; margin-right: 4px; }
+
+  /* Cómo funciona */
+  section.como { background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); border-radius: 20px; padding: 16px; }
+  section.como h2 { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; margin: 0 0 8px; color: var(--oro-claro); }
+  section.como p { color: var(--texto-suave); line-height: 1.5; font-size: .92rem; margin: 0 0 10px; }
+  .tipos { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 8px; }
+  .tipos li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; font-size: .9rem; line-height: 1.4; }
+  .chip { font-size: .75rem; font-weight: 700; border-radius: 999px; padding: 3px 9px; white-space: nowrap; color: var(--tinta); }
+  .chip.tema { background: #cfe3ff; } .chip.cuando { background: #ffd9a8; } .chip.donde { background: #c9efd5; }
+  .chip.formato { background: #f3c6e3; } .chip.sin-palabras { background: #e2d6ff; }
+  .tipos li span:last-child { color: var(--texto-suave); }
+  .tipos li b { color: var(--texto); }
+  .tabla-modos { width: 100%; border-collapse: collapse; font-size: .88rem; font-variant-numeric: tabular-nums; }
+  .tabla-modos th, .tabla-modos td { text-align: left; padding: 7px 6px; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+  .tabla-modos th { color: var(--texto-suave); font-weight: 600; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cielo, .pieza, .sello { animation: none; }
+  }
+</style>
+
+<div class="cielo" aria-hidden="true"></div>
+<main class="pantalla">
+  <header>
+    <h1 class="marca">Musa <span>✦</span></h1>
+    <span class="etiqueta-poc">Prueba · combinaciones</span>
+  </header>
+  <p class="intro">Cada ronda puede mezclar reglas de distintas categorías. "Una hora" sola dice poco; "una hora en una ciudad" ya cuenta una escena.</p>
+
+  <div class="modos">
+    <div class="modos-fila" role="radiogroup" aria-label="Modo de juego" id="modos"></div>
+    <p class="modo-desc" id="modo-desc"></p>
+  </div>
+
+  <article class="carta" aria-live="polite" id="carta"></article>
+
+  <div class="acciones">
+    <button class="boton principal" id="nueva">Nueva ronda</button>
+    <button class="boton" id="giro">＋ Añadir giro</button>
+    <button class="boton" id="otra">↻ Otra combinación</button>
+  </div>
+
+  <div class="historial" id="historial" aria-label="Rondas anteriores"></div>
+
+  <section class="como">
+    <h2>Cómo se combinan</h2>
+    <p>Cada regla tiene un tipo según qué parte de la pista limita. Solo se juntan tipos que no chocan:
+      nunca dos reglas de forma a la vez (no puede ser "una palabra" y "tres palabras"), ni dos del mismo tipo de tiempo o lugar.</p>
+    <ul class="tipos" id="tipos"></ul>
+    <table class="tabla-modos">
+      <thead><tr><th>Modo</th><th>Cambio de tema</th><th>Dos reglas</th><th>Tres reglas</th></tr></thead>
+      <tbody id="tabla-modos"></tbody>
+    </table>
+    <p style="margin-top:12px">Reto opcional: el narrador puede jugar libre, como siempre. Si cumple la combinación gana un punto extra por cada regla, aunque nadie adivine. La mesa decide si la cumplió.</p>
+  </section>
+</main>
+
+<script>
+  const DATOS = __DATOS__;
+
+  const MODOS = {
+    tranquilo: { nombre: 'Tranquilo', salto: 0.15, doble: 0, triple: 0, desc: 'Una regla por ronda. Los temas avanzan con calma.' },
+    normal: { nombre: 'Normal', salto: 0.3, doble: 0.25, triple: 0, desc: '1 de cada 4 rondas combina dos reglas.' },
+    caotico: { nombre: 'Caótico', salto: 0.6, doble: 0.5, triple: 0.15, desc: 'La mitad de las rondas combinan dos reglas y a veces tres.' },
+  };
+  const TIPOS = {
+    tema: { nombre: 'Tema', desc: '<b>de qué</b> habla la pista: un olor, una película, un animal…' },
+    cuando: { nombre: 'Cuándo', desc: '<b>en qué momento</b> ocurre: una hora, una fiesta, una época.' },
+    donde: { nombre: 'Dónde', desc: '<b>en qué lugar</b> o clima: una ciudad, un cuarto, la lluvia.' },
+    formato: { nombre: 'Forma', desc: '<b>cómo se dice</b>: una palabra, con rima, otro idioma.' },
+    'sin-palabras': { nombre: 'Sin palabras', desc: '<b>sin hablar</b>: mímica, una cara, tararear.' },
+  };
+  // Con qué conviene mezclar cada tipo (peso): "cuándo" busca un "dónde" para armar una escena, etc.
+  const AFINIDAD = {
+    tema: { cuando: 3, donde: 3, formato: 2, 'sin-palabras': 1, tema: 1 },
+    cuando: { donde: 5, tema: 2, formato: 1 },
+    donde: { cuando: 5, tema: 2, formato: 1 },
+    formato: { tema: 3, cuando: 1, donde: 1 },
+    'sin-palabras': { tema: 3, cuando: 1, donde: 1 },
+  };
+  const ESTRICTOS = ['formato', 'sin-palabras'];
+  const MAX_SEGUIDAS = 4;
+
+  const reglas = [];
+  for (const c of DATOS.cadenas) for (const r of c.reglas) reglas.push({ ...r, cadena: c });
+  const porId = Object.fromEntries(reglas.map((r) => [r.id, r]));
+
+  let modo = 'caotico';
+  let usadas = new Set();
+  let rondas = [];   // cada ronda: lista de ids de reglas
+  let numero = 0;
+
+  const azar = (lista) => lista[Math.floor(Math.random() * lista.length)];
+
+  function compatible(piezas, r) {
+    if (piezas.some((p) => p.cadena.id === r.cadena.id || p.id === r.id)) return false;
+    if (ESTRICTOS.includes(r.tipo) && piezas.some((p) => ESTRICTOS.includes(p.tipo))) return false;
+    if ((r.tipo === 'cuando' || r.tipo === 'donde') && piezas.some((p) => p.tipo === r.tipo)) return false;
+    return true;
+  }
+
+  function libres() {
+    let lista = reglas.filter((r) => !usadas.has(r.id));
+    if (lista.length < 10) { usadas = new Set(); lista = reglas.slice(); }
+    return lista;
+  }
+
+  // Regla principal: sigue el tema anterior o salta, como en Musa
+  function elegirBase() {
+    const anterior = rondas.length ? porId[rondas[rondas.length - 1][0]] : null;
+    const racha = (() => {
+      let n = 0;
+      for (let i = rondas.length - 1; i >= 0 && porId[rondas[i][0]].cadena.id === (anterior && anterior.cadena.id); i--) n++;
+      return n;
+    })();
+    const disponibles = libres();
+    if (anterior && racha < MAX_SEGUIDAS && Math.random() >= MODOS[modo].salto) {
+      const misma = disponibles.filter((r) => r.cadena.id === anterior.cadena.id);
+      if (misma.length) return misma[0];
+    }
+    const otras = disponibles.filter((r) => !anterior || r.cadena.id !== anterior.cadena.id);
+    return azar(otras.length ? otras : disponibles);
+  }
+
+  // Elige un giro compatible: primero el tipo según la afinidad con la regla base, después una regla de ese tipo.
+  // (Sortear por regla haría que casi todo fuera "tema + tema", porque hay muchas más reglas de tema.)
+  function elegirGiro(piezas) {
+    const base = piezas[0];
+    const candidatos = libres().filter((r) => compatible(piezas, r));
+    const tipos = [...new Set(candidatos.map((r) => r.tipo))].filter((t) => AFINIDAD[base.tipo][t]);
+    const total = tipos.reduce((a, t) => a + AFINIDAD[base.tipo][t], 0);
+    if (!total) return null;
+    let x = Math.random() * total;
+    const tipo = tipos.find((t) => (x -= AFINIDAD[base.tipo][t]) <= 0) || tipos[tipos.length - 1];
+    return azar(candidatos.filter((r) => r.tipo === tipo));
+  }
+
+  function armarRonda() {
+    const piezas = [elegirBase()];
+    const m = MODOS[modo];
+    const tirada = Math.random();
+    const cuantas = tirada < m.triple ? 3 : tirada < m.triple + m.doble ? 2 : 1;
+    while (piezas.length < cuantas) {
+      const g = elegirGiro(piezas);
+      if (!g) break;
+      piezas.push(g);
+    }
+    return piezas;
+  }
+
+  function apuntar(piezas) { piezas.forEach((p) => usadas.add(p.id)); }
+
+  // ---------- Pintado ----------
+  const $ = (id) => document.getElementById(id);
+  const quitarComillas = (t) => t.split('",')[0].replace(/^"|"$/g, '').replace(/^"/, '');
+  const NOMBRE_RONDA = { 1: 'Una regla', 2: 'Combinación doble', 3: 'Combinación triple' };
+
+  function pintarModos() {
+    $('modos').innerHTML = Object.entries(MODOS).map(([id, m]) =>
+      `<button class="modo" role="radio" aria-checked="${id === modo}" data-modo="${id}">${m.nombre}</button>`).join('');
+    $('modo-desc').textContent = MODOS[modo].desc;
+  }
+
+  function pintarCarta() {
+    const piezas = rondas[rondas.length - 1].map((id) => porId[id]);
+    const partes = [];
+    piezas.forEach((r, i) => {
+      if (i) partes.push('<div class="sello" aria-hidden="true">✕</div>');
+      partes.push(`
+        <div class="pieza">
+          <div class="simbolo" aria-hidden="true">${r.cadena.simbolo}</div>
+          <div class="pieza-texto">
+            <div class="cadena">${r.cadena.nombre} · ${TIPOS[r.tipo].nombre}</div>
+            <h3>${r.titulo}</h3>
+            <p>${r.descripcion}</p>
+            <div class="ejemplo">Ej.: ${r.ejemplo}</div>
+          </div>
+          ${i ? `<button class="quitar" data-quitar="${i}" aria-label="Quitar ${r.titulo}">✕</button>` : '<span></span>'}
+        </div>`);
+    });
+    const mezcla = piezas.length > 1
+      ? `<div class="mezcla"><span class="titulo">Una sola pista que cumpla todo, por ejemplo</span>
+           <span class="frase">${piezas.map((r) => '«' + quitarComillas(r.ejemplo) + '»').join(' + ')}</span></div>`
+      : '<p class="libre">O juega libre, como siempre.</p>';
+    $('carta').innerHTML = `
+      <div class="carta-cabeza">
+        <span class="ronda">Ronda <b>${numero}</b></span>
+        <span class="reto" title="Punto extra si el narrador cumple la combinación">Reto +${piezas.length}</span>
+      </div>
+      <h2 class="tipo-ronda">${NOMBRE_RONDA[piezas.length]}</h2>
+      <div class="piezas">${partes.join('')}</div>
+      ${mezcla}`;
+    $('giro').disabled = piezas.length >= 3 || !elegirGiro(piezas);
+  }
+
+  function pintarHistorial() {
+    $('historial').innerHTML = rondas.slice(0, -1).slice(-8).reverse().map((ids, i) => {
+      const n = numero - 1 - i;
+      return `<span class="mini"><b>${n}</b>${ids.map((id) => porId[id].cadena.simbolo).join(' ✕ ')} ${porId[ids[0]].titulo}${ids.length > 1 ? '…' : ''}</span>`;
+    }).join('');
+  }
+
+  function pintarAyuda() {
+    const cuenta = {};
+    reglas.forEach((r) => { cuenta[r.tipo] = (cuenta[r.tipo] || 0) + 1; });
+    $('tipos').innerHTML = Object.entries(TIPOS).map(([id, t]) =>
+      `<li><span class="chip ${id}">${t.nombre} · ${cuenta[id]}</span><span>${t.desc}</span></li>`).join('');
+    const pct = (x) => `${Math.round(x * 100)} %`;
+    $('tabla-modos').innerHTML = Object.values(MODOS).map((m) =>
+      `<tr><td>${m.nombre}</td><td>${pct(m.salto)}</td><td>${pct(m.doble)}</td><td>${pct(m.triple)}</td></tr>`).join('');
+  }
+
+  function pintar() { pintarModos(); pintarCarta(); pintarHistorial(); }
+
+  // ---------- Acciones ----------
+  function nuevaRonda() {
+    const piezas = armarRonda();
+    apuntar(piezas);
+    rondas.push(piezas.map((p) => p.id));
+    numero++;
+    pintar();
+  }
+
+  $('nueva').addEventListener('click', nuevaRonda);
+  $('otra').addEventListener('click', () => {
+    rondas.pop();
+    numero--;
+    nuevaRonda();
+  });
+  $('giro').addEventListener('click', () => {
+    const piezas = rondas[rondas.length - 1].map((id) => porId[id]);
+    const g = elegirGiro(piezas);
+    if (!g) return;
+    usadas.add(g.id);
+    rondas[rondas.length - 1].push(g.id);
+    pintarCarta();
+  });
+  $('carta').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-quitar]');
+    if (!b) return;
+    rondas[rondas.length - 1].splice(Number(b.dataset.quitar), 1);
+    pintarCarta();
+  });
+  $('modos').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-modo]');
+    if (!b) return;
+    modo = b.dataset.modo;
+    pintarModos();
+  });
+
+  // Abre con el ejemplo de la conversación: una hora en una ciudad
+  rondas = [['hora', 'pais']];
+  usadas = new Set(['hora', 'pais']);
+  numero = 1;
+  pintarAyuda();
+  pintar();
+</script>

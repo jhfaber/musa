@@ -1,0 +1,788 @@
+{
+ "cadenas": [
+  {
+   "id": "sentidos",
+   "nombre": "Los sentidos",
+   "simbolo": "👃",
+   "reglas": [
+    {
+     "id": "olores",
+     "titulo": "Olores",
+     "descripcion": "La pista debe ser un olor.",
+     "ejemplo": "\"Pan recién horneado\", \"tierra mojada\"",
+     "pregunta": "¿A qué olería esta carta"
+    },
+    {
+     "id": "sabores",
+     "titulo": "Sabores",
+     "descripcion": "La pista debe ser un sabor o algo que se saborea.",
+     "ejemplo": "\"Limón con sal\", \"amargo como el café\"",
+     "pregunta": "¿A qué sabría esta carta"
+    },
+    {
+     "id": "sonidos",
+     "titulo": "Sonidos",
+     "descripcion": "Describe un sonido que te evoca la carta (sin imitarlo).",
+     "ejemplo": "\"Una puerta que cruje\", \"lluvia en el techo\"",
+     "pregunta": "¿Qué sonido se escucharía en esta carta"
+    },
+    {
+     "id": "texturas",
+     "titulo": "Texturas",
+     "descripcion": "La pista debe ser una sensación al tacto.",
+     "ejemplo": "\"Terciopelo\", \"arena entre los dedos\"",
+     "pregunta": "¿Qué se sentiría al tocar esta carta"
+    },
+    {
+     "id": "temperaturas",
+     "titulo": "Temperaturas",
+     "descripcion": "Di qué temperatura o sensación térmica tiene la carta.",
+     "ejemplo": "\"Frío de madrugada\", \"sopa demasiado caliente\"",
+     "pregunta": "¿Qué temperatura tendría esta carta"
+    },
+    {
+     "id": "colores",
+     "titulo": "Solo colores",
+     "descripcion": "La pista solo puede ser uno o varios colores, inventados o reales.",
+     "ejemplo": "\"Azul tristeza\", \"dorado y negro\"",
+     "pregunta": "¿De qué colores sería esta carta"
+    },
+    {
+     "id": "sexto-sentido",
+     "titulo": "Sexto sentido",
+     "descripcion": "Un presentimiento o corazonada.",
+     "ejemplo": "\"Algo va a salir mal\", \"alguien me mira\"",
+     "pregunta": "¿Qué presentimiento daría esta carta"
+    }
+   ]
+  },
+  {
+   "id": "pantalla",
+   "nombre": "Pantalla y escenario",
+   "simbolo": "🎬",
+   "reglas": [
+    {
+     "id": "peliculas",
+     "titulo": "Películas",
+     "descripcion": "La pista debe ser el título de una película.",
+     "ejemplo": "\"Titanic\", \"El viaje de Chihiro\"",
+     "pregunta": "¿Qué película sería esta carta"
+    },
+    {
+     "id": "series",
+     "titulo": "Series y novelas",
+     "descripcion": "El nombre de una serie o telenovela.",
+     "ejemplo": "\"Stranger Things\", \"Betty la fea\"",
+     "pregunta": "¿Qué serie o novela sería esta carta"
+    },
+    {
+     "id": "dibujos",
+     "titulo": "Dibujos animados",
+     "descripcion": "Un personaje o serie de dibujos animados.",
+     "ejemplo": "\"Coraje, el perro cobarde\"",
+     "pregunta": "¿Qué dibujo animado sería esta carta"
+    },
+    {
+     "id": "videojuegos",
+     "titulo": "Videojuegos",
+     "descripcion": "Un videojuego o un personaje de videojuego.",
+     "ejemplo": "\"Tetris\", \"Zelda\"",
+     "pregunta": "¿Qué videojuego sería esta carta"
+    },
+    {
+     "id": "superheroes",
+     "titulo": "Héroes y villanos",
+     "descripcion": "Un superhéroe, villano o poder especial.",
+     "ejemplo": "\"Invisibilidad\", \"el Guasón\"",
+     "pregunta": "¿Qué héroe o villano viviría en esta carta"
+    },
+    {
+     "id": "escena-famosa",
+     "titulo": "Escena famosa",
+     "descripcion": "Describe una escena célebre de cine o TV.",
+     "ejemplo": "\"La puerta donde cabían los dos\""
+    },
+    {
+     "id": "cuentos",
+     "titulo": "Cuentos clásicos",
+     "descripcion": "Un cuento, fábula o personaje de cuento.",
+     "ejemplo": "\"Caperucita\", \"la liebre y la tortuga\"",
+     "pregunta": "¿Qué cuento sería esta carta"
+    }
+   ]
+  },
+  {
+   "id": "musica",
+   "nombre": "Música",
+   "simbolo": "🎵",
+   "reglas": [
+    {
+     "id": "canciones",
+     "titulo": "Canciones",
+     "descripcion": "El título de una canción.",
+     "ejemplo": "\"Bohemian Rhapsody\", \"La bamba\"",
+     "pregunta": "¿Qué canción sonaría en esta carta"
+    },
+    {
+     "id": "verso",
+     "titulo": "Un verso",
+     "descripcion": "Una frase corta de una canción (dicha, no cantada).",
+     "ejemplo": "\"Despacito…\""
+    },
+    {
+     "id": "tararear",
+     "titulo": "Tararear",
+     "descripcion": "Tararea una melodía, sin palabras.",
+     "ejemplo": "La musiquita de Tiburón",
+     "pregunta": "¿Qué melodía tararearías para esta carta"
+    },
+    {
+     "id": "generos",
+     "titulo": "Géneros musicales",
+     "descripcion": "La pista es un género o estilo musical.",
+     "ejemplo": "\"Bolero\", \"heavy metal\"",
+     "pregunta": "¿Qué género musical sonaría en esta carta"
+    },
+    {
+     "id": "instrumentos",
+     "titulo": "Instrumentos",
+     "descripcion": "Un instrumento musical.",
+     "ejemplo": "\"Arpa\", \"tambor lejano\"",
+     "pregunta": "¿Qué instrumento sonaría en esta carta"
+    },
+    {
+     "id": "banda",
+     "titulo": "Nombre de banda",
+     "descripcion": "Inventa el nombre de la banda que tendría esta carta.",
+     "ejemplo": "\"Los Relojes Derretidos\"",
+     "pregunta": "¿Cómo se llamaría la banda de esta carta"
+    }
+   ]
+  },
+  {
+   "id": "palabras",
+   "nombre": "Juegos de palabras",
+   "simbolo": "🔤",
+   "reglas": [
+    {
+     "id": "onomatopeyas",
+     "titulo": "Onomatopeyas",
+     "descripcion": "Solo puedes usar onomatopeyas.",
+     "ejemplo": "\"¡Zas!\", \"tic-tac\", \"glup\""
+    },
+    {
+     "id": "una-palabra",
+     "titulo": "Una sola palabra",
+     "descripcion": "La pista tiene exactamente una palabra.",
+     "ejemplo": "\"Abismo\""
+    },
+    {
+     "id": "tres-palabras",
+     "titulo": "Tres palabras",
+     "descripcion": "Exactamente tres palabras, ni una más.",
+     "ejemplo": "\"Nunca llega tarde\""
+    },
+    {
+     "id": "rima",
+     "titulo": "Con rima",
+     "descripcion": "La pista debe rimar.",
+     "ejemplo": "\"Luna sin fortuna\""
+    },
+    {
+     "id": "misma-letra",
+     "titulo": "Misma letra",
+     "descripcion": "Todas las palabras empiezan con la misma letra.",
+     "ejemplo": "\"Pequeño pájaro perdido\""
+    },
+    {
+     "id": "palabra-inventada",
+     "titulo": "Palabra inventada",
+     "descripcion": "Inventa una palabra que no exista.",
+     "ejemplo": "\"Nubeloso\", \"tristerío\""
+    },
+    {
+     "id": "otro-idioma",
+     "titulo": "Otro idioma",
+     "descripcion": "La pista debe estar en un idioma distinto al español.",
+     "ejemplo": "\"Saudade\", \"once upon a time\""
+    },
+    {
+     "id": "solo-verbos",
+     "titulo": "Solo verbos",
+     "descripcion": "Usa únicamente verbos.",
+     "ejemplo": "\"Caer, flotar, despertar\""
+    }
+   ]
+  },
+  {
+   "id": "cuerpo",
+   "nombre": "Sin palabras",
+   "simbolo": "🙌",
+   "reglas": [
+    {
+     "id": "mimica",
+     "titulo": "Mímica",
+     "descripcion": "Da la pista solo con gestos. Nada de sonidos.",
+     "ejemplo": "Hacer que nadas contra la corriente"
+    },
+    {
+     "id": "cara",
+     "titulo": "Una cara",
+     "descripcion": "Solo una expresión facial.",
+     "ejemplo": "Cara de sorpresa contenida"
+    },
+    {
+     "id": "pose",
+     "titulo": "Una pose",
+     "descripcion": "Quédate quieto en una pose, como estatua.",
+     "ejemplo": "El pensador"
+    },
+    {
+     "id": "sonido-boca",
+     "titulo": "Un sonido",
+     "descripcion": "Haz un sonido con la boca o las manos, sin palabras.",
+     "ejemplo": "Un silbido, un aplauso lento"
+    },
+    {
+     "id": "dibujo-aire",
+     "titulo": "Dibujo en el aire",
+     "descripcion": "Dibuja algo en el aire con el dedo.",
+     "ejemplo": "Una espiral"
+    }
+   ]
+  },
+  {
+   "id": "emociones",
+   "nombre": "Emociones",
+   "simbolo": "💭",
+   "reglas": [
+    {
+     "id": "sentimiento",
+     "titulo": "Un sentimiento",
+     "descripcion": "La pista es una emoción o estado de ánimo.",
+     "ejemplo": "\"Nostalgia\", \"alivio\"",
+     "pregunta": "¿Qué sentiría alguien en esta carta"
+    },
+    {
+     "id": "recuerdo",
+     "titulo": "Recuerdo de infancia",
+     "descripcion": "Algo que te recuerde a cuando eras niño.",
+     "ejemplo": "\"Esperar el bus del colegio\""
+    },
+    {
+     "id": "miedo",
+     "titulo": "Un miedo",
+     "descripcion": "Un miedo o fobia, real o absurdo.",
+     "ejemplo": "\"Que se acabe la batería\"",
+     "pregunta": "¿A qué le tendría miedo alguien en esta carta"
+    },
+    {
+     "id": "sueno",
+     "titulo": "Un sueño",
+     "descripcion": "Algo que podrías soñar dormido.",
+     "ejemplo": "\"Volar sin poder bajar\"",
+     "pregunta": "¿Qué soñaría alguien en esta carta"
+    },
+    {
+     "id": "deseo",
+     "titulo": "Un deseo",
+     "descripcion": "Algo que pedirías al soplar las velas.",
+     "ejemplo": "\"Que el lunes nunca llegue\"",
+     "pregunta": "¿Qué desearía alguien en esta carta"
+    },
+    {
+     "id": "verguenza",
+     "titulo": "Momento incómodo",
+     "descripcion": "Una situación que da vergüenza ajena.",
+     "ejemplo": "\"Saludar a quien no te saludaba\"",
+     "pregunta": "¿Qué momento incómodo pasaría en esta carta"
+    }
+   ]
+  },
+  {
+   "id": "lugares",
+   "nombre": "Lugares",
+   "simbolo": "🗺️",
+   "reglas": [
+    {
+     "id": "pais",
+     "titulo": "Un país o ciudad",
+     "descripcion": "Un lugar del mundo.",
+     "ejemplo": "\"Venecia\", \"Islandia\""
+    },
+    {
+     "id": "cuarto",
+     "titulo": "Un cuarto de la casa",
+     "descripcion": "Un espacio de una casa.",
+     "ejemplo": "\"El ático\", \"debajo de la cama\""
+    },
+    {
+     "id": "ciudad",
+     "titulo": "Un lugar de la ciudad",
+     "descripcion": "Un sitio cotidiano de la ciudad.",
+     "ejemplo": "\"La sala de espera\", \"la panadería\""
+    },
+    {
+     "id": "clima",
+     "titulo": "El clima",
+     "descripcion": "Describe el tiempo que hace en la carta.",
+     "ejemplo": "\"Llovizna con sol\"",
+     "pregunta": "¿Qué clima haría en esta carta"
+    },
+    {
+     "id": "paisaje",
+     "titulo": "Paisaje",
+     "descripcion": "Un tipo de paisaje o accidente geográfico.",
+     "ejemplo": "\"Desierto\", \"cascada\""
+    },
+    {
+     "id": "lugar-imaginario",
+     "titulo": "Lugar imaginario",
+     "descripcion": "Un lugar de ficción, real o inventado.",
+     "ejemplo": "\"El País de Nunca Jamás\""
+    }
+   ]
+  },
+  {
+   "id": "tiempo",
+   "nombre": "El tiempo",
+   "simbolo": "⏳",
+   "reglas": [
+    {
+     "id": "hora",
+     "titulo": "Una hora del día",
+     "descripcion": "Di a qué hora ocurre la carta.",
+     "ejemplo": "\"Las 3:07 de la madrugada\""
+    },
+    {
+     "id": "estacion",
+     "titulo": "Estación del año",
+     "descripcion": "Una estación, mes o temporada.",
+     "ejemplo": "\"Fin de vacaciones\""
+    },
+    {
+     "id": "fiesta",
+     "titulo": "Una fiesta",
+     "descripcion": "Una celebración o fecha especial.",
+     "ejemplo": "\"Año nuevo\", \"un cumpleaños sin invitados\""
+    },
+    {
+     "id": "epoca",
+     "titulo": "Época histórica",
+     "descripcion": "Un periodo o momento de la historia.",
+     "ejemplo": "\"Edad Media\", \"los años 80\""
+    },
+    {
+     "id": "futuro",
+     "titulo": "El futuro",
+     "descripcion": "Cómo será esto dentro de mil años.",
+     "ejemplo": "\"Ruinas de un centro comercial\""
+    },
+    {
+     "id": "duracion",
+     "titulo": "Cuánto dura",
+     "descripcion": "Una duración de tiempo.",
+     "ejemplo": "\"Cinco minutos más\", \"una eternidad\""
+    }
+   ]
+  },
+  {
+   "id": "dichos",
+   "nombre": "Dichos y frases",
+   "simbolo": "💬",
+   "reglas": [
+    {
+     "id": "refran",
+     "titulo": "Refranes",
+     "descripcion": "Un refrán o dicho popular.",
+     "ejemplo": "\"Camarón que se duerme…\"",
+     "pregunta": "¿Qué refrán le quedaría a esta carta"
+    },
+    {
+     "id": "frase-mama",
+     "titulo": "Frase de mamá",
+     "descripcion": "Algo que diría una mamá o una abuela.",
+     "ejemplo": "\"¿Y si tus amigos se tiran de un puente?\"",
+     "pregunta": "¿Qué diría una mamá sobre esta carta"
+    },
+    {
+     "id": "frase-pelicula",
+     "titulo": "Frase de película",
+     "descripcion": "Una frase célebre del cine.",
+     "ejemplo": "\"Que la fuerza te acompañe\""
+    },
+    {
+     "id": "consejo",
+     "titulo": "Un consejo",
+     "descripcion": "Un consejo que le darías al personaje de la carta.",
+     "ejemplo": "\"No mires hacia abajo\"",
+     "pregunta": "¿Qué consejo le darías a alguien en esta carta"
+    },
+    {
+     "id": "titular",
+     "titulo": "Titular de noticia",
+     "descripcion": "La carta es una noticia: ¿cuál es el titular?",
+     "ejemplo": "\"Hombre pierde su sombra en el metro\"",
+     "pregunta": "¿Cuál sería el titular de esta carta"
+    },
+    {
+     "id": "ultima-frase",
+     "titulo": "Últimas palabras",
+     "descripcion": "Lo último que diría alguien en esta carta.",
+     "ejemplo": "\"Tranquilos, sé lo que hago\"",
+     "pregunta": "¿Cuáles serían las últimas palabras en esta carta"
+    }
+   ]
+  },
+  {
+   "id": "cosas",
+   "nombre": "Cosas y seres",
+   "simbolo": "🧸",
+   "reglas": [
+    {
+     "id": "animal",
+     "titulo": "Un animal",
+     "descripcion": "La pista es un animal.",
+     "ejemplo": "\"Búho\", \"medusa\"",
+     "pregunta": "¿Qué animal viviría en esta carta"
+    },
+    {
+     "id": "comida",
+     "titulo": "Una comida",
+     "descripcion": "Un plato o comida.",
+     "ejemplo": "\"Sancocho\", \"helado derretido\"",
+     "pregunta": "¿Qué se comería en esta carta"
+    },
+    {
+     "id": "objeto",
+     "titulo": "Un objeto",
+     "descripcion": "Un objeto cotidiano.",
+     "ejemplo": "\"Paraguas roto\", \"llave sin puerta\"",
+     "pregunta": "¿Qué objeto encontrarías en esta carta"
+    },
+    {
+     "id": "profesion",
+     "titulo": "Una profesión",
+     "descripcion": "Un oficio o trabajo.",
+     "ejemplo": "\"Farolero\", \"astronauta\"",
+     "pregunta": "¿Qué oficio tendría alguien en esta carta"
+    },
+    {
+     "id": "juguete",
+     "titulo": "Un juguete",
+     "descripcion": "Un juguete o juego.",
+     "ejemplo": "\"Trompo\", \"las escondidas\"",
+     "pregunta": "¿Con qué se jugaría en esta carta"
+    },
+    {
+     "id": "deporte",
+     "titulo": "Un deporte",
+     "descripcion": "Un deporte o actividad física.",
+     "ejemplo": "\"Equilibrismo\", \"ajedrez\"",
+     "pregunta": "¿Qué deporte se practicaría en esta carta"
+    }
+   ]
+  },
+  {
+   "id": "imaginacion",
+   "nombre": "Pura imaginación",
+   "simbolo": "✨",
+   "reglas": [
+    {
+     "id": "titulo-cuento",
+     "titulo": "Título de cuento",
+     "descripcion": "Inventa el título del cuento de esta carta.",
+     "ejemplo": "\"La niña que coleccionaba ecos\"",
+     "pregunta": "¿Cómo se titularía el cuento de esta carta"
+    },
+    {
+     "id": "perfume",
+     "titulo": "Nombre de perfume",
+     "descripcion": "Si la carta fuera un perfume, ¿cómo se llamaría?",
+     "ejemplo": "\"Eau de Domingo\"",
+     "pregunta": "¿Cómo se llamaría el perfume de esta carta"
+    },
+    {
+     "id": "coctel",
+     "titulo": "Nombre de cóctel",
+     "descripcion": "El trago que inspira esta carta.",
+     "ejemplo": "\"Atardecer en llamas\"",
+     "pregunta": "¿Qué trago se serviría en esta carta"
+    },
+    {
+     "id": "hechizo",
+     "titulo": "Un hechizo",
+     "descripcion": "Las palabras mágicas de un hechizo.",
+     "ejemplo": "\"¡Olvidus completus!\"",
+     "pregunta": "¿Qué hechizo se lanzaría en esta carta"
+    },
+    {
+     "id": "superpoder",
+     "titulo": "Un superpoder",
+     "descripcion": "El poder que te daría esta carta.",
+     "ejemplo": "\"Hablar con los relojes\"",
+     "pregunta": "¿Qué superpoder daría esta carta"
+    },
+    {
+     "id": "secreto",
+     "titulo": "Un secreto",
+     "descripcion": "El secreto que esconde la carta.",
+     "ejemplo": "\"El gato ya lo sabía\"",
+     "pregunta": "¿Qué secreto escondería esta carta"
+    }
+   ]
+  },
+  {
+   "id": "narrativa",
+   "nombre": "Micro-historias",
+   "simbolo": "📖",
+   "reglas": [
+    {
+     "id": "micro-historia",
+     "titulo": "Micro-relato",
+     "descripcion": "Una historia de máximo dos frases, sin nombrar nada que se vea en la carta.",
+     "ejemplo": "\"Se dio cuenta de que el tren ya se fue, y sintió alivio\""
+    },
+    {
+     "id": "profecia",
+     "titulo": "Una profecía",
+     "descripcion": "Un vaticinio críptico para quien tenga esta carta.",
+     "ejemplo": "\"Perderás lo que amas por buscar lo que sobra\"",
+     "pregunta": "¿Qué profecía tendría esta carta"
+    },
+    {
+     "id": "despedida",
+     "titulo": "Una despedida",
+     "descripcion": "Lo que alguien dice antes de irse de aquí para siempre.",
+     "ejemplo": "\"Las llaves quedan debajo del tapete\"",
+     "pregunta": "¿Cómo se despediría alguien de esta carta"
+    }
+   ]
+  },
+  {
+   "id": "conceptos",
+   "nombre": "Ideas abstractas",
+   "simbolo": "🌀",
+   "reglas": [
+    {
+     "id": "paradoja",
+     "titulo": "Una paradoja",
+     "descripcion": "Dos ideas que se contradicen y aun así encajan.",
+     "ejemplo": "\"Silencio ensordecedor\", \"soledad acompañada\""
+    },
+    {
+     "id": "concepto",
+     "titulo": "Un concepto",
+     "descripcion": "Una idea científica o filosófica.",
+     "ejemplo": "\"Entropía\", \"gravedad cero\""
+    },
+    {
+     "id": "virtud",
+     "titulo": "Pecado o virtud",
+     "descripcion": "Un rasgo moral o del alma.",
+     "ejemplo": "\"Paciencia infinita\", \"vanidad\"",
+     "pregunta": "¿Qué pecado o virtud tendría esta carta"
+    }
+   ]
+  },
+  {
+   "id": "absurdo",
+   "nombre": "Absurdo total",
+   "simbolo": "🤪",
+   "reglas": [
+    {
+     "id": "clasificado",
+     "titulo": "Aviso clasificado",
+     "descripcion": "Un aviso de periódico absurdo.",
+     "ejemplo": "\"Se busca dueño para sombra huérfana\""
+    },
+    {
+     "id": "excusa",
+     "titulo": "La peor excusa",
+     "descripcion": "Una justificación absurda de por qué pasó esto.",
+     "ejemplo": "\"Llegué tarde porque el viento soplaba al revés\"",
+     "pregunta": "¿Qué excusa daría alguien en esta carta"
+    },
+    {
+     "id": "leyenda",
+     "titulo": "Leyenda urbana",
+     "descripcion": "El mito que contarían sobre esta carta.",
+     "ejemplo": "\"Si lo miras mucho, olvidas tu nombre\"",
+     "pregunta": "¿Qué leyenda contarían de esta carta"
+    }
+   ]
+  }
+ ],
+ "lentes": [
+  {
+   "id": "tiempo",
+   "nombre": "Tiempo",
+   "simbolo": "⏳",
+   "lentes": [
+    {
+     "id": "hace-mil",
+     "titulo": "Hace mil años",
+     "frase": "hace mil años"
+    },
+    {
+     "id": "edad-media",
+     "titulo": "Edad Media",
+     "frase": "en la Edad Media"
+    },
+    {
+     "id": "prehistoria",
+     "titulo": "Prehistoria",
+     "frase": "en la prehistoria"
+    },
+    {
+     "id": "anos-80",
+     "titulo": "Años 80",
+     "frase": "en los años 80"
+    },
+    {
+     "id": "dentro-mil",
+     "titulo": "Dentro de mil años",
+     "frase": "dentro de mil años"
+    },
+    {
+     "id": "madrugada",
+     "titulo": "3 de la madrugada",
+     "frase": "a las 3 de la madrugada"
+    },
+    {
+     "id": "navidad",
+     "titulo": "En Navidad",
+     "frase": "en plena Navidad"
+    },
+    {
+     "id": "dia-despues",
+     "titulo": "El día después",
+     "frase": "el día después de que todo pasó"
+    }
+   ],
+   "descripcion": "Lleva la carta a ese momento."
+  },
+  {
+   "id": "lugar",
+   "nombre": "Lugar",
+   "simbolo": "🗺️",
+   "lentes": [
+    {
+     "id": "fondo-mar",
+     "titulo": "Fondo del mar",
+     "frase": "en el fondo del mar"
+    },
+    {
+     "id": "espacio",
+     "titulo": "En el espacio",
+     "frase": "en una estación espacial"
+    },
+    {
+     "id": "pueblo",
+     "titulo": "Pueblo perdido",
+     "frase": "en un pueblo perdido en la montaña"
+    },
+    {
+     "id": "paris",
+     "titulo": "En París",
+     "frase": "en París"
+    },
+    {
+     "id": "oficina",
+     "titulo": "En una oficina",
+     "frase": "en una oficina un lunes"
+    }
+   ],
+   "descripcion": "Lleva la carta a ese lugar."
+  },
+  {
+   "id": "mirada",
+   "nombre": "Mirada",
+   "simbolo": "👁️",
+   "lentes": [
+    {
+     "id": "nino",
+     "titulo": "Según un niño",
+     "frase": ", según un niño de 5 años"
+    },
+    {
+     "id": "villano",
+     "titulo": "Según el villano",
+     "frase": ", según el villano de la historia"
+    },
+    {
+     "id": "abuela",
+     "titulo": "Según tu abuela",
+     "frase": ", según tu abuela"
+    },
+    {
+     "id": "gato",
+     "titulo": "Según un gato",
+     "frase": ", según un gato"
+    },
+    {
+     "id": "alien",
+     "titulo": "Según un extraterrestre",
+     "frase": ", según un extraterrestre de visita"
+    }
+   ],
+   "descripcion": "Mira la carta con esos ojos."
+  },
+  {
+   "id": "genero",
+   "nombre": "Género",
+   "simbolo": "🎭",
+   "lentes": [
+    {
+     "id": "terror",
+     "titulo": "Película de terror",
+     "frase": " si fuera una película de terror"
+    },
+    {
+     "id": "telenovela",
+     "titulo": "Telenovela",
+     "frase": " si fuera una telenovela"
+    },
+    {
+     "id": "comercial",
+     "titulo": "Comercial de TV",
+     "frase": " si fuera un comercial de TV"
+    },
+    {
+     "id": "sueno-lente",
+     "titulo": "Un sueño",
+     "frase": " si todo fuera un sueño"
+    },
+    {
+     "id": "hadas",
+     "titulo": "Cuento de hadas",
+     "frase": " si fuera un cuento de hadas"
+    }
+   ],
+   "descripcion": "Imagina la carta como esa clase de historia."
+  },
+  {
+   "id": "giro",
+   "nombre": "Giro",
+   "simbolo": "🔄",
+   "lentes": [
+    {
+     "id": "opuesto",
+     "titulo": "Al revés",
+     "frase": " en su versión opuesta"
+    },
+    {
+     "id": "miniatura",
+     "titulo": "En miniatura",
+     "frase": " si todo fuera diminuto"
+    },
+    {
+     "id": "exagerada",
+     "titulo": "Exagerada",
+     "frase": " exagerada mil veces"
+    }
+   ],
+   "descripcion": "Transforma la carta así."
+  }
+ ]
+}

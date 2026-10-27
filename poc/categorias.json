@@ -1,0 +1,326 @@
+{
+  "categorias": [
+    {
+      "id": "sentidos",
+      "nombre": "Sentidos",
+      "simbolo": "👃",
+      "descripcion": "Un olor, un sabor, un sonido, una textura o una temperatura.",
+      "ejemplos": [
+        "Tierra mojada después de la lluvia",
+        "Café recién colado",
+        "El crujido de hojas secas",
+        "Arena caliente entre los dedos",
+        "Frío de madrugada en la cara"
+      ],
+      "max_lentes": 2
+    },
+    {
+      "id": "emociones",
+      "nombre": "Emociones",
+      "simbolo": "💭",
+      "descripcion": "Un sentimiento o estado de ánimo.",
+      "ejemplos": [
+        "Nostalgia",
+        "Alivio después de un susto",
+        "Vértigo",
+        "Ternura",
+        "Celos que no quieres admitir"
+      ],
+      "max_lentes": 2
+    },
+    {
+      "id": "recuerdos",
+      "nombre": "Un recuerdo de infancia",
+      "simbolo": "🧒",
+      "descripcion": "Algo de cuando eras niño que la carta te recuerda. De paso, la mesa se conoce un poco más.",
+      "ejemplos": [
+        "La lonchera del colegio",
+        "Esperar el bus del colegio",
+        "La piñata del cumpleaños",
+        "Dormirse en el carro de vuelta del paseo",
+        "El regaño por llegar tarde"
+      ],
+      "excluye": [
+        "momento-vida"
+      ]
+    },
+    {
+      "id": "peliculas",
+      "nombre": "La película de esta carta",
+      "simbolo": "🎬",
+      "descripcion": "Imagina que la carta es una escena: ¿de qué película o serie sería? Di la película, la escena o una frase famosa de ella.",
+      "ejemplos": [
+        "Titanic, la escena del final",
+        "Volver al futuro, cuando llegan tarde",
+        "El viaje de Chihiro, perdida en otro mundo",
+        "\"Houston, tenemos un problema\"",
+        "Stranger Things, cuando se apagan las luces"
+      ]
+    },
+    {
+      "id": "personajes",
+      "nombre": "Personajes",
+      "simbolo": "🦸",
+      "descripcion": "Alguien de la ficción, la historia, los cuentos o los videojuegos que no esté dibujado en la carta.",
+      "ejemplos": [
+        "Caperucita Roja",
+        "Frida Kahlo",
+        "Don Quijote",
+        "El Chavo del 8",
+        "Gandalf"
+      ],
+      "relacionado": true,
+      "max_lentes": 2,
+      "solo_con_lentes": true
+    },
+    {
+      "id": "musica",
+      "nombre": "Bandas, géneros y artistas",
+      "simbolo": "🎵",
+      "descripcion": "Una banda, un artista o un género musical que le quede a la carta.",
+      "ejemplos": [
+        "Queen",
+        "Un bolero de despecho",
+        "Shakira en sus inicios",
+        "Heavy metal",
+        "Los Beatles"
+      ],
+      "solo_con_lentes": true
+    },
+    {
+      "id": "cercano",
+      "nombre": "Algo cercano",
+      "simbolo": "🧲",
+      "descripcion": "Un lugar o un objeto que esté cerca o tenga que ver con algo de la carta, no lo que se ve.",
+      "ejemplos": [
+        "Arena → el mar",
+        "Un libro → unas gafas",
+        "Una llave → el tapete de la entrada",
+        "Nieve → el congelador",
+        "Un paraguas → la puerta de la casa"
+      ],
+      "relacionado": true,
+      "max_lentes": 2
+    },
+    {
+      "id": "naturaleza",
+      "nombre": "Naturaleza y clima",
+      "simbolo": "🌦️",
+      "descripcion": "Un paisaje, un fenómeno o un clima que la carta te recuerde, no el que se ve.",
+      "ejemplos": [
+        "Una aurora boreal",
+        "Llovizna con sol",
+        "Marea baja",
+        "Un volcán dormido",
+        "Neblina en el páramo"
+      ],
+      "excluye": [
+        "estacion"
+      ],
+      "relacionado": true,
+      "lentes": 2,
+      "familias": [
+        "tiempo",
+        "sonido"
+      ]
+    },
+    {
+      "id": "animales",
+      "nombre": "Animales y criaturas",
+      "simbolo": "🐾",
+      "descripcion": "Un animal real o un ser fantástico que no esté en la carta pero encaje con ella.",
+      "ejemplos": [
+        "Un búho",
+        "Una medusa",
+        "Un dragón",
+        "Un gato callejero",
+        "Una tortuga centenaria"
+      ],
+      "relacionado": true,
+      "lentes": 2,
+      "familias": [
+        "tiempo",
+        "sonido"
+      ]
+    },
+    {
+      "id": "comidas",
+      "nombre": "Un plato con su momento",
+      "simbolo": "🍲",
+      "descripcion": "Una comida o bebida con su detalle o su instante: no solo el plato, sino cómo, cuándo o con quién se come.",
+      "ejemplos": [
+        "Chocolate caliente en día de lluvia",
+        "Helado derritiéndose",
+        "La torta que nadie se comió",
+        "Café frío olvidado en la mesa",
+        "Changua con vegetales que nadie pidió"
+      ],
+      "max_lentes": 2,
+      "solo_con_lentes": true
+    },
+    {
+      "id": "oficios",
+      "nombre": "Oficios y actividades",
+      "simbolo": "🧭",
+      "descripcion": "Un trabajo, un deporte o una actividad relacionada con la carta, no la que se ve.",
+      "ejemplos": [
+        "Farolero",
+        "Astronauta",
+        "Equilibrista",
+        "Jugador de ajedrez",
+        "Cartero de un pueblo"
+      ],
+      "relacionado": true,
+      "max_lentes": 2,
+      "solo_con_lentes": true
+    },
+    {
+      "id": "fantasia",
+      "nombre": "Una situación mágica",
+      "simbolo": "✨",
+      "descripcion": "Algo que solo podría pasar con magia: un poder, un hechizo, un objeto encantado, una criatura o una leyenda.",
+      "ejemplos": [
+        "Hablar con los relojes",
+        "Una varita rota",
+        "La leyenda de la Llorona",
+        "Un hechizo para volverse invisible",
+        "Un dragón que guarda un tesoro"
+      ]
+    },
+    {
+      "id": "antes-despues",
+      "nombre": "Historia: antes o después",
+      "simbolo": "⏮️",
+      "descripcion": "Lo que pasó justo antes o lo que pasará justo después de la carta.",
+      "ejemplos": [
+        "Nadie apagó la estufa",
+        "Llegó cinco minutos tarde",
+        "La última llamada sin contestar",
+        "Ganó la lotería y no lo sabía",
+        "Mañana todo vuelve a empezar"
+      ],
+      "relacionado": true
+    }
+  ],
+  "lentes": [
+    {
+      "id": "tiempo",
+      "nombre": "Tiempo",
+      "simbolo": "⏳",
+      "descripcion": "Tú eliges el momento en que pasa la carta.",
+      "lentes": [
+        {
+          "id": "epoca",
+          "titulo": "Una época",
+          "ejemplos": [
+            "Hace mil años",
+            "La prehistoria",
+            "Los años 80",
+            "La Edad Media",
+            "Dentro de mil años"
+          ]
+        },
+        {
+          "id": "hora-dia",
+          "titulo": "Una hora del día",
+          "ejemplos": [
+            "3 de la madrugada",
+            "El amanecer",
+            "Mediodía",
+            "El atardecer",
+            "Medianoche"
+          ]
+        },
+        {
+          "id": "estacion",
+          "titulo": "Una estación del año",
+          "ejemplos": [
+            "Invierno",
+            "Verano",
+            "Vacaciones",
+            "Temporada de lluvias",
+            "Otoño"
+          ]
+        },
+        {
+          "id": "momento-vida",
+          "titulo": "Un momento de la vida",
+          "ejemplos": [
+            "La infancia",
+            "El primer amor",
+            "El último día de colegio",
+            "El primer trabajo",
+            "La vejez"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "giro",
+      "nombre": "Giro",
+      "simbolo": "🔄",
+      "descripcion": "Tú eliges cómo se transforma la carta.",
+      "lentes": [
+        {
+          "id": "contrario",
+          "titulo": "Lo contrario",
+          "descripcion": "Di el opuesto de algo: de la carta, de la categoría o del otro lente.",
+          "ejemplos": [
+            "Desierto → un bosque",
+            "Arena → mar → lava",
+            "Lo que pasó → lo que jamás pasaría ahí",
+            "Silencio → un estadio lleno",
+            "Nostalgia → la emoción de estrenar"
+          ]
+        },
+        {
+          "id": "tamano",
+          "titulo": "Otro tamaño",
+          "ejemplos": [
+            "En miniatura",
+            "Gigante",
+            "Del tamaño de un grano de arena",
+            "Tan grande como un planeta",
+            "Dentro de una caja de fósforos"
+          ]
+        },
+        {
+          "id": "intensidad",
+          "titulo": "Otra intensidad",
+          "ejemplos": [
+            "Exagerada mil veces",
+            "Apenas perceptible",
+            "En cámara lenta",
+            "A toda velocidad",
+            "En silencio total"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sonido",
+      "nombre": "Sonido",
+      "simbolo": "🔊",
+      "descripcion": "Un sonido u onomatopeya relacionado con la carta: del animal o de cualquier cosa que pase en ella.",
+      "lentes": [
+        {
+          "id": "su-sonido",
+          "titulo": "Un sonido",
+          "solo_para": [
+            "animales",
+            "naturaleza",
+            "cercano",
+            "comidas"
+          ],
+          "ejemplos": [
+            "¡Pummm!",
+            "Uuh… uuh",
+            "Plic, plic, plic",
+            "Fiuuu",
+            "¡Crac!"
+          ]
+        }
+      ]
+    }
+  ]
+}
