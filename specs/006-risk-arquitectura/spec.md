@@ -151,6 +151,10 @@ Paño verde con borde dorado, tropas en un círculo dorado y cada fuente de trop
   ⚙ (2 por defecto) líderes; suma +1 al dado más alto **solo al atacar desde el territorio donde está**; se pierde si
   le conquistan ese territorio. La escuela lo explica con un ejemplo (5-3 contra 5-4, sin y con líder).
 
+- **Cuenta regresiva en celulares pequeños**: ya no se corta arriba (si no cabe, empieza arriba y se baja).
+- **Aviso al marcar un equipo ausente** (💤 Se fue, su panel o la cuenta): ventana con qué hacer si lo atacan
+  (otro tira por él o defiende con 4 y 2) y cómo vuelve.
+
 ## Venta de cartas (tabla del reglamento, pedida el 27-oct-2026)
 
 | ★ estrellas | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |

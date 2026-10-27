@@ -803,3 +803,33 @@ body[data-juego="risk"] .accion-juego .boton-icono { width: 36px; font-size: 1.3
 .risk-lider-parejas { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; gap: 3px; font-size: .8rem; }
 .risk-lider-parejas li { padding: 4px 8px; border-radius: 8px; background: #fff; border-left: 4px solid var(--tinta-suave); }
 .risk-lider-parejas .risk-explica--atq { border-left-color: var(--sangre); }
+
+/* Cuenta regresiva en celulares: si no cabe, empieza arriba y se baja (centrar con flex cortaba la parte de arriba).
+   Los pseudo-elementos con margin auto la centran cuando sí cabe. */
+.risk-cuenta { justify-content: flex-start; padding-top: max(56px, calc(env(safe-area-inset-top) + 44px)); gap: 12px; }
+.risk-cuenta::before, .risk-cuenta::after { content: ""; margin: auto; }
+@media (max-height: 820px) {
+  .risk-cuenta-anillo { width: 150px; height: 150px; flex: none; }
+  .risk-cuenta-numero { font-size: 5.5rem; }
+  .risk-cuenta-titulo { font-size: 1.6rem; }
+  .risk-cuenta { gap: 10px; }
+}
+
+/* Aviso emergente (p. ej. al marcar un equipo ausente) */
+.risk-aviso { position: fixed; inset: 0; z-index: 70; display: grid; place-items: center; padding: 20px; background: rgba(5, 5, 10, .65); backdrop-filter: blur(3px); animation: aparecer .2s ease-out; }
+.risk-aviso-carta {
+  width: min(100%, 380px);
+  padding: 22px 20px 18px;
+  border-radius: 22px;
+  text-align: center;
+  color: var(--texto);
+  background: linear-gradient(170deg, color-mix(in srgb, var(--equipo) 35%, #16161e), #101016);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--equipo) 45%, transparent), inset 0 0 0 2px var(--equipo);
+}
+.risk-aviso-arte { font-size: 3rem; line-height: 1; }
+.risk-aviso-carta h3 { margin: 8px 0 6px; font-family: var(--serif); font-weight: normal; font-size: 1.5rem; color: var(--oro-claro); }
+.risk-aviso-carta p { margin: 6px 0; line-height: 1.45; font-size: .95rem; }
+.risk-aviso-reglas { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 8px; text-align: left; }
+.risk-aviso-reglas li { padding: 10px 12px; border-radius: 12px; background: rgba(0, 0, 0, .3); font-size: .9rem; line-height: 1.4; }
+.risk-aviso-carta .boton { width: 100%; margin-top: 6px; }
+.risk-aviso-pausa { font-size: .82rem !important; color: var(--oro-claro); }

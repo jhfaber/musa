@@ -2,6 +2,6 @@
   "_ayuda": "Juegos de Musa en el orden del inicio. Cada uno vive en juegos/<id>/: se cargan sus .css y .js (o, si tiene entrada, ese módulo ES, que importa el resto) y el service worker guarda todos sus archivos para usarlos sin Internet.",
   "juegos": [
     { "id": "dixit", "archivos": ["dixit.css", "dixit.js", "categorias.json"] },
-    { "id": "risk", "entrada": "risk.js", "archivos": ["risk.css", "risk.js", "almacen.js", "efectos.js", "logica/reglas.js", "logica/dados.js", "logica/mapas.js", "logica/historial.js", "vistas/piezas.js", "vistas/tablero.js", "vistas/cuenta.js", "vistas/preparar.js", "vistas/fin.js", "vistas/equipo.js", "vistas/escuela.js", "vistas/simulador.js", "vistas/ajustes.js", "vistas/ganadores.js"] }
+    { "id": "risk", "entrada": "risk.js", "archivos": ["risk.css", "risk.js", "almacen.js", "efectos.js", "logica/reglas.js", "logica/dados.js", "logica/mapas.js", "logica/historial.js", "vistas/piezas.js", "vistas/tablero.js", "vistas/cuenta.js", "vistas/preparar.js", "vistas/fin.js", "vistas/equipo.js", "vistas/escuela.js", "vistas/simulador.js", "vistas/ajustes.js", "vistas/ganadores.js", "vistas/aviso.js"] }
   ]
 }

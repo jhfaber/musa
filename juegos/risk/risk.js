@@ -13,6 +13,7 @@ import { abrirEscuela } from './vistas/escuela.js';
 import { abrirSimulador } from './vistas/simulador.js';
 import { abrirAjustes, pintarAjustes } from './vistas/ajustes.js';
 import { abrirGanadores, guardarGanador } from './vistas/ganadores.js';
+import { avisoAusente, cerrarAviso } from './vistas/aviso.js';
 
 const almacen = crearAlmacen();
 let contenedor = null;
@@ -49,9 +50,29 @@ function pintar() {
   pintarAjustes();
 }
 
+// Si un equipo pasó a ausente (desde la tarjeta, su panel o la cuenta regresiva), se recuerda qué hacer si lo atacan.
+// Mientras el aviso está abierto, el tiempo que corría (la cuenta del siguiente o el reloj del turno) queda en pausa.
+function avisarSiSeFue(p, antes) {
+  if (!p || !antes) return;
+  const seFue = p.equipos.find(e => e.ausente && !(antes.equipos.find(a => a.id === e.id) || {}).ausente);
+  if (!seFue) return;
+  const pausa = p.cuenta ? (p.cuenta.corriendo ? 'cuentaPausa' : null) : (p.reloj.estado === 'corre' ? 'reloj' : null);
+  if (pausa) almacen.despachar({ tipo: pausa });
+  avisoAusente(seFue, pausa ? () => seguirTrasAviso(pausa) : null);
+}
+
+// Al cerrar el aviso, sigue el tiempo que se pausó (si nada cambió mientras tanto)
+function seguirTrasAviso(pausa) {
+  const p = almacen.partida;
+  if (!p || p.terminada) return;
+  if (pausa === 'cuentaPausa' && p.cuenta && !p.cuenta.corriendo) almacen.despachar({ tipo: 'cuentaPausa' });
+  if (pausa === 'reloj' && !p.cuenta && p.reloj.estado === 'pausa') almacen.despachar({ tipo: 'reloj' });
+}
+
 almacen.escuchar((p, antes, accion) => {
   efectos.alCambiar(p, antes, almacen.ajustes);
   if (accion.tipo === 'ganador') guardarGanador(p, almacen.ajustes);
+  avisarSiSeFue(p, antes);
   pintar();
 });
 
@@ -130,6 +151,7 @@ function abrir(elemento, barra) {
 window.addEventListener('hashchange', () => {
   if (location.hash !== '#risk') {
     quitarCuenta();
+    cerrarAviso(false);
     detenerFuegos();
     document.body.style.removeProperty('--equipo-turno');
     const meta = document.querySelector('meta[name="theme-color"]');
