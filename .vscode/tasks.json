@@ -17,6 +17,16 @@
       },
       "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
       "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      // Terminal → Ejecutar tarea… → "Publicar Musa": sube la app a https://jhfaber.github.io/musa/
+      "label": "Publicar Musa",
+      "type": "shell",
+      "command": "node",
+      "args": ["herramientas/publicar.js"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true }
     }
   ]
 }

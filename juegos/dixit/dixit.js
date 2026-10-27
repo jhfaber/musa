@@ -29,16 +29,11 @@
   }
 
   function cargarEstado() {
-    try {
-      const guardado = JSON.parse(localStorage.getItem(CLAVE));
-      if (guardado && Array.isArray(guardado.historial)) return guardado;
-    } catch (e) { /* sin almacenamiento: partida en memoria */ }
-    return estadoNuevo();
+    const guardado = Musa.leer(CLAVE);
+    return guardado && Array.isArray(guardado.historial) ? guardado : estadoNuevo();
   }
 
-  function guardarEstado() {
-    try { localStorage.setItem(CLAVE, JSON.stringify(estado)); } catch (e) { /* ignorar */ }
-  }
+  const guardarEstado = () => Musa.guardar(CLAVE, estado);
 
   // ---------- Favoritos: combinaciones exactas (categoría + lentes) que se quieren repetir ----------
 
@@ -46,20 +41,15 @@
   const claveRonda = r => `${r.categoria}|${r.lentes.join(',')}`;
   const esFavorita = r => favoritos.some(f => claveRonda(f) === claveRonda(r));
 
+  // Se descartan las que usan categorías o lentes que ya no existen
   function cargarFavoritos() {
-    try {
-      const guardados = JSON.parse(localStorage.getItem(CLAVE_FAVORITOS));
-      if (Array.isArray(guardados)) {
-        // Se descartan las que usan categorías o lentes que ya no existen
-        return guardados.filter(f => categoria(f.categoria) && Array.isArray(f.lentes) && f.lentes.every(id => lente(id)));
-      }
-    } catch (e) { /* sin almacenamiento: favoritos en memoria */ }
-    return [];
+    const guardados = Musa.leer(CLAVE_FAVORITOS);
+    return Array.isArray(guardados)
+      ? guardados.filter(f => categoria(f.categoria) && Array.isArray(f.lentes) && f.lentes.every(id => lente(id)))
+      : [];
   }
 
-  function guardarFavoritos() {
-    try { localStorage.setItem(CLAVE_FAVORITOS, JSON.stringify(favoritos)); } catch (e) { /* ignorar */ }
-  }
+  const guardarFavoritos = () => Musa.guardar(CLAVE_FAVORITOS, favoritos);
 
   function alternarFavorita() {
     const ronda = estado.historial[estado.indice];
@@ -87,139 +77,45 @@
     return { categoria: f.categoria, lentes: [...f.lentes], nivel: f.nivel };
   }
 
-  // ---------- Ajustes (menú ⚙) y reloj para pensar la pista ----------
+  // ---------- Ajustes (menú ⚙) y reloj para pensar la pista (el reloj vive en comun/reloj.js) ----------
 
   const CLAVE_AJUSTES = 'musa.dixit.ajustes.v1';
   const AJUSTES_BASE = { reloj: true, segundos: 60, vista: 'arena', sonido: true, vibrar: true };
-  const VISTAS = [
-    { id: 'arena', nombre: 'Arena', desc: 'Un velo dorado baja por la carta.' },
-    { id: 'borde', nombre: 'Borde', desc: 'El borde dorado de la carta se va consumiendo.' },
-    { id: 'numero', nombre: 'Solo el número', desc: 'Sin animación: solo cuenta el botón.' }
-  ];
+  const VISTAS = Musa.reloj.VISTAS;
   const ATAJOS = [30, 60, 90, 120];
-  const MIN_SEGUNDOS = 10;
-  const MAX_SEGUNDOS = 9 * 60 + 55;
-
-  const ajustarSegundos = s => Math.min(MAX_SEGUNDOS, Math.max(MIN_SEGUNDOS, Math.round(s / 5) * 5));
-  const formatoTiempo = s => { const c = Math.ceil(s); return `${Math.floor(c / 60)}:${String(c % 60).padStart(2, '0')}`; };
+  const ajustarSegundos = Musa.reloj.ajustarSegundos;
+  const formatoTiempo = Musa.reloj.formato;
 
   function cargarAjustes() {
-    let guardados = null;
-    try { guardados = JSON.parse(localStorage.getItem(CLAVE_AJUSTES)); } catch (e) { /* valores por defecto */ }
-    const a = { ...AJUSTES_BASE, ...(guardados || {}) };
+    const a = { ...AJUSTES_BASE, ...(Musa.leer(CLAVE_AJUSTES) || {}) };
     a.segundos = ajustarSegundos(Number(a.segundos) || AJUSTES_BASE.segundos);
     if (!VISTAS.some(v => v.id === a.vista)) a.vista = AJUSTES_BASE.vista;
     return a;
   }
 
-  function guardarAjustes() {
-    try { localStorage.setItem(CLAVE_AJUSTES, JSON.stringify(ajustes)); } catch (e) { /* ignorar */ }
-  }
+  const guardarAjustes = () => Musa.guardar(CLAVE_AJUSTES, ajustes);
 
-  // El tiempo se calcula contra la hora de término (no contando cuadros): si el celular frena la página
-  // o se apaga la pantalla, al volver marca lo que de verdad queda. Vive fuera de la carta, así que
-  // repintarla (p. ej. al marcar ⭐) no lo detiene.
-  const reloj = { restante: null, corriendo: false, terminaEn: 0, intervalo: 0 };
-  const relojRestante = () => (reloj.restante === null ? ajustes.segundos : reloj.restante);
-
-  function detenerReloj() {
-    reloj.corriendo = false;
-    clearInterval(reloj.intervalo);
-  }
-
-  // Cada vez que cambia la ronda en pantalla, el reloj vuelve a la duración completa
-  function reiniciarReloj() {
-    detenerReloj();
-    reloj.restante = null;
-  }
-
-  function pasoReloj() {
-    if (!reloj.corriendo) return;
-    reloj.restante = Math.max(0, (reloj.terminaEn - Date.now()) / 1000);
-    if (reloj.restante <= 0) {
-      detenerReloj();
-      avisarFin();
-    }
-    pintarReloj();
-  }
-
-  function alternarReloj() {
-    if (reloj.corriendo) {
-      pasoReloj();
-      detenerReloj();
-    } else {
-      if (relojRestante() <= 0) reloj.restante = ajustes.segundos;
-      reloj.restante = relojRestante();
-      reloj.corriendo = true;
-      reloj.terminaEn = Date.now() + reloj.restante * 1000;
-      clearInterval(reloj.intervalo);
-      reloj.intervalo = setInterval(pasoReloj, 100);
-    }
-    pintarReloj();
-  }
-
-  // Campanita suave (dos notas) y vibración corta
-  function avisarFin() {
-    if (ajustes.vibrar && navigator.vibrate) navigator.vibrate([120, 80, 120]);
-    if (!ajustes.sonido) return;
-    try {
-      const ctx = new (window.AudioContext || window.webkitAudioContext)();
-      [880, 1320].forEach((frecuencia, i) => {
-        const o = ctx.createOscillator();
-        const g = ctx.createGain();
-        o.type = 'sine';
-        o.frequency.value = frecuencia;
-        const t0 = ctx.currentTime + i * 0.18;
-        g.gain.setValueAtTime(0.0001, t0);
-        g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
-        g.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.2);
-        o.connect(g).connect(ctx.destination);
-        o.start(t0);
-        o.stop(t0 + 1.3);
-      });
-    } catch (e) { /* sin sonido */ }
-  }
-
-  // Lo que el reloj agrega dentro de la carta de la categoría: el velo de arena, el borde y el botón
-  const htmlReloj = () => `
-    <div class="reloj-velo" aria-hidden="true"><div class="reloj-arena"></div></div>
-    <svg class="reloj-borde" aria-hidden="true" preserveAspectRatio="none"><rect rx="24" ry="24"></rect></svg>
-    <button class="reloj-boton" data-accion="reloj"><span class="reloj-estado"></span><b class="reloj-cuenta"></b></button>`;
-
-  // El borde es un rectángulo redondeado cuyo trazo se acorta con el tiempo; se mide al pintar la carta
-  function medirBorde() {
-    const svg = contenedor && contenedor.querySelector('.reloj-borde');
-    if (!svg) return;
-    const w = svg.clientWidth;
-    const h = svg.clientHeight;
-    if (w < 10 || h < 10) return;
-    const rect = svg.querySelector('rect');
-    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-    rect.setAttribute('x', 2);
-    rect.setAttribute('y', 2);
-    rect.setAttribute('width', w - 4);
-    rect.setAttribute('height', h - 4);
-    const largo = rect.getTotalLength();
-    rect.style.strokeDasharray = largo;
-    rect.dataset.largo = largo;
-  }
+  // Vive fuera de la carta, así que repintarla (p. ej. al marcar ⭐) no lo detiene
+  const reloj = Musa.reloj.crear({
+    duracion: () => ajustes.segundos,
+    alCambiar: () => pintarReloj(),
+    alTerminar: () => Musa.reloj.avisar(ajustes)
+  });
+  const reiniciarReloj = () => reloj.reiniciar();
+  const alternarReloj = () => reloj.alternar();
+  const htmlReloj = Musa.reloj.html;
+  const medirBorde = () => Musa.reloj.medirBorde(contenedor);
 
   function pintarReloj() {
     const carta = contenedor && contenedor.querySelector('.carta--reloj');
     if (!carta) return;
-    const restante = relojRestante();
-    const lleno = restante / ajustes.segundos; // 1 = lleno, 0 = vacío
-    carta.querySelector('.reloj-arena').style.height = `${lleno * 100}%`;
-    const rect = carta.querySelector('.reloj-borde rect');
-    rect.style.strokeDashoffset = (1 - lleno) * Number(rect.dataset.largo || 0);
-    carta.querySelector('.reloj-cuenta').textContent = formatoTiempo(restante);
-    carta.querySelector('.reloj-estado').textContent = reloj.corriendo ? '⏸ Pausar'
-      : restante <= 0 ? '↻ Otra vez' : restante < ajustes.segundos ? '▶ Seguir' : '⏳ Pensar';
-    carta.classList.toggle('reloj--poco', reloj.corriendo && restante <= 10 && restante > 0);
+    const restante = reloj.restante();
+    Musa.reloj.pintarVista(carta, restante / ajustes.segundos, restante, reloj.corriendo() ? '⏸ Pausar'
+      : restante <= 0 ? '↻ Otra vez' : restante < ajustes.segundos ? '▶ Seguir' : '⏳ Pensar');
+    carta.classList.toggle('reloj--poco', reloj.corriendo() && restante <= 10 && restante > 0);
     carta.classList.toggle('reloj--fin', restante <= 0);
   }
 
-  document.addEventListener('visibilitychange', pasoReloj);
 
   // Cada categoría lista los lentes que le cuadran (lentes_permitidos); los demás nunca le salen.
   const choca = (c, l) => !c.lentes_permitidos.includes(l.id);
@@ -536,39 +432,10 @@
         </table>` : ''}`;
   }
 
-  // Panel lateral (catálogo ☰ y ajustes ⚙): fondo oscuro, cabecera con ✕ y un cuerpo que pinta cada uno
-  function crearPanel(titulo, etiqueta, antesDelCuerpo = '') {
-    const p = document.createElement('div');
-    p.className = 'catalogo';
-    p.hidden = true;
-    p.innerHTML = `
-      <div class="catalogo-fondo" data-cerrar></div>
-      <aside class="catalogo-panel" role="dialog" aria-modal="true" aria-label="${etiqueta}">
-        <header class="catalogo-cabeza">
-          <h2>${titulo}</h2>
-          <button class="boton-icono" data-cerrar aria-label="Cerrar">✕</button>
-        </header>
-        ${antesDelCuerpo}
-        <div class="catalogo-cuerpo"></div>
-      </aside>`;
-    document.body.appendChild(p);
-    return p;
-  }
-
-  function mostrarPanel(p) {
-    p.hidden = false;
-    document.body.classList.add('sin-scroll');
-    p.querySelector('[data-cerrar].boton-icono').focus();
-  }
-
-  function cerrarPanel(p) {
-    p.hidden = true;
-    document.body.classList.remove('sin-scroll');
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') document.querySelectorAll('.catalogo:not([hidden])').forEach(cerrarPanel);
-  });
+  // Panel lateral compartido (comun/panel.js)
+  const crearPanel = Musa.panel.crear;
+  const mostrarPanel = Musa.panel.mostrar;
+  const cerrarPanel = Musa.panel.cerrar;
 
   function abrirCatalogo() {
     if (!panel) {
@@ -602,15 +469,9 @@
 
   let panelAjustes = null;
 
-  const interruptor = (clave, titulo, desc) => `
-    <label class="ajuste-fila">
-      <span><b>${titulo}</b><small>${desc}</small></span>
-      <input type="checkbox" class="ajuste-interruptor" data-ajuste="${clave}" ${ajustes[clave] ? 'checked' : ''}>
-    </label>`;
+  const interruptor = (clave, titulo, desc) => Musa.ui.interruptor(ajustes[clave], clave, titulo, desc);
 
   function pintarAjustes() {
-    const min = Math.floor(ajustes.segundos / 60);
-    const seg = ajustes.segundos % 60;
     panelAjustes.querySelector('.catalogo-cuerpo').innerHTML = `
       <section class="ajuste">
         <h3 class="catalogo-subtitulo">Reloj para pensar la pista</h3>
@@ -618,18 +479,7 @@
       </section>
       <section class="ajuste" ${ajustes.reloj ? '' : 'hidden'}>
         <div class="ajuste-titulo">Duración</div>
-        <div class="ajuste-tiempo">
-          <div class="ajuste-paso">
-            <button class="boton-icono" data-paso="-60" aria-label="Un minuto menos">−</button>
-            <span><b>${min}</b> min</span>
-            <button class="boton-icono" data-paso="60" aria-label="Un minuto más">+</button>
-          </div>
-          <div class="ajuste-paso">
-            <button class="boton-icono" data-paso="-5" aria-label="Cinco segundos menos">−</button>
-            <span><b>${String(seg).padStart(2, '0')}</b> s</span>
-            <button class="boton-icono" data-paso="5" aria-label="Cinco segundos más">+</button>
-          </div>
-        </div>
+        ${Musa.ui.tiempo(ajustes.segundos, 'segundos')}
         <div class="chips">
           ${ATAJOS.map(s => `<button class="chip ${s === ajustes.segundos ? 'chip--activo' : ''}" data-atajo="${s}">${formatoTiempo(s)}</button>`).join('')}
         </div>

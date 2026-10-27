@@ -1,14 +1,17 @@
 // Guarda toda la app en el celular para que funcione sin Internet.
-// Si cambia la lista de archivos, sube la versión.
-const VERSION = 'musa-v38';
+// Los archivos de cada juego salen de juegos/juegos.json. Al cambiar cualquier archivo, sube la versión.
+const VERSION = 'musa-v45';
 const ARCHIVOS = [
   './',
   'index.html',
   'manifest.json',
-  'css/estilo.css',
-  'js/app.js',
-  'juegos/dixit/dixit.js',
-  'juegos/dixit/categorias.json',
+  'comun/base.css',
+  'comun/app.js',
+  'comun/guardar.js',
+  'comun/panel.js',
+  'comun/reloj.js',
+  'comun/ui.js',
+  'juegos/juegos.json',
   'iconos/icono-180.png',
   'iconos/icono-192.png',
   'iconos/icono-512.png',
@@ -16,7 +19,12 @@ const ARCHIVOS = [
 ];
 
 self.addEventListener('install', evento => {
-  evento.waitUntil(caches.open(VERSION).then(cache => cache.addAll(ARCHIVOS)));
+  evento.waitUntil((async () => {
+    const cache = await caches.open(VERSION);
+    const { juegos } = await (await fetch('juegos/juegos.json', { cache: 'no-store' })).json();
+    const deJuegos = juegos.flatMap(j => j.archivos.map(a => `juegos/${j.id}/${a}`));
+    await cache.addAll([...ARCHIVOS, ...deJuegos]);
+  })());
   self.skipWaiting();
 });
 

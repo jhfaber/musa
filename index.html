@@ -13,7 +13,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Musa">
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="comun/base.css">
 </head>
 <body>
   <div class="cielo" aria-hidden="true"></div>
@@ -43,7 +43,7 @@
 
     <footer class="pie">
       Acompañante no oficial, hecho en casa.<br>
-      Dixit es una marca registrada de Libellud.
+      Dixit es una marca registrada de Libellud. Risk es una marca registrada de Hasbro.
     </footer>
   </main>
 
@@ -57,8 +57,12 @@
     <div id="contenido-juego"></div>
   </main>
 
-  <script src="js/app.js"></script>
-  <script src="juegos/dixit/dixit.js"></script>
+  <script src="comun/app.js"></script>
+  <script src="comun/guardar.js"></script>
+  <script src="comun/panel.js"></script>
+  <script src="comun/reloj.js"></script>
+  <script src="comun/ui.js"></script>
+  <!-- Los juegos (CSS y JS) se cargan desde juegos/juegos.json -->
   <script>Musa.iniciar();</script>
 </body>
 </html>

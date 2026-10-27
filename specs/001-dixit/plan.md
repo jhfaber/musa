@@ -36,7 +36,7 @@ musa/
 ## Pruebas
 
 1. Navegador del PC en tamaño celular.
-2. Celular en el wifi de la casa: `node herramientas/servidor.js` → `http://192.168.2.10:8095` (solo LAN).
+2. Celular en el wifi de la casa: `node herramientas/servidor.js` → `http://<IP del PC>:8095` (solo LAN).
 3. Instalación y offline: publicada en GitHub Pages (HTTPS) — tarea aparte, cuando la versión esté jugable.
 
 ## Riesgos

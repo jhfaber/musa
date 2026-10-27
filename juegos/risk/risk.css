@@ -1,0 +1,616 @@
+/* Risk: mismo sistema visual de Musa con fondo rojo brasa. Lo compartido está en comun/base.css */
+body[data-juego="risk"] {
+  --noche: #1f0b10;
+  --violeta: #561a20;
+  --malva: #8f3b28;
+  --velo-controles: rgba(40, 11, 16, .86);
+  --sangre: #d8443c;
+}
+
+.risk { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.risk .ronda { font-size: .85rem; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.risk-quedan { color: var(--texto-suave); letter-spacing: .08em; }
+.risk-marca { padding: 2px 10px; border-radius: 999px; font-size: .7rem; letter-spacing: .08em; background: var(--oro); color: var(--noche); font-weight: 700; }
+.risk-marca--fin { background: var(--coral); }
+.risk-subtitulo { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--oro); margin: 14px 0 8px; }
+.risk-ancho { width: 100%; }
+.risk .boton--texto { color: var(--texto-suave); }
+
+/* Color de cada equipo: un punto, bordes y franjas usan --equipo */
+.risk-punto {
+  display: inline-block;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--equipo, var(--oro));
+  box-shadow: 0 0 0 2px rgba(255, 246, 213, .75), 0 0 10px var(--equipo, transparent);
+  vertical-align: -1px;
+}
+
+/* ---------- Carta del turno ---------- */
+.risk .carta { min-height: 0; padding: 0 16px 14px; overflow: hidden; }
+.risk-turno-cabeza {
+  margin: 0 -16px 6px;
+  padding: 12px 16px 10px;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--equipo) 85%, #000), var(--equipo));
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+  position: relative;
+  z-index: 1;
+}
+.risk-turno-cabeza .risk-punto { box-shadow: 0 0 0 2px #fff; }
+.risk-tropas { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin: 4px 0; position: relative; z-index: 1; }
+.risk-tropas b { font-family: var(--serif); font-weight: normal; font-size: 4.2rem; line-height: 1; color: var(--tinta); }
+.risk-tropas small { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); }
+
+.risk-desglose { list-style: none; margin: 0; padding: 0; text-align: left; font-size: .88rem; position: relative; z-index: 1; }
+.risk-desglose li { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-top: 1px dashed rgba(44, 33, 64, .18); }
+.risk-desglose small { color: var(--tinta-suave); }
+.risk-desglose b { font-variant-numeric: tabular-nums; }
+.risk-ahora b, .risk-venta b { background: var(--oro); color: var(--tinta); padding: 0 8px; border-radius: 999px; }
+.risk-ahora { color: #8a3b2e; font-weight: 600; }
+.risk-quitar { border: 0; background: none; color: var(--tinta-suave); font-size: .85rem; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; }
+
+/* Botones de la carta: mismo estilo que el botón del reloj */
+.risk-turno-acciones { position: relative; z-index: 1; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.risk-accion, .risk-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--oro);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--oro-claro), #f6dc9c);
+  color: var(--tinta);
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(44, 33, 64, .18);
+  cursor: pointer;
+}
+.risk-accion:active, .risk-mini:active { transform: translateY(1px); }
+.risk-accion--activa { background: var(--oro); }
+.risk-accion--suave { background: rgba(255, 255, 255, .7); border-color: rgba(44, 33, 64, .25); }
+.risk .controles .risk-pausa { flex: none; padding: 14px 16px; font-weight: 600; }
+.risk .controles .boton--principal { font-size: 1.05rem; padding: 16px 12px; }
+.risk-mini { padding: 5px 12px; font-size: .8rem; }
+.risk-mini small { font-weight: 400; color: var(--tinta-suave); }
+.risk-mini:disabled { opacity: .4; }
+
+.risk-venta-tabla { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.risk-venta-op {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: .85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(44, 33, 64, .2);
+  background: #fff;
+  color: var(--tinta);
+  cursor: pointer;
+}
+.risk-venta-op span { color: #1f8fd6; font-weight: 700; }
+.risk-venta-op--activa { background: var(--oro); border-color: var(--oro); }
+
+.risk-fase { position: relative; z-index: 1; margin-top: 10px; font-size: .78rem; color: var(--tinta-suave); display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.risk-fase--activa { color: var(--tinta); font-weight: 700; background: rgba(242, 196, 107, .5); padding: 1px 8px; border-radius: 999px; }
+.risk-turno .reloj-boton { margin-top: 10px; font-size: 1.05rem; padding: 11px 22px; }
+.risk-turno .reloj-cuenta { font-size: 1.2rem; }
+
+/* Urgencia: ámbar en el último tercio, rojo latiendo en los últimos 15 s (el latido viene de base.css) */
+.risk-turno.reloj--medio .reloj-arena { background: rgba(233, 160, 60, .3); }
+.risk-turno.reloj--medio .reloj-boton { border-color: #e0962f; }
+.risk-turno.reloj--poco .reloj-arena { background: rgba(216, 68, 60, .32); }
+.risk-turno.reloj--poco .reloj-boton { background: linear-gradient(180deg, #ffd9d2, #f29a8c); border-color: var(--sangre); }
+
+.risk-cartas { position: relative; z-index: 1; margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(44, 33, 64, .2); font-size: .8rem; color: var(--tinta-suave); display: grid; gap: 6px; justify-items: center; }
+.risk-cartas b { color: var(--tinta); font-size: .95rem; }
+.risk-cartas .chip { color: var(--tinta); border-color: rgba(44, 33, 64, .25); padding: 4px 14px; }
+.risk-cartas .chip--activo { color: var(--noche); border-color: var(--oro); }
+.risk-cartas--no { font-style: italic; }
+
+.risk-sigue { margin: 0; font-size: .9rem; color: var(--texto-suave); text-align: center; }
+.risk-sigue b { color: var(--oro-claro); }
+
+/* ---------- Tabla de equipos ---------- */
+.risk-equipos { width: 100%; display: grid; gap: 8px; }
+.risk-equipos .risk-subtitulo { text-align: center; margin: 6px 0 0; }
+.risk-equipo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px 8px 8px;
+  color: var(--texto);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 246, 213, .16);
+  border-left: 6px solid var(--equipo);
+  background: rgba(255, 255, 255, .07);
+}
+.risk-equipo-lugar { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 246, 213, .12); font-family: var(--serif); color: var(--oro-claro); }
+.risk-equipo--turno .risk-equipo-lugar { background: var(--oro); color: var(--noche); font-weight: 700; }
+.risk-equipo-abrir { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 4px 0; font: inherit; text-align: left; color: inherit; background: none; border: 0; cursor: pointer; }
+.risk-equipo-etiqueta { font-size: .66rem !important; letter-spacing: .1em; text-transform: uppercase; color: var(--oro) !important; }
+.risk-volvio { flex: none; padding: 8px 12px; }
+.risk-equipo--turno { background: rgba(255, 246, 213, .16); border-color: var(--oro); border-left-color: var(--equipo); }
+.risk-equipo--ausente { background: rgba(0, 0, 0, .2); border-style: dashed; }
+.risk-equipo--ausente .risk-equipo-abrir { opacity: .6; }
+.risk-equipo-texto { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.risk-equipo-texto em { font-style: normal; font-size: .65rem; padding: 1px 6px; border-radius: 999px; background: var(--oro); color: var(--noche); vertical-align: 2px; }
+.risk-equipo-texto small { color: var(--texto-suave); font-size: .82rem; letter-spacing: .02em; }
+.risk-equipo-tropas { display: grid; justify-items: end; }
+.risk-equipo-tropas b { font-family: var(--serif); font-weight: normal; font-size: 1.6rem; color: var(--oro-claro); line-height: 1; }
+.risk-equipo-tropas small { font-size: .62rem; color: var(--texto-suave); letter-spacing: .08em; text-transform: uppercase; }
+
+/* ---------- Preparar ---------- */
+.risk-preparar { text-align: center; padding-top: 18px !important; }
+.risk-preparar-arte { font-size: 3rem; line-height: 1; }
+.risk-preparar .carta-titulo { font-size: 2rem; margin: 6px 0 0; }
+.risk-preparar .risk-subtitulo { color: #8a3b2e; }
+.risk-preparar .chip { color: var(--tinta); border-color: rgba(44, 33, 64, .25); }
+.risk-preparar .chip--activo { color: var(--noche); border-color: var(--oro); }
+.risk-lista-equipos { list-style: none; margin: 14px 0; padding: 0; display: grid; gap: 8px; text-align: left; }
+.risk-lista-equipos li { display: flex; align-items: center; gap: 8px; padding: 4px; border-radius: 14px; }
+.risk-lista--empieza { background: rgba(242, 196, 107, .3); }
+.risk-lista-equipos .risk-punto { width: 18px; height: 18px; margin-left: 6px; box-shadow: 0 0 0 2px rgba(44, 33, 64, .25); }
+.risk-preparar .risk-nombre { flex: 1; min-width: 0; color: var(--tinta); background: #fff; border-color: rgba(44, 33, 64, .2); }
+.risk-preparar .chip[data-ui="inicio"] { flex: none; font-size: .78rem; padding: 6px 10px; }
+.risk-sorteo { flex: none; font-weight: 700; color: var(--tinta); }
+.risk-preparar .boton--secundario { color: var(--tinta); background: rgba(242, 196, 107, .3); border-color: var(--oro); }
+.risk-preparar-mapa { margin: 12px 0 0; font-size: .88rem; color: var(--tinta-suave); display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.risk-antes { margin-top: 12px; font-size: .88rem; color: var(--tinta-suave); text-align: left; }
+.risk-antes summary { cursor: pointer; color: var(--tinta); text-align: center; }
+.risk-antes ol { padding-left: 20px; line-height: 1.45; }
+.risk-nombre {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 246, 213, .3);
+  background: rgba(255, 255, 255, .08);
+  color: var(--texto);
+}
+
+/* ---------- Fin: celebración ---------- */
+.risk-fin { position: relative; min-height: 70vh; justify-content: center; }
+.risk-fuegos { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.risk-fin > :not(.risk-fuegos) { position: relative; z-index: 1; }
+.risk-fin-titulo { text-align: center; }
+.risk-fin-trofeo { font-size: 6rem; line-height: 1; filter: drop-shadow(0 0 30px rgba(242, 196, 107, .7)); animation: trofeo 2.4s ease-in-out infinite; }
+@keyframes trofeo { 50% { transform: translateY(-8px) rotate(-4deg) scale(1.05); } }
+.risk-fin-titulo h3 { margin: 10px 0 6px; font-family: var(--serif); font-weight: normal; font-size: 2.4rem; color: var(--oro-claro); }
+.risk-fin-titulo p { margin: 0; color: var(--texto-suave); line-height: 1.45; }
+.risk-fin-equipos { list-style: none; padding: 0; margin: 10px 0; width: 100%; display: grid; gap: 8px; }
+.risk-fin-equipos li { padding: 10px 14px; border-radius: 14px; background: rgba(255, 255, 255, .08); border-left: 6px solid var(--equipo); display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; }
+.risk-fin-equipos small { grid-column: 2; color: var(--texto-suave); }
+@media (prefers-reduced-motion: reduce) { .risk-fin-trofeo { animation: none; } }
+
+/* ---------- Cuenta regresiva entre turnos ---------- */
+.risk-cuenta {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+  text-align: center;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--equipo) 65%, transparent), transparent 62%),
+    linear-gradient(170deg, var(--noche), var(--violeta));
+  animation: aparecer .25s ease-out;
+  overflow-y: auto;
+}
+@keyframes aparecer { from { opacity: 0; transform: scale(1.04); } }
+.risk-cuenta-cerrar { position: absolute; top: max(12px, env(safe-area-inset-top)); right: 12px; }
+.risk-cuenta-aviso { margin: 0; padding: 8px 14px; border-radius: 12px; background: rgba(216, 68, 60, .4); font-weight: 600; }
+.risk-cuenta-ronda { font-family: var(--serif); letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; color: var(--oro); }
+.risk-cuenta-titulo { margin: 0; font-family: var(--serif); font-weight: normal; font-size: 2rem; line-height: 1.15; color: var(--oro-claro); }
+.risk-cuenta-titulo .risk-punto { width: 22px; height: 22px; }
+.risk-cuenta-anillo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 6px solid var(--equipo);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--equipo) 70%, transparent), inset 0 0 30px rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .2);
+}
+.risk-cuenta-numero {
+  font-family: var(--serif);
+  font-size: 7.5rem;
+  line-height: 1;
+  color: var(--oro-claro);
+  text-shadow: 0 0 20px rgba(242, 196, 107, .6);
+  font-variant-numeric: tabular-nums;
+  animation: golpe 1s ease-out infinite;
+}
+.risk-cuenta--pausa .risk-cuenta-numero { animation: none; opacity: .6; }
+@keyframes golpe { 0% { transform: scale(1.15); } 30% { transform: scale(1); } }
+.risk-cuenta-tropas { margin: 0; font-size: 1.1rem; color: var(--texto-suave); }
+.risk-cuenta-tropas b { color: var(--oro-claro); font-size: 1.6rem; }
+.risk-cuenta-botones { display: flex; gap: 10px; width: min(100%, 380px); }
+.risk-cuenta-botones .boton--secundario { flex: none; }
+.risk-cuenta-consejo { width: min(100%, 380px); padding: 14px; border-radius: 16px; background: rgba(255, 246, 213, .12); border: 1px solid rgba(255, 246, 213, .25); line-height: 1.45; font-size: .92rem; }
+.risk-cuenta-consejo p { margin: 0 0 10px; }
+.risk-cuenta-cartas { display: grid; gap: 6px; justify-items: center; font-size: .85rem; color: var(--texto-suave); padding-top: 10px; border-top: 1px solid rgba(255, 246, 213, .2); width: min(100%, 380px); }
+.risk-cuenta-cartas b { color: var(--oro-claro); }
+@media (prefers-reduced-motion: reduce) { .risk-cuenta, .risk-cuenta-numero { animation: none; } }
+
+/* ---------- Dados en 3D ---------- */
+.dado3d { --tam: 54px; display: inline-block; width: var(--tam); height: var(--tam); perspective: 400px; flex: none; }
+.dado3d-cubo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(24deg) var(--giro);
+  transition: transform .45s cubic-bezier(.3, 1.4, .5, 1);
+}
+.cara {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 16%;
+  gap: 4%;
+  border-radius: 18%;
+  backface-visibility: hidden;
+}
+.cara i { display: block; border-radius: 50%; }
+.cara i.pip { background: currentColor; box-shadow: inset 0 2px 2px rgba(0, 0, 0, .35); }
+.cara-1 { transform: translateZ(calc(var(--tam) / 2)); }
+.cara-6 { transform: rotateY(180deg) translateZ(calc(var(--tam) / 2)); }
+.cara-2 { transform: rotateY(90deg) translateZ(calc(var(--tam) / 2)); }
+.cara-5 { transform: rotateY(-90deg) translateZ(calc(var(--tam) / 2)); }
+.cara-3 { transform: rotateX(90deg) translateZ(calc(var(--tam) / 2)); }
+.cara-4 { transform: rotateX(-90deg) translateZ(calc(var(--tam) / 2)); }
+.dado3d--atq .cara { background: radial-gradient(circle at 30% 25%, #ff7a6e, #c2342c 70%); color: #fff7ee; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15), inset -4px -6px 10px rgba(0, 0, 0, .2); }
+.dado3d--def .cara { background: radial-gradient(circle at 30% 25%, #ffffff, #e2d7c4 75%); color: #2c2140; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12), inset -4px -6px 10px rgba(0, 0, 0, .12); }
+.dado3d[role="button"] { cursor: pointer; }
+.dado3d[role="button"]:active .dado3d-cubo { transform: rotateX(-20deg) rotateY(24deg) var(--giro) scale(.92); }
+
+/* Tirar: los dados entran girando en 3D y caen en su cara */
+.risk-mesa--rodar .dado3d { animation: caer .9s cubic-bezier(.2, .9, .3, 1.15) both; }
+.risk-mesa--rodar .dado3d-cubo { animation: girar3d .9s cubic-bezier(.2, .8, .3, 1) both; }
+.risk-mesa--rodar .risk-duelo:nth-child(3) .dado3d, .risk-mesa--rodar .risk-duelo:nth-child(3) .dado3d-cubo { animation-delay: .1s; }
+.risk-mesa--rodar .risk-duelo:nth-child(4) .dado3d, .risk-mesa--rodar .risk-duelo:nth-child(4) .dado3d-cubo { animation-delay: .2s; }
+.risk-mesa--rodar .risk-duelo-centro { animation: aparecer .3s .9s both; }
+@keyframes caer {
+  0% { transform: translate(-70px, -50px) scale(.6); opacity: 0; }
+  60% { transform: translate(4px, 4px) scale(1.06); opacity: 1; }
+  100% { transform: none; }
+}
+@keyframes girar3d { from { transform: rotateX(-740deg) rotateY(560deg) rotateZ(180deg); } }
+@media (prefers-reduced-motion: reduce) { .risk-mesa--rodar .dado3d, .risk-mesa--rodar .dado3d-cubo, .risk-mesa--rodar .risk-duelo-centro { animation: none; } }
+
+.risk-mesa {
+  display: grid;
+  gap: 10px;
+  padding: 12px 10px 14px;
+  margin: 12px 0;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 50% 30%, #2f6b45, #17402a);
+  box-shadow: inset 0 0 0 3px rgba(242, 196, 107, .5), inset 0 8px 30px rgba(0, 0, 0, .4);
+}
+.risk-mesa-cabeza { display: grid; grid-template-columns: 24px 72px 1fr 72px; gap: 8px; text-align: center; font-size: .6rem; letter-spacing: .04em; white-space: nowrap; text-transform: uppercase; color: #e8f3ea; font-weight: 600; }
+.risk-mesa-cabeza span:first-child { grid-column: 2; }
+.risk-mesa-cabeza span:nth-child(2) { font-weight: 400; letter-spacing: .04em; text-transform: none; opacity: .75; }
+
+/* Un duelo por fila: dado del atacante · comparación · dado del defensor */
+.risk-duelo {
+  display: grid;
+  grid-template-columns: 24px 72px 1fr 72px;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 6px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, .22);
+  border: 2px solid transparent;
+  transition: background .3s, border-color .3s;
+}
+.risk-duelo--atq { border-color: var(--sangre); background: linear-gradient(90deg, rgba(216, 68, 60, .45), rgba(0, 0, 0, .2) 70%); }
+.risk-duelo--def { border-color: var(--papel); background: linear-gradient(270deg, rgba(251, 243, 228, .3), rgba(0, 0, 0, .2) 70%); }
+.risk-duelo--solo { opacity: .55; border-style: dashed; border-color: rgba(255, 255, 255, .25); }
+.risk-duelo-orden { display: grid; font-family: var(--serif); font-size: .9rem; color: var(--oro-claro); text-align: center; line-height: 1.1; }
+.risk-duelo-orden small { font-family: var(--sans); font-size: .55rem; letter-spacing: .02em; color: rgba(232, 243, 234, .75); }
+
+/* Flecha a la izquierda de las filas: de mayor (arriba) a menor (abajo) */
+.risk-mesa-filas { position: relative; display: grid; gap: 10px; padding-left: 22px; }
+.risk-mesa-flecha { position: absolute; left: 0; top: 4px; bottom: 4px; width: 16px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.risk-mesa-flecha b { writing-mode: vertical-rl; transform: rotate(180deg); font-size: .55rem; letter-spacing: .12em; text-transform: uppercase; color: var(--oro); font-weight: 700; }
+.risk-mesa-flecha i { flex: 1; width: 3px; border-radius: 3px; background: linear-gradient(var(--oro), rgba(242, 196, 107, .2)); position: relative; }
+.risk-mesa-flecha i::after { content: ""; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: rgba(242, 196, 107, .5); border-bottom: 0; }
+.risk-mesa-cabeza { padding-left: 22px; }
+.risk-duelo { grid-template-columns: 40px 64px 1fr 64px !important; }
+.risk-mesa-cabeza { grid-template-columns: 40px 64px 1fr 64px !important; }
+
+/* Simulador: cómo cayeron los dados antes de ordenarlos */
+.risk-sim-orden { margin: 12px 0 0; padding: 10px 12px; border-radius: 14px; background: rgba(242, 196, 107, .12); border: 1px solid rgba(242, 196, 107, .35); font-size: .86rem; color: var(--texto-suave); text-align: center; }
+.risk-sim-orden b { color: var(--oro-claro); }
+.risk-sim-orden--tirada { display: grid; gap: 6px; justify-items: center; }
+.risk-sim-cayeron { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; }
+.risk-sim-cayeron i { font-style: normal; font-size: .75rem; margin: 0 4px; }
+.risk-chip-dado { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; font-weight: 700; font-size: .9rem; }
+.risk-chip-dado--atq { background: #d8443c; color: #fff; }
+.risk-chip-dado--def { background: var(--papel); color: var(--tinta); }
+.risk-sim-resultado { margin-top: 12px; padding: 12px; border-radius: 16px; background: rgba(255, 255, 255, .06); }
+.risk-sim-resultado .risk-resultado { margin-top: 0; }
+.risk-duelo-dado { display: grid; place-items: center; transition: opacity .3s, filter .3s; }
+.risk-duelo-dado--pierde { opacity: .45; filter: grayscale(.6); }
+.risk-duelo-vacio { width: 54px; height: 54px; border-radius: 12px; border: 2px dashed rgba(255, 255, 255, .2); }
+.risk-duelo-centro { display: grid; justify-items: center; gap: 2px; text-align: center; }
+.risk-duelo-cuenta { font-family: var(--serif); font-size: 1.7rem; line-height: 1; color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, .4); white-space: nowrap; }
+.risk-duelo-cuenta i { font-size: .8rem; font-style: normal; opacity: .7; }
+.risk-duelo-quien { font-size: .66rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: rgba(0, 0, 0, .3); color: #fff; line-height: 1.25; }
+.risk-duelo--atq .risk-duelo-quien { background: var(--sangre); }
+.risk-duelo--def .risk-duelo-quien { background: var(--papel); color: var(--tinta); }
+.risk-duelo-nada { font-size: .72rem; color: rgba(232, 243, 234, .8); line-height: 1.3; }
+
+.risk-resultado { margin: 6px 0; text-align: center; font-family: var(--serif); font-size: 1.45rem; color: var(--oro-claro); }
+.risk-explica { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 4px; font-size: .86rem; }
+.risk-explica li { padding: 6px 10px; border-radius: 10px; border-left: 4px solid var(--papel); background: rgba(255, 255, 255, .06); }
+.risk-explica--atq { border-left-color: var(--sangre) !important; }
+.risk-nota { margin: 6px 0; font-size: .85rem; line-height: 1.5; color: var(--texto-suave); }
+.risk-nota b { color: var(--texto); }
+.risk-pista { margin: 0 0 10px; text-align: center; font-size: .82rem; color: var(--texto-suave); }
+
+/* Simulador */
+.risk-sim-controles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.risk-sim-controles .chips { justify-content: flex-start; }
+
+/* Probabilidades */
+.risk-prob { margin-top: 10px; display: grid; gap: 6px; }
+.risk-prob-fila { position: relative; display: flex; justify-content: space-between; padding: 9px 12px; border-radius: 10px; background: rgba(255, 255, 255, .06); overflow: hidden; font-size: .88rem; }
+.risk-prob-fila span, .risk-prob-fila b { position: relative; z-index: 1; }
+.risk-prob-fila i { position: absolute; left: 0; top: 0; bottom: 0; opacity: .45; }
+.risk-prob--atq i { background: var(--sangre); }
+.risk-prob--medio i { background: var(--oro); }
+.risk-prob--def i { background: var(--papel); }
+
+/* ---------- Escuela ---------- */
+.risk-pestañas { justify-content: center; }
+.risk-leccion {
+  margin: 4px 0 12px;
+  padding: 20px 18px 18px;
+  border-radius: 22px;
+  background: var(--papel);
+  color: var(--tinta);
+  line-height: 1.5;
+  font-size: .98rem;
+  box-shadow: 0 18px 40px rgba(10, 5, 30, .4), inset 0 0 0 6px var(--papel), inset 0 0 0 7.5px var(--oro);
+  animation: aparecer .25s ease-out;
+}
+.risk-leccion-arte { font-size: 3.4rem; text-align: center; line-height: 1; }
+.risk-leccion-paso { text-align: center; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-suave); margin-top: 8px; }
+.risk-leccion h3 { margin: 4px 0 10px; text-align: center; font-family: var(--serif); font-weight: normal; font-size: 1.6rem; }
+.risk-leccion ul, .risk-leccion ol { margin: 6px 0; padding-left: 22px; }
+.risk-leccion li { margin: 4px 0; }
+.risk-leccion p { margin: 8px 0; }
+.risk-leccion .risk-nota { color: var(--tinta-suave); }
+.risk-leccion .risk-nota b { color: var(--tinta); }
+.risk-leccion .risk-resultado { color: #8a3b2e; }
+.risk-leccion .risk-explica li { background: rgba(44, 33, 64, .06); border-left-color: rgba(44, 33, 64, .3); }
+.risk-puntos-pasos { display: flex; justify-content: center; gap: 6px; margin: 4px 0 12px; }
+.risk-puntos-pasos button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 0; background: rgba(255, 246, 213, .3); cursor: pointer; }
+.risk-puntos-pasos button.activo { background: var(--oro); transform: scale(1.3); }
+.risk-pasar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.risk-pasar .boton:disabled { opacity: .35; }
+.risk-nieve { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 8px 0; }
+.risk-nieve span { display: grid; justify-items: center; padding: 8px 4px; border-radius: 12px; background: rgba(242, 196, 107, .25); font-size: .72rem; text-align: center; }
+.risk-nieve span:nth-child(2) { background: rgba(242, 196, 107, .45); }
+.risk-nieve span:nth-child(3) { background: rgba(242, 196, 107, .7); }
+.risk-nieve span:nth-child(4) { background: var(--oro); }
+.risk-nieve b { font-family: var(--serif); font-weight: normal; font-size: 1.5rem; }
+.risk-unidades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; font-size: 2rem; }
+.risk-unidades span { display: grid; padding: 10px 4px; border-radius: 14px; background: rgba(242, 196, 107, .25); font-size: .8rem; }
+.risk-unidades i { font-style: normal; font-size: 2rem; line-height: 1.2; }
+.risk-unidades b { font-family: var(--serif); font-size: 1.6rem; font-weight: normal; }
+.risk-pasos li::marker { font-weight: 700; color: #8a3b2e; }
+
+.risk-contador { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 10px 0; }
+.risk-contador > span { font-weight: 600; }
+.risk-contador .ajuste-paso { flex: none; width: 170px; }
+.risk-cuantos { margin: 14px 0; padding: 16px; border-radius: 18px; background: rgba(255, 246, 213, .1); text-align: center; }
+.risk-cuantos > b { display: block; font-family: var(--serif); font-weight: normal; font-size: 2.4rem; color: var(--oro-claro); }
+.risk-cuantos p { margin: 6px 0 12px; line-height: 1.45; color: var(--texto-suave); }
+
+.risk-pregunta { line-height: 1.45; text-align: center; }
+.risk-opciones { display: grid; gap: 8px; margin: 8px 0; }
+.risk-opcion { padding: 14px; font-size: 1rem; font-weight: 600; color: var(--texto); background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 246, 213, .3); }
+.risk-opcion:disabled { opacity: .55; }
+.risk-opcion--bien { background: #3aa05a; border-color: #3aa05a; opacity: 1 !important; }
+.risk-opcion--mal { background: var(--sangre); border-color: var(--sangre); opacity: 1 !important; }
+.risk-veredicto { margin: 8px 0 0; text-align: center; font-size: 1.3rem; font-weight: 700; }
+.risk-veredicto--bien { color: #7be09a; }
+.risk-veredicto--mal { color: #ff9c90; }
+
+.risk-tabla-cartas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+.risk-tabla-cartas div { display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; overflow: hidden; border: 2px solid rgba(255, 246, 213, .2); }
+.risk-tabla-cartas span, .risk-tabla-cartas b { padding: 10px 4px; text-align: center; font-size: 1.15rem; }
+.risk-tabla-cartas span { background: #2aa9e8; color: #fff; font-weight: 700; }
+.risk-tabla-cartas b { background: #8a8a8a; color: #fff; }
+
+/* ---------- Paneles: equipo y ajustes ---------- */
+.risk-continentes { display: grid; gap: 8px; margin-top: 10px; }
+.risk-continente {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  font: inherit;
+  text-align: left;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 246, 213, .2);
+  background: rgba(255, 255, 255, .06);
+  color: var(--texto);
+  cursor: pointer;
+}
+.risk-continente-texto { flex: 1; display: grid; }
+.risk-continente small { color: var(--texto-suave); font-size: .8rem; }
+.risk-continente-simbolo { font-size: 1.8rem; }
+.risk-continente-marca { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 246, 213, .3); }
+.risk-continente--suyo { background: var(--papel); color: var(--tinta); border-color: var(--equipo); box-shadow: inset 6px 0 0 var(--equipo); }
+.risk-continente--suyo small { color: var(--tinta-suave); }
+.risk-continente--suyo .risk-continente-marca { background: var(--oro); border-color: var(--oro); }
+
+.ajuste > .ajuste-paso { margin-bottom: 4px; }
+.risk-mapas { justify-content: flex-start; margin-bottom: 10px; }
+.risk-cont-editar { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.risk-cont-nombre { flex: 1; }
+.risk-cont-editar .risk-nombre { flex: 1; min-width: 0; padding: 8px 10px; }
+.risk-simbolo { width: 46px; flex: none; font: inherit; font-size: 1.2rem; text-align: center; padding: 6px; border-radius: 10px; border: 1px solid rgba(255, 246, 213, .3); background: rgba(255, 255, 255, .08); color: var(--texto); }
+.risk-bono { flex: none; width: 120px; }
+.risk-quitar-cont { width: 36px; height: 36px; font-size: 1rem; }
+.risk-nombre-mapa { margin-bottom: 8px; font-family: var(--serif); font-size: 1.1rem; }
+.risk-ajuste-botones { display: grid; gap: 8px; margin-top: 18px; }
+.risk-ajuste-botones + .risk-ajuste-botones { margin-top: 8px; }
+
+/* ---------- Tarjeta del turno: el color del equipo, con el resplandor de la cuenta regresiva ---------- */
+.risk .risk-turno {
+  padding: 0 14px 16px;
+  color: #f3f7f1;
+  background:
+    radial-gradient(circle at 50% 32%, color-mix(in srgb, var(--equipo) 65%, transparent), transparent 62%),
+    linear-gradient(170deg, color-mix(in srgb, var(--equipo) 30%, var(--noche)), var(--noche));
+  box-shadow:
+    0 0 36px color-mix(in srgb, var(--equipo) 65%, transparent),
+    0 18px 40px rgba(10, 5, 30, .5),
+    inset 0 0 0 3px var(--equipo),
+    inset 0 0 30px rgba(0, 0, 0, .3);
+}
+.risk .risk-turno.reloj--fin { box-shadow: 0 0 0 4px var(--coral), 0 0 36px color-mix(in srgb, var(--equipo) 65%, transparent), inset 0 0 0 3px var(--equipo); }
+.risk-turno .risk-turno-cabeza { margin: 0 -14px 4px; border-bottom: 2px solid color-mix(in srgb, var(--equipo) 60%, #fff); }
+.risk-turno .reloj-arena { background: rgba(242, 196, 107, .14); }
+
+.risk-turno .risk-tropas { margin: 10px 0 8px; align-items: center; }
+.risk-turno .risk-tropas small { color: rgba(232, 243, 234, .8); }
+.risk-tropas-num {
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 3.4rem !important;
+  color: var(--noche) !important;
+  background: radial-gradient(circle at 35% 30%, var(--oro-claro), var(--oro) 70%);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, .25), 0 0 30px rgba(242, 196, 107, .45);
+}
+
+.risk-turno .risk-desglose { display: grid; gap: 6px; }
+.risk-turno .risk-desglose li { border-top: 0; }
+.risk-fila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px !important;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .25);
+  border: 2px solid transparent;
+}
+.risk-fila-simbolo { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: rgba(255, 255, 255, .1); font-size: 1.2rem; }
+.risk-fila-texto { flex: 1; display: grid; font-weight: 600; line-height: 1.2; }
+.risk-fila-texto small { font-weight: 400; font-size: .72rem; color: rgba(232, 243, 234, .75) !important; }
+.risk-fila-tropas { font-family: var(--serif); font-size: 1.3rem; font-weight: normal; padding: 2px 10px; border-radius: 999px; background: rgba(255, 255, 255, .12); }
+.risk-fila--cont { border-color: rgba(242, 196, 107, .5); }
+.risk-fila--ahora { border-color: var(--oro); background: linear-gradient(90deg, rgba(242, 196, 107, .35), rgba(0, 0, 0, .25) 70%); color: #fff !important; }
+.risk-fila--ahora .risk-fila-tropas, .risk-fila--venta .risk-fila-tropas, .risk-fila--cont .risk-fila-tropas { background: var(--oro); color: var(--noche); }
+.risk-fila--venta { border-color: #2aa9e8; }
+.risk-fila--venta .risk-fila-simbolo { background: #2aa9e8; color: #fff; }
+.risk-turno .risk-quitar { color: rgba(232, 243, 234, .8); }
+
+.risk-turno .risk-fase { color: rgba(232, 243, 234, .8); }
+.risk-turno .risk-fase--activa { color: var(--noche); background: var(--oro); }
+.risk-turno .risk-cartas { border-top-color: rgba(242, 196, 107, .35); color: rgba(232, 243, 234, .85); }
+.risk-turno .risk-cartas b { color: var(--oro-claro); }
+.risk-turno .risk-cartas .chip { color: #fff; border-color: rgba(255, 255, 255, .35); }
+.risk-turno .risk-cartas .chip--activo { color: var(--noche); border-color: var(--oro); }
+.risk-turno .risk-venta-op { background: rgba(0, 0, 0, .25); color: #fff; border-color: rgba(255, 255, 255, .25); }
+.risk-turno .risk-venta-op span { color: #7cd0f7; }
+.risk-turno .risk-venta-op--activa { background: var(--oro); color: var(--noche); }
+.risk-turno .risk-venta-op--activa span { color: var(--noche); }
+.risk-turno .risk-accion--suave { background: rgba(255, 255, 255, .85); }
+
+/* Filas de turnos con el mismo aire de mesa */
+.risk-equipo { background: rgba(0, 0, 0, .22); }
+.risk-equipo--turno { background: linear-gradient(90deg, color-mix(in srgb, var(--equipo) 35%, transparent), rgba(0, 0, 0, .2) 75%); }
+
+/* ---------- Preparar: elegir ejércitos y ordenarlos ---------- */
+.risk-preparar .risk-subtitulo small { text-transform: none; letter-spacing: 0; color: var(--tinta-suave); }
+.risk-colores { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.risk-color {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: .95rem;
+  text-align: left;
+  color: var(--tinta);
+  border-radius: 14px;
+  border: 2px solid rgba(44, 33, 64, .15);
+  background: #fff;
+  cursor: pointer;
+}
+.risk-color-muestra {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--equipo);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .15);
+  font-family: var(--serif);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+.risk-color--elegido { border-color: var(--equipo); background: color-mix(in srgb, var(--equipo) 18%, #fff); font-weight: 700; }
+.risk-color:not(.risk-color--elegido) { opacity: .75; }
+
+.risk-orden { list-style: none; margin: 4px 0 12px; padding: 0; display: grid; gap: 8px; text-align: left; }
+.risk-orden-fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(44, 33, 64, .15);
+  border-left: 6px solid var(--equipo);
+}
+.risk-orden-fila.risk-lista--empieza { background: color-mix(in srgb, var(--oro) 30%, #fff); }
+.risk-orden-num { flex: none; width: 26px; text-align: center; font-family: var(--serif); font-size: 1.3rem; color: var(--tinta); }
+.risk-orden-mover { flex: none; display: grid; gap: 2px; }
+.risk-orden-mover .boton-icono { width: 34px; height: 30px; font-size: .9rem; color: var(--tinta); background: rgba(44, 33, 64, .07); border-radius: 8px; }
+.risk-orden-mover .boton-icono:disabled { opacity: .25; }
+.risk-orden-cuerpo { flex: 1; min-width: 0; display: grid; gap: 6px; }
+.risk-orden-linea { display: flex; align-items: center; gap: 8px; }
+.risk-orden-linea .risk-nombre { flex: 1; min-width: 0; padding: 7px 10px; color: var(--tinta); background: #fff; border-color: rgba(44, 33, 64, .2); }
+.risk-orden-linea .chip { font-size: .75rem; padding: 4px 10px; }
+.risk-orden-quitar { margin-left: auto; font: inherit; font-size: .75rem; padding: 4px 8px; border: 0; background: none; color: #8a3b2e; cursor: pointer; }
+.risk-nota-oscura { color: var(--tinta-suave); font-size: .9rem; }
+
+/* Cuenta regresiva: darle 20 s más al equipo anterior */
+.risk-cuenta-extra {
+  width: min(100%, 380px);
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 12px 16px;
+  border-color: var(--equipo) !important;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--equipo) 45%, transparent);
+}
+.risk-cuenta-extra small { font-size: .75rem; color: var(--texto-suave); font-weight: 400; }
