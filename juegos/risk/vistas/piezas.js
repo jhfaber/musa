@@ -1,5 +1,6 @@
 // Piezas de pantalla que comparten las vistas de Risk: dados en 3D, la mesa de una tirada y probabilidades.
 import { probabilidades, explicarPareja, frase } from '../logica/dados.js';
+import { ordenTurnos, estadisticas, equipoActual, totalReclamo, proximoReclamo, continentesDeEquipo } from '../logica/reglas.js';
 
 // Texto seguro dentro del HTML (nombres que escribe la gente)
 export const esc = t => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -72,3 +73,49 @@ export const barrasProb = (na, nd) => `
 // Selector de números como fichas (1, 2, 3…): data-ui="<ui>" data-n="<n>"
 export const fichas = (valores, activo, ui, etiqueta = n => n) => `
   <div class="chips">${valores.map(n => `<button class="chip ${n === activo ? 'chip--activo' : ''}" data-ui="${ui}" data-n="${n}">${etiqueta(n)}</button>`).join('')}</div>`;
+
+// "3 turnos · 52 tropas": lo que lleva un equipo en la partida
+export function resumenEquipo(eq) {
+  const { jugados, reclamadas } = estadisticas(eq);
+  return `${jugados} ${jugados === 1 ? 'turno' : 'turnos'} · ${reclamadas} tropas`;
+}
+
+// Cola de turnos: todos los equipos en el orden en que van a jugar (con los que recuperan su turno)
+// y al final los ausentes. Cada fila: lugar, nombre, lo que lleva, sus continentes y las tropas que va a reclamar.
+// desde: 0 = empieza en el que juega; 1 = en el que sigue. tocable: cada fila abre su panel de continentes.
+export function colaTurnos(p, aj, { desde = 0, titulo = 'Orden de los turnos', tocable = false } = {}) {
+  const orden = ordenTurnos(p, aj).slice(desde);
+  const ausentes = p.equipos.filter(e => e.ausente);
+  const estado = (eq, lugar) => {
+    if (eq.ausente) return 'ausente';
+    if (lugar === 0) return 'juega ahora';
+    const recupera = p.pendientes.includes(eq.id) ? ' · recupera su turno' : '';
+    return (lugar === 1 ? 'sigue · ¡prepárense!' : `${lugar + 1}.º en jugar`) + recupera;
+  };
+  const fila = (eq, lugar) => {
+    const conts = continentesDeEquipo(p, aj, eq);
+    const tropas = eq === equipoActual(p) ? totalReclamo(p, aj) : proximoReclamo(p, aj, eq);
+    const clase = eq.ausente ? 'risk-cola--ausente' : lugar === 0 ? 'risk-cola--ahora' : lugar === 1 ? 'risk-cola--sigue' : '';
+    const cuerpo = `
+      <span class="risk-cola-num">${eq.ausente ? '💤' : lugar + 1}</span>
+      <span class="risk-cola-nombre">
+        <b>${punto(eq.color)} ${esc(eq.nombre)}</b>
+        <em>${estado(eq, lugar)}</em>
+        <em>${resumenEquipo(eq)}</em>
+        ${conts.length ? `<em class="risk-cola-conts">${conts.map(c => `${c.simbolo} ×${c.mult}`).join('  ')}</em>` : ''}
+      </span>
+      ${eq.ausente ? '' : `<span class="risk-cola-tropas"><b>${tropas}</b><small>${lugar === 0 ? 'reclama' : 'reclamará'}</small></span>`}`;
+    return `
+      <li class="${clase}" style="--equipo: ${eq.color}">
+        ${tocable ? `<button class="risk-cola-fila" data-ui="equipo" data-equipo="${eq.id}" aria-label="${esc(eq.nombre)}: continentes y estado">${cuerpo}</button>`
+          : `<div class="risk-cola-fila">${cuerpo}</div>`}
+        ${eq.ausente && tocable ? `<button class="risk-accion risk-volvio" data-accion="volvio" data-equipo="${eq.id}">↩ Volvió</button>` : ''}
+      </li>`;
+  };
+  return `
+    <section class="risk-cola" aria-label="${titulo}">
+      <div class="risk-subtitulo">${titulo}</div>
+      <ol>${orden.map((eq, i) => fila(eq, i + desde)).join('')}${ausentes.map(eq => fila(eq, null)).join('')}</ol>
+      ${tocable ? '<p class="risk-nota risk-cola-pista">Toca un equipo para darle o quitarle continentes, o marcarlo ausente.</p>' : ''}
+    </section>`;
+}

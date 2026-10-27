@@ -1,9 +1,11 @@
-/* Risk: mismo sistema visual de Musa con fondo rojo brasa. Lo compartido está en comun/base.css */
+/* Risk: mismo sistema visual de Musa. El fondo es oscuro y neutro, con un matiz del color del equipo en turno
+   (--equipo-turno lo pone risk.js; sin partida queda gris azulado). Lo compartido está en comun/base.css */
 body[data-juego="risk"] {
-  --noche: #1f0b10;
-  --violeta: #561a20;
-  --malva: #8f3b28;
-  --velo-controles: rgba(40, 11, 16, .86);
+  --tono: var(--equipo-turno, #4a5068);
+  --noche: color-mix(in srgb, var(--tono) 14%, #0e0e14);
+  --violeta: color-mix(in srgb, var(--tono) 32%, #16161e);
+  --malva: color-mix(in srgb, var(--tono) 52%, #20202a);
+  --velo-controles: color-mix(in srgb, var(--noche) 88%, transparent);
   --sangre: #d8443c;
 }
 
@@ -99,8 +101,9 @@ body[data-juego="risk"] {
 
 .risk-fase { position: relative; z-index: 1; margin-top: 10px; font-size: .78rem; color: var(--tinta-suave); display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
 .risk-fase--activa { color: var(--tinta); font-weight: 700; background: rgba(242, 196, 107, .5); padding: 1px 8px; border-radius: 999px; }
-.risk-turno .reloj-boton { margin-top: 10px; font-size: 1.05rem; padding: 11px 22px; }
-.risk-turno .reloj-cuenta { font-size: 1.2rem; }
+/* El reloj del turno: centrado y algo más grande que el de Dixit */
+.risk-turno .reloj-boton { margin-top: 12px; padding: 11px 24px; font-size: 1.1rem; box-shadow: 0 4px 14px rgba(0, 0, 0, .28), 0 0 16px rgba(242, 196, 107, .3); }
+.risk-turno .reloj-cuenta { font-size: 1.5rem; }
 
 /* Urgencia: ámbar en el último tercio, rojo latiendo en los últimos 15 s (el latido viene de base.css) */
 .risk-turno.reloj--medio .reloj-arena { background: rgba(233, 160, 60, .3); }
@@ -614,3 +617,61 @@ body[data-juego="risk"] {
   box-shadow: 0 0 18px color-mix(in srgb, var(--equipo) 45%, transparent);
 }
 .risk-cuenta-extra small { font-size: .75rem; color: var(--texto-suave); font-weight: 400; }
+
+/* ---------- Cola de turnos: todos los equipos en orden ---------- */
+.risk-cola { width: 100%; }
+.risk-cola .risk-subtitulo { text-align: center; margin: 4px 0 8px; }
+.risk-cola ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.risk-cola li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .22);
+  border-left: 5px solid var(--equipo);
+  color: var(--texto);
+}
+.risk-cola li b { font-weight: 600; }
+.risk-cola-num { flex: none; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 246, 213, .12); font-family: var(--serif); font-size: .9rem; color: var(--oro-claro); }
+.risk-cola--ahora { background: linear-gradient(90deg, color-mix(in srgb, var(--equipo) 45%, transparent), rgba(0, 0, 0, .2) 80%) !important; box-shadow: 0 0 16px color-mix(in srgb, var(--equipo) 35%, transparent); }
+.risk-cola--ahora .risk-cola-num { background: var(--oro); color: var(--noche); font-weight: 700; }
+.risk-cola--ausente { opacity: .55; border-left-style: dashed; }
+.risk-cuenta .risk-cola { width: min(100%, 380px); text-align: left; }
+
+/* ---------- Vender cartas: sección fija en la tarjeta del turno ---------- */
+.risk-venta { position: relative; z-index: 1; margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, .3); text-align: left; }
+.risk-venta-titulo { margin: 0; font-family: var(--serif); font-weight: normal; font-size: 1.1rem; color: var(--oro-claro); }
+.risk-venta-ayuda { margin: 2px 0 8px; font-size: .78rem; line-height: 1.35; color: rgba(243, 247, 241, .8); }
+.risk-turno .risk-venta-tabla { margin-top: 0; }
+
+/* Cola de turnos: nombre con lo que lleva (turnos jugados · tropas reclamadas) */
+.risk-cola-nombre { display: grid; min-width: 0; }
+.risk-cola-nombre em { font-style: normal; font-size: .72rem; color: var(--texto-suave); }
+.risk-cola--ahora .risk-cola-nombre em:first-of-type, .risk-cola--sigue .risk-cola-nombre em:first-of-type { font-weight: 700; }
+
+/* Cola de turnos = lista de equipos: cada fila se toca para sus continentes */
+.risk-cola li { padding: 0; display: flex; align-items: center; gap: 6px; }
+.risk-cola-fila {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  background: none;
+  border: 0;
+}
+button.risk-cola-fila { cursor: pointer; }
+.risk-cola-nombre { flex: 1; display: grid; gap: 1px; }
+.risk-cola-nombre em:first-of-type { color: var(--oro-claro); font-size: .7rem; letter-spacing: .04em; }
+.risk-cola-conts { color: var(--texto) !important; font-size: .82rem !important; }
+.risk-cola-tropas { flex: none; display: grid; justify-items: end; }
+.risk-cola-tropas b { font-family: var(--serif); font-weight: normal; font-size: 1.7rem; line-height: 1; color: var(--oro-claro); }
+.risk-cola-tropas small { font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
+.risk-cola--ahora .risk-cola-tropas b { color: #fff; }
+.risk-cola .risk-volvio { margin-right: 8px; }
+.risk-cola-pista { text-align: center; font-size: .78rem; }

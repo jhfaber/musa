@@ -7,7 +7,7 @@ No toca la red de la casa ni ningún dispositivo: es solo HTML/CSS/JS estático.
 - `comun/`: lo compartido por todos los juegos (base.css, app.js, guardar.js, panel.js, reloj.js, ui.js). No sabe de ningún juego.
 - `juegos/<id>/`: cada juego con su JS, su CSS y sus datos. Se registra en `juegos/juegos.json` (de ahí lo
   cargan el inicio, el service worker y `publicar.js`).
-- Mismo sistema visual en todos; cada juego solo cambia sus colores con `body[data-juego="<id>"]` (Risk: rojo brasa).
+- Mismo sistema visual en todos; cada juego solo cambia sus colores con `body[data-juego="<id>"]` (Risk: fondo neutro con el matiz del equipo en turno).
 
 ## Forma de trabajo: SDD (Spec-Driven Development)
 - Nada se implementa sin una spec aprobada en `specs/` (ver `specs/README.md`).

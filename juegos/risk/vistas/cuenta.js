@@ -1,6 +1,6 @@
 // Cuenta regresiva entre turnos: toda la pantalla con el color del equipo que sigue (10, 9, 8…).
 import { equipoActual, equipoPorId, esUltimaRonda, totalReclamo, restanteCuenta, PRORROGA } from '../logica/reglas.js';
-import { esc, punto } from './piezas.js';
+import { esc, punto, colaTurnos } from './piezas.js';
 
 let capa = null;
 
@@ -29,7 +29,8 @@ function html(p, aj, ahora) {
     ${anterior && p.deshacer.length ? `
       <button class="boton boton--secundario risk-cuenta-extra" data-accion="prorroga" style="--equipo: ${anterior.color}">
         ${punto(anterior.color)} +${PRORROGA} s al ${esc(anterior.nombre)} <small>Usalos sabiamente</small>
-      </button>` : ''}`;
+      </button>` : ''}
+    ${colaTurnos(p, aj, { desde: 1, titulo: 'Después juegan' })}`;
 }
 
 // Dibuja, actualiza o quita la capa según la partida. alClic recibe los clics de la capa.

@@ -1,6 +1,6 @@
 // Fin de la partida: celebración con fuegos artificiales y estrellas en los colores de los equipos.
 import { continentesDeEquipo } from '../logica/reglas.js';
-import { esc, punto } from './piezas.js';
+import { esc, punto, resumenEquipo } from './piezas.js';
 
 let animacion = 0;
 
@@ -17,6 +17,7 @@ export function pintarFin(p, aj) {
         ${p.equipos.map(eq => {
           const suyos = continentesDeEquipo(p, aj, eq);
           return `<li style="--equipo: ${eq.color}">${punto(eq.color)} <b>${esc(eq.nombre)}</b>
+            <small>${resumenEquipo(eq)}</small>
             <small>${suyos.length ? suyos.map(c => `${c.simbolo} ${esc(c.nombre)}`).join(' · ') : 'Sin continentes'}</small></li>`;
         }).join('')}
       </ul>

@@ -1,6 +1,6 @@
 // Pruebas de la lógica de Risk (sin navegador). Uso: node herramientas/probar-risk.mjs
 import assert from 'node:assert/strict';
-import { aplicar, AJUSTES_BASE, COLORES, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
+import { aplicar, AJUSTES_BASE, COLORES, estadisticas, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
 import { mapasIniciales, crearMapa, agregarContinente, editarContinente, migrarMapas } from '../juegos/risk/logica/mapas.js';
 import { resolver, frase, probabilidades, dadosAtaque, dadosDefensa } from '../juegos/risk/logica/dados.js';
 
@@ -223,6 +223,24 @@ prueba('hasta 10 equipos: todos juegan una vez por ronda', () => {
   assert.equal(equipoActual(p).id, 'cafe');
   hacer('siguiente');
   assert.equal(p.ronda, 2);
+});
+
+prueba('cuenta turnos jugados y tropas reclamadas; ↶, +20 s y "se fue" no cuentan de más', () => {
+  hacer('nueva');
+  hacer('empezar', { equipos, inicio: 0 });
+  hacer('continente', { cont: 'asia', equipo: 'azul' });   // Azul reclama 7 + 7 = 14
+  turnoCompleto();                                         // termina Azul
+  assert.deepEqual(estadisticas(p.equipos[0]), { jugados: 1, reclamadas: 14 });
+  hacer('prorroga');                                       // Azul vuelve 20 s
+  pasar(21);                                               // y termina otra vez
+  assert.deepEqual(estadisticas(p.equipos[0]), { jugados: 1, reclamadas: 14 });
+  hacer('cuentaYa');
+  hacer('ausente', { equipo: 'rojo' });                    // Rojo se va en su turno: no cuenta
+  assert.equal(estadisticas(p.equipos[1]).jugados, 0);
+  hacer('cuentaYa');
+  hacer('siguiente');                                      // termina Verde
+  hacer('deshacer');                                       // ↶: vuelve al turno de Verde
+  assert.equal(estadisticas(p.equipos[2]).jugados, 0);
 });
 
 prueba('dados según fichas: 4 fichas atacan con 3, 1 ficha no ataca', () => {

@@ -102,6 +102,9 @@ export function proximoReclamo(p, aj, eq) {
   return total;
 }
 
+// Turnos que ha terminado y tropas que ha reclamado en toda la partida
+export const estadisticas = eq => ({ jugados: eq.jugados || 0, reclamadas: eq.reclamadas || 0 });
+
 export const continentesDeEquipo = (p, aj, eq) => continentes(p, aj)
   .filter(c => p.dominio[c.id] && p.dominio[c.id].equipo === eq.id)
   .map(c => ({ ...c, mult: Math.max(1, p.dominio[c.id].turnos) }));
@@ -166,8 +169,8 @@ function irse(p, aj, ahora, id) {
   e.debe = base.ronda;
   base.pendientes = base.pendientes.filter(x => x !== id);
   if (base === p) p.cuenta = null; // primer turno de la partida: no hay a dónde volver
-  if (base !== p && equipoActual(base).id === id) return siguienteTurno(base, aj, ahora, false, false);
-  return siguienteTurno(base, aj, ahora, false, base !== p);
+  if (base !== p && equipoActual(base).id === id) return siguienteTurno(base, aj, ahora, false, false, false);
+  return siguienteTurno(base, aj, ahora, false, base !== p, base !== p);
 }
 
 // Vuelve: si se saltó su turno en esta ronda, lo juega justo después del equipo que está jugando.
@@ -226,10 +229,16 @@ function volverAtras(p, aj) {
   return { ...anterior, deshacer: pila, cuenta: null, terminada: false, reloj: { estado: 'espera', terminaEn: 0, restante: null } };
 }
 
-// guardar = false cuando el estado ya viene de deshacer (para no guardar dos veces el mismo punto)
-function siguienteTurno(p, aj, ahora, porTiempo, guardar = true) {
-  const anterior = equipoActual(p).id;
+// guardar = false cuando el estado ya viene de deshacer (para no guardar dos veces el mismo punto).
+// contar = false cuando el equipo en turno no jugó (se fue antes de terminar).
+function siguienteTurno(p, aj, ahora, porTiempo, guardar = true, contar = true) {
+  const anterior = equipoActual(p);
   if (guardar) guardarDeshacer(p);
+  // El turno que termina cuenta para el equipo (después de guardar el punto de deshacer, así ↶ o +20 s no lo cuentan dos veces)
+  if (contar) {
+    anterior.jugados = (anterior.jugados || 0) + 1;
+    anterior.reclamadas = (anterior.reclamadas || 0) + totalReclamo(p, aj);
+  }
   avanzar(p, aj);
   if (p.terminada) {
     p.cuenta = null;
@@ -237,7 +246,7 @@ function siguienteTurno(p, aj, ahora, porTiempo, guardar = true) {
     return p;
   }
   prepararTurno(p, aj);
-  abrirCuenta(p, aj, ahora, { anterior, porTiempo });
+  abrirCuenta(p, aj, ahora, { anterior: anterior.id, porTiempo });
   return p;
 }
 
@@ -304,7 +313,7 @@ function noLoTenia(p, contId) {
 
 export function crearPartida({ equipos, inicio = 0, mapa = MAPA_NORMAL }, aj, ahora) {
   const p = {
-    v: 2, mapa, equipos: equipos.map(e => ({ ...e, ausente: false, debe: null })), inicio, turno: inicio, cursor: inicio,
+    v: 2, mapa, equipos: equipos.map(e => ({ ...e, ausente: false, debe: null, jugados: 0, reclamadas: 0 })), inicio, turno: inicio, cursor: inicio,
     ronda: 1, pendientes: [], terminada: false, dominio: {}, deshacer: [], cuenta: null
   };
   prepararTurno(p, aj);

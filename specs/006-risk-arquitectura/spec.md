@@ -106,6 +106,21 @@ Paño verde con borde dorado, tropas en un círculo dorado y cada fuente de trop
 - En la **cuenta regresiva entre turnos**: botón **+20 s al equipo anterior** (vuelve a su turno con 20 segundos para
   reubicar o si algo pasó; al acabarse sigue la cuenta del siguiente).
 
+- Debajo de *Siguiente →* (y en la cuenta regresiva, "Después juegan") se ve **la cola completa de turnos**:
+  quién juega, quién sigue, 3.º, 4.º… (con "recupera su turno") y al final los ausentes.
+- **Vender cartas** ya no es un botón: es una sección fija de la tarjeta con su título, una breve explicación y
+  las 9 opciones de estrellas → tropas.
+
+- En la cola de turnos (y al final) cada equipo muestra **turnos jugados · tropas reclamadas** en la partida.
+  Un turno cuenta al terminar; ↶, +20 s y "se fue" no lo cuentan de más.
+
+- La **cola de turnos es también la lista de equipos**: cada fila se toca para darle o quitarle continentes (o
+  marcarlo ausente) y muestra su estado, turnos y tropas de la partida, sus continentes ×n y **las tropas que
+  reclama/reclamará** en su turno. Se quitó la lista aparte de equipos.
+
+- **Colores de la pantalla**: el rojo brasa se cambió por un fondo oscuro neutro que toma **un matiz del color del
+  equipo en turno** (azul, verde, amarillo…); sin partida queda gris azulado.
+
 ## Venta de cartas (tabla del reglamento, pedida el 27-oct-2026)
 
 | ★ estrellas | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |

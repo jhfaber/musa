@@ -2,9 +2,9 @@
 // Flujo en una sola dirección: toque → acción → almacen.despachar → reglas.aplicar → guardar → pintar.
 // Ver specs/006-risk-arquitectura/spec.md.
 import { crearAlmacen } from './almacen.js';
-import { vencido } from './logica/reglas.js';
+import { vencido, equipoActual } from './logica/reglas.js';
 import * as efectos from './efectos.js';
-import { pintarTablero, actualizarReloj, ui as uiTablero } from './vistas/tablero.js';
+import { pintarTablero, actualizarReloj } from './vistas/tablero.js';
 import { pintarCuenta, actualizarCuenta, quitarCuenta } from './vistas/cuenta.js';
 import { pintarPreparar, datosPartida, alTocar as tocarPreparar, alEscribir } from './vistas/preparar.js';
 import { pintarFin, lanzarFuegos, detenerFuegos } from './vistas/fin.js';
@@ -19,10 +19,20 @@ const enRisk = () => location.hash === '#risk' && contenedor;
 
 // ---------- Pintar según el estado ----------
 
+// Toda la pantalla toma un matiz del color del equipo en turno
+function pintarTono(p) {
+  const color = p && !p.terminada ? equipoActual(p).color : null;
+  if (color) document.body.style.setProperty('--equipo-turno', color);
+  else document.body.style.removeProperty('--equipo-turno');
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = '#121218'; // barra del celular: oscuro neutro
+}
+
 function pintar() {
   if (!enRisk()) return;
   const p = almacen.partida;
   const aj = almacen.ajustes;
+  pintarTono(p);
   detenerFuegos();
   if (!p) contenedor.innerHTML = pintarPreparar(aj);
   else if (p.terminada) {
@@ -77,7 +87,6 @@ function pedirNueva(boton) {
 // Botones de pantalla (data-ui): abren paneles o cambian lo que se ve, no la partida
 const accionesUi = {
   equipo: b => abrirEquipo(almacen, b.dataset.equipo),
-  venta: () => { uiTablero.venta = !uiTablero.venta; pintar(); },
   nueva: pedirNueva,
   ajustes: irAjustes,
   empezar: () => almacen.despachar({ tipo: 'empezar', ...datosPartida(almacen.ajustes) })
@@ -88,7 +97,6 @@ function clic(evento) {
   if (!b || b.disabled) return;
   if (b.dataset.accion) {
     const { accion, ...datos } = b.dataset;
-    if (accion === 'venta') uiTablero.venta = false;
     return almacen.despachar({ tipo: accion, ...datos });
   }
   if (accionesUi[b.dataset.ui]) return accionesUi[b.dataset.ui](b);
@@ -113,7 +121,13 @@ function abrir(elemento, barra) {
 
 // Al salir de Risk se quitan la capa de la cuenta y los fuegos
 window.addEventListener('hashchange', () => {
-  if (location.hash !== '#risk') { quitarCuenta(); detenerFuegos(); }
+  if (location.hash !== '#risk') {
+    quitarCuenta();
+    detenerFuegos();
+    document.body.style.removeProperty('--equipo-turno');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = '#1b1446';
+  }
 });
 
 Musa.registrar({

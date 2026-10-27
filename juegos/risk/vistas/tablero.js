@@ -1,12 +1,9 @@
-// Tablero de la partida: la carta del turno (tropas y reloj) y la lista de turnos.
+// Tablero de la partida: la carta del turno (tropas, reloj, vender cartas) y la cola de turnos.
 // Solo dibuja: los botones llevan data-accion (cambian la partida) o data-ui (abren paneles).
 import {
-  equipoActual, esUltimaRonda, partesReclamo, totalReclamo, proximoReclamo, ordenTurnos,
-  continentesDeEquipo, duracion, restanteReloj, VENTA_CARTAS
+  equipoActual, esUltimaRonda, partesReclamo, totalReclamo, duracion, restanteReloj, VENTA_CARTAS
 } from '../logica/reglas.js';
-import { esc, punto } from './piezas.js';
-
-export const ui = { venta: false };
+import { esc, punto, colaTurnos } from './piezas.js';
 
 function desglose(p, aj) {
   const d = partesReclamo(p, aj);
@@ -26,48 +23,23 @@ function desglose(p, aj) {
   ].join('');
 }
 
+// Vender cartas: siempre a la vista, con la tabla de estrellas → tropas
 function venta(p) {
-  if (!ui.venta) return '';
   const actual = p.reclamo.venta;
   return `
-    <div class="risk-venta-tabla" role="group" aria-label="Vender cartas: estrellas y tropas">
-      ${Object.entries(VENTA_CARTAS).map(([estrellas, tropas]) => `
-        <button class="risk-venta-op ${Number(estrellas) === actual ? 'risk-venta-op--activa' : ''}" data-accion="venta" data-estrellas="${estrellas}">
-          <span>★ ${estrellas}</span><b>${tropas}</b></button>`).join('')}
-    </div>`;
-}
-
-// Una fila de la lista de turnos. lugar: 0 = juega ahora, 1 = sigue, 2… ; null = ausente
-function filaEquipo(p, aj, eq, lugar) {
-  const suyos = continentesDeEquipo(p, aj, eq);
-  const etiqueta = eq.ausente ? '💤 Ausente'
-    : lugar === 0 ? 'Juega ahora'
-    : p.pendientes.includes(eq.id) ? `${lugar === 1 ? 'Sigue' : `${lugar + 1}.º`} · recupera su turno`
-    : lugar === 1 ? 'Sigue' : `${lugar + 1}.º`;
-  return `
-    <div class="risk-equipo ${lugar === 0 ? 'risk-equipo--turno' : ''} ${eq.ausente ? 'risk-equipo--ausente' : ''}" style="--equipo: ${eq.color}">
-      <span class="risk-equipo-lugar">${eq.ausente ? '💤' : lugar + 1}</span>
-      <button class="risk-equipo-abrir" data-ui="equipo" data-equipo="${eq.id}" aria-label="${esc(eq.nombre)}: continentes y estado">
-        <span class="risk-equipo-texto">
-          <small class="risk-equipo-etiqueta">${etiqueta}</small>
-          <b>${punto(eq.color)} ${esc(eq.nombre)}</b>
-          <small>${suyos.length ? suyos.map(c => `${c.simbolo} ×${c.mult}`).join('  ') : 'Sin continentes'}</small>
-        </span>
-        ${eq.ausente ? '' : `<span class="risk-equipo-tropas"><b>${proximoReclamo(p, aj, eq)}</b><small>próximo</small></span>`}
-      </button>
-      ${eq.ausente ? `<button class="risk-accion risk-volvio" data-accion="volvio" data-equipo="${eq.id}">↩ Volvió</button>` : ''}
-    </div>`;
-}
-
-function listaTurnos(p, aj) {
-  const orden = ordenTurnos(p, aj);
-  const ausentes = p.equipos.filter(e => e.ausente);
-  return [...orden.map((eq, i) => filaEquipo(p, aj, eq, i)), ...ausentes.map(eq => filaEquipo(p, aj, eq, null))].join('');
+    <section class="risk-venta">
+      <h4 class="risk-venta-titulo">★ Vender cartas</h4>
+      <p class="risk-venta-ayuda">Suma las estrellas de las cartas que entregas y toca el total: esas tropas se suman a lo que reclama.</p>
+      <div class="risk-venta-tabla" role="group" aria-label="Estrellas vendidas y tropas que dan">
+        ${Object.entries(VENTA_CARTAS).map(([estrellas, tropas]) => `
+          <button class="risk-venta-op ${Number(estrellas) === actual ? 'risk-venta-op--activa' : ''}" data-accion="venta" data-estrellas="${estrellas}"
+            aria-pressed="${Number(estrellas) === actual}"><span>★ ${estrellas}</span><b>${tropas}</b></button>`).join('')}
+      </div>
+    </section>`;
 }
 
 export function pintarTablero(p, aj) {
   const e = equipoActual(p);
-  const sigue = ordenTurnos(p, aj)[1];
   const quedan = aj.rondas - p.ronda;
   return `
     <div class="risk">
@@ -83,11 +55,10 @@ export function pintarTablero(p, aj) {
           <ul class="risk-desglose">${desglose(p, aj)}</ul>
           <div class="risk-turno-acciones">
             <button class="risk-accion" data-ui="equipo" data-equipo="${e.id}">🚩 Conquistó continente</button>
-            <button class="risk-accion ${ui.venta ? 'risk-accion--activa' : ''}" data-ui="venta" aria-expanded="${ui.venta}">★ Vender cartas</button>
             <button class="risk-accion risk-accion--suave" data-accion="ausente" data-equipo="${e.id}">💤 Se fue</button>
           </div>
-          ${venta(p)}
           ${Musa.reloj.html()}
+          ${venta(p)}
         </article>
       </div>
 
@@ -96,12 +67,7 @@ export function pintarTablero(p, aj) {
         <button class="boton boton--secundario risk-pausa" data-accion="reloj" ${p.reloj.estado === 'fin' ? 'disabled' : ''}>⏸ Pausa</button>
         <button class="boton boton--principal" data-accion="siguiente">Siguiente →</button>
       </div>
-      <p class="risk-sigue">${sigue ? `Sigue ${punto(sigue.color)} <b>${esc(sigue.nombre)}</b> · ¡prepárense!` : 'Este es el último turno de la partida'}</p>
-
-      <section class="risk-equipos" aria-label="Orden de los turnos">
-        <div class="risk-subtitulo">Turnos · toca un equipo para sus continentes</div>
-        ${listaTurnos(p, aj)}
-      </section>
+      ${colaTurnos(p, aj, { tocable: true })}
 
       <button class="boton boton--texto" data-ui="nueva">✦ Nueva partida</button>
     </div>`;
