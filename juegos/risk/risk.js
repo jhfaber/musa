@@ -2,7 +2,7 @@
 // Flujo en una sola dirección: toque → acción → almacen.despachar → reglas.aplicar → guardar → pintar.
 // Ver specs/006-risk-arquitectura/spec.md.
 import { crearAlmacen } from './almacen.js';
-import { vencido, equipoActual } from './logica/reglas.js';
+import { vencido, equipoActual, equipoPorId } from './logica/reglas.js';
 import * as efectos from './efectos.js';
 import { pintarTablero, actualizarReloj } from './vistas/tablero.js';
 import { pintarCuenta, actualizarCuenta, quitarCuenta } from './vistas/cuenta.js';
@@ -14,6 +14,7 @@ import { abrirSimulador } from './vistas/simulador.js';
 import { abrirAjustes, pintarAjustes } from './vistas/ajustes.js';
 import { abrirGanadores, guardarGanador } from './vistas/ganadores.js';
 import { avisoAusente, cerrarAviso } from './vistas/aviso.js';
+import { usarEstilo, imagenDe } from './vistas/emblemas.js';
 
 const almacen = crearAlmacen();
 let contenedor = null;
@@ -21,11 +22,16 @@ const enRisk = () => location.hash === '#risk' && contenedor;
 
 // ---------- Pintar según el estado ----------
 
-// Toda la pantalla toma un matiz del color del equipo en turno
-function pintarTono(p) {
-  const color = p && !p.terminada ? equipoActual(p).color : null;
-  if (color) document.body.style.setProperty('--equipo-turno', color);
+// Toda la pantalla toma un matiz del color del equipo en turno (al terminar, del ganador) y, si está activada
+// en ⚙, la imagen de su bando de fondo (spec 007)
+function pintarTono(p, aj) {
+  const eq = !p ? null : p.terminada ? p.ganador && equipoPorId(p, p.ganador) : equipoActual(p);
+  if (eq) document.body.style.setProperty('--equipo-turno', eq.color);
   else document.body.style.removeProperty('--equipo-turno');
+  const imagen = eq && aj.fondo !== 'no' && imagenDe(eq);
+  if (imagen) document.body.style.setProperty('--risk-imagen', `url("${imagen}")`);
+  else document.body.style.removeProperty('--risk-imagen');
+  document.body.dataset.fondo = imagen ? aj.fondo : 'no';
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.content = '#121218'; // barra del celular: oscuro neutro
 }
@@ -34,7 +40,8 @@ function pintar() {
   if (!enRisk()) return;
   const p = almacen.partida;
   const aj = almacen.ajustes;
-  pintarTono(p);
+  usarEstilo(aj.emblema);
+  pintarTono(p, aj);
   detenerFuegos();
   if (!p) contenedor.innerHTML = pintarPreparar(aj);
   else if (p.terminada) {
@@ -154,6 +161,8 @@ window.addEventListener('hashchange', () => {
     cerrarAviso(false);
     detenerFuegos();
     document.body.style.removeProperty('--equipo-turno');
+    document.body.style.removeProperty('--risk-imagen');
+    delete document.body.dataset.fondo;
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.content = '#1b1446';
   }

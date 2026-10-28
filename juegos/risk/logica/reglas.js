@@ -3,18 +3,23 @@
 // La partida es solo datos, incluidos los relojes, así que reiniciar o recargar nunca deja tiempos "vivos".
 import { MAPA_NORMAL, continentesDe } from './mapas.js';
 
+// Cada color trae su bando (spec 007): escudo dibujado (vistas/emblemas.js), emoji, lema e imagen de fondo
+// (juegos/risk/img/<bando>.webp). El id del equipo es el del color, así que el bando se deduce siempre.
 export const COLORES = [
-  { id: 'azul', nombre: 'Azul', color: '#3d7be0' },
-  { id: 'rojo', nombre: 'Rojo', color: '#d8443c' },
-  { id: 'verde', nombre: 'Verde', color: '#3aa05a' },
-  { id: 'amarillo', nombre: 'Amarillo', color: '#e9c03a' },
-  { id: 'negro', nombre: 'Negro', color: '#34343c' },
-  { id: 'blanco', nombre: 'Blanco', color: '#f4f1ea' },
-  { id: 'morado', nombre: 'Morado', color: '#8e55c9' },
-  { id: 'naranja', nombre: 'Naranja', color: '#ee8a2e' },
-  { id: 'rosado', nombre: 'Rosado', color: '#e66aa8' },
-  { id: 'cafe', nombre: 'Café', color: '#8a5a3c' }
+  { id: 'azul', nombre: 'Azul', color: '#3d7be0', bando: 'guerreros', faccion: 'Guerreros', emoji: '⚔️', lema: 'Acero y escudo' },
+  { id: 'rojo', nombre: 'Rojo', color: '#d8443c', bando: 'dragones', faccion: 'Dragones', emoji: '🐉', lema: 'Fuego que no se apaga' },
+  { id: 'verde', nombre: 'Verde', color: '#3aa05a', bando: 'arqueros', faccion: 'Arqueros', emoji: '🏹', lema: 'Ninguna flecha se pierde' },
+  { id: 'amarillo', nombre: 'Amarillo', color: '#e9c03a', bando: 'reyes', faccion: 'Reyes', emoji: '👑', lema: 'La corona manda' },
+  { id: 'negro', nombre: 'Negro', color: '#34343c', bando: 'no-muertos', faccion: 'No muertos', emoji: '💀', lema: 'Nunca descansan' },
+  { id: 'blanco', nombre: 'Blanco', color: '#f4f1ea', bando: 'magos', faccion: 'Magos', emoji: '🧙', lema: 'El saber es poder' },
+  { id: 'morado', nombre: 'Morado', color: '#8e55c9', bando: 'orcos', faccion: 'Orcos', emoji: '👹', lema: '¡Más tropas!' },
+  { id: 'naranja', nombre: 'Naranja', color: '#ee8a2e', bando: 'jinetes', faccion: 'Jinetes', emoji: '🐎', lema: 'Más rápidos que el viento' },
+  { id: 'rosado', nombre: 'Rosado', color: '#e66aa8', bando: 'trolls', faccion: 'Trolls', emoji: '🧌', lema: 'Golpe grande, cerebro chico' },
+  { id: 'cafe', nombre: 'Café', color: '#8a5a3c', bando: 'enanos', faccion: 'Enanos', emoji: '🪓', lema: 'Hijos de la montaña' }
 ];
+
+// El color (con su bando) de un equipo; el registro de ganadores solo guarda el color, por eso se busca también así
+export const colorDe = eq => (eq && (COLORES.find(c => c.id === eq.id) || COLORES.find(c => c.color === eq.color))) || null;
 
 export const MAX_EQUIPOS = COLORES.length; // hasta 10 ejércitos
 
@@ -23,16 +28,21 @@ export const AJUSTES_BASE = {
   rondas: 6,              // el reglamento dice de 6 a 9
   turno: 135,             // un solo reloj por turno: 2:15
   cuenta: 10,             // segundos para que el siguiente equipo se prepare
-  maxCartas: 5,
+  maxCartas: 5,           // cartas máximas que se reclaman al final de un turno por territorios conquistados
   costoLider: 10,         // unidades que cuesta comprar un líder
-  maxLideres: 2,          // líderes que puede tener cada equipo           // cartas máximas que se reclaman al final de un turno por territorios conquistados
+  maxLideres: 2,          // líderes que puede tener cada equipo
   prorroga: 20,           // segundos extra que se le pueden dar al equipo anterior desde la cuenta regresiva
   mapa: MAPA_NORMAL,      // mapa con el que empieza la próxima partida
   vista: 'arena',
   sonido: true,
   vibrar: true,
-  tictac: false
+  tictac: false,
+  emblema: 'escudo',      // 'escudo' (dibujado) o 'emoji'
+  fondo: 'media'          // imagen del bando de fondo: 'no', 'suave', 'media' o 'fuerte'
 };
+
+// Valores posibles de los ajustes que se eligen de una lista (al cargar, uno desconocido vuelve al de AJUSTES_BASE)
+export const OPCIONES = { emblema: ['escudo', 'emoji'], fondo: ['no', 'suave', 'media', 'fuerte'] };
 
 // Venta de cartas de territorio: estrellas → tropas (tabla del reglamento)
 export const VENTA_CARTAS = { 2: 2, 3: 4, 4: 7, 5: 10, 6: 13, 7: 17, 8: 21, 9: 25, 10: 30 };

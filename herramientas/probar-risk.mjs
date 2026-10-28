@@ -1,8 +1,9 @@
 // Pruebas de la lógica de Risk (sin navegador). Uso: node herramientas/probar-risk.mjs
 import assert from 'node:assert/strict';
-import { aplicar, AJUSTES_BASE, COLORES, estadisticas, cartasPorConquista, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
+import { aplicar, AJUSTES_BASE, COLORES, OPCIONES, colorDe, estadisticas, cartasPorConquista, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
 import { mapasIniciales, crearMapa, agregarContinente, editarContinente, migrarMapas } from '../juegos/risk/logica/mapas.js';
 import { resolver, frase, probabilidades, dadosAtaque, dadosDefensa } from '../juegos/risk/logica/dados.js';
+import { existsSync, readFileSync } from 'node:fs';
 import { anotarGanador, borrarRegistro, puntosVictoria, MAX_REGISTROS } from '../juegos/risk/logica/historial.js';
 
 const aj = { ...AJUSTES_BASE, mapas: mapasIniciales() };
@@ -323,6 +324,31 @@ prueba('dados según fichas: 4 fichas atacan con 3, 1 ficha no ataca', () => {
   assert.equal(dadosAtaque(1), 0);
   assert.equal(dadosDefensa(1), 1);
   assert.equal(dadosDefensa(5), 2);
+});
+
+prueba('facciones: cada color tiene bando, nombre, emoji, lema e imagen .webp registrada (spec 007)', () => {
+  const juegos = JSON.parse(readFileSync(new URL('../juegos/juegos.json', import.meta.url), 'utf8')).juegos;
+  const archivosRisk = juegos.find(j => j.id === 'risk').archivos;
+  const bandos = new Set();
+  for (const c of COLORES) {
+    assert.ok(c.bando && c.faccion && c.emoji && c.lema, `falta algo en ${c.id}`);
+    bandos.add(c.bando);
+    assert.ok(existsSync(new URL(`../juegos/risk/img/${c.bando}.webp`, import.meta.url)), `falta img/${c.bando}.webp`);
+    assert.ok(archivosRisk.includes(`img/${c.bando}.webp`), `img/${c.bando}.webp no está en juegos.json`);
+  }
+  assert.equal(bandos.size, COLORES.length, 'cada color con un bando distinto');
+});
+
+prueba('facciones: el bando se encuentra por id (partida) o por color (registro de ganadores)', () => {
+  assert.equal(colorDe({ id: 'morado' }).bando, 'orcos');
+  assert.equal(colorDe({ color: '#8a5a3c' }).bando, 'enanos');
+  assert.equal(colorDe({ id: 'otro', color: '#123456' }), null);
+});
+
+prueba('ajustes de aspecto: valores por defecto válidos (escudo dibujado, imagen media)', () => {
+  assert.equal(AJUSTES_BASE.emblema, 'escudo');
+  assert.ok(OPCIONES.emblema.includes(AJUSTES_BASE.emblema));
+  assert.ok(OPCIONES.fondo.includes(AJUSTES_BASE.fondo));
 });
 
 let fallas = 0;

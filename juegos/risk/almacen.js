@@ -1,6 +1,6 @@
 // Almacén: guarda la partida y los ajustes, y es el único que los cambia.
 // Las vistas despachan acciones; el almacén pide a las reglas el estado nuevo, lo guarda y avisa.
-import { aplicar, AJUSTES_BASE, LIMITES } from './logica/reglas.js';
+import { aplicar, AJUSTES_BASE, LIMITES, OPCIONES } from './logica/reglas.js';
 import { migrarMapas, MAPA_NORMAL } from './logica/mapas.js';
 
 const CLAVE_PARTIDA = 'musa.risk.partida.v2';   // la v1 (versión inicial) se descarta
@@ -17,6 +17,7 @@ function cargarAjustes() {
   for (const [clave, rango] of Object.entries(LIMITES)) a[clave] = limitar(a[clave], rango);
   if (!a.mapas[a.mapa]) a.mapa = MAPA_NORMAL;
   if (!Musa.reloj.VISTAS.some(v => v.id === a.vista)) a.vista = AJUSTES_BASE.vista;
+  for (const [clave, valores] of Object.entries(OPCIONES)) if (!valores.includes(a[clave])) a[clave] = AJUSTES_BASE[clave];
   return a;
 }
 

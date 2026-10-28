@@ -1,14 +1,15 @@
 // Preparar la partida: qué equipos juegan (de los 10 colores), en qué orden, sus nombres y quién empieza.
 import { COLORES } from '../logica/reglas.js';
 import { dadoAlAzar } from '../logica/dados.js';
-import { esc, punto } from './piezas.js';
+import { esc} from './piezas.js';
+import { emblema } from './emblemas.js';
 
 // elegidos: ids de color en el orden de los turnos. propios: nombres escritos, por id. empieza: id.
-export const preparar = { elegidos: ['azul', 'rojo', 'verde'], nombres: 'colores', propios: {}, empieza: 'azul', sorteo: null };
+export const preparar = { elegidos: ['azul', 'rojo', 'verde'], nombres: 'bandos', propios: {}, empieza: 'azul', sorteo: null };
 
 const color = id => COLORES.find(c => c.id === id);
 const lugar = id => preparar.elegidos.indexOf(id);
-const nombrePorDefecto = id => (preparar.nombres === 'colores' ? `Equipo ${color(id).nombre}` : `Equipo ${lugar(id) + 1}`);
+const nombrePorDefecto = id => ({ bandos: color(id).faccion, colores: `Equipo ${color(id).nombre}` }[preparar.nombres] || `Equipo ${lugar(id) + 1}`);
 const nombre = id => preparar.propios[id] || nombrePorDefecto(id);
 
 // Lo que necesita la acción { tipo: 'empezar' }
@@ -72,7 +73,7 @@ function filaElegido(id, i, total) {
       </div>
       <div class="risk-orden-cuerpo">
         <div class="risk-orden-linea">
-          ${punto(c.color)}
+          ${emblema(c)}
           <input class="risk-nombre" data-nombre="${id}" value="${esc(nombre(id))}" aria-label="Nombre del equipo ${c.nombre}">
         </div>
         <div class="risk-orden-linea">
@@ -100,7 +101,8 @@ export function pintarPreparar(aj) {
             const elegido = elegidos.includes(c.id);
             return `
               <button class="risk-color ${elegido ? 'risk-color--elegido' : ''}" data-ui="elegir" data-n="${c.id}" aria-pressed="${elegido}" style="--equipo: ${c.color}">
-                <span class="risk-color-muestra">${elegido ? lugar(c.id) + 1 : ''}</span>${c.nombre}
+                ${emblema(c, 34)}<span class="risk-color-texto"><b>${c.faccion}</b><small>${c.nombre}</small></span>
+                <span class="risk-color-muestra">${elegido ? lugar(c.id) + 1 : ''}</span>
               </button>`;
           }).join('')}
         </div>
@@ -113,6 +115,7 @@ export function pintarPreparar(aj) {
 
         <div class="risk-subtitulo">Nombres</div>
         <div class="chips">
+          <button class="chip ${preparar.nombres === 'bandos' ? 'chip--activo' : ''}" data-ui="nombres" data-n="bandos">Por bando</button>
           <button class="chip ${preparar.nombres === 'colores' ? 'chip--activo' : ''}" data-ui="nombres" data-n="colores">Por colores</button>
           <button class="chip ${preparar.nombres === 'numeros' ? 'chip--activo' : ''}" data-ui="nombres" data-n="numeros">Por números</button>
         </div>

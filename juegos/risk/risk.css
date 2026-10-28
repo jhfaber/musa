@@ -699,7 +699,7 @@ button.risk-cola-fila { cursor: pointer; }
   cursor: pointer;
 }
 .risk-fin-equipo-texto { flex: 1; display: grid; gap: 1px; }
-.risk-fin-equipo-texto small { color: var(--texto-suave); font-size: .78rem; }
+.risk-fin-equipo-texto small { grid-column: auto; color: var(--texto-suave); font-size: .78rem; }
 .risk-fin-equipo-marca { flex: none; padding: 6px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; border: 1px solid rgba(255, 246, 213, .35); }
 .risk-fin-equipo--gano { border-color: var(--oro); background: linear-gradient(90deg, color-mix(in srgb, var(--equipo) 45%, transparent), rgba(0, 0, 0, .2)); box-shadow: 0 0 22px color-mix(in srgb, var(--equipo) 50%, transparent); }
 .risk-fin-equipo--gano .risk-fin-equipo-marca { background: var(--oro); color: var(--noche); border-color: var(--oro); }
@@ -833,3 +833,73 @@ body[data-juego="risk"] .accion-juego .boton-icono { width: 36px; font-size: 1.3
 .risk-aviso-reglas li { padding: 10px 12px; border-radius: 12px; background: rgba(0, 0, 0, .3); font-size: .9rem; line-height: 1.4; }
 .risk-aviso-carta .boton { width: 100%; margin-top: 6px; }
 .risk-aviso-pausa { font-size: .82rem !important; color: var(--oro-claro); }
+
+/* ---------- Facciones (spec 007): emblema de cada equipo e imagen de su bando de fondo ---------- */
+.risk-emblema { display: inline-grid; place-items: center; flex: none; width: var(--t, 24px); aspect-ratio: 64 / 72; vertical-align: middle; }
+.risk-emblema svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .45)); }
+.risk-emblema--emoji {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: calc(var(--t, 24px) * .56);
+  line-height: 1;
+  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--equipo) 70%, #fff), var(--equipo) 60%, color-mix(in srgb, var(--equipo) 60%, #000));
+  box-shadow: 0 0 0 2px var(--oro-claro), 0 2px 6px rgba(0, 0, 0, .45);
+}
+
+/* Carta del turno: escudo grande y el lema del bando */
+.risk-turno-cabeza { display: flex; align-items: center; gap: 10px; text-align: left; }
+.risk-turno-cabeza > span:last-child { display: flex; flex-direction: column; line-height: 1.2; }
+.risk-lema { font-style: italic; font-size: .82rem; color: rgba(255, 246, 213, .85); margin-top: 2px; }
+
+/* Cuenta: escudo grande del equipo que sigue */
+.risk-cuenta-emblema .risk-emblema { animation: emblema-flota 3s ease-in-out infinite alternate; }
+@keyframes emblema-flota { to { transform: translateY(-6px); } }
+
+/* Preparar: cada ejército con su escudo; los que no juegan, en gris */
+.risk-color { position: relative; }
+.risk-color-texto { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+.risk-color-texto small { font-weight: 400; font-size: .72rem; opacity: .8; }
+.risk-preparar .risk-color .risk-color-muestra { margin-left: auto; width: 24px; height: 24px; font-size: .8rem; }
+.risk-preparar .risk-color:not(.risk-color--elegido) .risk-color-muestra { visibility: hidden; }
+.risk-color:not(.risk-color--elegido) .risk-emblema { filter: grayscale(1); opacity: .5; }
+
+/* Fin: el escudo del ganador en lugar del trofeo */
+.risk-fin-trofeo .risk-emblema svg { filter: drop-shadow(0 0 24px rgba(242, 196, 107, .6)); }
+.risk-fin-equipo > .risk-emblema { margin-right: 4px; }
+
+/* Imagen del bando: en blanco y negro (mezcla luminosity) sobre el color del equipo, así nunca cambia el color.
+   Intensidad en ⚙ → Aspecto (body[data-fondo] lo pone risk.js) */
+body[data-juego="risk"] { --risk-fondo-op: 0; }
+body[data-juego="risk"][data-fondo="suave"] { --risk-fondo-op: .22; }
+body[data-juego="risk"][data-fondo="media"] { --risk-fondo-op: .38; }
+body[data-juego="risk"][data-fondo="fuerte"] { --risk-fondo-op: .55; }
+body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .cielo,
+.risk-cuenta-fondo {
+  background:
+    var(--risk-imagen) 62% 25% / cover no-repeat,
+    linear-gradient(170deg, var(--noche) 0%, var(--violeta) 55%, var(--malva) 100%);
+  background-blend-mode: luminosity, normal;
+  opacity: var(--risk-fondo-op);
+  animation: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 92%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 50%, transparent 92%);
+}
+.risk-cuenta-fondo { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+body[data-fondo="no"] .risk-cuenta-fondo, body:not([data-fondo]) .risk-cuenta-fondo { display: none; }
+body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .risk .risk-turno { isolation: isolate; }
+body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .risk .risk-turno::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    var(--risk-imagen) 62% 22% / cover no-repeat,
+    color-mix(in srgb, var(--equipo) 45%, #111);
+  background-blend-mode: luminosity, normal;
+  opacity: calc(var(--risk-fondo-op) + .12);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) { .risk-cuenta-emblema .risk-emblema { animation: none; } }
+.risk-muestra-emblemas { display: flex; gap: 8px; margin: 10px 0 4px; }

@@ -1,7 +1,8 @@
 // Panel de un equipo (pantalla completa): sus continentes, nombre y si está ausente.
 // Los cambios se despachan como acciones al almacén.
 import { equipoPorId, continentes, equipoActual } from '../logica/reglas.js';
-import { esc, punto } from './piezas.js';
+import { esc} from './piezas.js';
+import { emblema } from './emblemas.js';
 
 let panel = null;
 let abierto = null;
@@ -33,7 +34,7 @@ export function pintarEquipo() {
   const aj = almacen.ajustes;
   const eq = equipoPorId(p, abierto);
   const enTurno = equipoActual(p) === eq;
-  panel.querySelector('.catalogo-cabeza h2').innerHTML = `${punto(eq.color)} ${esc(eq.nombre)}`;
+  panel.querySelector('.catalogo-cabeza h2').innerHTML = `${emblema(eq)} ${esc(eq.nombre)}`;
   panel.querySelector('.catalogo-cuerpo').innerHTML = `
     <section class="ajuste">
       <h3 class="catalogo-subtitulo">🚩 Continentes</h3>
@@ -51,7 +52,7 @@ export function pintarEquipo() {
               aria-pressed="${Boolean(suyo)}" style="--equipo: ${(otro || eq).color}">
               <span class="risk-continente-simbolo">${c.simbolo}</span>
               <span class="risk-continente-texto"><b>${esc(c.nombre)}</b>
-                <small>${suyo ? `Suyo · ×${mult} · ${c.bono * mult} tropas` : otro ? `Lo tiene el ${esc(otro.nombre)} · tocar para quitárselo` : `Da ${c.bono} tropas`}</small></span>
+                <small>${suyo ? `Suyo · ×${mult} · ${c.bono * mult} tropas` : otro ? `Lo tiene ${esc(otro.nombre)} · tocar para quitárselo` : `Da ${c.bono} tropas`}</small></span>
               <span class="risk-continente-marca">${suyo ? '✓' : '＋'}</span>
             </button>`;
         }).join('')}

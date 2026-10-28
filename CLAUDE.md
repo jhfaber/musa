@@ -29,6 +29,9 @@ No toca la red de la casa ni ningún dispositivo: es solo HTML/CSS/JS estático.
 - Al cambiar reglas o dados: `node herramientas/probar-risk.mjs` (pruebas sin navegador).
 - Se guardan aparte: `musa.risk.partida.v2`, `musa.risk.ajustes.v1` (con los mapas) y `musa.risk.ganadores.v1`.
 - Archivos nuevos de Risk se agregan a `juegos/juegos.json` (el service worker los guarda de ahí).
+- Facciones (spec 007): cada color trae su bando (`COLORES` en `logica/reglas.js`); el escudo SVG o emoji sale de
+  `vistas/emblemas.js` y la imagen de fondo de `juegos/risk/img/<bando>.webp` (teñida con el color, nunca lo cambia).
+  Los originales de John están en `img/` (fuera de la app); al cambiar uno, volver a convertirlo a .webp de ~800 px.
 
 ## Probar
 `node herramientas/servidor.js` → `http://<IP del PC>:8095/#dixit` (solo en la red de la casa).

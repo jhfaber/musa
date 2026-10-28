@@ -1,6 +1,7 @@
 // Cuenta regresiva entre turnos: toda la pantalla con el color del equipo que sigue (10, 9, 8…).
 import { equipoActual, equipoPorId, esUltimaRonda, totalReclamo, restanteCuenta } from '../logica/reglas.js';
-import { esc, punto, colaTurnos } from './piezas.js';
+import { esc, colaTurnos } from './piezas.js';
+import { emblema } from './emblemas.js';
 
 let capa = null;
 
@@ -9,10 +10,12 @@ function html(p, aj, ahora) {
   const e = equipoActual(p);
   const anterior = c.anterior && equipoPorId(p, c.anterior);
   return `
+    <div class="risk-cuenta-fondo" aria-hidden="true"></div>
     <button class="boton-icono risk-cuenta-cerrar" data-accion="cuentaCerrar" aria-label="Cerrar y volver al tablero">✕</button>
-    ${c.porTiempo && anterior ? `<p class="risk-cuenta-aviso">⛔ Se acabó el tiempo del ${esc(anterior.nombre)}: ninguna acción más</p>` : ''}
+    ${c.porTiempo && anterior ? `<p class="risk-cuenta-aviso">⛔ Se acabó el tiempo de ${esc(anterior.nombre)}: ninguna acción más</p>` : ''}
     <div class="risk-cuenta-ronda">Ronda ${p.ronda} de ${aj.rondas}${esUltimaRonda(p, aj) ? ' · ¡Última ronda!' : ''}</div>
-    <h2 class="risk-cuenta-titulo">${punto(e.color)} ¡Turno del ${esc(e.nombre)}!</h2>
+    <div class="risk-cuenta-emblema">${emblema(e, 92)}</div>
+    <h2 class="risk-cuenta-titulo">¡Turno de ${esc(e.nombre)}!</h2>
     <div class="risk-cuenta-anillo"><div class="risk-cuenta-numero">${Math.ceil(restanteCuenta(p, aj, ahora))}</div></div>
     <p class="risk-cuenta-tropas">Reclama <b>${totalReclamo(p, aj)}</b> tropas</p>
     <div class="risk-cuenta-botones">
@@ -21,14 +24,14 @@ function html(p, aj, ahora) {
     </div>
     ${c.corriendo ? '' : `
       <div class="risk-cuenta-consejo">
-        <p><b>¿No está el ${esc(e.nombre)}?</b> Márcalo ausente y sigue el próximo. Cuando vuelva, toca <b>↩ Volvió</b>
+        <p><b>¿No está ${esc(e.nombre)}?</b> Márcalo ausente y sigue el próximo. Cuando vuelva, toca <b>↩ Volvió</b>
         y juega justo después del equipo que esté jugando. Si lo atacan mientras no está, alguien más tira por él
         o se defiende siempre con <b>4 y 2</b>.</p>
         <button class="boton boton--secundario" data-accion="cuentaAusente">💤 Marcar ausente</button>
       </div>`}
     ${anterior && p.deshacer.length ? `
       <button class="boton boton--secundario risk-cuenta-extra" data-accion="prorroga" style="--equipo: ${anterior.color}">
-        ${punto(anterior.color)} +${aj.prorroga} s al ${esc(anterior.nombre)} <small>Usalos sabiamente</small>
+        ${emblema(anterior)} +${aj.prorroga} s para ${esc(anterior.nombre)} <small>Usalos sabiamente</small>
       </button>` : ''}
     ${colaTurnos(p, aj, { desde: 1, titulo: 'Después juegan' })}`;
 }

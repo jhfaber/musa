@@ -1,11 +1,11 @@
 // Piezas de pantalla que comparten las vistas de Risk: dados en 3D, la mesa de una tirada y probabilidades.
 import { probabilidades, explicarPareja, frase } from '../logica/dados.js';
+import { emblema } from './emblemas.js';
 import { ordenTurnos, estadisticas, equipoActual, totalReclamo, proximoReclamo, continentesDeEquipo } from '../logica/reglas.js';
 
 // Texto seguro dentro del HTML (nombres que escribe la gente)
 export const esc = t => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-export const punto = color => `<span class="risk-punto" style="--equipo: ${color}"></span>`;
 
 // Caras del cubo: 1 al frente, 6 atrás, 2 derecha, 5 izquierda, 3 arriba, 4 abajo (opuestas suman 7)
 const PUNTOS = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
@@ -99,7 +99,7 @@ export function colaTurnos(p, aj, { desde = 0, titulo = 'Orden de los turnos', t
     const cuerpo = `
       <span class="risk-cola-num">${eq.ausente ? '💤' : lugar + 1}</span>
       <span class="risk-cola-nombre">
-        <b>${punto(eq.color)} ${esc(eq.nombre)}</b>
+        <b>${emblema(eq)} ${esc(eq.nombre)}</b>
         <em>${estado(eq, lugar)}</em>
         <em>${resumenEquipo(eq)}</em>
         ${conts.length ? `<em class="risk-cola-conts">${conts.map(c => `${c.simbolo} ×${c.mult}`).join('  ')}</em>` : ''}

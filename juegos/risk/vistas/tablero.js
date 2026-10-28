@@ -3,7 +3,8 @@
 import {
   equipoActual, esUltimaRonda, partesReclamo, totalReclamo, duracion, restanteReloj, VENTA_CARTAS
 } from '../logica/reglas.js';
-import { esc, punto, colaTurnos } from './piezas.js';
+import { esc, colaTurnos } from './piezas.js';
+import { emblema, faccionDe } from './emblemas.js';
 
 function desglose(p, aj) {
   const d = partesReclamo(p, aj);
@@ -50,7 +51,8 @@ export function pintarTablero(p, aj) {
 
       <div class="mesa">
         <article class="carta risk-turno carta--reloj reloj-vista-${aj.vista}" style="--equipo: ${e.color}">
-          <div class="risk-turno-cabeza">${punto(e.color)} Turno del <b>${esc(e.nombre)}</b></div>
+          <div class="risk-turno-cabeza">${emblema(e, 38)}
+            <span>Turno de <b>${esc(e.nombre)}</b>${faccionDe(e) ? `<small class="risk-lema">“${faccionDe(e).lema}”</small>` : ''}</span></div>
           <div class="risk-tropas"><small>Reclama</small><b class="risk-tropas-num">${totalReclamo(p, aj)}</b><small>tropas</small></div>
           <ul class="risk-desglose">${desglose(p, aj)}</ul>
           <div class="risk-turno-acciones">

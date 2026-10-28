@@ -2,7 +2,8 @@
 // Se guarda aparte de la partida (musa.risk.ganadores.v1).
 import { anotarGanador, borrarRegistro, MAX_REGISTROS } from '../logica/historial.js';
 import { continentesDeEquipo, equipoPorId } from '../logica/reglas.js';
-import { esc, punto } from './piezas.js';
+import { esc} from './piezas.js';
+import { emblema } from './emblemas.js';
 
 const CLAVE = 'musa.risk.ganadores.v1';
 let panel = null;
@@ -46,7 +47,7 @@ function pintar() {
         <li style="--equipo: ${r.ganador.color}">
           <span class="risk-ganadores-trofeo">${i === 0 ? '🏆' : '🥇'}</span>
           <span class="risk-ganadores-texto">
-            <b>${punto(r.ganador.color)} ${esc(r.ganador.nombre)}</b>
+            <b>${emblema(r.ganador)} ${esc(r.ganador.nombre)}</b>
             <span class="risk-ganadores-datos">
               <span><b>${r.tropas ?? '—'}</b> tropas</span>
               ${r.turnos !== undefined ? `<span><b>${r.turnos}</b> ${r.turnos === 1 ? 'turno' : 'turnos'}</span>` : ''}

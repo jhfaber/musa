@@ -1,11 +1,16 @@
-// Menú ⚙ (pantalla completa): partida, tiempos, mapa y continentes (incluidos los propios) y reloj.
+// Menú ⚙ (pantalla completa): partida, tiempos, mapa y continentes (incluidos los propios), aspecto y reloj.
 import * as Mapas from '../logica/mapas.js';
 import { esc } from './piezas.js';
+import { emblema } from './emblemas.js';
 
 let panel = null;
 let almacen = null;
 let acciones = {};          // { escuela, nueva } que pone risk.js
 let mapaVisto = null;       // mapa que se está editando
+
+const ESTILOS = [['escudo', 'Escudo dibujado'], ['emoji', 'Emoji']];
+const FONDOS = [['no', 'Sin imagen'], ['suave', 'Suave'], ['media', 'Media'], ['fuerte', 'Fuerte']];
+const MUESTRA = ['azul', 'rojo', 'verde', 'morado', 'cafe'];
 
 export function abrirAjustes(alm, otras) {
   almacen = alm;
@@ -28,11 +33,13 @@ function clic(e) {
   const b = e.target.closest('button');
   if (!b) return;
   const aj = almacen.ajustes;
-  const { tiempo, numero, paso, vista, mapa, ui, cont } = b.dataset;
+  const { tiempo, numero, paso, vista, mapa, ui, cont, emblema: estilo, fondo } = b.dataset;
   if (tiempo) cambiar({ [tiempo]: Musa.reloj.ajustarSegundos(aj[tiempo] + Number(paso)) });
   else if (numero === 'bono') cambiarMapas(m => Mapas.editarContinente(m, mapaVisto, cont, { bono: m[mapaVisto].continentes.find(c => c.id === cont).bono + Number(paso) }));
   else if (numero) cambiar({ [numero]: aj[numero] + Number(paso) * (numero === 'prorroga' ? 5 : 1) });
   else if (vista) cambiar({ vista });
+  else if (estilo) cambiar({ emblema: estilo });
+  else if (fondo) cambiar({ fondo });
   else if (mapa) { mapaVisto = mapa; cambiar({ mapa }); }
   else if (ui === 'nuevo-mapa') {
     const { mapas, id } = Mapas.crearMapa(aj.mapas, `Mi mapa ${Object.values(aj.mapas).filter(m => m.propio).length + 1}`);
@@ -119,6 +126,19 @@ export function pintarAjustes() {
       </div>
       ${enJuego ? '<p class="ajustes-desc">La partida en curso sigue con su mapa; este se usa en la próxima.</p>' : ''}
       ${editorMapa(aj)}
+    </section>
+    <section class="ajuste">
+      <h3 class="catalogo-subtitulo">🎨 Aspecto</h3>
+      <div class="ajuste-titulo">Emblema de cada equipo</div>
+      <div class="chips">
+        ${ESTILOS.map(([id, nombre]) => `<button class="chip ${id === aj.emblema ? 'chip--activo' : ''}" data-emblema="${id}">${nombre}</button>`).join('')}
+      </div>
+      <div class="risk-muestra-emblemas" aria-hidden="true">${MUESTRA.map(id => emblema({ id }, 34)).join('')}</div>
+      <div class="ajuste-titulo">Imagen del bando de fondo</div>
+      <div class="chips">
+        ${FONDOS.map(([id, nombre]) => `<button class="chip ${id === aj.fondo ? 'chip--activo' : ''}" data-fondo="${id}">${nombre}</button>`).join('')}
+      </div>
+      <p class="ajustes-desc">La imagen del equipo en turno, teñida con su color. Más suave se lee mejor en el sol.</p>
     </section>
     <section class="ajuste">
       <h3 class="catalogo-subtitulo">Reloj</h3>

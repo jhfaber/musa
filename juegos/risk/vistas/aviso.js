@@ -1,5 +1,6 @@
 // Aviso emergente encima de todo (se cierra con el botón o tocando fuera).
-import { esc, punto } from './piezas.js';
+import { esc } from './piezas.js';
+import { emblema } from './emblemas.js';
 
 let capa = null;
 let alCerrar = null;
@@ -33,7 +34,7 @@ function mostrar(color, contenido, cuandoCierre = null) {
 export function avisoAusente(eq, alCerrar = null) {
   mostrar(eq.color, `
     <div class="risk-aviso-arte" aria-hidden="true">💤</div>
-    <h3>${punto(eq.color)} Se fue el ${esc(eq.nombre)}</h3>
+    <h3>${emblema(eq)} Ausente: ${esc(eq.nombre)}</h3>
     <p>Su turno se salta y sigue el próximo de la lista.</p>
     <ul class="risk-aviso-reglas">
       <li>⚔️ <b>Si lo atacan</b> mientras no está, <b>otro equipo tira los dados por él</b> (que no sea el atacante).</li>
