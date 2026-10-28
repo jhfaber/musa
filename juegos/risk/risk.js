@@ -2,7 +2,7 @@
 // Flujo en una sola dirección: toque → acción → almacen.despachar → reglas.aplicar → guardar → pintar.
 // Ver specs/006-risk-arquitectura/spec.md.
 import { crearAlmacen } from './almacen.js';
-import { vencido, equipoActual, equipoPorId } from './logica/reglas.js';
+import { vencido, equipoActual, equipoPorId, BANDO_POR_DEFECTO, IMAGEN_TODOS } from './logica/reglas.js';
 import * as efectos from './efectos.js';
 import { pintarTablero, actualizarReloj } from './vistas/tablero.js';
 import { pintarCuenta, actualizarCuenta, quitarCuenta } from './vistas/cuenta.js';
@@ -23,15 +23,20 @@ const enRisk = () => location.hash === '#risk' && contenedor;
 // ---------- Pintar según el estado ----------
 
 // Toda la pantalla toma un matiz del color del equipo en turno (al terminar, del ganador) y, si está activada
-// en ⚙, la imagen de su bando de fondo (spec 007); sin equipo (nueva partida, victoria sin ganador), la del
-// bando por defecto
+// en ⚙, la imagen de su bando de fondo (spec 007); sin equipo: nueva partida → bando por defecto, victoria sin
+// ganador → todos los bandos. Los menús (paneles) usan siempre la de todos.
 function pintarTono(p, aj) {
   const eq = !p ? null : p.terminada ? p.ganador && equipoPorId(p, p.ganador) : equipoActual(p);
   if (eq) document.body.style.setProperty('--equipo-turno', eq.color);
   else document.body.style.removeProperty('--equipo-turno');
-  const imagen = aj.fondo !== 'no' && imagenDe(eq);
-  if (imagen) document.body.style.setProperty('--risk-imagen', `url("${imagen}")`);
-  else document.body.style.removeProperty('--risk-imagen');
+  const imagen = aj.fondo !== 'no' && imagenDe(eq, p && p.terminada ? IMAGEN_TODOS : BANDO_POR_DEFECTO);
+  if (imagen) {
+    document.body.style.setProperty('--risk-imagen', `url("${imagen}")`);
+    document.body.style.setProperty('--risk-imagen-menu', `url("${imagenDe(null, IMAGEN_TODOS)}")`);
+  } else {
+    document.body.style.removeProperty('--risk-imagen');
+    document.body.style.removeProperty('--risk-imagen-menu');
+  }
   document.body.dataset.fondo = imagen ? aj.fondo : 'no';
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.content = '#121218'; // barra del celular: oscuro neutro
@@ -163,6 +168,7 @@ window.addEventListener('hashchange', () => {
     detenerFuegos();
     document.body.style.removeProperty('--equipo-turno');
     document.body.style.removeProperty('--risk-imagen');
+    document.body.style.removeProperty('--risk-imagen-menu');
     delete document.body.dataset.fondo;
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.content = '#1b1446';

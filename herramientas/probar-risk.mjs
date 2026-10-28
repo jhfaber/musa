@@ -1,6 +1,6 @@
 // Pruebas de la lógica de Risk (sin navegador). Uso: node herramientas/probar-risk.mjs
 import assert from 'node:assert/strict';
-import { aplicar, AJUSTES_BASE, COLORES, OPCIONES, BANDO_POR_DEFECTO, colorDe, estadisticas, cartasPorConquista, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
+import { aplicar, AJUSTES_BASE, COLORES, OPCIONES, BANDO_POR_DEFECTO, IMAGEN_TODOS, colorDe, estadisticas, cartasPorConquista, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
 import { mapasIniciales, crearMapa, agregarContinente, editarContinente, migrarMapas } from '../juegos/risk/logica/mapas.js';
 import { resolver, frase, probabilidades, dadosAtaque, dadosDefensa } from '../juegos/risk/logica/dados.js';
 import { existsSync, readFileSync } from 'node:fs';
@@ -354,6 +354,13 @@ prueba('ajustes de aspecto: valores por defecto válidos (escudo dibujado, image
 prueba('imagen por defecto (nueva partida, victoria sin ganador): un bando que existe, los orcos', () => {
   assert.equal(BANDO_POR_DEFECTO, 'orcos');
   assert.ok(COLORES.some(c => c.bando === BANDO_POR_DEFECTO));
+});
+
+prueba('imagen de todos los bandos (victoria sin ganador y menús): existe y queda guardada sin Internet', () => {
+  const juegos = JSON.parse(readFileSync(new URL('../juegos/juegos.json', import.meta.url), 'utf8')).juegos;
+  const archivos = juegos.find(j => j.id === 'risk').archivos;
+  assert.ok(existsSync(new URL(`../juegos/risk/img/${IMAGEN_TODOS}.webp`, import.meta.url)));
+  assert.ok(archivos.includes(`img/${IMAGEN_TODOS}.webp`));
 });
 
 let fallas = 0;

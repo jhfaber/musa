@@ -43,6 +43,10 @@ arqueros…) con su **escudo dibujado** y una **imagen de fondo** propia, teñid
    cambia el color, solo aporta luces y sombras), semitransparente y con un velo oscuro detrás del texto
    para que se lea bien.
 
+   Sin equipo en turno (pedido de John, 27-oct-2026): en *Nueva partida* sale la imagen de los orcos; en la
+   victoria sin ganador marcado y en los menús (simulador, escuela, ganadores, ajustes) sale `todos` (todos
+   los bandos juntos).
+
 5. **En ⚙ Ajustes (nuevo apartado "Aspecto"):**
    - **Emblemas:** *Escudo dibujado* (por defecto) o *Emoji*.
    - **Imagen de fondo:** sí/no, y su intensidad (suave · media · fuerte).

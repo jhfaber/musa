@@ -82,10 +82,10 @@ export function emblema(equipo, tam = 24) {
 }
 
 // URL absoluta de la imagen de fondo del bando (absoluta para que funcione dentro de una variable CSS);
-// sin equipo, la del bando por defecto
-export const imagenDe = equipo => {
-  const bando = colorDe(equipo)?.bando || BANDO_POR_DEFECTO;
-  return new URL(`juegos/risk/img/${bando}.webp`, location.href).href;
+// sin equipo, la imagen por defecto que se pida
+export const imagenDe = (equipo, porDefecto = BANDO_POR_DEFECTO) => {
+  const nombre = colorDe(equipo)?.bando || porDefecto;
+  return new URL(`juegos/risk/img/${nombre}.webp`, location.href).href;
 };
 
 export const faccionDe = colorDe;

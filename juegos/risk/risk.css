@@ -900,6 +900,22 @@ body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .risk .risk-turno::be
   opacity: calc(var(--risk-fondo-op) + .12);
   pointer-events: none;
 }
+/* Menús de Risk (simulador, escuela, ganadores, ajustes, equipo): la imagen de todos los bandos, en color y
+   oscurecida, detrás del panel; el panel la cubre con el degradado violeta, que deja pasar lo mismo que la
+   intensidad elegida. (La mezcla luminosity no sirve aquí: el cielo blanco de la imagen lo volvía gris.) */
+body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .catalogo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--risk-imagen-menu) 50% 30% / cover no-repeat, var(--noche);
+  filter: grayscale(.35) brightness(.75);
+}
+body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .catalogo--completa .catalogo-fondo { background: none; backdrop-filter: none; }
+body[data-juego="risk"][data-fondo]:not([data-fondo="no"]) .catalogo-panel {
+  background: linear-gradient(170deg,
+    color-mix(in srgb, var(--noche) calc(100% - var(--risk-fondo-op) * 100%), transparent),
+    color-mix(in srgb, var(--violeta) calc(100% - var(--risk-fondo-op) * 100%), transparent));
+}
 
 @media (prefers-reduced-motion: reduce) { .risk-cuenta-emblema .risk-emblema { animation: none; } }
 .risk-muestra-emblemas { display: flex; gap: 8px; margin: 10px 0 4px; }
