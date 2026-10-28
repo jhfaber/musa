@@ -49,6 +49,18 @@ body {
 
 @keyframes titilar { to { opacity: .35; } }
 
+/* Inicio: la portada (luna) de fondo, oscurecida hacia abajo para que se lean los juegos */
+body:not([data-juego])::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(27, 20, 70, .35) 0%, rgba(27, 20, 70, .55) 35%, rgba(27, 20, 70, .9) 70%, var(--noche) 100%),
+    url('img/portada.webp') 50% 20% / cover no-repeat;
+}
+
 .pantalla {
   position: relative;
   max-width: 480px;

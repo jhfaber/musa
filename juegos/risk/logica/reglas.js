@@ -47,7 +47,7 @@ export const OPCIONES = { emblema: ['escudo', 'emoji'], fondo: ['no', 'suave', '
 // Imagen de fondo cuando no hay equipo en turno (nueva partida)
 export const BANDO_POR_DEFECTO = 'orcos';
 // Imagen con todos los bandos: victoria sin ganador marcado y menús (simulador, escuela, ganadores, ajustes)
-export const IMAGEN_TODOS = 'todos_dixit';
+export const IMAGEN_TODOS = 'todos';
 
 // Venta de cartas de territorio: estrellas → tropas (tabla del reglamento)
 export const VENTA_CARTAS = { 2: 2, 3: 4, 4: 7, 5: 10, 6: 13, 7: 17, 8: 21, 9: 25, 10: 30 };

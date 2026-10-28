@@ -1,6 +1,6 @@
 // Guarda toda la app en el celular para que funcione sin Internet.
 // Los archivos de cada juego salen de juegos/juegos.json. Al cambiar cualquier archivo, sube la versión.
-const VERSION = 'musa-v72';
+const VERSION = 'musa-v73';
 const ARCHIVOS = [
   './',
   'index.html',
@@ -12,6 +12,7 @@ const ARCHIVOS = [
   'comun/reloj.js',
   'comun/ui.js',
   'juegos/juegos.json',
+  'comun/img/portada.webp',
   'iconos/icono-180.png',
   'iconos/icono-192.png',
   'iconos/icono-512.png',
