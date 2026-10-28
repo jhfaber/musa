@@ -1,5 +1,30 @@
 {
-  // F5 arranca el servidor de Musa y abre http://localhost:8095/#dixit en el navegador.
+  // ─── CÓMO INICIAR MUSA SIN CLAUDE ─────────────────────────────────────────────────────────────
+  // Requisito: Node.js instalado (comprobar en una terminal: node -v).
+  //
+  // Opción A — F5 (esta configuración):
+  //   1. Abrir la carpeta musa en VS Code (Archivo → Abrir carpeta…).
+  //   2. Pulsar F5 (o Ejecutar y depurar → "Musa" → ▶).
+  //   3. Se abre solo el navegador en http://localhost:8095/#dixit
+  //   4. Para detener: Shift+F5 (o el cuadrado rojo de la barra de depuración).
+  //
+  // Opción B — Ctrl+Shift+B: ejecuta la tarea "Iniciar Musa" (ver tasks.json) y abrir a mano
+  //   http://localhost:8095/#risk (o #dixit). Se detiene con la papelera de la terminal.
+  //
+  // Opción C — terminal, desde la carpeta musa:
+  //   node herramientas/servidor.js
+  //   (se detiene con Ctrl+C)
+  //
+  // En el celular (mismo wifi): la terminal muestra "Musa en http://<IP del PC>:8095"; abrir esa dirección.
+  //
+  // Problemas comunes:
+  //   • "EADDRINUSE ... 8095": ya hay un Musa corriendo; basta con abrir http://localhost:8095
+  //     o cerrarlo antes (en PowerShell: Stop-Process -Id (Get-NetTCPConnection -LocalPort 8095).OwningProcess).
+  //   • No se ven los cambios: recargar con Ctrl+Shift+R (el service worker guarda una copia).
+  //
+  // Publicar en https://jhfaber.github.io/musa/ : subir VERSION en service-worker.js y luego
+  //   Terminal → Ejecutar tarea… → "Publicar Musa"   (o: node herramientas/publicar.js)
+  // ──────────────────────────────────────────────────────────────────────────────────────────────
   "version": "0.2.0",
   "configurations": [
     {
