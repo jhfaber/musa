@@ -118,3 +118,32 @@
   cursor: pointer;
 }
 .carta-fav--activa { color: #d9a21b; }
+
+/* Menús de Dixit (ajustes, catálogo): la portada detrás, en color y oscurecida, bajo el degradado violeta
+   semitransparente; el texto suelto va en tarjetas para que se lea (como en los menús de Risk) */
+body[data-juego="dixit"] .catalogo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../../comun/img/portada.webp') 50% 20% / cover no-repeat, var(--noche);
+  filter: grayscale(.2) brightness(.75);
+}
+body[data-juego="dixit"] .catalogo-fondo { background: rgba(10, 5, 30, .25); backdrop-filter: none; }
+body[data-juego="dixit"] .catalogo-panel {
+  background: linear-gradient(170deg, rgba(27, 20, 70, .62), rgba(59, 42, 110, .62));
+}
+body[data-juego="dixit"] .catalogo :is(section.ajuste, .catalogo-resumen) {
+  background: rgba(18, 13, 44, .78);
+  border: 1px solid rgba(255, 246, 213, .14);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+}
+body[data-juego="dixit"] .catalogo section.ajuste > .catalogo-subtitulo:first-child { margin-top: 0; }
+body[data-juego="dixit"] .catalogo :not(section.ajuste) > .catalogo-subtitulo {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(18, 13, 44, .78);
+}

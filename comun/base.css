@@ -49,8 +49,8 @@ body {
 
 @keyframes titilar { to { opacity: .35; } }
 
-/* Inicio: la portada (luna) de fondo, oscurecida hacia abajo para que se lean los juegos */
-body:not([data-juego])::before {
+/* Inicio y Dixit: la portada (luna) de fondo, oscurecida hacia abajo para que se lea el contenido */
+body:not([data-juego])::before, body[data-juego="dixit"]::before {
   content: "";
   position: fixed;
   inset: 0;
