@@ -229,12 +229,12 @@ body[data-juego="risk"] {
   background: rgba(0, 0, 0, .2);
 }
 .risk-cuenta-numero {
-  font-family: var(--serif);
+  font-family: var(--serif-cifras);
   font-size: 7.5rem;
   line-height: 1;
   color: var(--oro-claro);
   text-shadow: 0 0 20px rgba(242, 196, 107, .6);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
   animation: golpe 1s ease-out infinite;
 }
 .risk-cuenta--pausa .risk-cuenta-numero { animation: none; opacity: .6; }

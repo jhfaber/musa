@@ -11,6 +11,8 @@
   --texto: #f5efff;
   --texto-suave: #c9bde3;
   --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  /* Georgia tiene cifras de estilo antiguo (3, 4, 5, 7, 9 bajan; 6, 8 suben): para números grandes centrados */
+  --serif-cifras: 'Palatino Linotype', Palatino, 'Book Antiqua', 'Times New Roman', serif;
   --velo-controles: rgba(27, 20, 70, .82);
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
