@@ -1,0 +1,415 @@
+:root {
+  --noche: #1b1446;
+  --violeta: #3a2a6e;
+  --malva: #7a5a9e;
+  --oro: #f2c46b;
+  --oro-claro: #fff6d5;
+  --papel: #fbf3e4;
+  --tinta: #2c2140;
+  --tinta-suave: #6b5f7d;
+  --coral: #e98a7a;
+  --texto: #f5efff;
+  --texto-suave: #c9bde3;
+  --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  /* Georgia tiene cifras de estilo antiguo (3, 4, 5, 7, 9 bajan; 6, 8 suben): para números grandes centrados */
+  --serif-cifras: 'Palatino Linotype', Palatino, 'Book Antiqua', 'Times New Roman', serif;
+  --velo-controles: rgba(27, 20, 70, .82);
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  font-family: var(--sans);
+  color: var(--texto);
+  background: linear-gradient(170deg, var(--noche) 0%, var(--violeta) 55%, var(--malva) 100%) fixed;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* Estrellas de fondo */
+.cielo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 72%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 64% 12%, var(--oro-claro) 50%, transparent 51%),
+    radial-gradient(1px 1px at 82% 38%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 46% 46%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 84%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 8% 92%, var(--oro-claro) 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 64%, #fff 50%, transparent 51%);
+  opacity: .7;
+  animation: titilar 6s ease-in-out infinite alternate;
+}
+
+@keyframes titilar { to { opacity: .35; } }
+
+/* Inicio y Dixit: la portada (luna) de fondo, oscurecida hacia abajo para que se lea el contenido */
+body:not([data-juego])::before, body[data-juego="dixit"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(27, 20, 70, .35) 0%, rgba(27, 20, 70, .55) 35%, rgba(27, 20, 70, .9) 70%, var(--noche) 100%),
+    url('img/portada.webp') 50% 20% / cover no-repeat;
+}
+
+.pantalla {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+}
+
+[hidden] { display: none !important; }
+
+/* Inicio */
+.marca { text-align: center; padding: 40px 0 28px; }
+.marca-luna { width: 108px; height: 108px; filter: drop-shadow(0 0 24px rgba(242, 196, 107, .45)); }
+.marca h1 {
+  font-family: var(--serif);
+  font-size: 3.2rem;
+  font-weight: normal;
+  letter-spacing: .06em;
+  margin: 8px 0 4px;
+  color: var(--oro-claro);
+}
+.marca p { margin: 0; color: var(--texto-suave); font-style: italic; font-family: var(--serif); }
+
+.juegos { display: grid; gap: 12px; }
+
+.tarjeta-juego {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .09);
+  border: 1px solid rgba(255, 246, 213, .18);
+  color: inherit;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+.tarjeta-juego:active { transform: scale(.98); }
+.tarjeta-juego--pronto { opacity: .5; }
+.tarjeta-juego-simbolo { font-size: 2rem; }
+.tarjeta-juego-texto { flex: 1; display: grid; gap: 2px; }
+.tarjeta-juego-texto strong { font-family: var(--serif); font-size: 1.35rem; font-weight: normal; color: var(--oro-claro); }
+.tarjeta-juego-texto small { color: var(--texto-suave); font-size: .9rem; }
+.tarjeta-juego-flecha { font-size: 1.8rem; color: var(--oro); }
+
+.aviso-instalar { margin-top: 20px; text-align: center; color: var(--texto-suave); font-size: .9rem; line-height: 1.5; }
+
+.pie { margin-top: 40px; text-align: center; font-size: .75rem; color: var(--texto-suave); opacity: .7; line-height: 1.6; }
+
+/* Barra del juego */
+/* Tres columnas: el título queda centrado aunque a la derecha haya dos botones (⚙ y ☰) */
+.barra { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin-bottom: 8px; }
+.barra > :first-child { justify-self: start; }
+.barra h2 { font-family: var(--serif); font-weight: normal; font-size: 1.4rem; margin: 0; color: var(--oro-claro); }
+
+.boton-icono {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: var(--oro-claro);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Pantalla de juego: ronda, mesa y carta (todos los juegos) */
+
+.ronda {
+  font-family: var(--serif);
+  font-size: 1rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--oro);
+}
+
+.mesa { width: 100%; perspective: 1200px; }
+.mesa--girar .carta { animation: girar .6s cubic-bezier(.2, .8, .3, 1.1); }
+
+@keyframes girar {
+  from { transform: rotateY(-100deg) scale(.9); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.carta {
+  position: relative;
+  min-height: 340px;
+  padding: 26px 22px 22px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(242, 196, 107, .25), transparent 40%),
+    radial-gradient(circle at 10% 95%, rgba(233, 138, 122, .18), transparent 45%),
+    var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 18px 40px rgba(10, 5, 30, .45), inset 0 0 0 6px var(--papel), inset 0 0 0 7.5px var(--oro);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.carta-cadena { font-size: .85rem; color: var(--tinta-suave); letter-spacing: .05em; }
+.carta-cadena span { font-size: 1.1rem; }
+
+.carta-etiqueta {
+  align-self: center;
+  margin-top: 10px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: rgba(122, 90, 158, .14);
+  color: var(--violeta);
+}
+.carta-etiqueta--cambio { background: rgba(233, 138, 122, .22); color: #a8483a; }
+
+.carta-titulo {
+  font-family: var(--serif);
+  font-weight: normal;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  margin: 22px 0 12px;
+  color: var(--tinta);
+}
+
+.carta-descripcion { font-size: 1.2rem; line-height: 1.45; margin: 0 0 auto; }
+
+.carta-ejemplo {
+  margin: 24px 0 0;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(44, 33, 64, .25);
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--tinta-suave);
+  line-height: 1.4;
+}
+.carta-ejemplo span {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.carta--dorso {
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background:
+    repeating-radial-gradient(circle at 50% 45%, transparent 0 18px, rgba(242, 196, 107, .12) 18px 19px),
+    linear-gradient(160deg, var(--violeta), var(--noche));
+  color: var(--texto);
+  box-shadow: 0 18px 40px rgba(10, 5, 30, .45), inset 0 0 0 6px var(--noche), inset 0 0 0 7.5px var(--oro);
+}
+.carta-dorso-arte { font-size: 5rem; color: var(--oro); text-shadow: 0 0 30px rgba(242, 196, 107, .6); line-height: 1; }
+.carta-dorso-texto { margin: 0; color: var(--texto-suave); line-height: 1.5; font-size: 1.05rem; }
+
+
+.ajustes-desc { margin: 10px 0 4px; color: var(--texto-suave); font-size: .9rem; }
+
+.controles { display: flex; align-items: center; gap: 10px; width: 100%; }
+.boton-redondo { flex: none; background: rgba(255, 255, 255, .08); }
+.boton-redondo:disabled { opacity: .25; cursor: default; }
+
+.boton {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+}
+.boton--principal {
+  flex: 1;
+  padding: 16px 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--noche);
+  background: linear-gradient(180deg, var(--oro-claro), var(--oro));
+  box-shadow: 0 8px 22px rgba(242, 196, 107, .35);
+}
+.boton--principal:active { transform: translateY(1px) scale(.99); }
+.boton--secundario {
+  padding: 12px 20px;
+  color: var(--oro-claro);
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 246, 213, .3);
+}
+.boton--texto { padding: 8px 14px; background: none; color: var(--texto-suave); text-decoration: underline; text-underline-offset: 3px; }
+
+.ajustes {
+  width: 100%;
+  margin-top: 8px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .06);
+  text-align: center;
+}
+.ajustes-titulo { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--texto-suave); margin-bottom: 10px; }
+
+.chips { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.chip {
+  font: inherit;
+  font-size: .9rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 246, 213, .25);
+  background: none;
+  color: var(--texto);
+  cursor: pointer;
+}
+.chip--activo { background: var(--oro); border-color: var(--oro); color: var(--noche); font-weight: 600; }
+
+.como-jugar { width: 100%; color: var(--texto-suave); font-size: .9rem; line-height: 1.5; }
+.como-jugar summary { cursor: pointer; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cielo, .mesa--girar .carta, .mesa--girar .lente, .mesa--girar .sello { animation: none; }
+}
+
+
+/* El botón de nueva ronda queda siempre a la vista, aunque haya que bajar en celulares pequeños */
+.controles {
+  position: sticky;
+  bottom: max(10px, env(safe-area-inset-bottom, 0px));
+  z-index: 5;
+  padding: 6px;
+  border-radius: 999px;
+  background: var(--velo-controles);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Botón de la barra que pone cada juego (☰ en Dixit) */
+.accion-juego { justify-self: end; min-width: 44px; height: 44px; display: flex; align-items: center; }
+
+/* Catálogo: panel con las categorías y lentes de cada nivel */
+body.sin-scroll { overflow: hidden; }
+.catalogo { position: fixed; inset: 0; z-index: 50; }
+.catalogo-fondo { position: absolute; inset: 0; background: rgba(10, 5, 30, .6); backdrop-filter: blur(3px); }
+.catalogo-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100%, 520px);
+  overflow-y: auto;
+  padding: max(14px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) 16px;
+  background: linear-gradient(170deg, var(--noche), var(--violeta));
+  box-shadow: -12px 0 40px rgba(10, 5, 30, .5);
+  animation: deslizar .25s ease-out;
+}
+@keyframes deslizar { from { transform: translateX(40px); opacity: 0; } }
+.catalogo-cabeza { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.catalogo-cabeza h2 { font-family: var(--serif); font-weight: normal; font-size: 1.4rem; margin: 0; color: var(--oro-claro); }
+.catalogo .chips { margin-bottom: 12px; }
+.catalogo-resumen { margin: 0 0 10px; color: var(--texto-suave); font-size: .92rem; }
+.catalogo-resumen b { color: var(--oro-claro); }
+.catalogo-subtitulo { font-family: var(--serif); font-weight: normal; color: var(--oro-claro); font-size: 1.15rem; margin: 22px 0 8px; }
+
+.catalogo-tabla { width: 100%; border-collapse: collapse; font-size: .88rem; background: var(--papel); color: var(--tinta); border-radius: 14px; overflow: hidden; }
+.catalogo-tabla thead th { background: var(--oro); color: var(--tinta); text-align: left; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; padding: 8px 10px; }
+.catalogo-tabla tbody th, .catalogo-tabla td { text-align: left; vertical-align: top; padding: 9px 10px; border-top: 1px solid rgba(44, 33, 64, .12); line-height: 1.35; }
+.catalogo-tabla tbody th { font-weight: 600; width: 40%; }
+.cat-simbolo { margin-right: 2px; }
+.cat-marca, .cat-familia-nombre { display: block; margin-top: 3px; font-size: .7rem; font-weight: 600; color: #8a3b2e; }
+.cat-familia-nombre { color: var(--tinta-suave); font-weight: 500; }
+.cat-familia { display: block; }
+.cat-familia + .cat-familia { margin-top: 4px; }
+.cat-desc { color: var(--tinta-suave); }
+.cat-cuenta { display: inline-block; margin: 3px 4px 0 0; padding: 1px 8px; border-radius: 999px; font-size: .7rem; font-weight: 700; background: var(--oro); color: var(--tinta); }
+.cat-nivel { display: inline-block; margin-top: 3px; padding: 1px 8px; border-radius: 999px; font-size: .68rem; font-weight: 600; background: rgba(122, 90, 158, .16); color: var(--violeta); }
+
+@media (prefers-reduced-motion: reduce) { .catalogo-panel { animation: none; } }
+
+
+.boton--principal:disabled { opacity: .45; }
+
+/* Reloj para pensar la pista: botón centrado en la carta y cómo se ve pasar el tiempo */
+.reloj-boton {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--oro);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--oro-claro), #f6dc9c);
+  color: var(--tinta);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(44, 33, 64, .18);
+  cursor: pointer;
+}
+.reloj-boton:active { transform: translateY(1px); }
+.reloj-cuenta { font-variant-numeric: tabular-nums; padding-left: 8px; border-left: 1px solid rgba(44, 33, 64, .2); }
+
+.reloj-velo, .reloj-borde { display: none; }
+.reloj-velo { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+.reloj-arena { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: rgba(242, 196, 107, .22); transition: background .4s; }
+.reloj-vista-arena .reloj-velo { display: block; }
+
+.reloj-borde { position: absolute; inset: -5px; width: calc(100% + 10px); height: calc(100% + 10px); pointer-events: none; overflow: visible; }
+.reloj-borde rect { fill: none; stroke: var(--oro); stroke-width: 4; stroke-linecap: round; transition: stroke .4s; }
+.reloj-vista-borde .reloj-borde { display: block; }
+
+/* Últimos 10 segundos: coral y un latido suave; al terminar, contorno coral */
+.reloj--poco .reloj-boton { border-color: var(--coral); }
+.reloj--poco .reloj-arena { background: rgba(233, 138, 122, .25); }
+.reloj--poco .reloj-borde rect { stroke: var(--coral); }
+.mesa .carta.reloj--poco { animation: latido 1s ease-in-out infinite; }
+@keyframes latido { 50% { transform: scale(1.012); } }
+.carta.reloj--fin { box-shadow: 0 0 0 4px var(--coral), 0 18px 40px rgba(10, 5, 30, .45), inset 0 0 0 6px var(--papel), inset 0 0 0 7.5px var(--oro); }
+@media (prefers-reduced-motion: reduce) { .mesa .carta.reloj--poco { animation: none; } }
+
+/* Menú ⚙ Ajustes */
+.ajuste { color: var(--texto); }
+.ajuste .catalogo-subtitulo { margin-top: 4px; }
+.ajuste-titulo { margin: 18px 0 8px; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--oro); }
+.ajuste .chips { justify-content: flex-start; }
+.ajuste .ajustes-desc { margin: 8px 0 0; color: var(--texto-suave); font-size: .85rem; }
+.ajuste-fila { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(255, 246, 213, .12); cursor: pointer; }
+.ajuste-fila b { display: block; font-weight: 600; }
+.ajuste-fila small { display: block; margin-top: 2px; color: var(--texto-suave); font-size: .8rem; line-height: 1.35; }
+.ajuste-interruptor { flex: none; width: 22px; height: 22px; accent-color: var(--oro); }
+.ajuste-tiempo { display: flex; gap: 12px; margin-bottom: 10px; }
+.ajuste-paso { flex: 1; display: flex; align-items: center; justify-content: space-between; padding: 4px; border-radius: 999px; background: rgba(255, 246, 213, .08); border: 1px solid rgba(255, 246, 213, .2); }
+.ajuste-paso span { font-size: .9rem; color: var(--texto-suave); }
+.ajuste-paso b { font-family: var(--serif); font-size: 1.5rem; font-weight: normal; color: var(--oro-claro); font-variant-numeric: tabular-nums; }
+
+/* Panel a pantalla completa (escuela, juez…): ocupa todo y lleva "Cerrar" fijo abajo */
+.catalogo--completa .catalogo-panel { width: 100%; display: flex; flex-direction: column; padding-bottom: 0; }
+.catalogo--completa .catalogo-cuerpo { flex: 1; max-width: 560px; width: 100%; margin: 0 auto; }
+.catalogo--completa .catalogo-cabeza, .catalogo--completa .catalogo-panel > .chips { max-width: 560px; width: 100%; margin-left: auto; margin-right: auto; }
+.catalogo-pie {
+  position: sticky;
+  bottom: 0;
+  margin: 16px -16px 0;
+  padding: 12px 16px max(14px, env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, var(--noche) 70%, transparent);
+  display: flex;
+  justify-content: center;
+}
+.catalogo-pie .boton { width: min(100%, 420px); }

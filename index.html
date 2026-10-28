@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Musa</title>
+  <meta name="description" content="Rondas mágicas para tus juegos de mesa">
+  <meta name="theme-color" content="#1b1446">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="iconos/icono-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="iconos/icono-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Musa">
+  <link rel="stylesheet" href="comun/base.css">
+</head>
+<body>
+  <div class="cielo" aria-hidden="true"></div>
+
+  <!-- Inicio: lista de juegos -->
+  <main id="pantalla-inicio" class="pantalla">
+    <header class="marca">
+      <svg class="marca-luna" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <radialGradient id="g-luna" cx="40%" cy="35%" r="70%">
+            <stop offset="0" stop-color="#fff6d5"/>
+            <stop offset="1" stop-color="#f2c46b"/>
+          </radialGradient>
+          <mask id="m-luna"><rect width="100" height="100" fill="#fff"/><circle cx="62" cy="40" r="30" fill="#000"/></mask>
+        </defs>
+        <circle cx="46" cy="52" r="34" fill="url(#g-luna)" mask="url(#m-luna)"/>
+        <path d="M78 20 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#fff6d5"/>
+        <circle cx="86" cy="58" r="2.5" fill="#fff6d5"/>
+      </svg>
+      <h1>Musa</h1>
+      <p>Rondas mágicas para tus juegos de mesa</p>
+    </header>
+
+    <section class="juegos" id="lista-juegos" aria-label="Juegos"></section>
+
+    <div id="aviso-instalar" class="aviso-instalar" hidden></div>
+
+    <footer class="pie">
+      Acompañante no oficial, hecho en casa.<br>
+      Dixit es una marca registrada de Libellud. Risk es una marca registrada de Hasbro.
+    </footer>
+  </main>
+
+  <!-- Pantalla de un juego -->
+  <main id="pantalla-juego" class="pantalla" hidden>
+    <header class="barra">
+      <a href="#" class="boton-icono" aria-label="Volver al inicio">←</a>
+      <h2 id="titulo-juego"></h2>
+      <span id="accion-juego" class="accion-juego"></span>
+    </header>
+    <div id="contenido-juego"></div>
+  </main>
+
+  <script src="comun/app.js"></script>
+  <script src="comun/guardar.js"></script>
+  <script src="comun/panel.js"></script>
+  <script src="comun/reloj.js"></script>
+  <script src="comun/ui.js"></script>
+  <!-- Los juegos (CSS y JS) se cargan desde juegos/juegos.json -->
+  <script>Musa.iniciar();</script>
+</body>
+</html>

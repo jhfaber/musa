@@ -1,0 +1,431 @@
+{
+  "_ayuda": "Categorías: qué evocar. Lentes: pistas extra por nivel (Normal 1, Caótico 2, de familias distintas). relacionado = no vale lo que se ve; niveles = en qué niveles sale (si falta, en todos); sin_lentes = va siempre sola; min_lentes = trae al menos esos lentes aunque el nivel dé menos; lentes_permitidos = los únicos lentes que le pueden salir; lente_principal = familia del primer lente (p. ej. \"escala\" en las categorías \"Si la carta fuera…\").",
+  "categorias": [
+    {
+      "id": "emociones",
+      "nombre": "Lo que te hace sentir",
+      "simbolo": "💭",
+      "descripcion": "Una emoción o una sensación que te provoca la carta, como en el Dixit de siempre.",
+      "ejemplos": [
+        "Nostalgia",
+        "Vértigo",
+        "Un escalofrío",
+        "Alivio después de un susto",
+        "Ternura"
+      ],
+      "lentes_permitidos": [
+        "epoca",
+        "hora-dia",
+        "momento-vida",
+        "contrario",
+        "su-sonido"
+      ]
+    },
+    {
+      "id": "recuerdos",
+      "nombre": "Un recuerdo de infancia",
+      "simbolo": "🧒",
+      "descripcion": "Algo de cuando eras niño que la carta te recuerda. De paso, la mesa se conoce un poco más.",
+      "ejemplos": [
+        "La lonchera del colegio",
+        "Esperar el bus del colegio",
+        "La piñata del cumpleaños",
+        "Dormirse en el carro de vuelta del paseo",
+        "El regaño por llegar tarde"
+      ],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
+      "niveles": [
+        "normal",
+        "caotico"
+      ],
+      "lente_principal": "escala"
+    },
+    {
+      "id": "peliculas",
+      "nombre": "La película de esta carta",
+      "simbolo": "🎬",
+      "descripcion": "Imagina que la carta es una escena: ¿de qué película o serie sería? Di la película, la escena o una frase famosa de ella.",
+      "ejemplos": [
+        "Titanic, la escena del final",
+        "Volver al futuro, cuando llegan tarde",
+        "El viaje de Chihiro, perdida en otro mundo",
+        "\"Houston, tenemos un problema\"",
+        "Stranger Things, cuando se apagan las luces"
+      ],
+      "lentes_permitidos": [
+        "su-sonido"
+      ]
+    },
+    {
+      "id": "personajes",
+      "nombre": "Un personaje relacionado",
+      "simbolo": "🦸",
+      "descripcion": "Alguien de la ficción, la historia o los cuentos que tenga que ver con la carta sin estar dibujado en ella.",
+      "ejemplos": [
+        "Caperucita Roja",
+        "Don Quijote",
+        "Frida Kahlo",
+        "El Chavo del 8",
+        "Gandalf"
+      ],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
+      "niveles": [
+        "normal",
+        "caotico"
+      ],
+      "lente_principal": "escala",
+      "relacionado": true
+    },
+    {
+      "id": "musica",
+      "nombre": "Bandas, géneros y artistas",
+      "simbolo": "🎵",
+      "descripcion": "Una banda, un artista o un género musical que le quede a la carta.",
+      "ejemplos": [
+        "Queen",
+        "Un bolero de despecho",
+        "Shakira en sus inicios",
+        "Heavy metal",
+        "Los Beatles"
+      ],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
+      "niveles": [
+        "normal",
+        "caotico"
+      ],
+      "lente_principal": "escala"
+    },
+    {
+      "id": "cercano",
+      "nombre": "Algo cercano",
+      "simbolo": "🧲",
+      "descripcion": "Un lugar o un objeto que esté cerca o tenga que ver con algo de la carta, no lo que se ve.",
+      "ejemplos": [
+        "Arena → el mar",
+        "Un libro → unas gafas",
+        "Una llave → el tapete de la entrada",
+        "Nieve → el congelador",
+        "Un paraguas → la puerta de la casa"
+      ],
+      "relacionado": true,
+      "lentes_permitidos": [
+        "epoca",
+        "hora-dia",
+        "momento-vida",
+        "contrario",
+        "su-sonido"
+      ]
+    },
+    {
+      "id": "textura",
+      "nombre": "Si la carta fuera una textura",
+      "simbolo": "🧶",
+      "descripcion": "Imagina que pudieras tocar la carta: ¿qué textura o material sería?",
+      "ejemplos": [
+        "Terciopelo de un abrigo viejo",
+        "Vidrio roto bajo la lluvia",
+        "Papel arrugado de una carta vieja",
+        "Lija de unas manos trabajadoras",
+        "Algodón de azúcar pegajoso"
+      ],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
+      "niveles": [
+        "normal",
+        "caotico"
+      ],
+      "lente_principal": "escala"
+    },
+    {
+      "id": "animales",
+      "nombre": "Un animal relacionado",
+      "simbolo": "🐾",
+      "descripcion": "Un animal, real o fantástico, que tenga que ver con la carta sin estar dibujado en ella.",
+      "ejemplos": [
+        "El perro que espera afuera",
+        "Un búho que lo vio todo",
+        "La tortuga que llegó tarde",
+        "El colibrí del jardín",
+        "Un dragón dormido debajo"
+      ],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
+      "niveles": [
+        "normal",
+        "caotico"
+      ],
+      "lente_principal": "escala",
+      "relacionado": true
+    },
+    {
+      "id": "comidas",
+      "nombre": "Un plato con su momento",
+      "simbolo": "🍲",
+      "descripcion": "Una comida o bebida con su detalle o su instante: no solo el plato, sino cómo, cuándo o con quién se come.",
+      "ejemplos": [
+        "Chocolate caliente en día de lluvia",
+        "Helado derritiéndose",
+        "La torta que nadie se comió",
+        "Café frío olvidado en la mesa",
+        "Changua con vegetales que nadie pidió"
+      ],
+      "lentes_permitidos": [
+        "epoca",
+        "hora-dia",
+        "momento-vida",
+        "su-sonido"
+      ]
+    },
+    {
+      "id": "oficios",
+      "nombre": "Un oficio relacionado",
+      "simbolo": "🧭",
+      "descripcion": "Un trabajo o una actividad que tenga que ver con la carta sin que se vea en ella.",
+      "ejemplos": [
+        "Farolero",
+        "Cartero de un pueblo",
+        "Astronauta",
+        "Equilibrista",
+        "Jugador de ajedrez"
+      ],
+      "lentes_permitidos": [
+        "escala-tierna-peligrosa",
+        "escala-tranquila-caotica",
+        "escala-triste-alegre",
+        "escala-antigua-moderna",
+        "escala-cotidiana-extraordinaria",
+        "escala-fria-calida",
+        "escala-diminuta-enorme",
+        "su-sonido"
+      ],
+      "niveles": [
+        "normal",
+        "caotico"
+      ],
+      "lente_principal": "escala",
+      "relacionado": true
+    },
+    {
+      "id": "fantasia",
+      "nombre": "Una situación mágica",
+      "simbolo": "✨",
+      "descripcion": "Algo que solo podría pasar con magia: un poder, un hechizo, un objeto encantado, una criatura o una leyenda.",
+      "ejemplos": [
+        "Hablar con los relojes",
+        "Una varita rota",
+        "La leyenda de la Llorona",
+        "Un hechizo para volverse invisible",
+        "Un dragón que guarda un tesoro"
+      ],
+      "lentes_permitidos": [
+        "su-sonido"
+      ]
+    },
+    {
+      "id": "antes-despues",
+      "nombre": "Historia: antes o después",
+      "simbolo": "⏮️",
+      "descripcion": "Lo que pasó justo antes o lo que pasará justo después de la carta.",
+      "ejemplos": [
+        "Nadie apagó la estufa",
+        "Llegó cinco minutos tarde",
+        "La última llamada sin contestar",
+        "Ganó la lotería y no lo sabía",
+        "Mañana todo vuelve a empezar"
+      ],
+      "relacionado": true,
+      "lentes_permitidos": [
+        "su-sonido"
+      ]
+    }
+  ],
+  "lentes": [
+    {
+      "id": "escala",
+      "nombre": "Escala",
+      "simbolo": "🌡️",
+      "descripcion": "Ubica la carta entre los dos extremos, del 1 al 10, y di el número con tu pista.",
+      "lentes": [
+        {
+          "id": "escala-tierna-peligrosa",
+          "titulo": "De tierna a peligrosa",
+          "ejemplos": [
+            "1 = lo más tierna",
+            "10 = lo más peligrosa"
+          ]
+        },
+        {
+          "id": "escala-tranquila-caotica",
+          "titulo": "De tranquila a caótica",
+          "ejemplos": [
+            "1 = lo más tranquila",
+            "10 = lo más caótica"
+          ]
+        },
+        {
+          "id": "escala-triste-alegre",
+          "titulo": "De triste a alegre",
+          "ejemplos": [
+            "1 = lo más triste",
+            "10 = lo más alegre"
+          ]
+        },
+        {
+          "id": "escala-antigua-moderna",
+          "titulo": "De antigua a moderna",
+          "ejemplos": [
+            "1 = lo más antigua",
+            "10 = lo más moderna"
+          ]
+        },
+        {
+          "id": "escala-cotidiana-extraordinaria",
+          "titulo": "De cotidiana a extraordinaria",
+          "ejemplos": [
+            "1 = lo más cotidiana",
+            "10 = lo más extraordinaria"
+          ]
+        },
+        {
+          "id": "escala-fria-calida",
+          "titulo": "De fría a cálida",
+          "ejemplos": [
+            "1 = lo más fría",
+            "10 = lo más cálida"
+          ]
+        },
+        {
+          "id": "escala-diminuta-enorme",
+          "titulo": "De diminuta a enorme",
+          "ejemplos": [
+            "1 = lo más diminuta",
+            "10 = lo más enorme"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiempo",
+      "nombre": "Tiempo",
+      "simbolo": "⏳",
+      "descripcion": "Tú eliges el momento en que pasa la carta.",
+      "lentes": [
+        {
+          "id": "epoca",
+          "titulo": "Una época",
+          "ejemplos": [
+            "Hace mil años",
+            "La prehistoria",
+            "Los años 80",
+            "La Edad Media",
+            "Dentro de mil años"
+          ]
+        },
+        {
+          "id": "hora-dia",
+          "titulo": "Una hora del día",
+          "ejemplos": [
+            "3 de la madrugada",
+            "El amanecer",
+            "Mediodía",
+            "El atardecer",
+            "Medianoche"
+          ]
+        },
+        {
+          "id": "momento-vida",
+          "titulo": "Un momento de la vida",
+          "ejemplos": [
+            "La infancia",
+            "El primer amor",
+            "El último día de colegio",
+            "El primer trabajo",
+            "La vejez"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "giro",
+      "nombre": "Giro",
+      "simbolo": "🔄",
+      "descripcion": "Tú eliges cómo se transforma la carta.",
+      "lentes": [
+        {
+          "id": "contrario",
+          "titulo": "Lo contrario",
+          "descripcion": "Piensa la pista que darías y di lo contrario.",
+          "ejemplos": [
+            "Ibas a decir \"desierto\" → dices \"un bosque\"",
+            "Ibas a decir \"el mar\" → dices \"lava\"",
+            "Ibas a decir \"silencio\" → dices \"un estadio lleno\"",
+            "Ibas a decir \"nostalgia\" → dices \"la emoción de estrenar\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sonido",
+      "nombre": "Sonido",
+      "simbolo": "🔊",
+      "descripcion": "Un sonido u onomatopeya relacionado con la carta: del animal o de cualquier cosa que pase en ella.",
+      "lentes": [
+        {
+          "id": "su-sonido",
+          "titulo": "Un sonido",
+          "ejemplos": [
+            "¡Pummm!",
+            "Uuh… uuh",
+            "Plic, plic, plic",
+            "Fiuuu",
+            "¡Crac!"
+          ],
+          "descripcion": "Un sonido u onomatopeya de algo que pase en la carta."
+        }
+      ]
+    }
+  ]
+}
