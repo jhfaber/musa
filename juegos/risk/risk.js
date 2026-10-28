@@ -23,12 +23,13 @@ const enRisk = () => location.hash === '#risk' && contenedor;
 // ---------- Pintar según el estado ----------
 
 // Toda la pantalla toma un matiz del color del equipo en turno (al terminar, del ganador) y, si está activada
-// en ⚙, la imagen de su bando de fondo (spec 007)
+// en ⚙, la imagen de su bando de fondo (spec 007); sin equipo (nueva partida, victoria sin ganador), la del
+// bando por defecto
 function pintarTono(p, aj) {
   const eq = !p ? null : p.terminada ? p.ganador && equipoPorId(p, p.ganador) : equipoActual(p);
   if (eq) document.body.style.setProperty('--equipo-turno', eq.color);
   else document.body.style.removeProperty('--equipo-turno');
-  const imagen = eq && aj.fondo !== 'no' && imagenDe(eq);
+  const imagen = aj.fondo !== 'no' && imagenDe(eq);
   if (imagen) document.body.style.setProperty('--risk-imagen', `url("${imagen}")`);
   else document.body.style.removeProperty('--risk-imagen');
   document.body.dataset.fondo = imagen ? aj.fondo : 'no';

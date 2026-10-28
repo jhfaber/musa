@@ -44,6 +44,9 @@ export const AJUSTES_BASE = {
 // Valores posibles de los ajustes que se eligen de una lista (al cargar, uno desconocido vuelve al de AJUSTES_BASE)
 export const OPCIONES = { emblema: ['escudo', 'emoji'], fondo: ['no', 'suave', 'media', 'fuerte'] };
 
+// Imagen de fondo cuando no hay equipo (nueva partida, victoria sin ganador)
+export const BANDO_POR_DEFECTO = 'orcos';
+
 // Venta de cartas de territorio: estrellas → tropas (tabla del reglamento)
 export const VENTA_CARTAS = { 2: 2, 3: 4, 4: 7, 5: 10, 6: 13, 7: 17, 8: 21, 9: 25, 10: 30 };
 export const tropasPorEstrellas = estrellas => VENTA_CARTAS[estrellas] || 0;

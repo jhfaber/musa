@@ -1,6 +1,6 @@
 // Pruebas de la lógica de Risk (sin navegador). Uso: node herramientas/probar-risk.mjs
 import assert from 'node:assert/strict';
-import { aplicar, AJUSTES_BASE, COLORES, OPCIONES, colorDe, estadisticas, cartasPorConquista, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
+import { aplicar, AJUSTES_BASE, COLORES, OPCIONES, BANDO_POR_DEFECTO, colorDe, estadisticas, cartasPorConquista, totalReclamo, equipoActual, proximoReclamo, vencido, ordenTurnos } from '../juegos/risk/logica/reglas.js';
 import { mapasIniciales, crearMapa, agregarContinente, editarContinente, migrarMapas } from '../juegos/risk/logica/mapas.js';
 import { resolver, frase, probabilidades, dadosAtaque, dadosDefensa } from '../juegos/risk/logica/dados.js';
 import { existsSync, readFileSync } from 'node:fs';
@@ -349,6 +349,11 @@ prueba('ajustes de aspecto: valores por defecto válidos (escudo dibujado, image
   assert.equal(AJUSTES_BASE.emblema, 'escudo');
   assert.ok(OPCIONES.emblema.includes(AJUSTES_BASE.emblema));
   assert.ok(OPCIONES.fondo.includes(AJUSTES_BASE.fondo));
+});
+
+prueba('imagen por defecto (nueva partida, victoria sin ganador): un bando que existe, los orcos', () => {
+  assert.equal(BANDO_POR_DEFECTO, 'orcos');
+  assert.ok(COLORES.some(c => c.bando === BANDO_POR_DEFECTO));
 });
 
 let fallas = 0;

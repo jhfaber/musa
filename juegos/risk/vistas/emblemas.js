@@ -1,6 +1,6 @@
 // Emblema de cada equipo (spec 007): escudo dibujado en SVG con el color del equipo, o un emoji en un medallón.
 // El estilo lo fija risk.js en cada pintado con usarEstilo(aj.emblema). Sin imágenes externas.
-import { colorDe } from '../logica/reglas.js';
+import { colorDe, BANDO_POR_DEFECTO } from '../logica/reglas.js';
 
 let estilo = 'escudo';
 let siguienteId = 0;
@@ -81,10 +81,11 @@ export function emblema(equipo, tam = 24) {
     ${ICONOS[c.bando].replace(/"c"/g, `"${dibujo}"`).replace(/"h"/g, `"${color}"`)}</svg></span>`;
 }
 
-// URL absoluta de la imagen de fondo del bando (absoluta para que funcione dentro de una variable CSS)
+// URL absoluta de la imagen de fondo del bando (absoluta para que funcione dentro de una variable CSS);
+// sin equipo, la del bando por defecto
 export const imagenDe = equipo => {
-  const c = colorDe(equipo);
-  return c ? new URL(`juegos/risk/img/${c.bando}.webp`, location.href).href : null;
+  const bando = colorDe(equipo)?.bando || BANDO_POR_DEFECTO;
+  return new URL(`juegos/risk/img/${bando}.webp`, location.href).href;
 };
 
 export const faccionDe = colorDe;
