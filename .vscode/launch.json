@@ -22,8 +22,29 @@
   //     o cerrarlo antes (en PowerShell: Stop-Process -Id (Get-NetTCPConnection -LocalPort 8095).OwningProcess).
   //   • No se ven los cambios: recargar con Ctrl+Shift+R (el service worker guarda una copia).
   //
-  // Publicar en https://jhfaber.github.io/musa/ : subir VERSION en service-worker.js y luego
-  //   Terminal → Ejecutar tarea… → "Publicar Musa"   (o: node herramientas/publicar.js)
+  // ─── CÓMO PUBLICAR EN GITHUB PAGES (https://jhfaber.github.io/musa/) ──────────────────────────
+  // Requisito: Git instalado y sesión de GitHub iniciada en este PC (la primera vez Git abre una
+  // ventana para entrar con la cuenta jhfaber; después lo recuerda).
+  //
+  //   1. Probar que todo funciona (Opción A, B o C de arriba) y que pasan las pruebas:
+  //        node herramientas/probar-risk.mjs
+  //   2. Abrir service-worker.js y subir la versión en 1, p. ej.:
+  //        const VERSION = 'musa-v68';   →   const VERSION = 'musa-v69';
+  //      (sin esto los celulares siguen mostrando la versión vieja guardada)
+  //   3. Publicar: Terminal → Ejecutar tarea… → "Publicar Musa"
+  //        (o en una terminal desde la carpeta musa: node herramientas/publicar.js)
+  //      Debe terminar con: "Publicada musa-v69 → https://jhfaber.github.io/musa/"
+  //   4. Esperar 1 o 2 minutos y abrir https://jhfaber.github.io/musa/ en el PC (Ctrl+Shift+R).
+  //   5. En el celular: abrir Musa con internet; si no cambia, cerrarla del todo y volver a abrirla.
+  //   6. (Opcional) Guardar el código en GitHub:
+  //        git add -A
+  //        git commit -m "Describe el cambio"
+  //        git push origin main
+  //
+  // Qué hace publicar.js: copia SOLO la app (index.html, manifest.json, service-worker.js, comun/,
+  // juegos/, iconos/) a una carpeta temporal, hace un único commit con el correo privado de GitHub
+  // y lo sube a la rama gh-pages (reemplaza la anterior; no sube specs, poc ni el historial).
+  // Si falla con "Authentication failed": volver a iniciar sesión en GitHub (la ventana de Git).
   // ──────────────────────────────────────────────────────────────────────────────────────────────
   "version": "0.2.0",
   "configurations": [
