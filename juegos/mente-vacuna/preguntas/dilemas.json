@@ -1,0 +1,235 @@
+{
+  "id": "dilemas",
+  "nombre": "Dilemas",
+  "emoji": "⚖️",
+  "acento": "#ffe08a",
+  "descripcion": "¿Qué sacrificarías? Elegir entre cosas difíciles",
+  "pista": "Elige una de las 4 opciones, o responde lo que más se diría.",
+  "preguntas": [
+    {
+      "q": "¿Qué sacrificarías primero?",
+      "opciones": [
+        "El celular",
+        "El carro",
+        "La televisión",
+        "Las vacaciones"
+      ]
+    },
+    {
+      "q": "¿Qué soportarías toda la vida?",
+      "opciones": [
+        "Frío",
+        "Calor",
+        "Ruido",
+        "Silencio"
+      ]
+    },
+    {
+      "q": "¿Qué preferirías perder?",
+      "opciones": [
+        "La memoria",
+        "La vista",
+        "El oído",
+        "El olfato"
+      ]
+    },
+    {
+      "q": "¿Sin qué podrías vivir un año?",
+      "opciones": [
+        "Internet",
+        "Música",
+        "Dulces",
+        "Café"
+      ]
+    },
+    {
+      "q": "¿Qué sería peor?",
+      "opciones": [
+        "Mucho frío",
+        "Mucho calor",
+        "Mucha lluvia",
+        "Mucho viento"
+      ]
+    },
+    {
+      "q": "¿Qué viaje elegirías?",
+      "opciones": [
+        "Un crucero",
+        "Una ruta en carro",
+        "Un mochileo",
+        "Un hotel todo incluido"
+      ]
+    },
+    {
+      "q": "¿Qué te gustaría hacer perfecto?",
+      "opciones": [
+        "Cocinar",
+        "Bailar",
+        "Cantar",
+        "Tocar un instrumento"
+      ]
+    },
+    {
+      "q": "¿Qué vida elegirías?",
+      "opciones": [
+        "Fama sin privacidad",
+        "Plata con estrés",
+        "Humildad con paz",
+        "Anonimato y libertad"
+      ]
+    },
+    {
+      "q": "¿Qué soportarías en un viaje largo?",
+      "opciones": [
+        "Un bebé llorando",
+        "Música a todo volumen",
+        "Un asiento incómodo",
+        "Un vecino que no calla"
+      ]
+    },
+    {
+      "q": "¿Qué odiarías más en un compañero de casa?",
+      "opciones": [
+        "El desorden",
+        "El ruido",
+        "Las visitas",
+        "Que no pague"
+      ]
+    },
+    {
+      "q": "¿Qué prefieres en una cita?",
+      "opciones": [
+        "Cena elegante",
+        "Comida callejera",
+        "Un picnic",
+        "Una película"
+      ]
+    },
+    {
+      "q": "¿Qué solo podrías comer por un año?",
+      "opciones": [
+        "Dulce",
+        "Salado",
+        "Frituras",
+        "Sopa"
+      ]
+    },
+    {
+      "q": "¿Qué harías por dinero?",
+      "opciones": [
+        "Cantar en público",
+        "Bailar en público",
+        "Comer algo raro",
+        "Dormir en un lugar embrujado"
+      ]
+    },
+    {
+      "q": "¿Qué trabajo elegirías con el mismo sueldo?",
+      "opciones": [
+        "Piloto",
+        "Chef",
+        "Científico",
+        "Músico"
+      ]
+    },
+    {
+      "q": "¿Dónde vivirías con el mismo sueldo?",
+      "opciones": [
+        "Una isla",
+        "Una ciudad grande",
+        "Un pueblo",
+        "Otro país"
+      ]
+    },
+    {
+      "q": "¿Qué cambiarías de tu pasado?",
+      "opciones": [
+        "Una decisión",
+        "Un amor",
+        "Un trabajo",
+        "Nada"
+      ]
+    },
+    {
+      "q": "¿Qué arruinaría más tus vacaciones?",
+      "opciones": [
+        "Lluvia todo el tiempo",
+        "Perder la maleta",
+        "Enfermarte",
+        "Un hotel horrible"
+      ]
+    },
+    {
+      "q": "¿Con quién viajarías?",
+      "opciones": [
+        "Tu pareja",
+        "Tus amigos",
+        "Tu familia",
+        "Solo"
+      ]
+    },
+    {
+      "q": "¿Qué regalo preferirías?",
+      "opciones": [
+        "Un viaje",
+        "Dinero",
+        "Un aparato",
+        "Una experiencia"
+      ]
+    },
+    {
+      "q": "¿A qué le dirías adiós por un año?",
+      "opciones": [
+        "Redes sociales",
+        "Alcohol",
+        "Dulces",
+        "Series"
+      ]
+    },
+    {
+      "q": "¿Qué harías con una semana libre y plata?",
+      "opciones": [
+        "Viajar",
+        "Dormir",
+        "Estudiar algo",
+        "Hacer una fiesta"
+      ]
+    },
+    {
+      "q": "¿Qué le soportarías más a un amigo?",
+      "opciones": [
+        "Que llegue tarde",
+        "Que hable de más",
+        "Que sea tacaño",
+        "Que cancele planes"
+      ]
+    },
+    {
+      "q": "¿Qué perdonarías más fácil?",
+      "opciones": [
+        "Una mentira",
+        "Un olvido",
+        "Una grosería",
+        "Un plan cancelado"
+      ]
+    },
+    {
+      "q": "¿Qué serías en una banda?",
+      "opciones": [
+        "Cantante",
+        "Guitarrista",
+        "Baterista",
+        "Bajista"
+      ]
+    },
+    {
+      "q": "¿Qué cambiarías de tu rutina?",
+      "opciones": [
+        "Levantarme temprano",
+        "Mi trabajo",
+        "Mi alimentación",
+        "Mi forma de gastar"
+      ]
+    }
+  ]
+}

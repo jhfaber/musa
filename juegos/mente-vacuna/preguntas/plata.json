@@ -1,0 +1,208 @@
+{
+  "id": "plata",
+  "nombre": "Plata y vida adulta",
+  "emoji": "💰",
+  "acento": "#9be8a0",
+  "descripcion": "Sueldo, deudas, gastos y cosas de grandes",
+  "pista": "Elige una de las 4 opciones, o responde lo que más se diría.",
+  "preguntas": [
+    {
+      "q": "¿En qué se va más la plata?",
+      "opciones": [
+        "Comida",
+        "Arriendo",
+        "Salidas",
+        "Transporte"
+      ]
+    },
+    {
+      "q": "¿En qué gastas de más?",
+      "opciones": [
+        "Domicilios",
+        "Ropa",
+        "Tragos",
+        "Antojos"
+      ]
+    },
+    {
+      "q": "¿Qué comprarías con la prima?",
+      "opciones": [
+        "Un viaje",
+        "Ropa",
+        "Un aparato",
+        "Pagar deudas"
+      ]
+    },
+    {
+      "q": "¿Qué haces con la plata que sobra?",
+      "opciones": [
+        "La ahorro",
+        "Salgo",
+        "Viajo",
+        "Compro cosas"
+      ]
+    },
+    {
+      "q": "¿Qué es lo más duro de ser adulto?",
+      "opciones": [
+        "Pagar cuentas",
+        "Madrugar",
+        "Cocinar a diario",
+        "Hacer mercado"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo mejor de ganar la lotería?",
+      "opciones": [
+        "No trabajar",
+        "Viajar",
+        "Ayudar a la familia",
+        "Comprar casa"
+      ]
+    },
+    {
+      "q": "¿Qué da más estrés?",
+      "opciones": [
+        "Las deudas",
+        "El trabajo",
+        "El tráfico",
+        "Los vecinos"
+      ]
+    },
+    {
+      "q": "¿Qué tan pronto se acaba el sueldo?",
+      "opciones": [
+        "En la primera semana",
+        "A mitad de mes",
+        "Llega justo",
+        "Siempre sobra"
+      ]
+    },
+    {
+      "q": "¿Qué recortarías primero en una crisis?",
+      "opciones": [
+        "Las salidas",
+        "El streaming",
+        "La ropa",
+        "Los domicilios"
+      ]
+    },
+    {
+      "q": "¿Qué comprarías primero con mucha plata?",
+      "opciones": [
+        "Una casa",
+        "Un carro",
+        "Un viaje",
+        "Un negocio"
+      ]
+    },
+    {
+      "q": "¿Qué pagarías para que lo hagan por ti?",
+      "opciones": [
+        "Cocinar",
+        "Limpiar",
+        "Hacer mercado",
+        "Planchar"
+      ]
+    },
+    {
+      "q": "¿Qué es lo más caro de la vida?",
+      "opciones": [
+        "La vivienda",
+        "La salud",
+        "La educación",
+        "La comida"
+      ]
+    },
+    {
+      "q": "¿Qué recibo llega siempre más alto?",
+      "opciones": [
+        "La luz",
+        "El agua",
+        "El internet",
+        "El celular"
+      ]
+    },
+    {
+      "q": "¿Cómo pagas casi siempre?",
+      "opciones": [
+        "Tarjeta",
+        "Efectivo",
+        "Transferencia",
+        "Nequi"
+      ]
+    },
+    {
+      "q": "¿Dónde guardarías una gran suma?",
+      "opciones": [
+        "En el banco",
+        "En el colchón",
+        "Invertida",
+        "En un negocio"
+      ]
+    },
+    {
+      "q": "¿Qué prefieres con la plata?",
+      "opciones": [
+        "Ahorrar todo",
+        "Disfrutar todo",
+        "Mitad y mitad",
+        "Depende del mes"
+      ]
+    },
+    {
+      "q": "¿Qué te da más pereza de adulto?",
+      "opciones": [
+        "Los trámites",
+        "Hacer fila",
+        "Lavar la ropa",
+        "Ir al banco"
+      ]
+    },
+    {
+      "q": "¿Qué pagarías primero con dinero extra?",
+      "opciones": [
+        "Una deuda",
+        "El arriendo",
+        "Un gusto",
+        "Un ahorro"
+      ]
+    },
+    {
+      "q": "¿Qué es un lujo?",
+      "opciones": [
+        "Un viaje",
+        "Un buen restaurante",
+        "Una casa propia",
+        "Tiempo libre"
+      ]
+    },
+    {
+      "q": "¿Qué sacrificarías por un mejor sueldo?",
+      "opciones": [
+        "Tiempo libre",
+        "Vivir cerca",
+        "Cambiar de ciudad",
+        "Un horario flexible"
+      ]
+    },
+    {
+      "q": "¿Qué da más estabilidad?",
+      "opciones": [
+        "Un empleo fijo",
+        "Un negocio propio",
+        "Los ahorros",
+        "Una casa"
+      ]
+    },
+    {
+      "q": "¿Qué gasto es innecesario pero imposible de dejar?",
+      "opciones": [
+        "El café",
+        "Los domicilios",
+        "Las suscripciones",
+        "Los antojos"
+      ]
+    }
+  ]
+}

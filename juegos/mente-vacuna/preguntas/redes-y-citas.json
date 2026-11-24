@@ -1,0 +1,208 @@
+{
+  "id": "redes-y-citas",
+  "nombre": "Redes y citas",
+  "emoji": "💬",
+  "acento": "#7fd8ff",
+  "descripcion": "WhatsApp, visto, perfiles y primeras citas",
+  "pista": "Elige una de las 4 opciones, o responde lo que más se diría.",
+  "preguntas": [
+    {
+      "q": "¿Qué es lo peor que se hace en WhatsApp?",
+      "opciones": [
+        "Dejar en visto",
+        "Mandar audios largos",
+        "Escribir en mayúsculas",
+        "Responder días después"
+      ]
+    },
+    {
+      "q": "¿Qué mensaje da más pena?",
+      "opciones": [
+        "Uno al chat equivocado",
+        "Uno sin respuesta",
+        "Un audio sin querer",
+        "Un buenos días a un ex"
+      ]
+    },
+    {
+      "q": "¿Qué se mira primero en un perfil de citas?",
+      "opciones": [
+        "Las fotos",
+        "La descripción",
+        "Lo que estudia",
+        "La edad"
+      ]
+    },
+    {
+      "q": "¿Qué foto de perfil da mala espina?",
+      "opciones": [
+        "Con el carro",
+        "Sin camiseta",
+        "Con muchos filtros",
+        "Con su ex recortado"
+      ]
+    },
+    {
+      "q": "¿Qué es lo más molesto en redes?",
+      "opciones": [
+        "Los que presumen",
+        "Los que se quejan",
+        "Los que se hacen los profundos",
+        "Las cadenas"
+      ]
+    },
+    {
+      "q": "¿Cuándo respondes a alguien que te gusta?",
+      "opciones": [
+        "Enseguida",
+        "A la hora",
+        "Al día siguiente",
+        "Cuando me acuerdo"
+      ]
+    },
+    {
+      "q": "¿Qué red social usas más?",
+      "opciones": [
+        "Instagram",
+        "TikTok",
+        "WhatsApp",
+        "Facebook"
+      ]
+    },
+    {
+      "q": "¿Qué perfil stalkeas más?",
+      "opciones": [
+        "El de mi ex",
+        "El de un crush",
+        "El de un antiguo jefe",
+        "El de un compañero"
+      ]
+    },
+    {
+      "q": "¿Cuál es la peor señal en una primera cita?",
+      "opciones": [
+        "Mirar el celular",
+        "Hablar solo de sí",
+        "Hablar del ex",
+        "Llegar tarde"
+      ]
+    },
+    {
+      "q": "¿Qué da más pena haber publicado?",
+      "opciones": [
+        "Una indirecta",
+        "Una foto con el ex",
+        "Una queja larga",
+        "Un baile en TikTok"
+      ]
+    },
+    {
+      "q": "¿Cómo prefieres conocer gente?",
+      "opciones": [
+        "Una app de citas",
+        "Un amigo en común",
+        "Un bar",
+        "El gimnasio"
+      ]
+    },
+    {
+      "q": "¿Qué revela más de alguien en redes?",
+      "opciones": [
+        "Sus fotos",
+        "Lo que comenta",
+        "A quién sigue",
+        "Lo que escribe"
+      ]
+    },
+    {
+      "q": "¿Qué le dices a alguien que no te gusta?",
+      "opciones": [
+        "Estoy ocupado",
+        "Mejor amigos",
+        "Otro día",
+        "Nada, lo dejo en visto"
+      ]
+    },
+    {
+      "q": "¿Cuánto es demasiado para responder?",
+      "opciones": [
+        "Una hora",
+        "Un día",
+        "Tres días",
+        "Una semana"
+      ]
+    },
+    {
+      "q": "¿Qué es más coqueto?",
+      "opciones": [
+        "Un like",
+        "Un comentario",
+        "Un mensaje directo",
+        "Ver su historia"
+      ]
+    },
+    {
+      "q": "¿Qué emoji es el más sospechoso?",
+      "opciones": [
+        "El guiño",
+        "El beso",
+        "La carita pícara",
+        "La carita al revés"
+      ]
+    },
+    {
+      "q": "¿Qué hace que dejes de seguir a alguien?",
+      "opciones": [
+        "Que presuma",
+        "Que se queje",
+        "Que publique mucho",
+        "Que hable de política"
+      ]
+    },
+    {
+      "q": "¿Qué haces primero al despertar con el celular?",
+      "opciones": [
+        "Mirar WhatsApp",
+        "Mirar redes",
+        "Ver la hora",
+        "Apagar la alarma"
+      ]
+    },
+    {
+      "q": "¿Qué es peor en una pareja en redes?",
+      "opciones": [
+        "Que publique todo",
+        "Que no publique nada",
+        "Que le dé likes a su ex",
+        "Que tenga una cuenta secreta"
+      ]
+    },
+    {
+      "q": "¿Qué foto sube más la gente?",
+      "opciones": [
+        "Un viaje",
+        "La comida",
+        "Selfies",
+        "Su mascota"
+      ]
+    },
+    {
+      "q": "¿Qué pasa después de una primera cita buena?",
+      "opciones": [
+        "Un mensaje esa noche",
+        "Otra cita",
+        "Silencio",
+        "Un meme"
+      ]
+    },
+    {
+      "q": "¿Cuál es una bandera roja en el chat?",
+      "opciones": [
+        "Respuestas de una palabra",
+        "Desaparecer por días",
+        "Mandar solo memes",
+        "Hablar de su ex"
+      ]
+    }
+  ]
+}

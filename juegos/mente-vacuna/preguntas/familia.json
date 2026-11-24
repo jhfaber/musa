@@ -1,0 +1,208 @@
+{
+  "id": "familia",
+  "nombre": "Familia",
+  "emoji": "🏡",
+  "acento": "#ffb8c9",
+  "descripcion": "Navidad, suegros, hermanos y reuniones",
+  "pista": "Elige una de las 4 opciones, o responde lo que más se diría.",
+  "preguntas": [
+    {
+      "q": "¿Qué es lo mejor de la Navidad?",
+      "opciones": [
+        "La comida",
+        "Los regalos",
+        "La familia",
+        "La novena"
+      ]
+    },
+    {
+      "q": "¿Qué plan familiar es el más típico?",
+      "opciones": [
+        "Almuerzo de domingo",
+        "Paseo de olla",
+        "Cumpleaños",
+        "Fin de año"
+      ]
+    },
+    {
+      "q": "¿Qué molesta más de un suegro?",
+      "opciones": [
+        "Que opine de todo",
+        "Que pregunte por nietos",
+        "Que critique la comida",
+        "Que llegue sin avisar"
+      ]
+    },
+    {
+      "q": "¿Quién manda en una familia?",
+      "opciones": [
+        "La mamá",
+        "El papá",
+        "La abuela",
+        "Los hijos"
+      ]
+    },
+    {
+      "q": "¿Quién regaña más en la familia?",
+      "opciones": [
+        "La mamá",
+        "El papá",
+        "La abuela",
+        "El hermano mayor"
+      ]
+    },
+    {
+      "q": "¿Qué se hereda más en la familia?",
+      "opciones": [
+        "La nariz",
+        "El carácter",
+        "La terquedad",
+        "El humor"
+      ]
+    },
+    {
+      "q": "¿Qué tema se evita en la mesa familiar?",
+      "opciones": [
+        "La política",
+        "El dinero",
+        "La religión",
+        "La pareja"
+      ]
+    },
+    {
+      "q": "¿Qué pregunta de los tíos da más pena?",
+      "opciones": [
+        "¿Y el novio o la novia?",
+        "¿Cuándo te casas?",
+        "¿Cuándo hay nietos?",
+        "¿Y de trabajo qué?"
+      ]
+    },
+    {
+      "q": "¿Qué hermano eres?",
+      "opciones": [
+        "El mayor",
+        "El del medio",
+        "El menor",
+        "Hijo único"
+      ]
+    },
+    {
+      "q": "¿Qué es infaltable en una fiesta familiar?",
+      "opciones": [
+        "Sancocho",
+        "Asado",
+        "Tamales",
+        "Lechona"
+      ]
+    },
+    {
+      "q": "¿Qué es lo mejor de la casa de los abuelos?",
+      "opciones": [
+        "La comida",
+        "Los mimos",
+        "Las historias",
+        "Las bendiciones"
+      ]
+    },
+    {
+      "q": "¿Qué dice más una mamá?",
+      "opciones": [
+        "Ponte un saco",
+        "Come más",
+        "Llámame al llegar",
+        "¿Cuándo vienes?"
+      ]
+    },
+    {
+      "q": "¿Qué dice más un papá?",
+      "opciones": [
+        "Apague esa luz",
+        "¿Cuánto cuesta eso?",
+        "Cuando yo tenía su edad",
+        "Ya casi llegamos"
+      ]
+    },
+    {
+      "q": "¿Qué grupo de WhatsApp es el peor?",
+      "opciones": [
+        "El de la familia",
+        "El del trabajo",
+        "El del colegio",
+        "El de los vecinos"
+      ]
+    },
+    {
+      "q": "¿Qué es lo más molesto de un viaje en familia?",
+      "opciones": [
+        "Los que se demoran",
+        "Las paradas",
+        "La música",
+        "El «¿ya vamos a llegar?»"
+      ]
+    },
+    {
+      "q": "¿Qué tradición familiar mantendrías?",
+      "opciones": [
+        "La Navidad juntos",
+        "El almuerzo de domingo",
+        "Las vacaciones",
+        "La novena"
+      ]
+    },
+    {
+      "q": "¿Quién cocina mejor en tu familia?",
+      "opciones": [
+        "Mamá",
+        "Papá",
+        "La abuela",
+        "Un tío o tía"
+      ]
+    },
+    {
+      "q": "¿Por qué se pelea más una familia?",
+      "opciones": [
+        "La herencia",
+        "El control del televisor",
+        "El carro",
+        "La comida"
+      ]
+    },
+    {
+      "q": "¿Cuál es el mejor momento de una reunión familiar?",
+      "opciones": [
+        "La comida",
+        "El baile",
+        "La sobremesa",
+        "El brindis"
+      ]
+    },
+    {
+      "q": "¿Qué cansa más de una reunión familiar?",
+      "opciones": [
+        "Las anécdotas repetidas",
+        "Las fotos",
+        "Las preguntas por plata",
+        "Comparar a los hijos"
+      ]
+    },
+    {
+      "q": "¿A quién llamas primero con una buena noticia?",
+      "opciones": [
+        "A mamá",
+        "A mi pareja",
+        "A un amigo",
+        "A papá"
+      ]
+    },
+    {
+      "q": "¿Quién es el más consentido de la familia?",
+      "opciones": [
+        "El menor",
+        "El mayor",
+        "El del medio",
+        "El nieto"
+      ]
+    }
+  ]
+}

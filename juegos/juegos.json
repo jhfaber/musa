@@ -197,7 +197,11 @@
         "preguntas/fantasias.json",
         "preguntas/filosoficas.json",
         "preguntas/en-pareja.json",
-        "preguntas/misterios.json"
+        "preguntas/misterios.json",
+        "preguntas/dilemas.json",
+        "preguntas/redes-y-citas.json",
+        "preguntas/plata.json",
+        "preguntas/familia.json"
       ]
     },
     {
