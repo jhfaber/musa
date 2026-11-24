@@ -2,7 +2,7 @@
 
 - [x] Escribir la decisión 0006 y enlazarla en `CLAUDE.md`
 - [x] Proponer prohibiciones (332); John pidió quitarlas: solo queda la del goleador
-- [ ] John elige cuáles prohibiciones aplicar
+- [x] John elige cuáles prohibiciones aplicar (las 👍 y la de Asia: 162 en total)
 - [x] Reducir/cambiar opciones (10) y eliminar preguntas (5)
 - [x] `npm test` y `npm run validar` sin errores; service worker v103
 - [ ] Marcar `Completada` aquí y en `specs/README.md` cuando John la apruebe

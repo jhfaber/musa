@@ -26,16 +26,31 @@
         "PlayStation"
       ]
     },
-    "Una app para pedir comida.",
+    {
+      "q": "Una app para pedir comida.",
+      "no": [
+        "Rappi"
+      ]
+    },
     {
       "q": "Una contraseña típica que todos usan.",
       "no": [
         "123456"
       ]
     },
-    "Un emoji que todos usan.",
+    {
+      "q": "Un emoji que todos usan.",
+      "no": [
+        "carita de risa"
+      ]
+    },
     "Lo primero que se busca en Google.",
-    "Un creador de contenido famoso.",
+    {
+      "q": "Un creador de contenido famoso.",
+      "no": [
+        "MrBeast"
+      ]
+    },
     {
       "q": "Una app de mensajes.",
       "no": [
@@ -44,16 +59,36 @@
     },
     "Algo que se hace con el celular en el baño.",
     "Una marca de computador.",
-    "Un invento tecnológico reciente.",
+    {
+      "q": "Un invento tecnológico reciente.",
+      "no": [
+        "ChatGPT"
+      ]
+    },
     "Un aparato de la casa que no puede faltar.",
-    "Lo que más se ve en TikTok.",
+    {
+      "q": "Lo que más se ve en TikTok.",
+      "no": [
+        "bailes"
+      ]
+    },
     "Un juego del celular.",
     "Una empresa de tecnología.",
-    "Lo peor que le puede pasar a un celular.",
+    {
+      "q": "Lo peor que le puede pasar a un celular.",
+      "no": [
+        "que se caiga"
+      ]
+    },
     "Un accesorio para el celular.",
     "Una palabra de internet que usan los jóvenes.",
     "Algo que hace la inteligencia artificial.",
-    "Lo que hace la gente cuando se va el internet.",
+    {
+      "q": "Lo que hace la gente cuando se va el internet.",
+      "no": [
+        "reiniciar el router"
+      ]
+    },
     "Un aparato que ya nadie usa.",
     {
       "q": "Una app de música.",
@@ -61,9 +96,19 @@
         "Spotify"
       ]
     },
-    "Un tipo de video que siempre se vuelve viral.",
+    {
+      "q": "Un tipo de video que siempre se vuelve viral.",
+      "no": [
+        "gatos"
+      ]
+    },
     "La primera app que se abre en la mañana.",
-    "Algo que siempre se olvida cargar.",
+    {
+      "q": "Algo que siempre se olvida cargar.",
+      "no": [
+        "celular"
+      ]
+    },
     "Un nombre típico para la red wifi.",
     {
       "q": "Una plataforma para ver videos.",
@@ -71,6 +116,11 @@
         "YouTube"
       ]
     },
-    "Lo más molesto de una videollamada."
+    {
+      "q": "Lo más molesto de una videollamada.",
+      "no": [
+        "no te oigo"
+      ]
+    }
   ]
 }

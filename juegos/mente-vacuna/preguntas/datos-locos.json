@@ -39,7 +39,12 @@
     "El mejor invento de la humanidad.",
     "Un invento que sobra.",
     "Algo que siempre se pierde.",
-    "El mejor nombre para un barco.",
+    {
+      "q": "El mejor nombre para un barco.",
+      "no": [
+        "Titanic"
+      ]
+    },
     "Un animal que sería un pésimo mesero.",
     "Algo que huele a infancia.",
     {

@@ -12,9 +12,19 @@
         "perro"
       ]
     },
-    "Tu color favorito.",
+    {
+      "q": "Tu color favorito.",
+      "no": [
+        "azul"
+      ]
+    },
     "Una comida que podrías comer todos los días.",
-    "Tu mayor miedo.",
+    {
+      "q": "Tu mayor miedo.",
+      "no": [
+        "la muerte"
+      ]
+    },
     "El superpoder que te gustaría tener.",
     {
       "q": "Una cosa que nunca falta en tu bolso o en tus bolsillos.",
@@ -25,14 +35,24 @@
       ]
     },
     "Una hora a la que te despiertas entre semana.",
-    "Tu estación o época del año favorita.",
+    {
+      "q": "Tu estación o época del año favorita.",
+      "no": [
+        "verano"
+      ]
+    },
     {
       "q": "La primera cosa que haces al despertar.",
       "no": [
         "mirar el celular"
       ]
     },
-    "Un lugar al que irías de vacaciones mañana mismo.",
+    {
+      "q": "Un lugar al que irías de vacaciones mañana mismo.",
+      "no": [
+        "Cartagena"
+      ]
+    },
     "Algo que coleccionabas de niño.",
     "El trabajo que soñabas tener de niño.",
     "Una manía tuya.",
@@ -42,20 +62,45 @@
         "WhatsApp"
       ]
     },
-    "Lo primero que harías si ganaras la lotería.",
-    "Tu postre favorito.",
+    {
+      "q": "Lo primero que harías si ganaras la lotería.",
+      "no": [
+        "comprar una casa"
+      ]
+    },
+    {
+      "q": "Tu postre favorito.",
+      "no": [
+        "helado"
+      ]
+    },
     "Un talento oculto que tienes.",
     "La palabra que más repites.",
-    "Tu plan perfecto de domingo.",
+    {
+      "q": "Tu plan perfecto de domingo.",
+      "no": [
+        "dormir"
+      ]
+    },
     {
       "q": "Un objeto que no podrías dejar de usar ni un día.",
       "no": [
         "celular"
       ]
     },
-    "Lo que más pereza te da hacer en casa.",
+    {
+      "q": "Lo que más pereza te da hacer en casa.",
+      "no": [
+        "lavar platos"
+      ]
+    },
     "La mejor edad de la vida.",
-    "Algo que te pone de buen humor al instante.",
+    {
+      "q": "Algo que te pone de buen humor al instante.",
+      "no": [
+        "la música"
+      ]
+    },
     "Un apodo que has tenido.",
     {
       "q": "Lo que haces cuando no puedes dormir.",
@@ -63,10 +108,20 @@
         "ver el celular"
       ]
     },
-    "Un deporte que te gustaría aprender.",
+    {
+      "q": "Un deporte que te gustaría aprender.",
+      "no": [
+        "natación"
+      ]
+    },
     "La mejor etapa de tu vida hasta ahora.",
     "Un personaje famoso con el que te tomarías un café.",
-    "Tu hora favorita del día.",
+    {
+      "q": "Tu hora favorita del día.",
+      "no": [
+        "la noche"
+      ]
+    },
     "La prenda de ropa que más usas."
   ]
 }

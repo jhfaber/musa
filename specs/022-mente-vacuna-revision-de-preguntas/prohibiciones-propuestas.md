@@ -1,6 +1,6 @@
 # Prohibiciones propuestas (spec 022)
 
-Estas prohibiciones **no están aplicadas** (John las pidió quitar el 24-nov-2026: "no parecen interesantes… igual las prohibiciones si presentamelas a ver cuales tienen sentido"). Solo quedó activa la del **mayor goleador de la historia** (Messi y Cristiano Ronaldo), que John dijo que se dejara "a ver".
+**Aplicadas el 24-nov-2026 (v105): las 👍, la de "Un país de Asia" y la del goleador.** Las ⚠ y ❌ no se aplicaron. Lo que sigue es la lista original. Estas prohibiciones no estaban aplicadas (John las pidió quitar el 24-nov-2026: "no parecen interesantes… igual las prohibiciones si presentamelas a ver cuales tienen sentido"). Solo quedó activa la del **mayor goleador de la historia** (Messi y Cristiano Ronaldo), que John dijo que se dejara "a ver".
 
 La columna *Mi opinión* es un criterio de ojo: 👍 una sola respuesta domina (es la que tiene más sentido prohibir), ⚠ prohíbe 2 o 3 que están al mismo nivel (la gente pasa a la siguiente), ❌ sin sentido (números, letras, meses).
 

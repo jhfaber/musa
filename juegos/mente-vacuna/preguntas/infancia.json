@@ -7,15 +7,40 @@
   "pista": "Lo primero que te recuerde a la infancia.",
   "preguntas": [
     "Un juego de recreo.",
-    "Un dibujo animado de tu infancia.",
+    {
+      "q": "Un dibujo animado de tu infancia.",
+      "no": [
+        "Dragon Ball"
+      ]
+    },
     "Lo que más se compraba en la tienda del colegio.",
     "Un juguete que todos tenían.",
-    "Una materia que todos odiaban en el colegio.",
-    "Una materia favorita del colegio.",
-    "Un castigo típico de la infancia.",
+    {
+      "q": "Una materia que todos odiaban en el colegio.",
+      "no": [
+        "matemáticas"
+      ]
+    },
+    {
+      "q": "Una materia favorita del colegio.",
+      "no": [
+        "educación física"
+      ]
+    },
+    {
+      "q": "Un castigo típico de la infancia.",
+      "no": [
+        "sin televisión"
+      ]
+    },
     "Lo que más miedo daba de niño.",
     "Un juego de mesa de la infancia.",
-    "Una canción infantil.",
+    {
+      "q": "Una canción infantil.",
+      "no": [
+        "Los pollitos dicen"
+      ]
+    },
     {
       "q": "Un cuento clásico.",
       "no": [
@@ -25,12 +50,27 @@
     "Una frase típica de los profesores.",
     "Algo que se llevaba en la lonchera.",
     "Un regalo de Navidad soñado de niño.",
-    "Una excusa para no hacer la tarea.",
+    {
+      "q": "Una excusa para no hacer la tarea.",
+      "no": [
+        "se me olvidó"
+      ]
+    },
     "Un programa de televisión de la tarde.",
-    "Un videojuego de la infancia.",
+    {
+      "q": "Un videojuego de la infancia.",
+      "no": [
+        "Mario Bros"
+      ]
+    },
     "Un personaje que daba miedo de niño.",
     "Lo mejor de las vacaciones de mitad de año.",
-    "Un deporte que se jugaba en el barrio.",
+    {
+      "q": "Un deporte que se jugaba en el barrio.",
+      "no": [
+        "fútbol"
+      ]
+    },
     "Una travesura típica.",
     "Lo primero que hacías al llegar del colegio.",
     "Un superhéroe favorito de niño.",

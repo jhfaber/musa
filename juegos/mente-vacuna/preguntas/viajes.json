@@ -21,7 +21,12 @@
         "ropa"
       ]
     },
-    "Un lugar para ir en vacaciones.",
+    {
+      "q": "Un lugar para ir en vacaciones.",
+      "no": [
+        "la playa"
+      ]
+    },
     {
       "q": "Una isla.",
       "no": [
@@ -37,7 +42,12 @@
     "Un lugar para ir de camping.",
     "Lo peor de viajar en avión.",
     "Un medio de transporte favorito.",
-    "Un recuerdo típico que se trae de un viaje.",
+    {
+      "q": "Un recuerdo típico que se trae de un viaje.",
+      "no": [
+        "imán"
+      ]
+    },
     "Un país con buena comida.",
     "Una ciudad para perderse.",
     "Un lugar que parece de película.",
@@ -50,7 +60,12 @@
         "Nueva York"
       ]
     },
-    "Una montaña para escalar.",
+    {
+      "q": "Una montaña para escalar.",
+      "no": [
+        "Everest"
+      ]
+    },
     "Un lugar para un puente festivo.",
     "Lo primero que se hace al llegar a una playa.",
     "Un animal que quieres ver de cerca en un safari.",
@@ -63,16 +78,36 @@
     "Un destino para una despedida de soltero o soltera.",
     "Un lugar que da calma.",
     "Un país para ir de compras.",
-    "Un lugar para ver la nieve.",
-    "Una cosa que se olvida siempre al viajar.",
+    {
+      "q": "Un lugar para ver la nieve.",
+      "no": [
+        "Suiza"
+      ]
+    },
+    {
+      "q": "Una cosa que se olvida siempre al viajar.",
+      "no": [
+        "el cargador"
+      ]
+    },
     "La mejor forma de viajar.",
     "Un país donde se habla otro idioma.",
     "Un aeropuerto famoso.",
-    "Algo que se compra en el aeropuerto.",
+    {
+      "q": "Algo que se compra en el aeropuerto.",
+      "no": [
+        "perfume"
+      ]
+    },
     "Un plan para un viaje con amigos.",
     "Un lugar para ver el atardecer.",
     "Algo que no puede faltar en un viaje en carro.",
-    "Una ciudad para ir a comer.",
+    {
+      "q": "Una ciudad para ir a comer.",
+      "no": [
+        "Lima"
+      ]
+    },
     "Un país con playas lindas.",
     "Lo mejor de quedarse en un hotel.",
     "Lo peor de volver de vacaciones."

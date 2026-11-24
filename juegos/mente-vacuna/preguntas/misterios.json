@@ -7,20 +7,70 @@
   "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
   "preguntas": [
     "Algo que crees que nos ocultan.",
-    "Una teoría de conspiración que da risa.",
+    {
+      "q": "Una teoría de conspiración que da risa.",
+      "no": [
+        "la tierra plana"
+      ]
+    },
     "Una teoría de conspiración que podría ser cierta.",
-    "Un misterio sin resolver que te fascina.",
+    {
+      "q": "Un misterio sin resolver que te fascina.",
+      "no": [
+        "Triángulo Bermudas"
+      ]
+    },
     "Algo que la humanidad todavía no explica.",
-    "Una prueba de que hay vida extraterrestre.",
-    "El lugar más misterioso del mundo.",
-    "Una leyenda urbana que te asustó.",
-    "Un animal mítico que te gustaría ver.",
-    "Una película sobre conspiraciones.",
-    "Lo que habría en el Área 51.",
+    {
+      "q": "Una prueba de que hay vida extraterrestre.",
+      "no": [
+        "ovnis"
+      ]
+    },
+    {
+      "q": "El lugar más misterioso del mundo.",
+      "no": [
+        "Área 51"
+      ]
+    },
+    {
+      "q": "Una leyenda urbana que te asustó.",
+      "no": [
+        "la llorona"
+      ]
+    },
+    {
+      "q": "Un animal mítico que te gustaría ver.",
+      "no": [
+        "Pie Grande"
+      ]
+    },
+    {
+      "q": "Una película sobre conspiraciones.",
+      "no": [
+        "Matrix"
+      ]
+    },
+    {
+      "q": "Lo que habría en el Área 51.",
+      "no": [
+        "extraterrestres"
+      ]
+    },
     "Una cosa que cambiaría si se supiera la verdad.",
     "Lo primero que harías si llegaran los extraterrestres.",
-    "Una teoría sobre las pirámides.",
-    "Un misterio histórico sin resolver.",
+    {
+      "q": "Una teoría sobre las pirámides.",
+      "no": [
+        "extraterrestres"
+      ]
+    },
+    {
+      "q": "Un misterio histórico sin resolver.",
+      "no": [
+        "Jack el Destripador"
+      ]
+    },
     "Un fantasma o aparición que conoces.",
     "Una explicación para las luces en el cielo.",
     "Un secreto que le gustaría conocer al mundo entero.",

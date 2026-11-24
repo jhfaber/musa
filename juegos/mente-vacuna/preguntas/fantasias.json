@@ -8,8 +8,18 @@
   "preguntas": [
     "Una fantasía sexual que todo el mundo tiene y nadie confiesa.",
     "Una fantasía sexual que ya cumplió casi todo el mundo.",
-    "La fantasía sexual más común.",
-    "La fantasía sexual más rara que has escuchado.",
+    {
+      "q": "La fantasía sexual más común.",
+      "no": [
+        "un trío"
+      ]
+    },
+    {
+      "q": "La fantasía sexual más rara que has escuchado.",
+      "no": [
+        "un trío"
+      ]
+    },
     "Un lugar donde te gustaría cumplir una fantasía.",
     "Un disfraz que despierta fantasías.",
     "Una fantasía que se ve genial en el cine y en la vida real sería un desastre.",
@@ -21,9 +31,19 @@
     "Una película o serie que despierta fantasías.",
     "Una fantasía que crees que alguien en esta mesa ya cumplió.",
     "El mejor momento del día para una fantasía.",
-    "Un juego de pareja que casi todos han probado.",
+    {
+      "q": "Un juego de pareja que casi todos han probado.",
+      "no": [
+        "verdad o reto"
+      ]
+    },
     "Una fantasía que suena mejor de lo que es.",
-    "La fantasía más romántica.",
+    {
+      "q": "La fantasía más romántica.",
+      "no": [
+        "la playa"
+      ]
+    },
     "Un destino de viaje para cumplir una fantasía.",
     "Una fantasía que se arregla con una buena playlist.",
     "Un personaje de ficción con el que se fantasea.",

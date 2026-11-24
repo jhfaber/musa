@@ -86,7 +86,12 @@
         "Torre Eiffel"
       ]
     },
-    "Una de las maravillas del mundo.",
+    {
+      "q": "Una de las maravillas del mundo.",
+      "no": [
+        "Muralla China"
+      ]
+    },
     {
       "q": "Una montaña famosa.",
       "no": [
@@ -100,7 +105,12 @@
         "ballena"
       ]
     },
-    "Un hueso del cuerpo humano.",
+    {
+      "q": "Un hueso del cuerpo humano.",
+      "no": [
+        "fémur"
+      ]
+    },
     {
       "q": "Un órgano del cuerpo.",
       "no": [
@@ -116,8 +126,19 @@
     },
     "Una marca de carros.",
     "Un invento que cambió el mundo.",
-    "Un volcán famoso.",
-    "Un país de Asia.",
+    {
+      "q": "Un volcán famoso.",
+      "no": [
+        "Vesubio"
+      ]
+    },
+    {
+      "q": "Un país de Asia.",
+      "no": [
+        "China",
+        "Japón"
+      ]
+    },
     "Un tipo de baile.",
     "Un deporte olímpico.",
     "Un personaje de la mitología.",

@@ -14,20 +14,60 @@
     "Lo que más valora una mujer en una pareja.",
     "Lo que hace que una relación dure.",
     "Lo que acaba con una relación.",
-    "Algo que enamora de un hombre.",
-    "Algo que enamora de una mujer.",
-    "Lo que más molesta de un hombre en pareja.",
-    "Lo que más molesta de una mujer en pareja.",
+    {
+      "q": "Algo que enamora de un hombre.",
+      "no": [
+        "la sonrisa"
+      ]
+    },
+    {
+      "q": "Algo que enamora de una mujer.",
+      "no": [
+        "la sonrisa"
+      ]
+    },
+    {
+      "q": "Lo que más molesta de un hombre en pareja.",
+      "no": [
+        "los celos"
+      ]
+    },
+    {
+      "q": "Lo que más molesta de una mujer en pareja.",
+      "no": [
+        "los celos"
+      ]
+    },
     "Una señal de que alguien es buena pareja.",
-    "Un detalle que enamora.",
-    "Lo más importante para casarse.",
+    {
+      "q": "Un detalle que enamora.",
+      "no": [
+        "flores"
+      ]
+    },
+    {
+      "q": "Lo más importante para casarse.",
+      "no": [
+        "amor"
+      ]
+    },
     "Una bandera roja en una pareja.",
     "Una bandera verde en una pareja.",
     "Lo que no se negocia en una relación.",
     "Un gesto romántico que nunca pasa de moda.",
     "Lo que más se extraña de una pareja.",
-    "Algo que una pareja debería hacer cada semana.",
-    "Una pelea típica de pareja.",
+    {
+      "q": "Algo que una pareja debería hacer cada semana.",
+      "no": [
+        "una cena"
+      ]
+    },
+    {
+      "q": "Una pelea típica de pareja.",
+      "no": [
+        "los celos"
+      ]
+    },
     {
       "q": "¿Qué es lo más importante en un hombre?",
       "opciones": [

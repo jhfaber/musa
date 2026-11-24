@@ -8,7 +8,12 @@
   "preguntas": [
     "El sentido de la vida, en una palabra.",
     "Lo que más importa en la vida.",
-    "Lo que le da sentido a tu vida.",
+    {
+      "q": "Lo que le da sentido a tu vida.",
+      "no": [
+        "la familia"
+      ]
+    },
     "Algo que te gustaría haber sabido a los 18.",
     "Lo que crees que pasa después de la muerte.",
     "Una cosa que hace feliz a la gente.",
@@ -162,7 +167,12 @@
     "Una cosa que haría mejor al mundo.",
     "Lo que significa una vida bien vivida.",
     "Un lugar donde te sientes en paz.",
-    "Algo que nadie te puede quitar.",
+    {
+      "q": "Algo que nadie te puede quitar.",
+      "no": [
+        "los recuerdos"
+      ]
+    },
     "Lo que más extrañarías de estar vivo.",
     "Una pregunta que nadie sabe responder.",
     "Algo que le preguntarías al universo.",

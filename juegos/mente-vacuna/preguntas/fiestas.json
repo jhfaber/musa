@@ -6,24 +6,64 @@
   "descripcion": "Navidad, cumpleaños, bodas y rumba",
   "pista": "Algo de una fiesta o una celebración.",
   "preguntas": [
-    "Una canción que no puede faltar en Navidad.",
+    {
+      "q": "Una canción que no puede faltar en Navidad.",
+      "no": [
+        "Mi burrito sabanero"
+      ]
+    },
     "Un disfraz de Halloween.",
     "Una tradición de Año Nuevo.",
     "Algo que se hace a las doce el 31 de diciembre.",
     "Un juego para una fiesta.",
-    "Lo que nunca falta en un cumpleaños.",
+    {
+      "q": "Lo que nunca falta en un cumpleaños.",
+      "no": [
+        "torta"
+      ]
+    },
     "Una fecha especial del año.",
-    "Un regalo para el Día de la Madre.",
-    "Un regalo para el Día del Padre.",
-    "Lo que se come en una boda.",
+    {
+      "q": "Un regalo para el Día de la Madre.",
+      "no": [
+        "flores"
+      ]
+    },
+    {
+      "q": "Un regalo para el Día del Padre.",
+      "no": [
+        "corbata"
+      ]
+    },
+    {
+      "q": "Lo que se come en una boda.",
+      "no": [
+        "torta"
+      ]
+    },
     "Una canción de la hora loca.",
     "Un lugar para celebrar un cumpleaños.",
-    "Una decoración de Navidad.",
+    {
+      "q": "Una decoración de Navidad.",
+      "no": [
+        "árbol"
+      ]
+    },
     "Algo que se hace en la novena.",
     "Lo primero que se acaba en una fiesta.",
     "Un tema para una fiesta de disfraces.",
-    "Un plan para Amor y Amistad.",
-    "La peor parte de organizar una fiesta.",
+    {
+      "q": "Un plan para Amor y Amistad.",
+      "no": [
+        "chocolates"
+      ]
+    },
+    {
+      "q": "La peor parte de organizar una fiesta.",
+      "no": [
+        "limpiar"
+      ]
+    },
     "Un festivo favorito.",
     "Algo típico de una despedida de soltero.",
     "Una tradición de Semana Santa.",

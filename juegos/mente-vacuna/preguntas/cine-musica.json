@@ -6,16 +6,41 @@
   "descripcion": "Películas, series, artistas y canciones",
   "pista": "Un título, un artista o un género.",
   "preguntas": [
-    "Una película que todo el mundo ha visto.",
+    {
+      "q": "Una película que todo el mundo ha visto.",
+      "no": [
+        "Titanic"
+      ]
+    },
     "Una película de terror famosa.",
-    "Un actor famoso.",
-    "Una actriz famosa.",
+    {
+      "q": "Un actor famoso.",
+      "no": [
+        "Tom Cruise"
+      ]
+    },
+    {
+      "q": "Una actriz famosa.",
+      "no": [
+        "Angelina Jolie"
+      ]
+    },
     "Una película que te hizo llorar.",
     "Una serie para ver en maratón.",
     "Una comedia que te hace reír.",
-    "Un cantante famoso.",
+    {
+      "q": "Un cantante famoso.",
+      "no": [
+        "Shakira"
+      ]
+    },
     "Una banda de rock famosa.",
-    "Una canción que todos cantan.",
+    {
+      "q": "Una canción que todos cantan.",
+      "no": [
+        "Despacito"
+      ]
+    },
     "Un género musical.",
     "Una película animada.",
     "Un villano de película.",
@@ -28,7 +53,12 @@
     },
     "Una saga de películas.",
     "Un director de cine famoso.",
-    "Una canción para una fiesta.",
+    {
+      "q": "Una canción para una fiesta.",
+      "no": [
+        "Despacito"
+      ]
+    },
     "Una canción de amor.",
     "Una canción de la que ya estás cansado.",
     "Un cantante que te gusta pero casi no lo dices.",

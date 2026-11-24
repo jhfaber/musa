@@ -14,7 +14,12 @@
     },
     "Un animal de granja.",
     "Un pájaro.",
-    "Un animal que vuela pero no es pájaro.",
+    {
+      "q": "Un animal que vuela pero no es pájaro.",
+      "no": [
+        "murciélago"
+      ]
+    },
     {
       "q": "Un animal muy lento.",
       "no": [
@@ -47,7 +52,12 @@
         "búho"
       ]
     },
-    "Un reptil.",
+    {
+      "q": "Un reptil.",
+      "no": [
+        "serpiente"
+      ]
+    },
     {
       "q": "Un animal que salta.",
       "no": [
@@ -61,17 +71,37 @@
         "rosa"
       ]
     },
-    "Un árbol.",
+    {
+      "q": "Un árbol.",
+      "no": [
+        "pino"
+      ]
+    },
     {
       "q": "Un animal que da leche.",
       "no": [
         "vaca"
       ]
     },
-    "Un insecto que no molesta.",
-    "Un animal que aparece en los cuentos.",
+    {
+      "q": "Un insecto que no molesta.",
+      "no": [
+        "mariposa"
+      ]
+    },
+    {
+      "q": "Un animal que aparece en los cuentos.",
+      "no": [
+        "lobo"
+      ]
+    },
     "Un animal que sería buena mascota de oficina.",
-    "Un animal muy inteligente.",
+    {
+      "q": "Un animal muy inteligente.",
+      "no": [
+        "delfín"
+      ]
+    },
     "Un animal que da ternura.",
     {
       "q": "Un animal del desierto.",
@@ -79,12 +109,27 @@
         "camello"
       ]
     },
-    "Un fenómeno natural.",
+    {
+      "q": "Un fenómeno natural.",
+      "no": [
+        "terremoto"
+      ]
+    },
     "Un animal que vive en el río.",
     "Un animal con cuernos.",
     "Un animal de zoológico.",
-    "Un sonido de la naturaleza.",
-    "Un paisaje para relajarse.",
+    {
+      "q": "Un sonido de la naturaleza.",
+      "no": [
+        "lluvia"
+      ]
+    },
+    {
+      "q": "Un paisaje para relajarse.",
+      "no": [
+        "la playa"
+      ]
+    },
     {
       "q": "Un animal muy grande.",
       "no": [

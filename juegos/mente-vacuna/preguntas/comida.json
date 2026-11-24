@@ -28,32 +28,77 @@
     },
     "El mejor acompañante del arroz.",
     "Una bebida para una fiesta.",
-    "Un postre.",
-    "Una verdura que no soportas.",
-    "Un desayuno perfecto.",
+    {
+      "q": "Un postre.",
+      "no": [
+        "helado"
+      ]
+    },
+    {
+      "q": "Una verdura que no soportas.",
+      "no": [
+        "brócoli"
+      ]
+    },
+    {
+      "q": "Un desayuno perfecto.",
+      "no": [
+        "huevos"
+      ]
+    },
     {
       "q": "Un snack para ver una película.",
       "no": [
         "crispetas"
       ]
     },
-    "Una salsa.",
+    {
+      "q": "Una salsa.",
+      "no": [
+        "ají"
+      ]
+    },
     "Una sopa.",
-    "El mejor plato del mundo.",
+    {
+      "q": "El mejor plato del mundo.",
+      "no": [
+        "bandeja paisa"
+      ]
+    },
     "Una comida que sabe mejor al día siguiente.",
     "Un condimento que no puede faltar.",
-    "Un ingrediente que arruina una pizza.",
+    {
+      "q": "Un ingrediente que arruina una pizza.",
+      "no": [
+        "piña"
+      ]
+    },
     {
       "q": "Una bebida caliente.",
       "no": [
         "café"
       ]
     },
-    "Una comida de la calle.",
+    {
+      "q": "Una comida de la calle.",
+      "no": [
+        "empanada"
+      ]
+    },
     "Un plato que sabes cocinar.",
     "Una golosina de la infancia.",
-    "Un jugo.",
-    "Un tipo de pasta.",
+    {
+      "q": "Un jugo.",
+      "no": [
+        "naranja"
+      ]
+    },
+    {
+      "q": "Un tipo de pasta.",
+      "no": [
+        "espagueti"
+      ]
+    },
     "Una comida para una cita.",
     "Una comida de otro país.",
     "El ingrediente imprescindible de una hamburguesa.",
@@ -67,7 +112,17 @@
       ]
     },
     "Lo que no puede faltar en Navidad.",
-    "Un antojo de medianoche.",
-    "Un sabor de gaseosa."
+    {
+      "q": "Un antojo de medianoche.",
+      "no": [
+        "pizza"
+      ]
+    },
+    {
+      "q": "Un sabor de gaseosa.",
+      "no": [
+        "cola"
+      ]
+    }
   ]
 }

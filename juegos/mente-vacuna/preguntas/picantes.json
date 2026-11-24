@@ -270,19 +270,69 @@
     "Lo primero que un hombre mira de una mujer.",
     "Lo primero que una mujer mira de un hombre.",
     "La parte del cuerpo de una mujer que más enloquece a los hombres.",
-    "La parte del cuerpo de un hombre que más enloquece a las mujeres.",
-    "Una parte del cuerpo de una mujer que se ve bien con cualquier ropa.",
-    "Una parte del cuerpo de un hombre que luce con una camiseta ajustada.",
-    "La parte del cuerpo que más se nota en un traje de baño.",
+    {
+      "q": "La parte del cuerpo de un hombre que más enloquece a las mujeres.",
+      "no": [
+        "la espalda"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo de una mujer que se ve bien con cualquier ropa.",
+      "no": [
+        "las piernas"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo de un hombre que luce con una camiseta ajustada.",
+      "no": [
+        "los brazos"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo que más se nota en un traje de baño.",
+      "no": [
+        "la cola"
+      ]
+    },
     "Una parte del cuerpo que te gusta de ti.",
-    "La parte del cuerpo que más le gusta a la gente de sí misma.",
-    "Una parte del cuerpo que todos admiran en un atleta.",
+    {
+      "q": "La parte del cuerpo que más le gusta a la gente de sí misma.",
+      "no": [
+        "los ojos"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo que todos admiran en un atleta.",
+      "no": [
+        "los brazos"
+      ]
+    },
     "Una parte del cuerpo que se mira con disimulo.",
-    "La parte del cuerpo más sensible.",
-    "La parte del cuerpo más sensual de un hombre.",
+    {
+      "q": "La parte del cuerpo más sensible.",
+      "no": [
+        "el cuello"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo más sensual de un hombre.",
+      "no": [
+        "la espalda"
+      ]
+    },
     "La parte del cuerpo más sensual de una mujer.",
-    "Una parte del cuerpo donde un beso se siente mejor.",
-    "Una parte del cuerpo donde un masaje es perfecto.",
+    {
+      "q": "Una parte del cuerpo donde un beso se siente mejor.",
+      "no": [
+        "la boca"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo donde un masaje es perfecto.",
+      "no": [
+        "la espalda"
+      ]
+    },
     "El detalle físico que más enamora.",
     {
       "q": "¿Qué parte del cuerpo de una mujer le gusta más a un hombre?",
