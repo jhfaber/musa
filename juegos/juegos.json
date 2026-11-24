@@ -192,7 +192,10 @@
         "preguntas/trabajo.json",
         "preguntas/fiestas.json",
         "preguntas/cuatro-opciones.json",
-        "preguntas/picantes.json"
+        "preguntas/picantes.json",
+        "preguntas/posiciones.json",
+        "preguntas/fantasias.json",
+        "preguntas/filosoficas.json"
       ]
     },
     {

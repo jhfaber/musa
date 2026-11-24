@@ -56,6 +56,48 @@
     "Un lugar donde no te quedarías solo.",
     "Una situación en la que te da pena hablar.",
     "Un monstruo clásico.",
-    "Una cosa que te saca de quicio."
+    "Una cosa que te saca de quicio.",
+    "Lo que más temes perder.",
+    "El mayor miedo de la gente.",
+    "Un miedo que aparece al hacerse adulto.",
+    "Un miedo que nadie admite en voz alta.",
+    "Lo que más miedo da del futuro.",
+    "Un miedo que se supera con el tiempo.",
+    {
+      "q": "¿Cuál es el mayor miedo de la gente?",
+      "opciones": [
+        "La muerte",
+        "La soledad",
+        "El fracaso",
+        "Perder a un ser querido"
+      ]
+    },
+    {
+      "q": "¿Qué da más miedo?",
+      "opciones": [
+        "Las alturas",
+        "La oscuridad",
+        "Los espacios cerrados",
+        "Hablar en público"
+      ]
+    },
+    {
+      "q": "¿Qué da más miedo del futuro?",
+      "opciones": [
+        "Quedarse solo",
+        "No tener dinero",
+        "Enfermarse",
+        "Que el mundo empeore"
+      ]
+    },
+    {
+      "q": "¿Qué miedo es el más difícil de superar?",
+      "opciones": [
+        "Las alturas",
+        "La soledad",
+        "El fracaso",
+        "La muerte"
+      ]
+    }
   ]
 }
