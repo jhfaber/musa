@@ -1,0 +1,25 @@
+{
+  "jugadores": "2 o más",
+  "duracion": "5 a 10 min",
+  "necesitas": "cinta para la línea y algo para lanzar.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Marca una **línea** en el piso.",
+        "Cada uno lanza un **disco** (moneda, pelota, tapa…) desde lejos.",
+        "Si **pasas la línea**, quedas eliminado.",
+        "Gana el que queda **más cerca** sin pasarse."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Todos lanzan desde el mismo punto."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

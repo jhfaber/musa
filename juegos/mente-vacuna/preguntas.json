@@ -1,0 +1,1138 @@
+{
+  "_ayuda": "Banco de preguntas de Mente Vacuna (spec 009). Una categoría agrupa preguntas del mismo tipo. Una pregunta es un texto o {q, no}: 'no' son respuestas prohibidas por obvias; 'pista' dice cómo responder; 'acento' es su color; 'adultos' es una categoría que arranca apagada.",
+  "categorias": [
+    {
+      "id": "sobre-ti",
+      "nombre": "Sobre ti",
+      "emoji": "🧑",
+      "acento": "#f2c46b",
+      "descripcion": "Gustos, manías y cosas tuyas: para conocerse",
+      "pista": "Responde sobre ti, con una palabra o una frase corta.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Tu animal favorito.",
+          "no": [
+            "perro"
+          ]
+        },
+        "Tu color favorito.",
+        "Una comida que podrías comer todos los días.",
+        "Tu mayor miedo.",
+        "El superpoder que te gustaría tener.",
+        {
+          "q": "Una cosa que nunca falta en tu bolso o en tus bolsillos.",
+          "no": [
+            "celular",
+            "llaves",
+            "billetera"
+          ]
+        },
+        "Una hora a la que te despiertas entre semana.",
+        "Tu estación o época del año favorita.",
+        {
+          "q": "La primera cosa que haces al despertar.",
+          "no": [
+            "mirar el celular"
+          ]
+        },
+        "Un lugar al que irías de vacaciones mañana mismo.",
+        "Algo que coleccionabas de niño.",
+        "El trabajo que soñabas tener de niño.",
+        "Una manía tuya.",
+        {
+          "q": "La app que más usas en el celular.",
+          "no": [
+            "WhatsApp"
+          ]
+        },
+        "Lo primero que harías si ganaras la lotería.",
+        "Tu postre favorito.",
+        "Un talento oculto que tienes.",
+        "La palabra que más repites.",
+        "Tu plan perfecto de domingo.",
+        {
+          "q": "Un objeto que no podrías dejar de usar ni un día.",
+          "no": [
+            "celular"
+          ]
+        },
+        "Lo que más pereza te da hacer en casa.",
+        "La mejor edad de la vida.",
+        "Algo que te pone de buen humor al instante.",
+        "Un apodo que has tenido.",
+        {
+          "q": "Lo que haces cuando no puedes dormir.",
+          "no": [
+            "ver el celular"
+          ]
+        },
+        "Un deporte que te gustaría aprender.",
+        "La mejor etapa de tu vida hasta ahora.",
+        "Un personaje famoso con el que te tomarías un café.",
+        "Tu hora favorita del día.",
+        "La prenda de ropa que más usas."
+      ]
+    },
+    {
+      "id": "del-grupo",
+      "nombre": "Del grupo",
+      "emoji": "👥",
+      "acento": "#ee8f7e",
+      "descripcion": "¿Quién del grupo…? La respuesta es una persona de la mesa",
+      "pista": "Escribe el nombre de una persona del grupo.",
+      "adultos": false,
+      "preguntas": [
+        "¿Quién del grupo es el más puntual?",
+        "¿Quién es el más dormilón?",
+        "¿Quién llegaría tarde a su propia boda?",
+        "¿Quién se haría famoso primero?",
+        "¿Quién es el más gracioso?",
+        "¿Quién gasta más plata en tonterías?",
+        "¿Quién se perdería en su propio barrio?",
+        "¿Quién sería el mejor jefe?",
+        "¿Quién ahorra más?",
+        "¿Quién se gastaría todo el premio de la lotería primero?",
+        "¿Quién es el que más habla?",
+        "¿Quién se pone nervioso más rápido?",
+        "¿Quién cocina mejor?",
+        "¿Quién baila mejor?",
+        "¿Quién sobreviviría más tiempo en una isla desierta?",
+        "¿Quién es el más desordenado?",
+        "¿Quién es el más ordenado?",
+        "¿Quién se casaría primero?",
+        "¿Quién es el más terco?",
+        "¿Quién llora con las películas?",
+        "¿Quién es el mayor del grupo?",
+        "¿Quién es el menor del grupo?",
+        "¿Quién siempre cree tener la razón?",
+        "¿Quién se asustaría primero en una película de terror?",
+        "¿Quién maneja mejor?",
+        "¿Quién pierde más el celular?",
+        "¿Quién viajaría más lejos de casa?",
+        "¿Quién es el más cariñoso?",
+        "¿Quién guardaría mejor un secreto?",
+        "¿Quién sería el primero en rendirse en un juego?",
+        "¿Quién siempre dice \"ya voy\" y no llega?",
+        "¿Quién sería el mejor presidente del grupo?",
+        "¿Quién sacaría más fotos en un viaje?",
+        "¿Quién se ríe más fuerte?"
+      ]
+    },
+    {
+      "id": "cultura-general",
+      "nombre": "Cultura general",
+      "emoji": "🧠",
+      "acento": "#7fb3ff",
+      "descripcion": "Lo que todo el mundo sabe… o cree saber",
+      "pista": "Una respuesta corta: un nombre, un lugar o una cosa.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Un país de Europa.",
+          "no": [
+            "España"
+          ]
+        },
+        {
+          "q": "Un país de Sudamérica.",
+          "no": [
+            "Colombia"
+          ]
+        },
+        {
+          "q": "Un planeta del sistema solar.",
+          "no": [
+            "Tierra"
+          ]
+        },
+        {
+          "q": "Un instrumento musical.",
+          "no": [
+            "guitarra"
+          ]
+        },
+        {
+          "q": "Un inventor famoso.",
+          "no": [
+            "Edison"
+          ]
+        },
+        {
+          "q": "Un científico famoso.",
+          "no": [
+            "Einstein"
+          ]
+        },
+        {
+          "q": "Un escritor famoso.",
+          "no": [
+            "García Márquez"
+          ]
+        },
+        {
+          "q": "Un pintor famoso.",
+          "no": [
+            "Picasso"
+          ]
+        },
+        {
+          "q": "Un río famoso.",
+          "no": [
+            "Amazonas"
+          ]
+        },
+        {
+          "q": "Una ciudad de Estados Unidos.",
+          "no": [
+            "Nueva York"
+          ]
+        },
+        "Una capital del mundo.",
+        "Un personaje famoso de la historia.",
+        {
+          "q": "Un idioma, además del español.",
+          "no": [
+            "inglés"
+          ]
+        },
+        {
+          "q": "Un elemento de la tabla periódica.",
+          "no": [
+            "oxígeno"
+          ]
+        },
+        {
+          "q": "Un monumento famoso del mundo.",
+          "no": [
+            "Torre Eiffel"
+          ]
+        },
+        "Una de las maravillas del mundo.",
+        {
+          "q": "Una montaña famosa.",
+          "no": [
+            "Everest"
+          ]
+        },
+        {
+          "q": "Un animal que viva en el mar.",
+          "no": [
+            "tiburón",
+            "ballena"
+          ]
+        },
+        "Un hueso del cuerpo humano.",
+        {
+          "q": "Un órgano del cuerpo.",
+          "no": [
+            "corazón"
+          ]
+        },
+        "Un filósofo famoso.",
+        {
+          "q": "Una moneda del mundo.",
+          "no": [
+            "dólar"
+          ]
+        },
+        "Una marca de carros.",
+        "Un invento que cambió el mundo.",
+        "Un volcán famoso.",
+        "Un país de Asia.",
+        "Un tipo de baile.",
+        "Un deporte olímpico.",
+        "Un personaje de la mitología.",
+        "Una sigla que todo el mundo conoce.",
+        "Un mar famoso.",
+        "Un país de África."
+      ]
+    },
+    {
+      "id": "deporte",
+      "nombre": "Deporte",
+      "emoji": "⚽",
+      "acento": "#6fd38b",
+      "descripcion": "Fútbol y de todo un poco: opiniones de tribuna",
+      "pista": "Una persona, un equipo o un deporte.",
+      "adultos": false,
+      "preguntas": [
+        "¿Quién es el mayor goleador de la historia?",
+        "El mejor jugador de fútbol de todos los tiempos.",
+        "El mejor equipo de fútbol de la historia.",
+        "Un deporte que no te gusta ver.",
+        "El mejor deportista de la historia, de cualquier deporte.",
+        "Un deporte que nunca podrías practicar.",
+        "El mejor entrenador de la historia.",
+        "Un equipo de fútbol que te cae mal.",
+        "Un deporte extremo.",
+        "Un estadio famoso.",
+        "El mejor portero de la historia.",
+        "Un deporte de invierno.",
+        {
+          "q": "Un deporte que se juega con raqueta.",
+          "no": [
+            "tenis"
+          ]
+        },
+        "Un país que siempre es favorito en el Mundial.",
+        "Un tenista famoso.",
+        {
+          "q": "Un jugador de baloncesto famoso.",
+          "no": [
+            "Michael Jordan"
+          ]
+        },
+        "Un atleta de pista famoso.",
+        "Un deporte que parece fácil pero no lo es.",
+        "Un jugador que te encantaría tener en tu equipo.",
+        "Lo mejor de ver un partido con amigos.",
+        "Un deporte para hacer con amigos.",
+        "Un piloto de carreras famoso.",
+        "Lo que más se grita viendo un partido.",
+        "Una competencia deportiva famosa.",
+        "El deporte más aburrido de ver.",
+        "El deporte más difícil del mundo.",
+        "Un ejercicio que todos odian hacer.",
+        "Un jugador de fútbol que ya se retiró y extrañas.",
+        "Un equipo que siempre está en la final.",
+        "Una cosa que no puede faltar en un partido de barrio.",
+        {
+          "q": "Un deporte acuático.",
+          "no": [
+            "natación"
+          ]
+        },
+        "Un equipo de baloncesto.",
+        "Una selección que siempre decepciona.",
+        "Un deporte que se juega en la playa.",
+        "Una celebración de gol famosa.",
+        "Lo primero que se compra para empezar a hacer ejercicio.",
+        "Una camiseta de fútbol famosa.",
+        "Un deporte que solo se ve en los Olímpicos.",
+        "Un deporte para hacer en pareja.",
+        "La posición más difícil en el fútbol."
+      ]
+    },
+    {
+      "id": "datos-locos",
+      "nombre": "Datos locos",
+      "emoji": "🤯",
+      "acento": "#c79bff",
+      "descripcion": "Rarezas, números y ocurrencias para sorprenderse",
+      "pista": "Lo primero que se te ocurra.",
+      "adultos": false,
+      "preguntas": [
+        "Un animal que te daría miedo tener de mascota.",
+        {
+          "q": "Un número del 1 al 10.",
+          "no": [
+            "7"
+          ]
+        },
+        "Un número del 1 al 100.",
+        "Una letra del abecedario.",
+        "Un mes del año.",
+        "Un día de la semana.",
+        "Un animal que le ganaría a un oso en una pelea.",
+        "Un animal que sería buen superhéroe.",
+        "Algo que se puede comer pero no se debería.",
+        "Un animal raro que existe de verdad.",
+        "Un objeto que todo el mundo tiene en casa pero nadie usa.",
+        "Un superpoder inútil.",
+        "Un color que no combina con nada.",
+        "Algo que se puede hacer en cinco segundos.",
+        "La cosa más rara que has visto en la calle.",
+        "Un nombre que no le pondrías a tu hijo.",
+        "Un nombre que le pondrías a una mascota.",
+        "Algo que se rompe fácil.",
+        "Un animal que sería buen presidente.",
+        "Un trabajo que no existía hace treinta años.",
+        "Algo que cabe en un bolsillo.",
+        "Un animal que parece estar siempre enojado.",
+        "La peor idea para un negocio.",
+        "Algo que pesa más de lo que parece.",
+        "Una cosa que se vuelve peligrosa si hay demasiada.",
+        "El mejor invento de la humanidad.",
+        "Un invento que sobra.",
+        "Algo que siempre se pierde.",
+        "El mejor nombre para un barco.",
+        "Un animal que sería un pésimo mesero.",
+        "Algo que huele a infancia."
+      ]
+    },
+    {
+      "id": "deduccion",
+      "nombre": "Deducción",
+      "emoji": "🔎",
+      "acento": "#5fd6d0",
+      "descripcion": "Piensa lo que respondería la mayoría",
+      "pista": "No digas lo que tú harías: escribe lo que haría la mayoría.",
+      "adultos": false,
+      "preguntas": [
+        "Lo primero que haría la mayoría si se encuentra una billetera llena de plata.",
+        {
+          "q": "Lo que más se contesta cuando alguien pregunta \"¿cómo estás?\".",
+          "no": [
+            "bien"
+          ]
+        },
+        "Lo que la mayoría responde cuando le preguntan \"¿qué quieres comer?\".",
+        {
+          "q": "La excusa que más se usa para llegar tarde.",
+          "no": [
+            "el trancón"
+          ]
+        },
+        "Lo más típico que se regala en un cumpleaños.",
+        "La comida que más se pide en un restaurante.",
+        "El primer lugar que se visita en una ciudad nueva.",
+        "La frase que más se repite en una reunión de trabajo.",
+        "Lo primero que mira la gente al entrar a una casa ajena.",
+        {
+          "q": "Lo que más se olvida al salir de casa.",
+          "no": [
+            "llaves",
+            "celular"
+          ]
+        },
+        "La mentira más común.",
+        "El primer pensamiento de la mañana.",
+        {
+          "q": "Lo que hace la mayoría dentro de un ascensor.",
+          "no": [
+            "mirar el celular"
+          ]
+        },
+        {
+          "q": "El objeto que la gente más revisa durante el día.",
+          "no": [
+            "celular"
+          ]
+        },
+        "Lo que más se pide en una cafetería.",
+        "Lo primero que hace la gente al llegar a un hotel.",
+        {
+          "q": "Lo que hace la mayoría en un semáforo largo.",
+          "no": [
+            "mirar el celular"
+          ]
+        },
+        {
+          "q": "El tema de conversación cuando no hay tema.",
+          "no": [
+            "el clima"
+          ]
+        },
+        "La razón número uno para no ir a un plan.",
+        "La frase que más dice una mamá.",
+        "Lo que responde la mayoría a \"¿qué haces?\" cuando no hace nada.",
+        "Lo primero que se pierde en un viaje.",
+        "El pasatiempo más común de la gente en casa.",
+        "Una película que casi todo el mundo ha visto.",
+        "Lo primero que se le ofrece a un invitado.",
+        "Lo que se pone la mayoría para una entrevista de trabajo.",
+        {
+          "q": "La palabra que más se usa en WhatsApp.",
+          "no": [
+            "jaja"
+          ]
+        },
+        "Lo primero que hace un adulto al llegar a casa.",
+        "Lo que más se compra de más en el supermercado.",
+        "La hora a la que la mayoría se va a dormir."
+      ]
+    },
+    {
+      "id": "comida",
+      "nombre": "Comida y bebida",
+      "emoji": "🍕",
+      "acento": "#ffa45c",
+      "descripcion": "Sabores, antojos y platos",
+      "pista": "Una comida o una bebida.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Un sabor de helado.",
+          "no": [
+            "chocolate",
+            "vainilla"
+          ]
+        },
+        "Una fruta que te encante.",
+        {
+          "q": "Un tipo de pizza.",
+          "no": [
+            "hawaiana"
+          ]
+        },
+        {
+          "q": "Una comida rápida.",
+          "no": [
+            "hamburguesa"
+          ]
+        },
+        "El mejor acompañante del arroz.",
+        "Una bebida para una fiesta.",
+        "Un postre.",
+        "Una verdura que no soportas.",
+        "Un desayuno perfecto.",
+        {
+          "q": "Un snack para ver una película.",
+          "no": [
+            "crispetas"
+          ]
+        },
+        "Una salsa.",
+        "Una sopa.",
+        "El mejor plato del mundo.",
+        "Una comida que sabe mejor al día siguiente.",
+        "Un condimento que no puede faltar.",
+        "Un ingrediente que arruina una pizza.",
+        {
+          "q": "Una bebida caliente.",
+          "no": [
+            "café"
+          ]
+        },
+        "Una comida de la calle.",
+        "Un plato que sabes cocinar.",
+        "Una golosina de la infancia.",
+        "Un jugo.",
+        "Un tipo de pasta.",
+        "Una comida para una cita.",
+        "Una comida de otro país.",
+        "El ingrediente imprescindible de una hamburguesa.",
+        "Una comida que huele rico pero sabe feo.",
+        "Una fruta difícil de pelar.",
+        "Una comida que se come con las manos.",
+        {
+          "q": "Un restaurante de comida rápida.",
+          "no": [
+            "McDonald's"
+          ]
+        },
+        "Lo que no puede faltar en Navidad.",
+        "Un antojo de medianoche.",
+        "Un sabor de gaseosa."
+      ]
+    },
+    {
+      "id": "cine-musica",
+      "nombre": "Cine y música",
+      "emoji": "🎬",
+      "acento": "#ff8fb4",
+      "descripcion": "Películas, series, artistas y canciones",
+      "pista": "Un título, un artista o un género.",
+      "adultos": false,
+      "preguntas": [
+        "Una película que todo el mundo ha visto.",
+        "Una película de terror famosa.",
+        "Un actor famoso.",
+        "Una actriz famosa.",
+        "Una película que te hizo llorar.",
+        "Una serie para ver en maratón.",
+        "Una comedia que te hace reír.",
+        "Un cantante famoso.",
+        "Una banda de rock famosa.",
+        "Una canción que todos cantan.",
+        "Un género musical.",
+        "Una película animada.",
+        "Un villano de película.",
+        {
+          "q": "Un superhéroe.",
+          "no": [
+            "Batman",
+            "Spider-Man"
+          ]
+        },
+        "Una saga de películas.",
+        "Un director de cine famoso.",
+        "Una canción para una fiesta.",
+        "Una canción de amor.",
+        "Una canción de la que ya estás cansado.",
+        "Un cantante que te gusta pero casi no lo dices.",
+        "Un baile de moda.",
+        "Un reality de televisión.",
+        {
+          "q": "Una plataforma de streaming.",
+          "no": [
+            "Netflix"
+          ]
+        },
+        "Un personaje de serie que te cae mal.",
+        "Una película que dura demasiado.",
+        "Un musical famoso.",
+        "Un instrumento que quieres aprender.",
+        "Una película de Navidad.",
+        "Un cantante de reguetón.",
+        "Un artista que todo el mundo conoce."
+      ]
+    },
+    {
+      "id": "miedos-y-manias",
+      "nombre": "Miedos y manías",
+      "emoji": "😱",
+      "acento": "#a2acff",
+      "descripcion": "Lo que asusta, lo que molesta y lo que repetimos",
+      "pista": "Responde con lo que más se diría.",
+      "adultos": false,
+      "preguntas": [
+        "A qué se le tiene más miedo.",
+        {
+          "q": "Un animal que da miedo.",
+          "no": [
+            "serpiente"
+          ]
+        },
+        {
+          "q": "Un bicho que odias.",
+          "no": [
+            "cucaracha"
+          ]
+        },
+        "Un lugar que da miedo de noche.",
+        "Una manía que todos tenemos.",
+        "Algo que te da escalofríos.",
+        "Un miedo que da pena contar.",
+        "Lo peor que te puede pasar en un viaje.",
+        {
+          "q": "Una fobia común.",
+          "no": [
+            "arañas"
+          ]
+        },
+        "Lo que más estrés te da.",
+        "Algo que da pena hacer en público.",
+        "Un sonido que no soportas.",
+        "Una película que te dejó sin dormir.",
+        "Una superstición que conoces.",
+        "Lo que más asco te da.",
+        "Algo que da mala suerte.",
+        "Algo que revisas más de una vez antes de salir.",
+        "Un olor que no soportas.",
+        "Lo peor de ir al dentista.",
+        "Lo que nunca harías en una montaña rusa.",
+        "Una cosa que asusta en la oscuridad.",
+        "Un miedo de la infancia.",
+        "Lo más vergonzoso que te puede pasar en una fiesta.",
+        "Algo que te da ansiedad.",
+        {
+          "q": "Un insecto que te haría correr.",
+          "no": [
+            "cucaracha"
+          ]
+        },
+        "Lo que menos quisieras encontrar en tu cama.",
+        "Un lugar donde no te quedarías solo.",
+        "Una situación en la que te da pena hablar.",
+        "Un monstruo clásico.",
+        "Una cosa que te saca de quicio."
+      ]
+    },
+    {
+      "id": "viajes",
+      "nombre": "Viajes y lugares",
+      "emoji": "✈️",
+      "acento": "#6cc6ff",
+      "descripcion": "Destinos, maletas y planes de escapada",
+      "pista": "Un lugar, un destino o una cosa de viaje.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Una ciudad para visitar antes de morir.",
+          "no": [
+            "París"
+          ]
+        },
+        "Un país que quieres conocer.",
+        "Una playa famosa.",
+        "Un destino para una luna de miel.",
+        {
+          "q": "Lo imprescindible en una maleta.",
+          "no": [
+            "ropa"
+          ]
+        },
+        "Un lugar para ir en vacaciones.",
+        {
+          "q": "Una isla.",
+          "no": [
+            "San Andrés"
+          ]
+        },
+        {
+          "q": "Una ciudad europea.",
+          "no": [
+            "París"
+          ]
+        },
+        "Un lugar para ir de camping.",
+        "Lo peor de viajar en avión.",
+        "Un medio de transporte favorito.",
+        "Un recuerdo típico que se trae de un viaje.",
+        "Un país con buena comida.",
+        "Una ciudad para perderse.",
+        "Un lugar que parece de película.",
+        "Un lugar con el que sueñas.",
+        "Un país para vivir.",
+        "Un lugar frío.",
+        {
+          "q": "Una ciudad que nunca duerme.",
+          "no": [
+            "Nueva York"
+          ]
+        },
+        "Una montaña para escalar.",
+        "Un lugar para un puente festivo.",
+        "Lo primero que se hace al llegar a una playa.",
+        "Un animal que quieres ver de cerca en un safari.",
+        {
+          "q": "Un museo famoso.",
+          "no": [
+            "el Louvre"
+          ]
+        },
+        "Un destino para una despedida de soltero o soltera.",
+        "Un lugar que da calma.",
+        "Un país para ir de compras.",
+        "Un lugar para ver la nieve.",
+        "Una cosa que se olvida siempre al viajar.",
+        "La mejor forma de viajar.",
+        "Un país donde se habla otro idioma.",
+        "Un aeropuerto famoso.",
+        "Algo que se compra en el aeropuerto.",
+        "Un plan para un viaje con amigos.",
+        "Un lugar para ver el atardecer.",
+        "Algo que no puede faltar en un viaje en carro.",
+        "Una ciudad para ir a comer.",
+        "Un país con playas lindas.",
+        "Lo mejor de quedarse en un hotel.",
+        "Lo peor de volver de vacaciones."
+      ]
+    },
+    {
+      "id": "infancia",
+      "nombre": "Infancia",
+      "emoji": "🧸",
+      "acento": "#ffc8a8",
+      "descripcion": "Recuerdos de cuando éramos niños",
+      "pista": "Lo primero que te recuerde a la infancia.",
+      "adultos": false,
+      "preguntas": [
+        "Un juego de recreo.",
+        "Un dibujo animado de tu infancia.",
+        "Lo que más se compraba en la tienda del colegio.",
+        "Un juguete que todos tenían.",
+        "Una materia que todos odiaban en el colegio.",
+        "Una materia favorita del colegio.",
+        "Un castigo típico de la infancia.",
+        "Lo que más miedo daba de niño.",
+        "Un juego de mesa de la infancia.",
+        "Una canción infantil.",
+        {
+          "q": "Un cuento clásico.",
+          "no": [
+            "Caperucita Roja"
+          ]
+        },
+        "Una frase típica de los profesores.",
+        "Algo que se llevaba en la lonchera.",
+        "Un regalo de Navidad soñado de niño.",
+        "Una excusa para no hacer la tarea.",
+        "Un programa de televisión de la tarde.",
+        "Un videojuego de la infancia.",
+        "Un personaje que daba miedo de niño.",
+        "Lo mejor de las vacaciones de mitad de año.",
+        "Un deporte que se jugaba en el barrio.",
+        "Una travesura típica.",
+        "Lo primero que hacías al llegar del colegio.",
+        "Un superhéroe favorito de niño.",
+        "Una comida que odiabas de niño.",
+        "Un útil escolar que siempre se perdía.",
+        "Algo que coleccionaban todos en el colegio.",
+        "Un lugar al que te llevaban de paseo de niño.",
+        "La peor parte de ir al médico de niño.",
+        "Una película de dibujos que viste mil veces.",
+        "Un juego para jugar en la calle."
+      ]
+    },
+    {
+      "id": "colombia",
+      "nombre": "Colombia",
+      "emoji": "🇨🇴",
+      "acento": "#ffe066",
+      "descripcion": "Lo nuestro: comida, lugares, música y frases",
+      "pista": "Algo de Colombia: un lugar, una comida, una persona o una frase.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Un plato típico colombiano.",
+          "no": [
+            "bandeja paisa"
+          ]
+        },
+        {
+          "q": "Una ciudad de Colombia.",
+          "no": [
+            "Bogotá"
+          ]
+        },
+        "Una fruta colombiana.",
+        {
+          "q": "Un cantante colombiano.",
+          "no": [
+            "Shakira"
+          ]
+        },
+        {
+          "q": "Un futbolista colombiano.",
+          "no": [
+            "James"
+          ]
+        },
+        {
+          "q": "Un lugar turístico de Colombia.",
+          "no": [
+            "Cartagena"
+          ]
+        },
+        "Una palabra muy colombiana.",
+        {
+          "q": "Una bebida típica colombiana.",
+          "no": [
+            "aguardiente"
+          ]
+        },
+        "Un departamento de Colombia.",
+        "Una feria o carnaval colombiano.",
+        "Un río de Colombia.",
+        "Una telenovela colombiana.",
+        "Un dulce típico colombiano.",
+        "Un recuerdo típico para llevar de Colombia.",
+        "Un equipo de fútbol colombiano.",
+        "Un animal típico de Colombia.",
+        "Un paseo de fin de semana desde Bogotá.",
+        "Un tipo de arepa.",
+        "Lo primero que le muestras a un extranjero en Colombia.",
+        "Una frase que solo entiende un colombiano.",
+        {
+          "q": "Un escritor colombiano.",
+          "no": [
+            "García Márquez"
+          ]
+        },
+        "Un deportista colombiano que no sea futbolista.",
+        "Una playa de Colombia.",
+        "Un pueblo bonito de Colombia.",
+        "Un postre de Navidad colombiano.",
+        "Un ritmo musical colombiano.",
+        "Lo que más se extraña de Colombia estando afuera.",
+        "Un antojo callejero colombiano.",
+        "Algo que siempre hay en una fiesta colombiana.",
+        "Un acompañante del ajiaco."
+      ]
+    },
+    {
+      "id": "animales",
+      "nombre": "Animales y naturaleza",
+      "emoji": "🐾",
+      "acento": "#9ee37d",
+      "descripcion": "Bichos, plantas y paisajes",
+      "pista": "Un animal, una planta o algo de la naturaleza.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Un animal de la selva.",
+          "no": [
+            "mono"
+          ]
+        },
+        "Un animal de granja.",
+        "Un pájaro.",
+        "Un animal que vuela pero no es pájaro.",
+        {
+          "q": "Un animal muy lento.",
+          "no": [
+            "tortuga"
+          ]
+        },
+        {
+          "q": "Un animal muy rápido.",
+          "no": [
+            "guepardo"
+          ]
+        },
+        {
+          "q": "Un animal que vive en la nieve.",
+          "no": [
+            "pingüino"
+          ]
+        },
+        "Una mascota rara.",
+        {
+          "q": "Un animal con rayas.",
+          "no": [
+            "cebra"
+          ]
+        },
+        "Un animal con manchas.",
+        {
+          "q": "Un animal nocturno.",
+          "no": [
+            "búho"
+          ]
+        },
+        "Un reptil.",
+        {
+          "q": "Un animal que salta.",
+          "no": [
+            "canguro"
+          ]
+        },
+        "Un animal en peligro de extinción.",
+        {
+          "q": "Una flor.",
+          "no": [
+            "rosa"
+          ]
+        },
+        "Un árbol.",
+        {
+          "q": "Un animal que da leche.",
+          "no": [
+            "vaca"
+          ]
+        },
+        "Un insecto que no molesta.",
+        "Un animal que aparece en los cuentos.",
+        "Un animal que sería buena mascota de oficina.",
+        "Un animal muy inteligente.",
+        "Un animal que da ternura.",
+        {
+          "q": "Un animal del desierto.",
+          "no": [
+            "camello"
+          ]
+        },
+        "Un fenómeno natural.",
+        "Un animal que vive en el río.",
+        "Un animal con cuernos.",
+        "Un animal de zoológico.",
+        "Un sonido de la naturaleza.",
+        "Un paisaje para relajarse.",
+        {
+          "q": "Un animal muy grande.",
+          "no": [
+            "elefante"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tecnologia",
+      "nombre": "Tecnología e internet",
+      "emoji": "📱",
+      "acento": "#dfe6f2",
+      "descripcion": "Celulares, apps, redes y videojuegos",
+      "pista": "Una app, una marca, un aparato o algo de internet.",
+      "adultos": false,
+      "preguntas": [
+        {
+          "q": "Una red social.",
+          "no": [
+            "Instagram"
+          ]
+        },
+        {
+          "q": "Una marca de celular.",
+          "no": [
+            "Apple",
+            "Samsung"
+          ]
+        },
+        "Un videojuego famoso.",
+        {
+          "q": "Una consola de videojuegos.",
+          "no": [
+            "PlayStation"
+          ]
+        },
+        "Una app para pedir comida.",
+        {
+          "q": "Una contraseña típica que todos usan.",
+          "no": [
+            "123456"
+          ]
+        },
+        "Un emoji que todos usan.",
+        "Lo primero que se busca en Google.",
+        "Un creador de contenido famoso.",
+        {
+          "q": "Una app de mensajes.",
+          "no": [
+            "WhatsApp"
+          ]
+        },
+        "Algo que se hace con el celular en el baño.",
+        "Una marca de computador.",
+        "Un invento tecnológico reciente.",
+        "Un aparato de la casa que no puede faltar.",
+        "Lo que más se ve en TikTok.",
+        "Un juego del celular.",
+        "Una empresa de tecnología.",
+        "Lo peor que le puede pasar a un celular.",
+        "Un accesorio para el celular.",
+        "Una palabra de internet que usan los jóvenes.",
+        "Algo que hace la inteligencia artificial.",
+        "Lo que hace la gente cuando se va el internet.",
+        "Un aparato que ya nadie usa.",
+        {
+          "q": "Una app de música.",
+          "no": [
+            "Spotify"
+          ]
+        },
+        "Un tipo de video que siempre se vuelve viral.",
+        "La primera app que se abre en la mañana.",
+        "Algo que siempre se olvida cargar.",
+        "Un nombre típico para la red wifi.",
+        {
+          "q": "Una plataforma para ver videos.",
+          "no": [
+            "YouTube"
+          ]
+        },
+        "Lo más molesto de una videollamada."
+      ]
+    },
+    {
+      "id": "trabajo",
+      "nombre": "Trabajo y estudio",
+      "emoji": "💼",
+      "acento": "#dcc6a0",
+      "descripcion": "Oficina, colegio, universidad y jefes",
+      "pista": "Una profesión, una situación o una cosa del trabajo o el estudio.",
+      "adultos": false,
+      "preguntas": [
+        "Una profesión que todos admiran.",
+        "Una carrera universitaria.",
+        "Un trabajo muy aburrido.",
+        "Un trabajo soñado.",
+        "Lo mejor de trabajar desde la casa.",
+        "Lo peor de los lunes.",
+        "Algo que no puede faltar en un escritorio.",
+        "Una excusa para faltar al trabajo.",
+        "Lo que más se habla a la hora del almuerzo.",
+        "Un jefe famoso de película.",
+        "Una profesión peligrosa.",
+        "Un trabajo que ya hacen los robots.",
+        "Lo más difícil de un examen.",
+        "Algo que se hace en una reunión aburrida.",
+        "Una frase típica de un jefe.",
+        "Lo que se compra con la primera quincena.",
+        "Un trabajo de vacaciones.",
+        "Una profesión que sale mucho en las series.",
+        "Lo primero que se hace al llegar a la oficina.",
+        "Un regalo para un compañero de trabajo.",
+        "Una habilidad que todo el mundo pone en la hoja de vida.",
+        "Un trabajo bien pagado que nadie quiere.",
+        "Lo mejor del viernes.",
+        "Una materia difícil de la universidad.",
+        "Un lugar para estudiar.",
+        "Lo más típico de una fiesta de oficina.",
+        "Algo que se hace para no dormirse en clase.",
+        "Un trabajo que sería divertido por un día.",
+        "Una profesión que sueñan los niños y casi nadie estudia.",
+        "Una pregunta típica de una entrevista de trabajo."
+      ]
+    },
+    {
+      "id": "fiestas",
+      "nombre": "Fiestas y celebraciones",
+      "emoji": "🎉",
+      "acento": "#ff9ed2",
+      "descripcion": "Navidad, cumpleaños, bodas y rumba",
+      "pista": "Algo de una fiesta o una celebración.",
+      "adultos": false,
+      "preguntas": [
+        "Una canción que no puede faltar en Navidad.",
+        "Un disfraz de Halloween.",
+        "Una tradición de Año Nuevo.",
+        "Algo que se hace a las doce el 31 de diciembre.",
+        "Un juego para una fiesta.",
+        "Lo que nunca falta en un cumpleaños.",
+        "Una fecha especial del año.",
+        "Un regalo para el Día de la Madre.",
+        "Un regalo para el Día del Padre.",
+        "Lo que se come en una boda.",
+        "Una canción de la hora loca.",
+        "Un lugar para celebrar un cumpleaños.",
+        "Una decoración de Navidad.",
+        "Algo que se hace en la novena.",
+        "Lo primero que se acaba en una fiesta.",
+        "Un tema para una fiesta de disfraces.",
+        "Un plan para Amor y Amistad.",
+        "La peor parte de organizar una fiesta.",
+        "Un festivo favorito.",
+        "Algo típico de una despedida de soltero.",
+        "Una tradición de Semana Santa.",
+        "Lo que siempre pasa en una reunión familiar.",
+        "El mejor regalo de cumpleaños.",
+        {
+          "q": "Un sabor de torta.",
+          "no": [
+            "chocolate"
+          ]
+        },
+        "Algo que se baila en una boda.",
+        "Un juego de baby shower.",
+        "Lo que más se toma en una fiesta.",
+        "La hora a la que debería terminar una buena fiesta.",
+        "Un deseo típico al soplar las velas.",
+        "Lo que se hace cuando ya se acabó la fiesta."
+      ]
+    },
+    {
+      "id": "picantes",
+      "nombre": "Picantes",
+      "emoji": "🔥",
+      "acento": "#ff7b6b",
+      "descripcion": "Preguntas para adultos, con humor y sin pasarse",
+      "pista": "Responde con lo que más se diría. Solo mayores de 18.",
+      "adultos": true,
+      "preguntas": [
+        "Una mentira piadosa que todo el mundo dice.",
+        "Una excusa para no salir con alguien.",
+        "Algo que haces cuando estás solo en casa.",
+        "El mejor lugar para una primera cita.",
+        "Lo peor que puede pasar en una primera cita.",
+        "Una cosa que te enamora de alguien.",
+        "Una señal de que no le gustas a alguien.",
+        "Un regalo para conquistar a alguien.",
+        "Lo que más molesta de una pareja.",
+        "Una canción para ponerse romántico.",
+        "Una cosa que nadie confiesa.",
+        "Un vicio que casi todos tenemos.",
+        "Algo que haces y no cuentas.",
+        "Algo de lo que te arrepientes después de una fiesta.",
+        "Lo más tonto que se hace por amor.",
+        "Una bebida para animarse.",
+        "La peor forma de terminar una relación.",
+        "Un secreto que todos guardamos.",
+        "Algo que se ve en el celular de otro y no se debería ver.",
+        "Una frase para coquetear.",
+        "El mejor lugar para dar un beso.",
+        "Un defecto que perdonas.",
+        "Un defecto que no perdonas.",
+        "El peor regalo de cumpleaños.",
+        "Una cosa que todos dicen que no hacen, pero hacen.",
+        "Una tontería que hiciste siendo adolescente.",
+        "Lo que haces cuando alguien te cae mal pero tienes que ser amable.",
+        "Algo que haces por pereza.",
+        "El peor momento para que te llame tu mamá.",
+        "Un tema del que no se habla en una primera cita."
+      ]
+    }
+  ]
+}

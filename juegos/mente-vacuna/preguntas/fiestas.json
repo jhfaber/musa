@@ -1,0 +1,46 @@
+{
+  "id": "fiestas",
+  "nombre": "Fiestas y celebraciones",
+  "emoji": "🎉",
+  "acento": "#ff9ed2",
+  "descripcion": "Navidad, cumpleaños, bodas y rumba",
+  "pista": "Algo de una fiesta o una celebración.",
+  "adultos": false,
+  "preguntas": [
+    "Una canción que no puede faltar en Navidad.",
+    "Un disfraz de Halloween.",
+    "Una tradición de Año Nuevo.",
+    "Algo que se hace a las doce el 31 de diciembre.",
+    "Un juego para una fiesta.",
+    "Lo que nunca falta en un cumpleaños.",
+    "Una fecha especial del año.",
+    "Un regalo para el Día de la Madre.",
+    "Un regalo para el Día del Padre.",
+    "Lo que se come en una boda.",
+    "Una canción de la hora loca.",
+    "Un lugar para celebrar un cumpleaños.",
+    "Una decoración de Navidad.",
+    "Algo que se hace en la novena.",
+    "Lo primero que se acaba en una fiesta.",
+    "Un tema para una fiesta de disfraces.",
+    "Un plan para Amor y Amistad.",
+    "La peor parte de organizar una fiesta.",
+    "Un festivo favorito.",
+    "Algo típico de una despedida de soltero.",
+    "Una tradición de Semana Santa.",
+    "Lo que siempre pasa en una reunión familiar.",
+    "El mejor regalo de cumpleaños.",
+    {
+      "q": "Un sabor de torta.",
+      "no": [
+        "chocolate"
+      ]
+    },
+    "Algo que se baila en una boda.",
+    "Un juego de baby shower.",
+    "Lo que más se toma en una fiesta.",
+    "La hora a la que debería terminar una buena fiesta.",
+    "Un deseo típico al soplar las velas.",
+    "Lo que se hace cuando ya se acabó la fiesta."
+  ]
+}

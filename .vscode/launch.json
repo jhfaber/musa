@@ -58,7 +58,7 @@
       "serverReadyAction": {
         "action": "openExternally",
         "pattern": "Musa en (http://localhost:[0-9]+)",
-        "uriFormat": "%s/#dixit"
+        "uriFormat": "%s/"
       }
     }
   ]

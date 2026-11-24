@@ -1,0 +1,76 @@
+{
+  "id": "colombia",
+  "nombre": "Colombia",
+  "emoji": "🇨🇴",
+  "acento": "#ffe066",
+  "descripcion": "Lo nuestro: comida, lugares, música y frases",
+  "pista": "Algo de Colombia: un lugar, una comida, una persona o una frase.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Un plato típico colombiano.",
+      "no": [
+        "bandeja paisa"
+      ]
+    },
+    {
+      "q": "Una ciudad de Colombia.",
+      "no": [
+        "Bogotá"
+      ]
+    },
+    "Una fruta colombiana.",
+    {
+      "q": "Un cantante colombiano.",
+      "no": [
+        "Shakira"
+      ]
+    },
+    {
+      "q": "Un futbolista colombiano.",
+      "no": [
+        "James"
+      ]
+    },
+    {
+      "q": "Un lugar turístico de Colombia.",
+      "no": [
+        "Cartagena"
+      ]
+    },
+    "Una palabra muy colombiana.",
+    {
+      "q": "Una bebida típica colombiana.",
+      "no": [
+        "aguardiente"
+      ]
+    },
+    "Un departamento de Colombia.",
+    "Una feria o carnaval colombiano.",
+    "Un río de Colombia.",
+    "Una telenovela colombiana.",
+    "Un dulce típico colombiano.",
+    "Un recuerdo típico para llevar de Colombia.",
+    "Un equipo de fútbol colombiano.",
+    "Un animal típico de Colombia.",
+    "Un paseo de fin de semana desde Bogotá.",
+    "Un tipo de arepa.",
+    "Lo primero que le muestras a un extranjero en Colombia.",
+    "Una frase que solo entiende un colombiano.",
+    {
+      "q": "Un escritor colombiano.",
+      "no": [
+        "García Márquez"
+      ]
+    },
+    "Un deportista colombiano que no sea futbolista.",
+    "Una playa de Colombia.",
+    "Un pueblo bonito de Colombia.",
+    "Un postre de Navidad colombiano.",
+    "Un ritmo musical colombiano.",
+    "Lo que más se extraña de Colombia estando afuera.",
+    "Un antojo callejero colombiano.",
+    "Algo que siempre hay en una fiesta colombiana.",
+    "Un acompañante del ajiaco."
+  ]
+}

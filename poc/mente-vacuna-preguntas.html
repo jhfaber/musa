@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PoC · Mente Vacuna · Preguntas</title>
+  <meta name="theme-color" content="#1b1446">
+  <link rel="stylesheet" href="../comun/base.css">
+  <style>
+    /* PoC de la spec 009: así podría verse la pantalla de preguntas. No es código final. */
+    body { --acento: #f2c46b; }
+    .mv { display: flex; flex-direction: column; min-height: 100dvh; }
+    .mv-barra { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; margin-bottom: 4px; }
+    .mv-barra h2 { margin: 0; text-align: center; font-family: var(--serif); font-weight: normal; font-size: 1.4rem; color: var(--oro-claro); }
+
+    /* Pestañas Preguntas / Reglas */
+    .mv-pestanas { display: flex; gap: 6px; padding: 4px; margin: 6px 0 12px; border-radius: 999px; background: rgba(255,255,255,.07); }
+    .mv-pestanas button { flex: 1; padding: 10px 8px; font: inherit; font-size: .95rem; border: 0; border-radius: 999px; background: none; color: var(--texto); cursor: pointer; }
+    .mv-pestanas .activa { background: var(--oro); color: var(--noche); font-weight: 600; }
+
+    /* Categorías: fila que se desliza con el dedo */
+    .mv-cats { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 -16px; padding-inline: 16px; scrollbar-width: none; scroll-snap-type: x proximity; }
+    .mv-cats::-webkit-scrollbar { display: none; }
+    .mv-cat {
+      flex: none; scroll-snap-align: start;
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 14px; font: inherit; font-size: .9rem; color: var(--texto);
+      border-radius: 999px; border: 1px solid rgba(255,246,213,.25); background: rgba(255,255,255,.06); cursor: pointer;
+      transition: background .2s, color .2s, transform .15s;
+    }
+    .mv-cat:active { transform: scale(.96); }
+    .mv-cat[aria-pressed="true"] { background: var(--c); border-color: var(--c); color: #1b1446; font-weight: 600; box-shadow: 0 4px 14px color-mix(in srgb, var(--c) 45%, transparent); }
+    .mv-cat--adultos:not([aria-pressed="true"]) { opacity: .65; }
+
+    .mv-cuenta { display: flex; justify-content: space-between; align-items: baseline; margin: 2px 4px 10px; color: var(--texto-suave); font-size: .85rem; }
+    .mv-cuenta b { color: var(--oro-claro); font-family: var(--serif); font-weight: normal; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; }
+
+    /* La tarjeta: papel, brillo del color de la categoría y letra grande */
+    .mv-mesa { flex: 1; display: flex; perspective: 1200px; min-height: 0; }
+    .mv-carta {
+      position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+      min-height: 380px; padding: 26px 22px 20px; border-radius: 26px; text-align: center; color: var(--tinta);
+      background:
+        radial-gradient(circle at 85% 8%, color-mix(in srgb, var(--acento) 38%, transparent), transparent 46%),
+        radial-gradient(circle at 8% 98%, color-mix(in srgb, var(--acento) 22%, transparent), transparent 50%),
+        var(--papel);
+      box-shadow: 0 22px 46px rgba(10,5,30,.5), 0 0 60px color-mix(in srgb, var(--acento) 28%, transparent), inset 0 0 0 6px var(--papel), inset 0 0 0 7.5px var(--acento);
+      transition: box-shadow .5s;
+    }
+    .mv-carta--entra { animation: mv-entra .55s cubic-bezier(.2,.8,.3,1.1); }
+    @keyframes mv-entra { from { transform: rotateY(-95deg) scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+
+    .mv-insignia { display: grid; justify-items: center; gap: 8px; }
+    .mv-emoji {
+      width: 64px; height: 64px; display: grid; place-items: center; font-size: 2rem; border-radius: 50%;
+      background: var(--acento); box-shadow: 0 6px 18px color-mix(in srgb, var(--acento) 55%, transparent), inset 0 0 0 3px rgba(255,255,255,.5);
+    }
+    .mv-etiqueta { padding: 3px 14px; border-radius: 999px; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; background: color-mix(in srgb, var(--acento) 30%, white); color: #3a2a6e; }
+
+    .mv-pregunta { margin: 0; font-family: var(--serif); font-weight: normal; line-height: 1.18; color: var(--tinta); font-size: clamp(1.9rem, 8vw, 2.5rem); text-wrap: balance; }
+
+    .mv-pista { width: 100%; padding-top: 12px; border-top: 1px dashed rgba(44,33,64,.25); font-family: var(--serif); font-style: italic; color: var(--tinta-suave); line-height: 1.35; font-size: .95rem; }
+    .mv-pista span { display: block; margin-bottom: 3px; font-family: var(--sans); font-style: normal; font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; }
+
+    /* Controles al alcance del pulgar */
+    .mv .controles { margin-top: 14px; }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      .mv-carta { min-height: 0; flex-direction: row; gap: 18px; padding: 16px 24px; text-align: left; }
+      .mv-pregunta { font-size: clamp(1.4rem, 4.2vw, 2rem); }
+      .mv-pista { width: auto; max-width: 30%; border-top: 0; padding-top: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .mv-carta--entra { animation: none; } }
+  </style>
+</head>
+<body>
+  <div class="cielo" aria-hidden="true"></div>
+  <main class="pantalla mv">
+    <header class="mv-barra">
+      <a href="#" class="boton-icono" aria-label="Volver">←</a>
+      <h2>Mente Vacuna</h2>
+      <span></span>
+    </header>
+
+    <div class="mv-pestanas" role="tablist">
+      <button class="activa" role="tab" aria-selected="true">Preguntas</button>
+      <button role="tab" aria-selected="false">Reglas</button>
+    </div>
+
+    <div class="mv-cats" id="cats" aria-label="Categorías"></div>
+    <div class="mv-cuenta"><b id="categoria-actual"></b><span id="cuenta"></span></div>
+
+    <div class="mv-mesa"><article class="mv-carta" id="carta" aria-live="polite"></article></div>
+
+    <div class="controles">
+      <button class="boton-icono boton-redondo" id="anterior" aria-label="Pregunta anterior" disabled>‹</button>
+      <button class="boton boton--principal" id="nueva">Nueva pregunta</button>
+      <button class="boton-icono boton-redondo" id="descartar" aria-label="Descartar esta pregunta">✕</button>
+    </div>
+  </main>
+
+<script>
+  // Colores de acento por categoría (en la versión final vivirían en el archivo de datos)
+  const ACENTOS = {
+    'sobre-ti': '#f2c46b', 'del-grupo': '#ee8f7e', 'cultura-general': '#7fb3ff', 'deporte': '#6fd38b', 'datos-locos': '#c79bff',
+    'deduccion': '#5fd6d0', 'comida': '#ffa45c', 'cine-musica': '#ff7aa8', 'miedos-y-manias': '#a2acff', 'viajes': '#6cc6ff', 'picantes': '#ff6262'
+  };
+  const $ = (id) => document.getElementById(id);
+  let categorias = [], activas = new Set(), bolsa = [], historial = [], visto = 0;
+
+  const azar = (n) => Math.floor(Math.random() * n);
+  const cat = (id) => categorias.find((c) => c.id === id);
+
+  function rearmarBolsa() {
+    bolsa = categorias.filter((c) => activas.has(c.id)).flatMap((c) => c.preguntas.map((q) => ({ q, c: c.id })));
+    visto = 0;
+  }
+
+  function pintarCategorias() {
+    $('cats').innerHTML = '';
+    for (const c of categorias) {
+      const b = document.createElement('button');
+      b.className = 'mv-cat' + (c.adultos ? ' mv-cat--adultos' : '');
+      b.style.setProperty('--c', ACENTOS[c.id]);
+      b.setAttribute('aria-pressed', activas.has(c.id));
+      b.innerHTML = `<span>${c.emoji}</span>${c.nombre}${c.adultos ? ' <small>+18</small>' : ''}`;
+      b.onclick = () => {
+        if (c.adultos && !activas.has(c.id) && !confirm('Esta categoría es solo para mayores de 18. ¿Activarla?')) return;
+        activas.has(c.id) ? activas.delete(c.id) : activas.add(c.id);
+        if (!activas.size) activas.add(c.id);
+        pintarCategorias(); rearmarBolsa(); actualizarCuenta();
+      };
+      $('cats').appendChild(b);
+    }
+  }
+
+  function actualizarCuenta() {
+    $('cuenta').textContent = `pregunta ${visto} · quedan ${bolsa.length}`;
+  }
+
+  function mostrar(item, animar = true) {
+    const c = cat(item.c);
+    document.body.style.setProperty('--acento', ACENTOS[c.id]);
+    $('categoria-actual').textContent = `${c.emoji} ${c.nombre}`;
+    $('carta').innerHTML = `
+      <div class="mv-insignia"><div class="mv-emoji" aria-hidden="true">${c.emoji}</div><div class="mv-etiqueta">${c.nombre}</div></div>
+      <p class="mv-pregunta">${item.q}</p>
+      <div class="mv-pista"><span>Cómo responder</span>${c.pista}</div>`;
+    $('carta').style.setProperty('--acento', ACENTOS[c.id]);
+    if (animar) { $('carta').classList.remove('mv-carta--entra'); void $('carta').offsetWidth; $('carta').classList.add('mv-carta--entra'); }
+    $('anterior').disabled = historial.length < 2;
+    if (navigator.vibrate) navigator.vibrate(12);
+  }
+
+  function nueva() {
+    if (!bolsa.length) rearmarBolsa();
+    const item = bolsa.splice(azar(bolsa.length), 1)[0];
+    visto++; historial.push(item); mostrar(item); actualizarCuenta();
+  }
+
+  $('nueva').onclick = nueva;
+  $('anterior').onclick = () => { if (historial.length > 1) { historial.pop(); mostrar(historial[historial.length - 1]); } };
+  $('descartar').onclick = nueva;
+
+  fetch('../specs/009-mente-vacuna-preguntas/banco-borrador.json').then((r) => r.json()).then((d) => {
+    categorias = d.categorias;
+    activas = new Set(categorias.filter((c) => !c.adultos).map((c) => c.id));
+    pintarCategorias(); rearmarBolsa(); nueva();
+  });
+</script>
+</body>
+</html>

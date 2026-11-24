@@ -1,0 +1,76 @@
+{
+  "jugadores": "4 a 20",
+  "duracion": "20 a 30 min",
+  "necesitas": "el tablero, las fichas de vaca, la vaca rosa, las cartas de preguntas y hojas para anotar.",
+  "nota": "La vaca rosa y los detalles del reparto de vacas están por confirmar con el manual de la caja.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Pensar como el rebaño: dar la misma respuesta que la mayoría.",
+        "Gana quien llegue a **8 vacas sin tener la vaca rosa**."
+      ]
+    },
+    {
+      "t": "Cada ronda",
+      "p": [
+        "Se lee una pregunta.",
+        "Todos escriben su respuesta **en secreto**.",
+        "Se muestran todas a la vez.",
+        "Si la pregunta dice **🚫 No vale**, esa respuesta es demasiado obvia y no cuenta: quien la escriba no suma."
+      ]
+    },
+    {
+      "t": "Puntos",
+      "p": [
+        "Quienes dieron la respuesta **más repetida** (por lo menos dos iguales) se llevan una vaca.",
+        "Si hay empate por la más repetida, o todas son distintas, nadie se lleva vaca."
+      ]
+    },
+    {
+      "t": "La vaca rosa",
+      "p": [
+        "La recibe quien se quede **solo** con una respuesta distinta a todos.",
+        "Mientras la tengas, **no puedes ganar**: se la pasa quien quede solo en otra ronda."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Preparación",
+      "p": [
+        "Cada jugador toma una hoja y algo para escribir.",
+        "Las cartas de preguntas, boca abajo.",
+        "Las vacas y la vaca rosa, a un lado del tablero."
+      ]
+    },
+    {
+      "t": "Respuestas",
+      "p": [
+        "Valen respuestas cortas, de una o pocas palabras.",
+        "Si dos respuestas dicen lo mismo con otras palabras, se acuerda en la mesa si cuentan como iguales."
+      ]
+    },
+    {
+      "t": "Vacas",
+      "p": [
+        "Cada ronda, el rebaño (la mayoría) gana una vaca por cabeza.",
+        "Las vacas se acumulan en el tablero, a nombre de cada jugador."
+      ]
+    },
+    {
+      "t": "Vaca rosa",
+      "p": [
+        "La tiene quien se quedó solo con una respuesta distinta.",
+        "Si la tienes, aunque llegues a 8 vacas, no ganas hasta quitártela.",
+        "Para quitártela, otro jugador tiene que quedar solo en una ronda."
+      ]
+    },
+    {
+      "t": "Fin de la partida",
+      "p": [
+        "Gana el primero con **8 vacas** que no tenga la vaca rosa."
+      ]
+    }
+  ]
+}

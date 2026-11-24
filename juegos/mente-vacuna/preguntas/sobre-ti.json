@@ -1,0 +1,73 @@
+{
+  "id": "sobre-ti",
+  "nombre": "Sobre ti",
+  "emoji": "🧑",
+  "acento": "#f2c46b",
+  "descripcion": "Gustos, manías y cosas tuyas: para conocerse",
+  "pista": "Responde sobre ti, con una palabra o una frase corta.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Tu animal favorito.",
+      "no": [
+        "perro"
+      ]
+    },
+    "Tu color favorito.",
+    "Una comida que podrías comer todos los días.",
+    "Tu mayor miedo.",
+    "El superpoder que te gustaría tener.",
+    {
+      "q": "Una cosa que nunca falta en tu bolso o en tus bolsillos.",
+      "no": [
+        "celular",
+        "llaves",
+        "billetera"
+      ]
+    },
+    "Una hora a la que te despiertas entre semana.",
+    "Tu estación o época del año favorita.",
+    {
+      "q": "La primera cosa que haces al despertar.",
+      "no": [
+        "mirar el celular"
+      ]
+    },
+    "Un lugar al que irías de vacaciones mañana mismo.",
+    "Algo que coleccionabas de niño.",
+    "El trabajo que soñabas tener de niño.",
+    "Una manía tuya.",
+    {
+      "q": "La app que más usas en el celular.",
+      "no": [
+        "WhatsApp"
+      ]
+    },
+    "Lo primero que harías si ganaras la lotería.",
+    "Tu postre favorito.",
+    "Un talento oculto que tienes.",
+    "La palabra que más repites.",
+    "Tu plan perfecto de domingo.",
+    {
+      "q": "Un objeto que no podrías dejar de usar ni un día.",
+      "no": [
+        "celular"
+      ]
+    },
+    "Lo que más pereza te da hacer en casa.",
+    "La mejor edad de la vida.",
+    "Algo que te pone de buen humor al instante.",
+    "Un apodo que has tenido.",
+    {
+      "q": "Lo que haces cuando no puedes dormir.",
+      "no": [
+        "ver el celular"
+      ]
+    },
+    "Un deporte que te gustaría aprender.",
+    "La mejor etapa de tu vida hasta ahora.",
+    "Un personaje famoso con el que te tomarías un café.",
+    "Tu hora favorita del día.",
+    "La prenda de ropa que más usas."
+  ]
+}

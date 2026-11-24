@@ -1,0 +1,11 @@
+{
+  "name": "musa",
+  "private": true,
+  "description": "Comandos de Musa. En VS Code aparecen solos en Terminal → Ejecutar tarea… (npm: …) y en el panel NPM SCRIPTS. No se publica.",
+  "scripts": {
+    "iniciar": "node herramientas/servidor.js",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test pruebas/*.test.mjs && node herramientas/probar-risk.mjs",
+    "validar": "node herramientas/validar-juegos.mjs",
+    "publicar": "node herramientas/publicar.js"
+  }
+}

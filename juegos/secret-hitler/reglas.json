@@ -1,0 +1,98 @@
+{
+  "jugadores": "5 a 10",
+  "duracion": "45 min",
+  "necesitas": "tablero, cartas de rol y de partido, cartas de política, tarjetas Ja/Nein y marcadores.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "**Liberales:** aprobar 5 leyes liberales o **matar a Hitler**.",
+        "**Fascistas:** aprobar 6 leyes fascistas o lograr que **Hitler sea elegido Canciller** cuando ya hay 3 leyes fascistas."
+      ]
+    },
+    {
+      "t": "Roles",
+      "p": [
+        "5 jugadores: 3 liberales, 1 fascista, Hitler.",
+        "6: 4 liberales, 1 fascista, Hitler.",
+        "7: 4 liberales, 2 fascistas, Hitler.",
+        "8: 5 liberales, 2 fascistas, Hitler.",
+        "9: 5 liberales, 3 fascistas, Hitler.",
+        "10: 6 liberales, 3 fascistas, Hitler.",
+        "Con 5 o 6, el fascista y Hitler se conocen. Con 7 o más, los fascistas se conocen y conocen a Hitler, pero Hitler no los conoce."
+      ]
+    },
+    {
+      "t": "Una ronda",
+      "p": [
+        "**1.** El Presidente (va rotando) elige a un Canciller.",
+        "**2.** Todos votan **Ja** o **Nein** a la vez.",
+        "**3.** Si gana el Ja: el Presidente roba 3 leyes, descarta 1 en secreto y pasa 2 al Canciller, que descarta otra y aprueba la que queda.",
+        "Si gana el Nein: pasa el turno de Presidente. A los **3 rechazos seguidos**, se aprueba la ley de arriba del mazo."
+      ]
+    },
+    {
+      "t": "Poderes",
+      "p": [
+        "Al aprobar leyes fascistas, el Presidente puede ganar un poder: investigar la lealtad de alguien, elegir al siguiente Presidente, ver las 3 leyes de arriba o **ejecutar** a un jugador."
+      ]
+    },
+    {
+      "t": "Mentir",
+      "p": [
+        "Todos pueden decir lo que quieran. Los fascistas **mienten siempre**; los liberales casi nunca pueden."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Preparación",
+      "p": [
+        "Reparte las cartas de rol en secreto.",
+        "Todos cierran los ojos; los fascistas (y Hitler, según el número de jugadores) los abren para reconocerse, como dice la caja.",
+        "Se barajan las 17 leyes (11 fascistas y 6 liberales)."
+      ]
+    },
+    {
+      "t": "Elegir Canciller",
+      "p": [
+        "El Presidente nominará a otro jugador como Canciller.",
+        "No puede ser quien fue Presidente o Canciller **del gobierno anterior elegido**. Con 5 o menos jugadores vivos, solo se excluye al Canciller anterior."
+      ]
+    },
+    {
+      "t": "Votación",
+      "p": [
+        "Todos votan a la vez con las tarjetas Ja/Nein y las muestran juntas.",
+        "Si hay empate, no se aprueba."
+      ]
+    },
+    {
+      "t": "Legislación",
+      "p": [
+        "En silencio y sin mostrar cartas. El Presidente y el Canciller pueden contar luego lo que quieran, aunque sea mentira."
+      ]
+    },
+    {
+      "t": "Poderes del Presidente",
+      "p": [
+        "5 o 6 jugadores: con la 3.ª ley fascista, ver las 3 leyes de arriba; con la 4.ª y 5.ª, ejecutar.",
+        "7 u 8: con la 2.ª, investigar lealtad; con la 3.ª, elegir al siguiente Presidente; con la 4.ª y 5.ª, ejecutar.",
+        "9 o 10: con la 1.ª y 2.ª, investigar lealtad; con la 3.ª, elegir al siguiente Presidente; con la 4.ª y 5.ª, ejecutar."
+      ]
+    },
+    {
+      "t": "Veto",
+      "p": [
+        "Tras 5 leyes fascistas, el Presidente y el Canciller pueden acordar un **veto** para descartar las 2 leyes de esa ronda (cuenta como un rechazo)."
+      ]
+    },
+    {
+      "t": "Fin de la partida",
+      "p": [
+        "Los liberales ganan con 5 leyes liberales o al ejecutar a Hitler.",
+        "Los fascistas ganan con 6 leyes fascistas o si Hitler es elegido Canciller con 3 o más leyes fascistas aprobadas."
+      ]
+    }
+  ]
+}

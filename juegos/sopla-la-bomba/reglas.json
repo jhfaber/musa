@@ -1,0 +1,24 @@
+{
+  "jugadores": "2 o más",
+  "duracion": "5 min",
+  "necesitas": "bombas y vasos plásticos.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Cada jugador tiene una **bomba** y un **vaso** al frente.",
+        "Hay que **inflar la bomba** de forma que empuje y tumbe el vaso.",
+        "Gana el primero que lo **tumba**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Variante",
+      "p": [
+        "Ponga el vaso cada vez más lejos en cada ronda."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

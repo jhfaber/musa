@@ -1,8 +1,612 @@
 {
-  "_ayuda": "Juegos de Musa en el orden del inicio. Cada uno vive en juegos/<id>/: se cargan sus .css y .js (o, si tiene entrada, ese módulo ES, que importa el resto) y el service worker guarda todos sus archivos para usarlos sin Internet.",
+  "_ayuda": "Juegos de Musa en el orden del inicio. Cada uno vive en juegos/<id>/: se cargan sus .css y .js (o, si tiene entrada, ese módulo ES, que importa el resto) y el service worker guarda todos sus archivos para usarlos sin Internet. Los juegos con tipo \"reglas\" no llevan JS: su reglas.json lo lee el visor de comun/reglas.js (spec 008). \"categorias\" (spec 011): los tipos de juego de la portada; cada juego tiene 1 o 2. Una categoría con \"aparte\": true (All-afters) no entra en \"Todos\": sus juegos exclusivos solo se ven al abrirla o al buscarlos.",
+  "categorias": [
+    {
+      "id": "party",
+      "nombre": "Party",
+      "emoji": "🎉",
+      "descripcion": "Para grupos grandes, rápidos de explicar y de reírse"
+    },
+    {
+      "id": "familiares",
+      "nombre": "Familiares",
+      "emoji": "👨‍👩‍👧",
+      "descripcion": "Para todas las edades, con reglas sencillas"
+    },
+    {
+      "id": "estrategia",
+      "nombre": "Estrategia",
+      "emoji": "♟️",
+      "descripcion": "Se gana pensando a largo plazo"
+    },
+    {
+      "id": "cartas",
+      "nombre": "Cartas",
+      "emoji": "🃏",
+      "descripcion": "Se juegan con una baraja"
+    },
+    {
+      "id": "deduccion",
+      "nombre": "Deducción y engaño",
+      "emoji": "🕵️",
+      "descripcion": "Roles ocultos: mentir y descubrir al otro"
+    },
+    {
+      "id": "all-afters",
+      "nombre": "All-afters",
+      "emoji": "🪩",
+      "descripcion": "Juegos para los eventos de All-afters",
+      "aparte": true
+    }
+  ],
   "juegos": [
-    { "id": "dixit", "archivos": ["dixit.css", "dixit.js", "categorias.json"] },
-    { "id": "risk", "entrada": "risk.js", "archivos": ["risk.css", "risk.js", "almacen.js", "efectos.js", "logica/reglas.js", "logica/dados.js", "logica/mapas.js", "logica/historial.js", "vistas/piezas.js", "vistas/tablero.js", "vistas/cuenta.js", "vistas/preparar.js", "vistas/fin.js", "vistas/equipo.js", "vistas/escuela.js", "vistas/simulador.js", "vistas/ajustes.js", "vistas/ganadores.js", "vistas/aviso.js", "vistas/emblemas.js",
-      "img/guerreros.webp", "img/dragones.webp", "img/arqueros.webp", "img/reyes.webp", "img/no-muertos.webp", "img/magos.webp", "img/orcos.webp", "img/jinetes.webp", "img/trolls.webp", "img/enanos.webp", "img/todos.webp"] }
+    {
+      "id": "dixit",
+      "categorias": [
+        "party",
+        "familiares"
+      ],
+      "archivos": [
+        "dixit.css",
+        "dixit.js",
+        "categorias.json"
+      ]
+    },
+    {
+      "id": "risk",
+      "categorias": [
+        "estrategia"
+      ],
+      "entrada": "risk.js",
+      "archivos": [
+        "risk.css",
+        "risk.js",
+        "almacen.js",
+        "efectos.js",
+        "logica/reglas.js",
+        "logica/dados.js",
+        "logica/mapas.js",
+        "logica/historial.js",
+        "vistas/piezas.js",
+        "vistas/tablero.js",
+        "vistas/cuenta.js",
+        "vistas/preparar.js",
+        "vistas/fin.js",
+        "vistas/equipo.js",
+        "vistas/escuela.js",
+        "vistas/simulador.js",
+        "vistas/ajustes.js",
+        "vistas/ganadores.js",
+        "vistas/aviso.js",
+        "vistas/emblemas.js",
+        "img/guerreros.webp",
+        "img/dragones.webp",
+        "img/arqueros.webp",
+        "img/reyes.webp",
+        "img/no-muertos.webp",
+        "img/magos.webp",
+        "img/orcos.webp",
+        "img/jinetes.webp",
+        "img/trolls.webp",
+        "img/enanos.webp",
+        "img/todos.webp"
+      ]
+    },
+    {
+      "id": "cacho",
+      "tipo": "reglas",
+      "nombre": "Cacho",
+      "simbolo": "🎲",
+      "descripcion": "Dados y mentiras: apuesta cantidad y palo o di ¡dudo!",
+      "categorias": [
+        "deduccion",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "charada",
+      "tipo": "reglas",
+      "nombre": "Charada",
+      "simbolo": "🎭",
+      "descripcion": "Mímica · 4 o más jugadores",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "codenames-pictures",
+      "tipo": "reglas",
+      "nombre": "Codenames Pictures",
+      "simbolo": "🕵️",
+      "descripcion": "Pistas con imágenes · 2 equipos",
+      "categorias": [
+        "party",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "el-que-piensa-pierde",
+      "tipo": "reglas",
+      "nombre": "El que piensa pierde",
+      "simbolo": "🧠",
+      "descripcion": "Palabras a toda velocidad · 2 a 5",
+      "categorias": [
+        "party",
+        "cartas"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "ghost-blitz",
+      "tipo": "reglas",
+      "nombre": "Ghost Blitz",
+      "simbolo": "👻",
+      "descripcion": "Agarra la figura correcta · reflejos",
+      "categorias": [
+        "familiares"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "mente-vacuna",
+      "categorias": [
+        "party"
+      ],
+      "entrada": "mente-vacuna.js",
+      "archivos": [
+        "mente-vacuna.css",
+        "mente-vacuna.js",
+        "almacen.js",
+        "efectos.js",
+        "logica/bolsa.js",
+        "vistas/preguntas.js",
+        "reglas.json",
+        "preguntas/indice.json",
+        "preguntas/sobre-ti.json",
+        "preguntas/del-grupo.json",
+        "preguntas/cultura-general.json",
+        "preguntas/deporte.json",
+        "preguntas/datos-locos.json",
+        "preguntas/deduccion.json",
+        "preguntas/comida.json",
+        "preguntas/cine-musica.json",
+        "preguntas/miedos-y-manias.json",
+        "preguntas/viajes.json",
+        "preguntas/infancia.json",
+        "preguntas/colombia.json",
+        "preguntas/animales.json",
+        "preguntas/tecnologia.json",
+        "preguntas/trabajo.json",
+        "preguntas/fiestas.json",
+        "preguntas/cuatro-opciones.json",
+        "preguntas/picantes.json"
+      ]
+    },
+    {
+      "id": "monopoly",
+      "tipo": "reglas",
+      "nombre": "Monopoly",
+      "simbolo": "🎩",
+      "descripcion": "Compra, cobra y arruina · clásico",
+      "categorias": [
+        "familiares"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "monopoly-dados-y-tragos",
+      "tipo": "reglas",
+      "nombre": "Monopoly Dados y Tragos",
+      "simbolo": "🍹",
+      "descripcion": "Monopoly para adultos · los tragos son el dinero",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "monopoly-superbanco",
+      "tipo": "reglas",
+      "nombre": "Monopoly Superbanco Electrónico",
+      "simbolo": "💳",
+      "descripcion": "Monopoly con tarjetas y unidad bancaria",
+      "categorias": [
+        "familiares"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "pictionary-adultos",
+      "tipo": "reglas",
+      "nombre": "Pictionary para adultos",
+      "simbolo": "✏️",
+      "descripcion": "Dibuja y adivina · edición atrevida",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "poker",
+      "tipo": "reglas",
+      "nombre": "Póker",
+      "simbolo": "🃏",
+      "descripcion": "Texas Hold'em · ranking de manos",
+      "categorias": [
+        "cartas",
+        "estrategia"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "secret-hitler",
+      "tipo": "reglas",
+      "nombre": "Secret Hitler",
+      "simbolo": "🗳️",
+      "descripcion": "Roles ocultos · engaño y votación",
+      "categorias": [
+        "deduccion",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "uno-no-mercy",
+      "tipo": "reglas",
+      "nombre": "Uno No Mercy",
+      "simbolo": "😈",
+      "descripcion": "Uno sin piedad: robos que se acumulan",
+      "categorias": [
+        "cartas",
+        "familiares"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "uno-normal",
+      "tipo": "reglas",
+      "nombre": "Uno Normal",
+      "simbolo": "🟥",
+      "descripcion": "El clásico de cartas de colores",
+      "categorias": [
+        "cartas",
+        "familiares"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "uno-super-mario",
+      "tipo": "reglas",
+      "nombre": "Uno Super Mario",
+      "simbolo": "🍄",
+      "descripcion": "Uno con la carta Superestrella",
+      "categorias": [
+        "cartas",
+        "familiares"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "zombie-kittens",
+      "tipo": "reglas",
+      "nombre": "Zombie Kittens",
+      "simbolo": "🧟",
+      "descripcion": "Gatitos zombi · el último en pie",
+      "categorias": [
+        "cartas",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "triqui-botellas",
+      "tipo": "reglas",
+      "nombre": "Triqui con botellas",
+      "simbolo": "🍾",
+      "descripcion": "Triqui gigante con cinta y papeles de colores · 2 equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "musicologo",
+      "tipo": "reglas",
+      "nombre": "Musicólogo",
+      "simbolo": "🎵",
+      "descripcion": "Adivina la canción · equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "torre-de-vasos",
+      "tipo": "reglas",
+      "nombre": "Torre de vasos",
+      "simbolo": "🥤",
+      "descripcion": "Baja la pirámide sin tumbar la pelota",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "salta-triqui",
+      "tipo": "reglas",
+      "nombre": "Salta triqui",
+      "simbolo": "🦘",
+      "descripcion": "Carrera de saltos y triqui en el piso · 2 equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "llena-la-bomba",
+      "tipo": "reglas",
+      "nombre": "Llena la bomba",
+      "simbolo": "🎈",
+      "descripcion": "Apila vasos usando solo bombas infladas",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "sopla-la-bomba",
+      "tipo": "reglas",
+      "nombre": "Sopla la bomba",
+      "simbolo": "💨",
+      "descripcion": "Infla la bomba para tumbar el vaso",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "serpentinas",
+      "tipo": "reglas",
+      "nombre": "Serpentinas",
+      "simbolo": "🎊",
+      "descripcion": "Tumba las bolas del vaso con serpentina",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "tortazos",
+      "tipo": "reglas",
+      "nombre": "Tortazos",
+      "simbolo": "💦",
+      "descripcion": "Agua en la boca y poses ridículas: el que se ríe pierde",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "beer-pong",
+      "tipo": "reglas",
+      "nombre": "Beer pong",
+      "simbolo": "🍺",
+      "descripcion": "Mete la bola en los vasos del otro equipo · 2 equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "pura-mierda",
+      "tipo": "reglas",
+      "nombre": "Pura mierda",
+      "simbolo": "💩",
+      "descripcion": "Apuesta cuántos nombres sabes de un tema · equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "charadas-random",
+      "tipo": "reglas",
+      "nombre": "Charadas con palabras random",
+      "simbolo": "🤪",
+      "descripcion": "Mímica con palabras al azar · equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "contacto",
+      "tipo": "reglas",
+      "nombre": "Contacto",
+      "simbolo": "🤝",
+      "descripcion": "Desbloquea la palabra letra por letra",
+      "categorias": [
+        "all-afters",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "cafe-o-tinto",
+      "tipo": "reglas",
+      "nombre": "Café o tinto",
+      "simbolo": "☕",
+      "descripcion": "Adivina la palabra eligiendo entre dos opciones",
+      "categorias": [
+        "all-afters",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "palabra-entremetida",
+      "tipo": "reglas",
+      "nombre": "Palabra entremetida",
+      "simbolo": "🍍",
+      "descripcion": "Repite una palabra loca después de cada palabra",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "pregunta-consignada",
+      "tipo": "reglas",
+      "nombre": "Pregunta consignada",
+      "simbolo": "😏",
+      "descripcion": "Preguntas que terminan con una consigna atrevida",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "conteo-perfecto",
+      "tipo": "reglas",
+      "nombre": "Conteo perfecto",
+      "simbolo": "🔢",
+      "descripcion": "Cuenten hasta el final sin chocarse",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "simon-dice",
+      "tipo": "reglas",
+      "nombre": "Simón dice (al revés)",
+      "simbolo": "🙃",
+      "descripcion": "Haz lo contrario de lo que dice el director",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "quien-es-mas-probable",
+      "tipo": "reglas",
+      "nombre": "¿Quién es más probable que…?",
+      "simbolo": "👉",
+      "descripcion": "A la cuenta de 3, todos señalan",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "quien-soy-yo",
+      "tipo": "reglas",
+      "nombre": "¿Quién soy yo?",
+      "simbolo": "🤳",
+      "descripcion": "Celular en la frente: adivina qué eres",
+      "categorias": [
+        "all-afters",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "linea-mortal",
+      "tipo": "reglas",
+      "nombre": "Línea mortal",
+      "simbolo": "🎯",
+      "descripcion": "Lanza y acércate a la línea sin pasarte",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "minijuegos",
+      "tipo": "reglas",
+      "nombre": "Minijuegos",
+      "simbolo": "🃏",
+      "descripcion": "Saca una carta y se activa un minijuego · 3 o más",
+      "categorias": [
+        "all-afters",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    }
   ]
 }

@@ -1,0 +1,66 @@
+{
+  "id": "deporte",
+  "nombre": "Deporte",
+  "emoji": "⚽",
+  "acento": "#6fd38b",
+  "descripcion": "Fútbol y de todo un poco: opiniones de tribuna",
+  "pista": "Una persona, un equipo o un deporte.",
+  "adultos": false,
+  "preguntas": [
+    "¿Quién es el mayor goleador de la historia?",
+    "El mejor jugador de fútbol de todos los tiempos.",
+    "El mejor equipo de fútbol de la historia.",
+    "Un deporte que no te gusta ver.",
+    "El mejor deportista de la historia, de cualquier deporte.",
+    "Un deporte que nunca podrías practicar.",
+    "El mejor entrenador de la historia.",
+    "Un equipo de fútbol que te cae mal.",
+    "Un deporte extremo.",
+    "Un estadio famoso.",
+    "El mejor portero de la historia.",
+    "Un deporte de invierno.",
+    {
+      "q": "Un deporte que se juega con raqueta.",
+      "no": [
+        "tenis"
+      ]
+    },
+    "Un país que siempre es favorito en el Mundial.",
+    "Un tenista famoso.",
+    {
+      "q": "Un jugador de baloncesto famoso.",
+      "no": [
+        "Michael Jordan"
+      ]
+    },
+    "Un atleta de pista famoso.",
+    "Un deporte que parece fácil pero no lo es.",
+    "Un jugador que te encantaría tener en tu equipo.",
+    "Lo mejor de ver un partido con amigos.",
+    "Un deporte para hacer con amigos.",
+    "Un piloto de carreras famoso.",
+    "Lo que más se grita viendo un partido.",
+    "Una competencia deportiva famosa.",
+    "El deporte más aburrido de ver.",
+    "El deporte más difícil del mundo.",
+    "Un ejercicio que todos odian hacer.",
+    "Un jugador de fútbol que ya se retiró y extrañas.",
+    "Un equipo que siempre está en la final.",
+    "Una cosa que no puede faltar en un partido de barrio.",
+    {
+      "q": "Un deporte acuático.",
+      "no": [
+        "natación"
+      ]
+    },
+    "Un equipo de baloncesto.",
+    "Una selección que siempre decepciona.",
+    "Un deporte que se juega en la playa.",
+    "Una celebración de gol famosa.",
+    "Lo primero que se compra para empezar a hacer ejercicio.",
+    "Una camiseta de fútbol famosa.",
+    "Un deporte que solo se ve en los Olímpicos.",
+    "Un deporte para hacer en pareja.",
+    "La posición más difícil en el fútbol."
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "cultura-general",
+  "nombre": "Cultura general",
+  "emoji": "🧠",
+  "acento": "#7fb3ff",
+  "descripcion": "Lo que todo el mundo sabe… o cree saber",
+  "pista": "Una respuesta corta: un nombre, un lugar o una cosa.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Un país de Europa.",
+      "no": [
+        "España"
+      ]
+    },
+    {
+      "q": "Un país de Sudamérica.",
+      "no": [
+        "Colombia"
+      ]
+    },
+    {
+      "q": "Un planeta del sistema solar.",
+      "no": [
+        "Tierra"
+      ]
+    },
+    {
+      "q": "Un instrumento musical.",
+      "no": [
+        "guitarra"
+      ]
+    },
+    {
+      "q": "Un inventor famoso.",
+      "no": [
+        "Edison"
+      ]
+    },
+    {
+      "q": "Un científico famoso.",
+      "no": [
+        "Einstein"
+      ]
+    },
+    {
+      "q": "Un escritor famoso.",
+      "no": [
+        "García Márquez"
+      ]
+    },
+    {
+      "q": "Un pintor famoso.",
+      "no": [
+        "Picasso"
+      ]
+    },
+    {
+      "q": "Un río famoso.",
+      "no": [
+        "Amazonas"
+      ]
+    },
+    {
+      "q": "Una ciudad de Estados Unidos.",
+      "no": [
+        "Nueva York"
+      ]
+    },
+    "Una capital del mundo.",
+    "Un personaje famoso de la historia.",
+    {
+      "q": "Un idioma, además del español.",
+      "no": [
+        "inglés"
+      ]
+    },
+    {
+      "q": "Un elemento de la tabla periódica.",
+      "no": [
+        "oxígeno"
+      ]
+    },
+    {
+      "q": "Un monumento famoso del mundo.",
+      "no": [
+        "Torre Eiffel"
+      ]
+    },
+    "Una de las maravillas del mundo.",
+    {
+      "q": "Una montaña famosa.",
+      "no": [
+        "Everest"
+      ]
+    },
+    {
+      "q": "Un animal que viva en el mar.",
+      "no": [
+        "tiburón",
+        "ballena"
+      ]
+    },
+    "Un hueso del cuerpo humano.",
+    {
+      "q": "Un órgano del cuerpo.",
+      "no": [
+        "corazón"
+      ]
+    },
+    "Un filósofo famoso.",
+    {
+      "q": "Una moneda del mundo.",
+      "no": [
+        "dólar"
+      ]
+    },
+    "Una marca de carros.",
+    "Un invento que cambió el mundo.",
+    "Un volcán famoso.",
+    "Un país de Asia.",
+    "Un tipo de baile.",
+    "Un deporte olímpico.",
+    "Un personaje de la mitología.",
+    "Una sigla que todo el mundo conoce.",
+    "Un mar famoso.",
+    "Un país de África."
+  ]
+}

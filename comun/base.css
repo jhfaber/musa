@@ -74,7 +74,6 @@ body:not([data-juego])::before, body[data-juego="dixit"]::before {
 
 /* Inicio */
 .marca { text-align: center; padding: 40px 0 28px; }
-.marca-luna { width: 108px; height: 108px; filter: drop-shadow(0 0 24px rgba(242, 196, 107, .45)); }
 .marca h1 {
   font-family: var(--serif);
   font-size: 3.2rem;
@@ -86,6 +85,58 @@ body:not([data-juego])::before, body[data-juego="dixit"]::before {
 .marca p { margin: 0; color: var(--texto-suave); font-style: italic; font-family: var(--serif); }
 
 .juegos { display: grid; gap: 12px; }
+.juegos [hidden] { display: none; }
+
+/* Categorías (spec 011): la portada abre con tarjetas de categorías; al tocar una aparecen sus juegos */
+.categorias-inicio { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.categorias-inicio[hidden], .cabecera-categoria[hidden], .juegos[hidden] { display: none; }
+.tarjeta-categoria {
+  display: flex; flex-direction: column; gap: 6px; min-height: 168px; padding: 16px 16px 14px; border-radius: 20px;
+  color: inherit; text-decoration: none; background: rgba(27, 20, 70, .55); border: 1px solid rgba(255, 246, 213, .2);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: transform .15s, border-color .2s;
+}
+.tarjeta-categoria:active { transform: scale(.97); }
+.tarjeta-categoria:hover { border-color: var(--oro); }
+.tarjeta-categoria-emoji { font-size: 2.2rem; line-height: 1; }
+.tarjeta-categoria strong { font-family: var(--serif); font-weight: normal; font-size: 1.3rem; color: var(--oro-claro); line-height: 1.15; }
+.tarjeta-categoria small { color: var(--texto-suave); font-size: .82rem; line-height: 1.35; }
+.tarjeta-categoria-pie { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .95rem; }
+.tarjeta-categoria-pie > span { overflow: hidden; white-space: nowrap; text-overflow: clip; }
+.tarjeta-categoria-pie b { flex: none; padding: 2px 9px; border-radius: 999px; font-size: .75rem; color: var(--noche); background: var(--oro); }
+.tarjeta-categoria--todos { grid-column: 1 / -1; min-height: 0; flex-direction: row; align-items: center; gap: 14px; }
+.tarjeta-categoria--todos .tarjeta-categoria-pie { margin: 0 0 0 auto; }
+.cabecera-categoria { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 8px; margin: 2px 0 12px; }
+.cabecera-categoria h2 { margin: 0; font-family: var(--serif); font-weight: normal; font-size: 1.45rem; color: var(--oro-claro); }
+.cabecera-categoria > span { color: var(--texto-suave); font-size: .9rem; }
+
+/* Dado al azar: categorías para tirar entre todas, una o varias */
+.azar-categorias { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.chip-categoria {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px; font: inherit; font-size: .88rem; color: var(--texto);
+  border-radius: 999px; border: 1px solid rgba(255, 246, 213, .25); background: rgba(27, 20, 70, .55); cursor: pointer;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background .2s, color .2s;
+}
+.chip-categoria small { padding: 0 6px; border-radius: 999px; font-size: .72rem; font-weight: 600; background: rgba(255, 255, 255, .12); }
+.chip-categoria[aria-pressed="true"] { background: var(--oro); border-color: var(--oro); color: var(--noche); font-weight: 600; }
+.chip-categoria[aria-pressed="true"] small { background: rgba(27, 20, 70, .15); }
+.azar-cuantos { flex-basis: 100%; margin: 2px 0 0; text-align: center; font-size: .85rem; color: var(--texto-suave); }
+.tarjeta-juego-categorias { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.etiqueta-categoria { padding: 1px 8px; border-radius: 999px; font-size: .72rem; color: var(--texto-suave); background: rgba(255, 255, 255, .08); }
+
+/* Buscador de la portada */
+.buscador { position: relative; display: flex; align-items: center; margin: 0 0 14px; }
+.buscador input {
+  width: 100%; padding: 13px 44px 13px 46px; font: inherit; font-size: 1rem; color: var(--texto);
+  border-radius: 999px; border: 1px solid rgba(255, 246, 213, .25); background: rgba(27, 20, 70, .55);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); outline: none; -webkit-appearance: none; appearance: none;
+}
+.buscador input::placeholder { color: var(--texto-suave); }
+.buscador input:focus { border-color: var(--oro); box-shadow: 0 0 0 3px rgba(242, 196, 107, .25); }
+.buscador input::-webkit-search-cancel-button { display: none; }
+.buscador-lupa { position: absolute; z-index: 1; left: 17px; font-size: 1rem; pointer-events: none; }
+.buscador-borrar { position: absolute; right: 6px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .1); color: var(--texto); font: inherit; cursor: pointer; }
+.buscador-borrar[hidden] { display: none; }
+.buscador-vacio { margin: 8px 0; text-align: center; color: var(--texto-suave); }
 
 .tarjeta-juego {
   display: flex;

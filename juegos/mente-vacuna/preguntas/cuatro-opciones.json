@@ -1,0 +1,911 @@
+{
+  "id": "cuatro-opciones",
+  "nombre": "Cuatro opciones",
+  "emoji": "🔠",
+  "acento": "#ffd27a",
+  "descripcion": "Una pregunta y 4 posibles respuestas",
+  "pista": "Elige una de las 4 opciones.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Diga algo que se lleva a la playa.",
+      "opciones": [
+        "bloqueador",
+        "vestido de baño",
+        "toalla",
+        "gafas de sol"
+      ]
+    },
+    {
+      "q": "Diga algo que se le echa al arroz.",
+      "opciones": [
+        "sal",
+        "aceite",
+        "ajo",
+        "cebolla"
+      ]
+    },
+    {
+      "q": "Diga una fruta amarilla.",
+      "opciones": [
+        "banano",
+        "piña",
+        "mango",
+        "maracuyá"
+      ]
+    },
+    {
+      "q": "Diga algo que hace la gente en un trancón.",
+      "opciones": [
+        "mirar el celular",
+        "pitar",
+        "escuchar música",
+        "desesperarse"
+      ]
+    },
+    {
+      "q": "Diga algo que no puede faltar en un asado.",
+      "opciones": [
+        "carne",
+        "chorizo",
+        "papa",
+        "cerveza"
+      ]
+    },
+    {
+      "q": "Diga algo que se pierde con frecuencia en la casa.",
+      "opciones": [
+        "llaves",
+        "control del televisor",
+        "celular",
+        "medias"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace el domingo.",
+      "opciones": [
+        "dormir",
+        "almorzar en familia",
+        "ver fútbol",
+        "salir a pasear"
+      ]
+    },
+    {
+      "q": "Diga un animal que se ve en una finca.",
+      "opciones": [
+        "vaca",
+        "caballo",
+        "gallina",
+        "perro"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace al llegar a la casa después del trabajo.",
+      "opciones": [
+        "quitarse los zapatos",
+        "comer",
+        "bañarse",
+        "acostarse"
+      ]
+    },
+    {
+      "q": "Diga un regalo típico de Navidad.",
+      "opciones": [
+        "ropa",
+        "perfume",
+        "juguetes",
+        "tecnología"
+      ]
+    },
+    {
+      "q": "Diga algo que se compra en una tienda de barrio.",
+      "opciones": [
+        "pan",
+        "leche",
+        "huevos",
+        "gaseosa"
+      ]
+    },
+    {
+      "q": "Diga algo que da pereza hacer.",
+      "opciones": [
+        "lavar la loza",
+        "madrugar",
+        "hacer ejercicio",
+        "planchar"
+      ]
+    },
+    {
+      "q": "Diga algo de color rojo.",
+      "opciones": [
+        "tomate",
+        "sangre",
+        "fresa",
+        "manzana"
+      ]
+    },
+    {
+      "q": "Diga algo que se celebra con torta.",
+      "opciones": [
+        "cumpleaños",
+        "boda",
+        "grado",
+        "aniversario"
+      ]
+    },
+    {
+      "q": "Diga una excusa para no ir al colegio.",
+      "opciones": [
+        "estoy enfermo",
+        "me duele el estómago",
+        "no hay clase",
+        "se me hizo tarde"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en un baño.",
+      "opciones": [
+        "inodoro",
+        "papel higiénico",
+        "jabón",
+        "ducha"
+      ]
+    },
+    {
+      "q": "Diga algo que la gente hace cuando está aburrida.",
+      "opciones": [
+        "ver el celular",
+        "dormir",
+        "comer",
+        "ver televisión"
+      ]
+    },
+    {
+      "q": "Diga algo que se le pone al perro caliente.",
+      "opciones": [
+        "salsa de tomate",
+        "mostaza",
+        "papitas",
+        "queso"
+      ]
+    },
+    {
+      "q": "Diga algo que hace un bebé.",
+      "opciones": [
+        "llorar",
+        "dormir",
+        "comer",
+        "reír"
+      ]
+    },
+    {
+      "q": "Diga algo que se lleva a un paseo de olla.",
+      "opciones": [
+        "olla",
+        "gallina",
+        "papa",
+        "leña"
+      ]
+    },
+    {
+      "q": "Diga algo que hace la gente en un ascensor.",
+      "opciones": [
+        "mirar el celular",
+        "mirar al piso",
+        "saludar",
+        "mirarse al espejo"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en Año Nuevo.",
+      "opciones": [
+        "comer uvas",
+        "abrazar a la familia",
+        "salir con maleta",
+        "brindar"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en una cocina.",
+      "opciones": [
+        "estufa",
+        "nevera",
+        "ollas",
+        "cuchillos"
+      ]
+    },
+    {
+      "q": "Diga un lugar donde hay que hacer fila.",
+      "opciones": [
+        "banco",
+        "supermercado",
+        "EPS",
+        "cine"
+      ]
+    },
+    {
+      "q": "Diga algo que se le echa al café.",
+      "opciones": [
+        "azúcar",
+        "leche",
+        "panela",
+        "canela"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en una boda.",
+      "opciones": [
+        "bailar",
+        "comer",
+        "brindar",
+        "tomar fotos"
+      ]
+    },
+    {
+      "q": "Diga algo que asusta a los niños.",
+      "opciones": [
+        "la oscuridad",
+        "el coco",
+        "las inyecciones",
+        "los payasos"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace antes de dormir.",
+      "opciones": [
+        "cepillarse",
+        "ver el celular",
+        "rezar",
+        "ponerse la pijama"
+      ]
+    },
+    {
+      "q": "Diga algo que hay en un parque.",
+      "opciones": [
+        "columpios",
+        "árboles",
+        "bancas",
+        "perros"
+      ]
+    },
+    {
+      "q": "Diga algo que se usa cuando llueve.",
+      "opciones": [
+        "sombrilla",
+        "chaqueta",
+        "botas",
+        "impermeable"
+      ]
+    },
+    {
+      "q": "Diga una comida que se come con las manos.",
+      "opciones": [
+        "pizza",
+        "hamburguesa",
+        "empanada",
+        "arepa"
+      ]
+    },
+    {
+      "q": "Diga algo que hace la gente en el gimnasio.",
+      "opciones": [
+        "pesas",
+        "correr",
+        "tomarse fotos",
+        "bicicleta"
+      ]
+    },
+    {
+      "q": "Diga algo que se le regala a la mamá.",
+      "opciones": [
+        "flores",
+        "ropa",
+        "perfume",
+        "chocolates"
+      ]
+    },
+    {
+      "q": "Diga algo que tiene ruedas.",
+      "opciones": [
+        "carro",
+        "bicicleta",
+        "moto",
+        "patineta"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en vacaciones.",
+      "opciones": [
+        "viajar",
+        "dormir",
+        "ir a la playa",
+        "descansar"
+      ]
+    },
+    {
+      "q": "Diga algo que se dice al contestar el teléfono.",
+      "opciones": [
+        "aló",
+        "quién habla",
+        "hola",
+        "bueno"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en una fiesta de cumpleaños.",
+      "opciones": [
+        "cantar",
+        "soplar las velas",
+        "comer torta",
+        "bailar"
+      ]
+    },
+    {
+      "q": "Diga algo que la gente revisa antes de salir de la casa.",
+      "opciones": [
+        "llaves",
+        "celular",
+        "billetera",
+        "la estufa"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace cuando se va la luz.",
+      "opciones": [
+        "prender velas",
+        "dormir",
+        "usar la linterna del celular",
+        "quejarse"
+      ]
+    },
+    {
+      "q": "Diga un ingrediente del sancocho.",
+      "opciones": [
+        "papa",
+        "yuca",
+        "plátano",
+        "mazorca"
+      ]
+    },
+    {
+      "q": "Diga algo que se compra en la droguería.",
+      "opciones": [
+        "pastillas",
+        "acetaminofén",
+        "curitas",
+        "alcohol"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en el carro en un viaje largo.",
+      "opciones": [
+        "cantar",
+        "dormir",
+        "comer",
+        "preguntar si ya llegamos"
+      ]
+    },
+    {
+      "q": "Diga algo que tiene teclas.",
+      "opciones": [
+        "computador",
+        "piano",
+        "celular",
+        "control remoto"
+      ]
+    },
+    {
+      "q": "Diga algo que la gente hace en el baño además de lo obvio.",
+      "opciones": [
+        "ver el celular",
+        "cantar",
+        "leer",
+        "pensar"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en la playa.",
+      "opciones": [
+        "arena",
+        "mar",
+        "conchas",
+        "palmeras"
+      ]
+    },
+    {
+      "q": "Diga algo que hace un profesor.",
+      "opciones": [
+        "explicar",
+        "calificar",
+        "regañar",
+        "poner tareas"
+      ]
+    },
+    {
+      "q": "Diga algo que se toma cuando hace calor.",
+      "opciones": [
+        "agua",
+        "limonada",
+        "cerveza",
+        "gaseosa"
+      ]
+    },
+    {
+      "q": "Diga algo que se toma cuando hace frío.",
+      "opciones": [
+        "chocolate",
+        "café",
+        "agua de panela",
+        "canelazo"
+      ]
+    },
+    {
+      "q": "Diga un sitio para una primera cita.",
+      "opciones": [
+        "cine",
+        "restaurante",
+        "parque",
+        "café"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en un escritorio.",
+      "opciones": [
+        "computador",
+        "lapicero",
+        "papeles",
+        "lámpara"
+      ]
+    },
+    {
+      "q": "Diga algo que se pone en el árbol de Navidad.",
+      "opciones": [
+        "luces",
+        "bolas",
+        "estrella",
+        "regalos"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en un día lluvioso.",
+      "opciones": [
+        "dormir",
+        "ver películas",
+        "tomar chocolate",
+        "quedarse en casa"
+      ]
+    },
+    {
+      "q": "Diga algo que se lleva al colegio.",
+      "opciones": [
+        "maleta",
+        "cuadernos",
+        "lonchera",
+        "cartuchera"
+      ]
+    },
+    {
+      "q": "Diga algo que se le pone a una ensalada.",
+      "opciones": [
+        "tomate",
+        "lechuga",
+        "limón",
+        "aceite"
+      ]
+    },
+    {
+      "q": "Diga algo que se rompe fácil.",
+      "opciones": [
+        "vidrio",
+        "huevo",
+        "celular",
+        "corazón"
+      ]
+    },
+    {
+      "q": "Diga algo que tiene alas.",
+      "opciones": [
+        "pájaro",
+        "avión",
+        "mariposa",
+        "ángel"
+      ]
+    },
+    {
+      "q": "Diga algo que hace un perro.",
+      "opciones": [
+        "ladrar",
+        "mover la cola",
+        "morder",
+        "jugar"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en un día de spa.",
+      "opciones": [
+        "masajes",
+        "mascarilla",
+        "sauna",
+        "manicure"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en la oficina cuando el jefe no está.",
+      "opciones": [
+        "ver el celular",
+        "hablar",
+        "descansar",
+        "comer"
+      ]
+    },
+    {
+      "q": "Diga algo que se vende en un semáforo.",
+      "opciones": [
+        "dulces",
+        "agua",
+        "frutas",
+        "cargadores"
+      ]
+    },
+    {
+      "q": "Diga algo que se usa para limpiar.",
+      "opciones": [
+        "escoba",
+        "trapero",
+        "jabón",
+        "límpido"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en el cine.",
+      "opciones": [
+        "ver la película",
+        "comer crispetas",
+        "dormir",
+        "besarse"
+      ]
+    },
+    {
+      "q": "Diga algo que se pone en una maleta para viajar.",
+      "opciones": [
+        "ropa",
+        "cepillo de dientes",
+        "zapatos",
+        "cargador"
+      ]
+    },
+    {
+      "q": "Diga un trabajo en el que se usa uniforme.",
+      "opciones": [
+        "policía",
+        "médico",
+        "enfermera",
+        "mesero"
+      ]
+    },
+    {
+      "q": "Diga algo que hay en un hospital.",
+      "opciones": [
+        "médicos",
+        "camas",
+        "enfermeras",
+        "medicinas"
+      ]
+    },
+    {
+      "q": "Diga algo que la gente colecciona.",
+      "opciones": [
+        "monedas",
+        "estampillas",
+        "láminas",
+        "carritos"
+      ]
+    },
+    {
+      "q": "Diga algo que se dice cuando alguien estornuda.",
+      "opciones": [
+        "salud",
+        "Jesús",
+        "que Dios te bendiga",
+        "gesundheit"
+      ]
+    },
+    {
+      "q": "Diga algo que se come en el desayuno.",
+      "opciones": [
+        "huevos",
+        "arepa",
+        "pan",
+        "café"
+      ]
+    },
+    {
+      "q": "Diga algo que hace la gente cuando está nerviosa.",
+      "opciones": [
+        "comerse las uñas",
+        "sudar",
+        "mover la pierna",
+        "hablar mucho"
+      ]
+    },
+    {
+      "q": "Diga algo que se le pide al Niño Dios.",
+      "opciones": [
+        "juguetes",
+        "bicicleta",
+        "celular",
+        "videojuegos"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en el cielo.",
+      "opciones": [
+        "nubes",
+        "sol",
+        "estrellas",
+        "aviones"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en una piscina.",
+      "opciones": [
+        "nadar",
+        "tirarse",
+        "asolearse",
+        "jugar"
+      ]
+    },
+    {
+      "q": "Diga algo que tiene un carro por dentro.",
+      "opciones": [
+        "timón",
+        "asientos",
+        "radio",
+        "cinturón"
+      ]
+    },
+    {
+      "q": "Diga algo que la gente hace en una reunión aburrida.",
+      "opciones": [
+        "ver el celular",
+        "bostezar",
+        "dormirse",
+        "mirar el reloj"
+      ]
+    },
+    {
+      "q": "Diga algo que se celebra en diciembre.",
+      "opciones": [
+        "Navidad",
+        "novenas",
+        "Año Nuevo",
+        "velitas"
+      ]
+    },
+    {
+      "q": "Diga algo que hace una persona enamorada.",
+      "opciones": [
+        "suspirar",
+        "sonreír",
+        "escribir mensajes",
+        "regalar flores"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en el recreo.",
+      "opciones": [
+        "comer",
+        "jugar fútbol",
+        "hablar",
+        "correr"
+      ]
+    },
+    {
+      "q": "Diga algo que se ve en un zoológico.",
+      "opciones": [
+        "león",
+        "jirafa",
+        "elefante",
+        "mono"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace con un limón.",
+      "opciones": [
+        "limonada",
+        "echarle a la comida",
+        "jugo",
+        "curar el guayabo"
+      ]
+    },
+    {
+      "q": "Diga algo que se usa en el pelo.",
+      "opciones": [
+        "champú",
+        "peine",
+        "gel",
+        "moño"
+      ]
+    },
+    {
+      "q": "Diga algo que hace la gente en la fila del banco.",
+      "opciones": [
+        "ver el celular",
+        "quejarse",
+        "esperar",
+        "hablar"
+      ]
+    },
+    {
+      "q": "Diga algo que se le pone a una arepa.",
+      "opciones": [
+        "queso",
+        "mantequilla",
+        "huevo",
+        "sal"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace al levantarse.",
+      "opciones": [
+        "bañarse",
+        "cepillarse",
+        "ver el celular",
+        "tomar café"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en una sala.",
+      "opciones": [
+        "sofá",
+        "televisor",
+        "mesa de centro",
+        "cuadros"
+      ]
+    },
+    {
+      "q": "Diga algo que hacen los abuelos.",
+      "opciones": [
+        "contar historias",
+        "consentir",
+        "dormir",
+        "cocinar"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en un concierto.",
+      "opciones": [
+        "cantar",
+        "bailar",
+        "grabar",
+        "gritar"
+      ]
+    },
+    {
+      "q": "Diga algo que la gente teme perder.",
+      "opciones": [
+        "el trabajo",
+        "la familia",
+        "el celular",
+        "la billetera"
+      ]
+    },
+    {
+      "q": "Diga un deporte que se ve por televisión.",
+      "opciones": [
+        "fútbol",
+        "ciclismo",
+        "tenis",
+        "baloncesto"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en un día festivo.",
+      "opciones": [
+        "descansar",
+        "viajar",
+        "dormir",
+        "salir a comer"
+      ]
+    },
+    {
+      "q": "Diga algo que se usa en la cabeza.",
+      "opciones": [
+        "gorra",
+        "sombrero",
+        "casco",
+        "gafas"
+      ]
+    },
+    {
+      "q": "Diga algo que se compra en una papelería.",
+      "opciones": [
+        "cuadernos",
+        "lápices",
+        "fotocopias",
+        "cartulina"
+      ]
+    },
+    {
+      "q": "Diga algo que se dice cuando algo sale mal.",
+      "opciones": [
+        "ay no",
+        "qué pena",
+        "mala suerte",
+        "otra vez"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en un picnic.",
+      "opciones": [
+        "comer",
+        "jugar",
+        "descansar",
+        "tomar fotos"
+      ]
+    },
+    {
+      "q": "Diga algo que lleva una mujer en la cartera.",
+      "opciones": [
+        "maquillaje",
+        "billetera",
+        "celular",
+        "llaves"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en Semana Santa.",
+      "opciones": [
+        "viajar",
+        "ir a misa",
+        "descansar",
+        "comer pescado"
+      ]
+    },
+    {
+      "q": "Diga algo que se le compra a un recién nacido.",
+      "opciones": [
+        "pañales",
+        "ropa",
+        "tetero",
+        "cuna"
+      ]
+    },
+    {
+      "q": "Diga algo que se hace en la noche de velitas.",
+      "opciones": [
+        "prender velas",
+        "comer natilla",
+        "pedir deseos",
+        "reunirse en familia"
+      ]
+    },
+    {
+      "q": "Diga algo que hace la gente cuando gana su equipo.",
+      "opciones": [
+        "gritar",
+        "celebrar en la calle",
+        "tomar",
+        "pitar"
+      ]
+    },
+    {
+      "q": "Diga algo que se encuentra en un carro de supermercado.",
+      "opciones": [
+        "comida",
+        "niños",
+        "bolsas",
+        "papel higiénico"
+      ]
+    },
+    {
+      "q": "Diga algo que se toma en una fiesta colombiana.",
+      "opciones": [
+        "aguardiente",
+        "cerveza",
+        "ron",
+        "gaseosa"
+      ]
+    }
+  ]
+}

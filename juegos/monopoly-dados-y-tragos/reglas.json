@@ -1,0 +1,52 @@
+{
+  "jugadores": "2 a 10",
+  "duracion": "30 min",
+  "necesitas": "el juego de la caja y las bebidas que quieran (o agua).",
+  "nota": "Solo para mayores de 18. Bebe con moderación. No tengo las reglas completas de la caja: aquí va lo que sé del juego. Pásame el manual y lo completo.",
+  "empezar": [
+    {
+      "t": "Qué es",
+      "p": [
+        "Un Monopoly para adultos, de 2 a 10 jugadores y unos 30 minutos.",
+        "Los **tragos son el dinero**."
+      ]
+    },
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Tira el dado y avanza por el tablero.",
+        "Si caes en una propiedad, la **compras con tragos**.",
+        "Si es de otro, **pagas la renta con tragos**."
+      ]
+    },
+    {
+      "t": "Cartas de Fortuna",
+      "p": [
+        "Traen retos y preguntas atrevidas.",
+        "Tomas los tragos que dice la carta, o los evitas cumpliendo el reto."
+      ]
+    },
+    {
+      "t": "Para cuidarse",
+      "p": [
+        "Nadie está obligado a tomar: usen agua o fichas en lugar de tragos si quieren."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Por completar",
+      "p": [
+        "Cuántos tragos cuesta cada propiedad.",
+        "Cómo se gana y cuándo termina.",
+        "Reglas especiales de las casillas."
+      ]
+    },
+    {
+      "t": "Si no tienes el manual a la mano",
+      "p": [
+        "Juega con las bases de Monopoly: compra, renta y turnos."
+      ]
+    }
+  ]
+}

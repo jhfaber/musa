@@ -1,0 +1,46 @@
+{
+  "id": "infancia",
+  "nombre": "Infancia",
+  "emoji": "🧸",
+  "acento": "#ffc8a8",
+  "descripcion": "Recuerdos de cuando éramos niños",
+  "pista": "Lo primero que te recuerde a la infancia.",
+  "adultos": false,
+  "preguntas": [
+    "Un juego de recreo.",
+    "Un dibujo animado de tu infancia.",
+    "Lo que más se compraba en la tienda del colegio.",
+    "Un juguete que todos tenían.",
+    "Una materia que todos odiaban en el colegio.",
+    "Una materia favorita del colegio.",
+    "Un castigo típico de la infancia.",
+    "Lo que más miedo daba de niño.",
+    "Un juego de mesa de la infancia.",
+    "Una canción infantil.",
+    {
+      "q": "Un cuento clásico.",
+      "no": [
+        "Caperucita Roja"
+      ]
+    },
+    "Una frase típica de los profesores.",
+    "Algo que se llevaba en la lonchera.",
+    "Un regalo de Navidad soñado de niño.",
+    "Una excusa para no hacer la tarea.",
+    "Un programa de televisión de la tarde.",
+    "Un videojuego de la infancia.",
+    "Un personaje que daba miedo de niño.",
+    "Lo mejor de las vacaciones de mitad de año.",
+    "Un deporte que se jugaba en el barrio.",
+    "Una travesura típica.",
+    "Lo primero que hacías al llegar del colegio.",
+    "Un superhéroe favorito de niño.",
+    "Una comida que odiabas de niño.",
+    "Un útil escolar que siempre se perdía.",
+    "Algo que coleccionaban todos en el colegio.",
+    "Un lugar al que te llevaban de paseo de niño.",
+    "La peor parte de ir al médico de niño.",
+    "Una película de dibujos que viste mil veces.",
+    "Un juego para jugar en la calle."
+  ]
+}

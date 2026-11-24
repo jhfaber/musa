@@ -1,0 +1,69 @@
+{
+  "jugadores": "4 o más",
+  "duracion": "20 min o más",
+  "necesitas": "papelitos con palabras, personajes o películas y un cronómetro (el del celular sirve).",
+  "nota": "Charada se juega con reglas de la casa: aquí va la forma más común. Cámbiala por la que juegues tú.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Que tu equipo adivine lo que actúas, **sin que hables**."
+      ]
+    },
+    {
+      "t": "Preparación",
+      "p": [
+        "Dos equipos.",
+        "Cada uno escribe palabras, personajes o películas en papelitos y se los da al otro equipo."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Un actor del equipo saca un papelito y lo actúa durante **1 minuto**.",
+        "Prohibido hablar, hacer sonidos o señalar cosas del lugar.",
+        "Su equipo grita respuestas; cada acierto es **1 punto** y se saca otro papelito."
+      ]
+    },
+    {
+      "t": "Gana",
+      "p": [
+        "El equipo con más puntos después de las rondas que acuerden."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Señas de siempre",
+      "p": [
+        "Con los dedos: cuántas palabras tiene y cuál de ellas estás actuando.",
+        "Dedos sobre el antebrazo: cuántas sílabas, y cuál estás actuando.",
+        "Tirarte de la oreja: \"suena como…\".",
+        "Juntar los dedos casi sin separarlos: palabra corta."
+      ]
+    },
+    {
+      "t": "Qué está prohibido",
+      "p": [
+        "Hablar, susurrar o hacer sonidos.",
+        "Señalar objetos o personas de la sala.",
+        "Mover los labios como si hablaras."
+      ]
+    },
+    {
+      "t": "Turnos y tiempo",
+      "p": [
+        "Los actores rotan: nadie actúa dos veces seguidas hasta que pasen todos.",
+        "Si se acaba el tiempo, el papelito vuelve al montón o se descarta, como acuerden.",
+        "Si te quedas pegado, puedes **pasar** y pierdes el punto."
+      ]
+    },
+    {
+      "t": "Para acordar antes",
+      "p": [
+        "Cuánto dura el turno y cuántas rondas se juegan.",
+        "Si valen sinónimos o tiene que ser la palabra exacta."
+      ]
+    }
+  ]
+}

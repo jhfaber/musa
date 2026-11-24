@@ -1,0 +1,77 @@
+{
+  "id": "tecnologia",
+  "nombre": "Tecnología e internet",
+  "emoji": "📱",
+  "acento": "#dfe6f2",
+  "descripcion": "Celulares, apps, redes y videojuegos",
+  "pista": "Una app, una marca, un aparato o algo de internet.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Una red social.",
+      "no": [
+        "Instagram"
+      ]
+    },
+    {
+      "q": "Una marca de celular.",
+      "no": [
+        "Apple",
+        "Samsung"
+      ]
+    },
+    "Un videojuego famoso.",
+    {
+      "q": "Una consola de videojuegos.",
+      "no": [
+        "PlayStation"
+      ]
+    },
+    "Una app para pedir comida.",
+    {
+      "q": "Una contraseña típica que todos usan.",
+      "no": [
+        "123456"
+      ]
+    },
+    "Un emoji que todos usan.",
+    "Lo primero que se busca en Google.",
+    "Un creador de contenido famoso.",
+    {
+      "q": "Una app de mensajes.",
+      "no": [
+        "WhatsApp"
+      ]
+    },
+    "Algo que se hace con el celular en el baño.",
+    "Una marca de computador.",
+    "Un invento tecnológico reciente.",
+    "Un aparato de la casa que no puede faltar.",
+    "Lo que más se ve en TikTok.",
+    "Un juego del celular.",
+    "Una empresa de tecnología.",
+    "Lo peor que le puede pasar a un celular.",
+    "Un accesorio para el celular.",
+    "Una palabra de internet que usan los jóvenes.",
+    "Algo que hace la inteligencia artificial.",
+    "Lo que hace la gente cuando se va el internet.",
+    "Un aparato que ya nadie usa.",
+    {
+      "q": "Una app de música.",
+      "no": [
+        "Spotify"
+      ]
+    },
+    "Un tipo de video que siempre se vuelve viral.",
+    "La primera app que se abre en la mañana.",
+    "Algo que siempre se olvida cargar.",
+    "Un nombre típico para la red wifi.",
+    {
+      "q": "Una plataforma para ver videos.",
+      "no": [
+        "YouTube"
+      ]
+    },
+    "Lo más molesto de una videollamada."
+  ]
+}

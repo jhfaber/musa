@@ -1,0 +1,29 @@
+{
+  "jugadores": "5 o más",
+  "duracion": "5 a 10 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "En círculo, las personas van diciendo los **números del 1 en adelante**, sin orden fijo.",
+        "Si **dos dicen el mismo número al tiempo**, pierden los dos.",
+        "La **última persona** en decir un número pierde."
+      ]
+    },
+    {
+      "t": "Ejemplo",
+      "p": [
+        "Alguien dice \"1\" (se salvó), otro \"2\" (se salvó); luego dos dicen \"3\" al tiempo: **pierden los dos**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "No se vale hacer señas para ponerse de acuerdo."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

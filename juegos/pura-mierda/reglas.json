@@ -1,0 +1,37 @@
+{
+  "jugadores": "2 equipos o más",
+  "duracion": "10 a 15 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Se elige un **tema** (por ejemplo: marcas de carros).",
+        "Un equipo dice: \"sabemos **X nombres**\".",
+        "El siguiente equipo decide: **le cree o no le cree**."
+      ]
+    },
+    {
+      "t": "Si le cree",
+      "p": [
+        "Tiene que decir que sabe **más nombres** que el anterior, y le toca al siguiente equipo."
+      ]
+    },
+    {
+      "t": "Si no le cree: \"¡pura mierda!\"",
+      "p": [
+        "El equipo que apostó tiene que **decir los X nombres**.",
+        "Si **no puede**, pierde; si **puede**, pierde el que no le creyó."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "No se valen nombres repetidos.",
+        "Se puede poner un tiempo para decir los nombres."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

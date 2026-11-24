@@ -1,0 +1,24 @@
+{
+  "jugadores": "2 o más",
+  "duracion": "5 min",
+  "necesitas": "serpentina en spray, vasos y bolas.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Pon **bolas** (de ping pong o de papel) encima o dentro de un vaso.",
+        "Con **serpentina en spray**, cada jugador intenta **sacarlas o tumbarlas**.",
+        "Gana el primero que las saca todas."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Se dispara desde una línea marcada en el piso."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

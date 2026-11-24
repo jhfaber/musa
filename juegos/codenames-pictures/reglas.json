@@ -1,0 +1,76 @@
+{
+  "jugadores": "4 a 8 (también 2 o 3)",
+  "duracion": "15 min",
+  "necesitas": "las 20 cartas de imágenes, la tarjeta de claves y las fichas de agentes.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Que tu equipo descubra **primero** a todos sus agentes entre las imágenes."
+      ]
+    },
+    {
+      "t": "Equipos",
+      "p": [
+        "Dos equipos: rojo y azul.",
+        "Cada equipo elige un **jefe de espías**; los demás son agentes.",
+        "Solo los jefes ven la tarjeta de claves."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "El jefe de espías dice **una palabra y un número**: cuántas imágenes se relacionan con esa pista.",
+        "Sus agentes tocan imágenes, una por una, hasta acertar o fallar."
+      ]
+    },
+    {
+      "t": "Qué pasa al tocar",
+      "p": [
+        "Agente de tu equipo: acertaste, puedes seguir (hasta el número de la pista **más uno**).",
+        "Agente del otro equipo: se acaba tu turno y le regalas un punto.",
+        "Transeúnte inocente: se acaba tu turno.",
+        "**Asesino: tu equipo pierde en el acto.**"
+      ]
+    },
+    {
+      "t": "Gana",
+      "p": [
+        "El primer equipo que descubre a todos sus agentes."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Preparación",
+      "p": [
+        "Pon las 20 imágenes en una rejilla de 5 × 4.",
+        "La tarjeta de claves (solo para los jefes) dice qué imágenes son agentes rojos, azules, inocentes o el asesino.",
+        "El equipo que empieza tiene **un agente más**."
+      ]
+    },
+    {
+      "t": "La pista",
+      "p": [
+        "Una sola palabra y un número, sin más señas, gestos ni explicaciones.",
+        "El número dice cuántas imágenes se relacionan con la pista.",
+        "El jefe no puede reaccionar a lo que sus agentes dicen o tocan."
+      ]
+    },
+    {
+      "t": "Los agentes",
+      "p": [
+        "Pueden hablar entre ellos para decidir.",
+        "Tienen que tocar **al menos una** imagen cada turno.",
+        "Pueden parar cuando quieran; el turno pasa al otro equipo."
+      ]
+    },
+    {
+      "t": "Fin de la partida",
+      "p": [
+        "Gana el equipo que descubre su último agente.",
+        "Si un equipo toca al asesino, pierde y gana el otro."
+      ]
+    }
+  ]
+}

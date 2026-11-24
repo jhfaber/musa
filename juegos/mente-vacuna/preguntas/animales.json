@@ -1,0 +1,96 @@
+{
+  "id": "animales",
+  "nombre": "Animales y naturaleza",
+  "emoji": "🐾",
+  "acento": "#9ee37d",
+  "descripcion": "Bichos, plantas y paisajes",
+  "pista": "Un animal, una planta o algo de la naturaleza.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Un animal de la selva.",
+      "no": [
+        "mono"
+      ]
+    },
+    "Un animal de granja.",
+    "Un pájaro.",
+    "Un animal que vuela pero no es pájaro.",
+    {
+      "q": "Un animal muy lento.",
+      "no": [
+        "tortuga"
+      ]
+    },
+    {
+      "q": "Un animal muy rápido.",
+      "no": [
+        "guepardo"
+      ]
+    },
+    {
+      "q": "Un animal que vive en la nieve.",
+      "no": [
+        "pingüino"
+      ]
+    },
+    "Una mascota rara.",
+    {
+      "q": "Un animal con rayas.",
+      "no": [
+        "cebra"
+      ]
+    },
+    "Un animal con manchas.",
+    {
+      "q": "Un animal nocturno.",
+      "no": [
+        "búho"
+      ]
+    },
+    "Un reptil.",
+    {
+      "q": "Un animal que salta.",
+      "no": [
+        "canguro"
+      ]
+    },
+    "Un animal en peligro de extinción.",
+    {
+      "q": "Una flor.",
+      "no": [
+        "rosa"
+      ]
+    },
+    "Un árbol.",
+    {
+      "q": "Un animal que da leche.",
+      "no": [
+        "vaca"
+      ]
+    },
+    "Un insecto que no molesta.",
+    "Un animal que aparece en los cuentos.",
+    "Un animal que sería buena mascota de oficina.",
+    "Un animal muy inteligente.",
+    "Un animal que da ternura.",
+    {
+      "q": "Un animal del desierto.",
+      "no": [
+        "camello"
+      ]
+    },
+    "Un fenómeno natural.",
+    "Un animal que vive en el río.",
+    "Un animal con cuernos.",
+    "Un animal de zoológico.",
+    "Un sonido de la naturaleza.",
+    "Un paisaje para relajarse.",
+    {
+      "q": "Un animal muy grande.",
+      "no": [
+        "elefante"
+      ]
+    }
+  ]
+}

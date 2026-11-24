@@ -1,0 +1,102 @@
+/* Fichas de reglas (juegos de tipo "reglas") y dado al azar de la portada */
+
+/* Portada: botón del dado encima de la lista */
+.azar-boton { width: 100%; margin: 0 0 14px; padding: 14px 20px; font-size: 1.05rem; }
+
+/* Ficha del juego */
+.ficha { display: grid; gap: 12px; padding-bottom: 8px; }
+.ficha-estado { text-align: center; color: var(--texto-suave); padding: 40px 0; }
+
+.ficha-cabeza { display: flex; align-items: center; gap: 14px; padding: 6px 2px 0; }
+.ficha-simbolo { font-size: 2.6rem; line-height: 1; }
+.ficha-meta { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.ficha-meta span {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 246, 213, .2);
+  font-size: .85rem;
+  color: var(--oro-claro);
+}
+
+.ficha-necesitas { margin: 0; color: var(--texto-suave); font-size: .92rem; line-height: 1.45; }
+.ficha-necesitas b { color: var(--oro-claro); }
+
+/* Aviso cuando algo de las reglas no está confirmado */
+.ficha-nota {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--coral);
+  background: rgba(233, 138, 122, .14);
+  color: var(--texto);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.ficha-pestanas { justify-content: stretch; gap: 6px; padding: 4px; border-radius: 999px; background: rgba(255, 255, 255, .07); }
+.ficha-pestanas .chip { flex: 1; padding: 10px 8px; border-color: transparent; font-size: .95rem; }
+
+.ficha-vista { display: grid; gap: 10px; }
+
+/* Para empezar: tarjetas con viñetas */
+.regla {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 246, 213, .15);
+}
+.regla h3, .regla-det summary { font-family: var(--serif); font-weight: normal; color: var(--oro-claro); }
+.regla h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.regla ul, .regla-det ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; line-height: 1.45; font-size: 1rem; }
+.regla li::marker, .regla-det li::marker { color: var(--oro); }
+.regla b, .regla-det b { color: var(--oro-claro); }
+
+/* Reglamento: secciones que se abren y se cierran */
+.regla-herramientas { display: flex; justify-content: flex-end; gap: 4px; }
+.regla-herramientas .boton { font-size: .85rem; }
+.regla-det {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 246, 213, .15);
+  overflow: hidden;
+}
+.regla-det summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+}
+.regla-det summary::-webkit-details-marker { display: none; }
+.regla-det summary::after { content: '▾'; color: var(--oro); transition: transform .2s; }
+.regla-det[open] summary::after { transform: rotate(180deg); }
+.regla-det ul { padding: 0 16px 16px 36px; }
+
+.ficha-pie { margin: 8px 0 0; text-align: center; font-size: .75rem; color: var(--texto-suave); opacity: .75; }
+
+/* Dado al azar */
+.azar { display: grid; justify-items: center; gap: 22px; padding-top: 24px; text-align: center; }
+.azar-dado { font-size: 5rem; line-height: 1; filter: drop-shadow(0 0 24px rgba(242, 196, 107, .45)); }
+.azar-dado--gira { animation: rodar .5s linear infinite; }
+@keyframes rodar { to { transform: rotate(360deg); } }
+.azar-resultado {
+  min-height: 3.2em;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--oro-claro);
+}
+.azar-resultado--girando { opacity: .7; }
+.azar-acciones { display: grid; gap: 10px; width: min(100%, 320px); }
+.azar-acciones .boton--principal { flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .azar-dado--gira { animation: none; }
+  .regla-det summary::after { transition: none; }
+}

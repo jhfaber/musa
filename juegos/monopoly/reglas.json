@@ -1,0 +1,115 @@
+{
+  "jugadores": "2 a 8",
+  "duracion": "1 a 3 horas",
+  "necesitas": "tablero, fichas, dados, dinero, títulos de propiedad, cartas de Suerte y Arca comunal, casas y hoteles.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Ser el **último jugador con dinero**: arruina a los demás con rentas."
+      ]
+    },
+    {
+      "t": "Preparación",
+      "p": [
+        "Cada jugador toma una ficha y la pone en **Salida**.",
+        "Un jugador es la banca (reparte el dinero y guarda los títulos).",
+        "Cada uno empieza con el dinero que diga la caja (en el clásico, 1500)."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Tira los dados y avanza.",
+        "Casilla sin dueño: **cómprala** o la banca la **subasta**.",
+        "Casilla con dueño: **pagas renta**.",
+        "Sacas **dobles**: vuelves a tirar. A los **tres dobles seguidos**, a la cárcel."
+      ]
+    },
+    {
+      "t": "Otras casillas",
+      "p": [
+        "Salida: cobras (en el clásico, 200) cada vez que pasas.",
+        "Suerte o Arca comunal: toma una carta y haz lo que dice.",
+        "Impuestos: pagas a la banca.",
+        "Ve a la cárcel: vas directo, sin cobrar."
+      ]
+    },
+    {
+      "t": "Construir",
+      "p": [
+        "Con **todas las propiedades de un color** puedes poner casas y luego hotel.",
+        "Se construye parejo: una casa por propiedad antes de poner la segunda."
+      ]
+    },
+    {
+      "t": "Si no puedes pagar",
+      "p": [
+        "Vende casas, hipoteca propiedades.",
+        "Si aún no alcanzas, quedas en **bancarrota**: tus cosas pasan a quien te cobraba."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Subasta",
+      "p": [
+        "Si no compras una propiedad en la que caíste, la banca la subasta entre **todos**, incluido tú.",
+        "Se empieza en cualquier precio y se sube hasta que nadie más ofrezca."
+      ]
+    },
+    {
+      "t": "Cárcel",
+      "p": [
+        "Sales pagando la multa (en el clásico, 50) antes de tirar, usando una carta de \"Sal de la cárcel\", o sacando dobles.",
+        "En la cárcel igual cobras rentas.",
+        "Al tercer turno sin dobles, pagas y sales."
+      ]
+    },
+    {
+      "t": "Rentas",
+      "p": [
+        "La renta sube con casas y hoteles (está en el título).",
+        "Con todo un color sin casas, la renta se **duplica**.",
+        "Estaciones: la renta sube con cuántas tengas.",
+        "Servicios: la renta es los dados multiplicados por 4 o por 10, según cuántos tengas."
+      ]
+    },
+    {
+      "t": "Casas y hoteles",
+      "p": [
+        "Máximo 4 casas por propiedad; la quinta es un hotel (se devuelven las 4 casas).",
+        "Las casas y los hoteles de la caja **son limitados**: si se acaban, no se construye más."
+      ]
+    },
+    {
+      "t": "Hipotecas",
+      "p": [
+        "Hipotecar te da dinero de la banca, pero no cobras renta de esa propiedad.",
+        "Para levantarla pagas la hipoteca más 10 %.",
+        "No se puede hipotecar un color con casas: primero se venden."
+      ]
+    },
+    {
+      "t": "Negociar",
+      "p": [
+        "Se puede comprar, vender e intercambiar propiedades, dinero y cartas de \"Sal de la cárcel\" entre jugadores, cuando quieran.",
+        "No se vende ni se intercambia una propiedad de un color con casas."
+      ]
+    },
+    {
+      "t": "Fin de la partida",
+      "p": [
+        "Cuando solo queda un jugador sin bancarrota, gana.",
+        "Si acuerdan un tiempo, gana el más rico al terminar."
+      ]
+    },
+    {
+      "t": "Reglas de la casa",
+      "p": [
+        "**No son oficiales**, pero se juegan mucho: poner dinero en el centro y llevárselo al caer en el parqueadero, o no subastar.",
+        "Pónganse de acuerdo **antes** de empezar."
+      ]
+    }
+  ]
+}

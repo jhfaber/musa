@@ -1,0 +1,270 @@
+{
+  "id": "picantes",
+  "nombre": "Picantes",
+  "emoji": "🔥",
+  "acento": "#ff7b6b",
+  "descripcion": "Pareja, citas, ex y secretos: para adultos",
+  "pista": "Responde con lo que más se diría, o elige una opción.",
+  "adultos": false,
+  "preguntas": [
+    "Una mentira piadosa que todo el mundo dice.",
+    "Una excusa para no salir con alguien.",
+    "Algo que haces cuando estás solo en casa.",
+    "El mejor lugar para una primera cita.",
+    "Lo peor que puede pasar en una primera cita.",
+    "Una cosa que te enamora de alguien.",
+    "Una señal de que no le gustas a alguien.",
+    "Un regalo para conquistar a alguien.",
+    "Lo que más molesta de una pareja.",
+    "Una canción para ponerse romántico.",
+    "Una cosa que nadie confiesa.",
+    "Un vicio que casi todos tenemos.",
+    "Algo que haces y no cuentas.",
+    "Algo de lo que te arrepientes después de una fiesta.",
+    "Lo más tonto que se hace por amor.",
+    "Una bebida para animarse.",
+    "La peor forma de terminar una relación.",
+    "Un secreto que todos guardamos.",
+    "Algo que se ve en el celular de otro y no se debería ver.",
+    "Una frase para coquetear.",
+    "El mejor lugar para dar un beso.",
+    "Un defecto que perdonas.",
+    "Un defecto que no perdonas.",
+    "El peor regalo de cumpleaños.",
+    "Una cosa que todos dicen que no hacen, pero hacen.",
+    "Una tontería que hiciste siendo adolescente.",
+    "Lo que haces cuando alguien te cae mal pero tienes que ser amable.",
+    "Algo que haces por pereza.",
+    "El peor momento para que te llame tu mamá.",
+    "Un tema del que no se habla en una primera cita.",
+    "¿Cuántas citas hay que tener antes de ser novios?",
+    "Lo que nunca se perdona en una relación.",
+    "Una alerta roja en una primera cita.",
+    "Una buena señal en una primera cita.",
+    "Lo primero que se le revisa a alguien en redes antes de salir.",
+    "Una excusa para terminar con alguien.",
+    "A qué edad está bien casarse.",
+    "Lo más difícil de una relación a distancia.",
+    "Algo que se le perdona a la pareja pero no a un amigo.",
+    "Una señal de que alguien está con otra persona.",
+    "Por lo que más pelea una pareja.",
+    "Lo primero que se borra cuando terminas con alguien.",
+    "¿Cuánto tiempo hay que esperar para presentarle a alguien a la familia?",
+    {
+      "q": "Mientras estás conociendo a alguien, ¿se vale salir con otras personas?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Solo si se lo dices",
+        "Depende de cuánto lleven"
+      ]
+    },
+    {
+      "q": "¿Cuánto hay que esperar para empezar otra relación después de terminar?",
+      "opciones": [
+        "Nada",
+        "Un mes",
+        "Seis meses",
+        "Un año"
+      ]
+    },
+    {
+      "q": "¿Se vale revisar el celular de la pareja?",
+      "opciones": [
+        "Nunca",
+        "Solo si hay sospechas",
+        "Si los dos están de acuerdo",
+        "Siempre"
+      ]
+    },
+    {
+      "q": "¿Volver con un ex es buena idea?",
+      "opciones": [
+        "Nunca",
+        "A veces",
+        "Depende de por qué terminaron",
+        "Sí"
+      ]
+    },
+    {
+      "q": "¿Quién debe pagar en la primera cita?",
+      "opciones": [
+        "El que invitó",
+        "Mitad y mitad",
+        "El hombre",
+        "El que gane más"
+      ]
+    },
+    {
+      "q": "¿Se puede ser amigo de un ex?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Solo después de un tiempo",
+        "Solo si no hay pareja nueva"
+      ]
+    },
+    {
+      "q": "¿Está bien salir con el ex de un amigo?",
+      "opciones": [
+        "Nunca",
+        "Si el amigo da permiso",
+        "Depende del tiempo que pasó",
+        "Sí"
+      ]
+    },
+    {
+      "q": "¿Cuánto tiempo de novios antes de vivir juntos?",
+      "opciones": [
+        "Seis meses",
+        "Un año",
+        "Dos años",
+        "Hasta casarse"
+      ]
+    },
+    {
+      "q": "¿Le contarías a un amigo que su pareja le es infiel?",
+      "opciones": [
+        "Sí, de una",
+        "Solo con pruebas",
+        "No me meto",
+        "Primero hablo con la pareja"
+      ]
+    },
+    {
+      "q": "¿Un beso con otra persona es infidelidad?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Depende",
+        "Solo si hay sentimientos"
+      ]
+    },
+    {
+      "q": "¿Se vale seguir hablando con el ex estando en otra relación?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Solo si hay hijos",
+        "Solo por cosas importantes"
+      ]
+    },
+    {
+      "q": "¿Cuántas veces se perdona una infidelidad?",
+      "opciones": [
+        "Ninguna",
+        "Una",
+        "Depende",
+        "Las que sean"
+      ]
+    },
+    {
+      "q": "¿La pareja debe saber tus contraseñas?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Solo algunas",
+        "Si los dos quieren"
+      ]
+    },
+    {
+      "q": "¿Quién debe escribir primero después de una cita?",
+      "opciones": [
+        "El que invitó",
+        "El hombre",
+        "El más interesado",
+        "Da igual"
+      ]
+    },
+    {
+      "q": "¿Se vale terminar por mensaje?",
+      "opciones": [
+        "Nunca",
+        "Si fue algo corto",
+        "Si da miedo la reacción",
+        "Sí"
+      ]
+    },
+    {
+      "q": "¿Es raro tener una pareja mucho mayor?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Depende de la diferencia",
+        "Depende de las edades"
+      ]
+    },
+    {
+      "q": "¿Las relaciones abiertas funcionan?",
+      "opciones": [
+        "Nunca",
+        "A veces",
+        "Si hay reglas claras",
+        "Sí"
+      ]
+    },
+    {
+      "q": "¿Un poco de celos es normal?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Depende",
+        "Solo al principio"
+      ]
+    },
+    {
+      "q": "¿A la pareja nueva hay que contarle de los ex?",
+      "opciones": [
+        "Todo",
+        "Solo lo importante",
+        "Nada",
+        "Solo si pregunta"
+      ]
+    },
+    {
+      "q": "¿Cuántos ex son muchos?",
+      "opciones": [
+        "Más de 3",
+        "Más de 5",
+        "Más de 10",
+        "No hay número"
+      ]
+    },
+    {
+      "q": "¿Se vale dar like a fotos de otras personas teniendo pareja?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Depende de la foto",
+        "Solo de amigos"
+      ]
+    },
+    {
+      "q": "¿Quién debe decir \"te amo\" primero?",
+      "opciones": [
+        "El que lo sienta",
+        "El hombre",
+        "La mujer",
+        "Da igual"
+      ]
+    },
+    {
+      "q": "¿Está bien tener un mejor amigo del otro sexo teniendo pareja?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Depende de la confianza",
+        "Si la pareja lo conoce"
+      ]
+    },
+    {
+      "q": "¿Hay que pedirle permiso a la pareja para salir con amigos?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Avisar sí, permiso no",
+        "Depende del plan"
+      ]
+    }
+  ]
+}

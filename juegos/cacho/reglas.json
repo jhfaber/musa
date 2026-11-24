@@ -1,0 +1,102 @@
+{
+  "jugadores": "2 o más",
+  "duracion": "20 a 40 min",
+  "necesitas": "un cubilete y dados por jugador (normalmente 5 cada uno; pueden ser más o menos, todos con la misma cantidad).",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Ser el **último jugador con dados**."
+      ]
+    },
+    {
+      "t": "Cantidad y palo",
+      "p": [
+        "Una apuesta tiene dos partes: **cantidad** (cuántos dados) y **palo** (qué número del dado, del 1 al 6).",
+        "\"**Ocho cincos**\" = cantidad **8**, palo **5**: \"entre todos, en la mesa hay al menos 8 dados que muestran 5\".",
+        "Se cuentan los dados de **todos los jugadores**, no solo los tuyos."
+      ]
+    },
+    {
+      "t": "Cada ronda",
+      "p": [
+        "Todos lanzan sus dados **en secreto** y los tapan con el cubilete.",
+        "El primero apuesta: \"**cuatro treses**\"."
+      ]
+    },
+    {
+      "t": "Tu turno: subir o dudar",
+      "p": [
+        "**Subir la cantidad**, mismo palo: cuatro treses → **cinco treses**.",
+        "**Subir el palo**, misma cantidad: cuatro treses → **cuatro cincos**.",
+        "**Subir los dos**: cuatro treses → **seis seises**.",
+        "Nunca se puede bajar: después de \"cuatro cincos\" no vale \"cuatro treses\".",
+        "O dices **\"¡Dudo!\"** si crees que el anterior mintió."
+      ]
+    },
+    {
+      "t": "¡Dudo!",
+      "p": [
+        "Todos destapan y se cuentan los dados **del palo apostado** (más los unos, que son comodín).",
+        "Si hay **igual o más** que la cantidad, pierde un dado **el que dudó**.",
+        "Si hay **menos**, pierde un dado **el que apostó**."
+      ]
+    },
+    {
+      "t": "Los unos (comodín)",
+      "p": [
+        "Los **1 cuentan como cualquier palo**, mientras no se esté apostando a unos."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ejemplo de una ronda completa",
+      "p": [
+        "Tres jugadores con 5 dados cada uno (15 dados en la mesa).",
+        "Ana tiene 2 cincos y 1 uno. Apuesta: \"**cuatro cincos**\" (cantidad 4, palo 5).",
+        "Beto sube la cantidad: \"**cinco cincos**\".",
+        "Carla sube el palo: \"**cinco seises**\".",
+        "Ana no le cree: \"**¡Dudo!**\". Todos destapan.",
+        "En la mesa hay 2 seises y 2 unos: cuentan como **4 seises**. Carla dijo 5: había menos, así que **Carla pierde un dado**."
+      ]
+    },
+    {
+      "t": "Cómo se cuentan los unos",
+      "p": [
+        "Apuesta \"seis cuatros\". En la mesa hay 4 cuatros y 2 unos: los unos cuentan como cuatros → **6 cuatros**. La apuesta era cierta.",
+        "Si la apuesta es a unos (\"tres unos\"), solo cuentan los unos."
+      ]
+    },
+    {
+      "t": "Perder dados",
+      "p": [
+        "Quien pierde un dado sigue jugando con menos.",
+        "El juego sigue hasta que solo un jugador tenga dados."
+      ]
+    },
+    {
+      "t": "Ronda de un solo dado",
+      "p": [
+        "Cuando alguien queda con **1 dado**, en esa ronda **nadie ve sus dados, solo él**."
+      ]
+    },
+    {
+      "t": "Bajar a unos",
+      "p": [
+        "Para apostar a unos, la **cantidad se divide entre 2 y se suma 1** (si da decimal, se redondea hacia arriba).",
+        "Ejemplo: después de \"**ocho cincos**\" se puede decir \"**cinco unos**\" (8 ÷ 2 + 1 = 5).",
+        "Ejemplo: después de \"**seis cuatros**\" → \"**cuatro unos**\" (6 ÷ 2 + 1 = 4).",
+        "Se activa el **modo unos**: hasta que termine la ronda solo se apuesta a unos, subiendo la cantidad: cinco unos → seis unos."
+      ]
+    },
+    {
+      "t": "Salir de los unos (opcional)",
+      "p": [
+        "Para pasar de unos a otro palo, la **cantidad se multiplica por 2 y se suma 1**.",
+        "Ejemplo: de \"**seis unos**\" a \"**trece doses**\" (6 × 2 + 1 = 13).",
+        "Ya en ese palo, se sigue subiendo normal: trece doses → catorce doses, o trece treses."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "jugadores": "3 o más",
+  "duracion": "lo que dure la noche",
+  "necesitas": "una baraja de póker o de UNO.",
+  "nota": "Para mayores de 18. Toma con moderación. Las cartas de los 5 minijuegos sin número (J, Q, K…) son una propuesta: dime si las quieres distintas (pendiente de confirmar).",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Por turnos, cada uno **saca una carta**.",
+        "El número de la carta dice **qué minijuego** se activa (ver la lista).",
+        "El que pierde un minijuego, **toma**."
+      ]
+    },
+    {
+      "t": "Las cartas",
+      "p": [
+        "**1** Palabra loca",
+        "**2** Terodáctilo",
+        "**3** Pregunta pregunta",
+        "**4** Palabra contextual",
+        "**5** Sílaba final",
+        "**6** Pura mierda",
+        "**7** Soy el Rey",
+        "**8** Vínculo eterno",
+        "**9** Acento extranjero",
+        "**+2** Contacto físico",
+        "**+4** Toque de cabeza",
+        "**Prohibido** Verdad y mentira"
+      ]
+    },
+    {
+      "t": "Con baraja de póker",
+      "p": [
+        "**A** = 1 · **2 a 9** igual · **10** = +2 · **J** = +4 · **Q** = Prohibido.",
+        "**K** o **comodín**: el que la saca **elige** uno de los minijuegos sin número."
+      ]
+    },
+    {
+      "t": "Con baraja de UNO",
+      "p": [
+        "Números, **+2**, **+4** y **Prohibido** como en la lista.",
+        "**Retorno** o **comodín de color**: el que la saca **elige** uno de los minijuegos sin número."
+      ]
+    },
+    {
+      "t": "Sin número (se eligen)",
+      "p": [
+        "Cultura chupística",
+        "Mis aguinaldos",
+        "Vikingo vikingo",
+        "Esclavo",
+        "Impostor"
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "1 · Palabra loca",
+      "p": [
+        "Inventa una palabra loca (ej.: \"piña\").",
+        "Toda frase debe llevarla **después de cada palabra**: \"Voy *piña* al *piña* baño *piña*\"."
+      ]
+    },
+    {
+      "t": "2 · Terodáctilo",
+      "p": [
+        "**Nadie puede mostrar los dientes.** Solo se hacen ruidos de terodáctilo.",
+        "Si te ríes o hablas, pierdes."
+      ]
+    },
+    {
+      "t": "3 · Pregunta pregunta",
+      "p": [
+        "Solo se puede hablar **haciendo preguntas**.",
+        "Si respondes o afirmas algo, pierdes."
+      ]
+    },
+    {
+      "t": "4 · Palabra contextual",
+      "p": [
+        "Dices una palabra y el siguiente dice una **relacionada**, y así.",
+        "El que se bloquee, toma."
+      ]
+    },
+    {
+      "t": "5 · Sílaba final",
+      "p": [
+        "Cada uno dice una palabra que empiece con la **última sílaba** de la anterior.",
+        "¡Cero repeticiones!"
+      ]
+    },
+    {
+      "t": "6 · Pura mierda",
+      "p": [
+        "Dices \"yo me sé **X cosas** de tal categoría\".",
+        "El siguiente dice más… o grita **\"¡pura mierda!\"** si no te cree.",
+        "Si te dudan, tienes que decirlas: si no puedes, pierdes; si puedes, pierde el que dudó."
+      ]
+    },
+    {
+      "t": "7 · Soy el Rey",
+      "p": [
+        "Hasta que acabe la ronda, todos te piden **permiso para todo**, con formalidad: \"Majestad, ¿puedo ir al baño?\"."
+      ]
+    },
+    {
+      "t": "8 · Vínculo eterno",
+      "p": [
+        "Eliges a alguien: si tú tomas, él también; si él recoge cartas, tú también.",
+        "¡Lo que haga uno lo hace el otro!"
+      ]
+    },
+    {
+      "t": "9 · Acento extranjero",
+      "p": [
+        "Hablas con **acento** español, mexicano, gringo, el que sea.",
+        "Si hablas normal, ¡bebes!"
+      ]
+    },
+    {
+      "t": "+2 · Contacto físico",
+      "p": [
+        "Mantén **contacto con los de al lado** hasta que acabe la ronda: mano, hombro, lo que sea.",
+        "El que se despegue… ¡toma!"
+      ]
+    },
+    {
+      "t": "+4 · Toque de cabeza",
+      "p": [
+        "Si alguien **se toca la cabeza**, todos golpean la mesa.",
+        "El último, ¡pum!, bebe."
+      ]
+    },
+    {
+      "t": "Prohibido · Verdad y mentira",
+      "p": [
+        "Dices **una verdad y una mentira**. Todos votan cuál es cuál.",
+        "Los que se equivoquen, toman."
+      ]
+    },
+    {
+      "t": "Elegible · Cultura chupística",
+      "p": [
+        "Preguntas de **cultura general**: el que falle, ¡toma!"
+      ]
+    },
+    {
+      "t": "Elegible · Mis aguinaldos",
+      "p": [
+        "No se puede decir **\"sí\" ni \"no\"**. El primero que lo diga, toma."
+      ]
+    },
+    {
+      "t": "Elegible · Vikingo vikingo",
+      "p": [
+        "Juego de **gestos con ritmo**: todos lo siguen. Si te pierdes, tomas."
+      ]
+    },
+    {
+      "t": "Elegible · Esclavo",
+      "p": [
+        "Cada vez que alguien habla, le tienes que **dar un cumplido**."
+      ]
+    },
+    {
+      "t": "Elegible · Impostor",
+      "p": [
+        "Se elige una palabra (ej.: \"mareo\") y se le dice **al oído** a todos menos a **1 a 3 personas**: los impostores.",
+        "Los impostores tratan de **adivinar la palabra**; los demás, de **descubrir a los impostores**."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

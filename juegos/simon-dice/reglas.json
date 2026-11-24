@@ -1,0 +1,23 @@
+{
+  "jugadores": "3 o más",
+  "duracion": "5 a 10 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "El **director** dice una orden: \"Simón dice: manos arriba\".",
+        "Todos deben hacer **lo contrario**: manos abajo.",
+        "El que hace lo que dijo, o se demora, **pierde**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "El director va cada vez más rápido."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

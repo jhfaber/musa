@@ -1,0 +1,25 @@
+{
+  "jugadores": "2 equipos o más",
+  "duracion": "15 a 20 min",
+  "necesitas": "un parlante y una lista de canciones.",
+  "nota": "Escribí la forma más común de jugarlo. Si en tus eventos se juega distinto, dime y lo ajusto (pendiente de confirmar).",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Suena un pedazo de una canción.",
+        "El primer equipo que dice **el nombre y el artista** gana el punto.",
+        "Gana el equipo con más puntos al final."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ideas",
+      "p": [
+        "Más difícil: poner solo los primeros segundos, o tararear la canción en vez de ponerla."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

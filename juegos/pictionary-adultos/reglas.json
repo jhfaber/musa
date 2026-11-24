@@ -1,0 +1,73 @@
+{
+  "jugadores": "4 a 16 (3 o más)",
+  "duracion": "45 a 60 min",
+  "necesitas": "tablero, fichas, dado, reloj de arena, tarjetas, lápices y bloc de dibujo.",
+  "nota": "Edición para adultos: las palabras son atrevidas. Las reglas de dibujar son las del Pictionary de siempre.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Dibujar para que tu equipo adivine antes de que caiga la arena. Gana el primer equipo que llegue a la meta."
+      ]
+    },
+    {
+      "t": "Equipos",
+      "p": [
+        "Dos o más equipos, cada uno con su ficha en el tablero.",
+        "En cada turno dibuja **uno** del equipo; el dibujante va rotando."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "El dibujante lee la tarjeta en secreto y dibuja **la palabra de la categoría** de su casilla.",
+        "Prohibido hablar, escribir letras o números y hacer gestos.",
+        "Su equipo adivina antes de que se acabe el reloj de arena."
+      ]
+    },
+    {
+      "t": "Si aciertan",
+      "p": [
+        "Tiran el dado, avanzan y siguen jugando.",
+        "Si no aciertan, el turno pasa al otro equipo."
+      ]
+    },
+    {
+      "t": "Todos juegan",
+      "p": [
+        "En esa casilla dibujan **todos los equipos a la vez**; el primero en adivinar avanza."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Categorías",
+      "p": [
+        "Cada color del tablero es una categoría distinta.",
+        "Cada tarjeta trae una palabra por categoría; el dibujante usa la del color de su casilla."
+      ]
+    },
+    {
+      "t": "Reglas del dibujo",
+      "p": [
+        "No se vale hablar, hacer sonidos ni gestos.",
+        "No se vale escribir letras ni números.",
+        "Se puede dibujar cualquier cosa que no sea eso, como símbolos o rayas."
+      ]
+    },
+    {
+      "t": "Tiempo",
+      "p": [
+        "El reloj de arena se da vuelta cuando empieza a dibujar.",
+        "Si se acaba antes de acertar, el turno pasa al otro equipo."
+      ]
+    },
+    {
+      "t": "Para ganar",
+      "p": [
+        "Llegar a la casilla final del tablero.",
+        "En la casilla final hay que ganar un **Todos juegan**."
+      ]
+    }
+  ]
+}

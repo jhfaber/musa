@@ -1,0 +1,74 @@
+{
+  "id": "comida",
+  "nombre": "Comida y bebida",
+  "emoji": "🍕",
+  "acento": "#ffa45c",
+  "descripcion": "Sabores, antojos y platos",
+  "pista": "Una comida o una bebida.",
+  "adultos": false,
+  "preguntas": [
+    {
+      "q": "Un sabor de helado.",
+      "no": [
+        "chocolate",
+        "vainilla"
+      ]
+    },
+    "Una fruta que te encante.",
+    {
+      "q": "Un tipo de pizza.",
+      "no": [
+        "hawaiana"
+      ]
+    },
+    {
+      "q": "Una comida rápida.",
+      "no": [
+        "hamburguesa"
+      ]
+    },
+    "El mejor acompañante del arroz.",
+    "Una bebida para una fiesta.",
+    "Un postre.",
+    "Una verdura que no soportas.",
+    "Un desayuno perfecto.",
+    {
+      "q": "Un snack para ver una película.",
+      "no": [
+        "crispetas"
+      ]
+    },
+    "Una salsa.",
+    "Una sopa.",
+    "El mejor plato del mundo.",
+    "Una comida que sabe mejor al día siguiente.",
+    "Un condimento que no puede faltar.",
+    "Un ingrediente que arruina una pizza.",
+    {
+      "q": "Una bebida caliente.",
+      "no": [
+        "café"
+      ]
+    },
+    "Una comida de la calle.",
+    "Un plato que sabes cocinar.",
+    "Una golosina de la infancia.",
+    "Un jugo.",
+    "Un tipo de pasta.",
+    "Una comida para una cita.",
+    "Una comida de otro país.",
+    "El ingrediente imprescindible de una hamburguesa.",
+    "Una comida que huele rico pero sabe feo.",
+    "Una fruta difícil de pelar.",
+    "Una comida que se come con las manos.",
+    {
+      "q": "Un restaurante de comida rápida.",
+      "no": [
+        "McDonald's"
+      ]
+    },
+    "Lo que no puede faltar en Navidad.",
+    "Un antojo de medianoche.",
+    "Un sabor de gaseosa."
+  ]
+}

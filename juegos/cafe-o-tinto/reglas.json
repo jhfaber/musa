@@ -1,0 +1,24 @@
+{
+  "jugadores": "3 o más",
+  "duracion": "10 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Una persona piensa una **palabra secreta**.",
+        "En cada ronda le preguntan entre **dos opciones**: \"¿café o humano?\".",
+        "Responde la que **más se acerca** a su palabra.",
+        "Así, con cada respuesta, el grupo se va acercando hasta **adivinarla**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ejemplo",
+      "p": [
+        "Palabra: perro. \"¿Café o humano?\" → humano. \"¿Humano o mueble?\" → humano. \"¿Humano o gato?\" → gato…"
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

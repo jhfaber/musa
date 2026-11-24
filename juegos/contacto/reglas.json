@@ -1,0 +1,43 @@
+{
+  "jugadores": "4 o más",
+  "duracion": "15 a 20 min",
+  "empezar": [
+    {
+      "t": "Preparación",
+      "p": [
+        "Una persona **lidera** y piensa una palabra secreta (ej.: **AMIGO**).",
+        "Dice la **primera letra**: \"A\"."
+      ]
+    },
+    {
+      "t": "Desbloquear una letra",
+      "p": [
+        "Alguien da una **pista** de una palabra que empiece por esas letras: \"animal que vuela\".",
+        "Otro que crea saberla dice **\"¡Contacto!\"**.",
+        "Cuentan hasta 3 y los dos dicen la palabra al tiempo: **\"águila\"**.",
+        "Si dicen la **misma palabra**, se desbloquea la siguiente letra: \"AM\"."
+      ]
+    },
+    {
+      "t": "El que lidera",
+      "p": [
+        "Puede **bloquear** palabras para hacerlo más difícil (por ejemplo, decir \"águila\" antes que ellos)."
+      ]
+    },
+    {
+      "t": "Ganar",
+      "p": [
+        "En cada ronda se puede intentar **adivinar la palabra completa una vez**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Si el que lidera dice la palabra antes del \"contacto\", esa pista no vale y se da otra."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

@@ -1,0 +1,86 @@
+{
+  "jugadores": "2 a 10",
+  "duracion": "20 a 30 min",
+  "necesitas": "el mazo UNO No Mercy (168 cartas).",
+  "nota": "Resumen de lo esencial. Confirma las cifras y las cartas nuevas con el manual de la caja.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Quedarte sin cartas primero, y sobrevivir a la regla de misericordia."
+      ]
+    },
+    {
+      "t": "Se juega como UNO",
+      "p": [
+        "Mismo color, número o símbolo.",
+        "Pero **los robos se acumulan**: si te echan un +2, respondes con otro +2 (o con un robo mayor) y el castigo pasa al siguiente, sumado."
+      ]
+    },
+    {
+      "t": "Sin piedad",
+      "p": [
+        "Si no tienes carta que sirva, **robas hasta que te salga una jugable**.",
+        "**Regla de misericordia:** si llegas a **25 cartas** en la mano, quedas eliminado."
+      ]
+    },
+    {
+      "t": "Cartas nuevas",
+      "p": [
+        "Comodines **+6** y **+10**.",
+        "Comodín **Ruleta de colores**.",
+        "**Descartar todas:** sueltas de una todas las cartas de ese color.",
+        "**Saltar a todos** y **Reversa +4**."
+      ]
+    },
+    {
+      "t": "Números especiales",
+      "p": [
+        "**0:** todos pasan su mano en el sentido del juego.",
+        "**7:** cambias tu mano con otro jugador, el que elijas."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Acumular robos",
+      "p": [
+        "Cuando alguien juega una carta de robo, el siguiente puede jugar otra de robo igual o mayor en vez de robar.",
+        "El total se suma y lo termina robando quien ya no pueda responder."
+      ]
+    },
+    {
+      "t": "Robar hasta jugar",
+      "p": [
+        "Si no puedes jugar, robas del mazo hasta que salga una carta jugable, y la juegas.",
+        "Por eso las manos se llenan muy rápido."
+      ]
+    },
+    {
+      "t": "Misericordia",
+      "p": [
+        "Quien llega a **25 cartas** queda fuera de la partida.",
+        "Sus cartas vuelven al mazo."
+      ]
+    },
+    {
+      "t": "0 y 7",
+      "p": [
+        "Con un **0**, todas las manos se pasan al jugador siguiente.",
+        "Con un **7**, intercambias tu mano con quien tú quieras."
+      ]
+    },
+    {
+      "t": "Cartas nuevas",
+      "p": [
+        "Revisa en la caja qué hace exactamente cada una: Ruleta de colores, Descartar todas, Saltar a todos y los comodines grandes."
+      ]
+    },
+    {
+      "t": "¡UNO!",
+      "p": [
+        "Igual que en el UNO normal: grítalo con una carta; si te descubren sin decirlo, robas."
+      ]
+    }
+  ]
+}

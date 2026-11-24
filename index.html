@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Musa</title>
-  <meta name="description" content="Rondas mágicas para tus juegos de mesa">
+  <meta name="description" content="Rondas mágicas y reglas rápidas para tus juegos">
   <meta name="theme-color" content="#1b1446">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="iconos/icono-192.png" type="image/png">
@@ -14,6 +14,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Musa">
   <link rel="stylesheet" href="comun/base.css">
+  <link rel="stylesheet" href="comun/reglas.css">
 </head>
 <body>
   <div class="cielo" aria-hidden="true"></div>
@@ -21,20 +22,8 @@
   <!-- Inicio: lista de juegos -->
   <main id="pantalla-inicio" class="pantalla">
     <header class="marca">
-      <svg class="marca-luna" viewBox="0 0 100 100" aria-hidden="true">
-        <defs>
-          <radialGradient id="g-luna" cx="40%" cy="35%" r="70%">
-            <stop offset="0" stop-color="#fff6d5"/>
-            <stop offset="1" stop-color="#f2c46b"/>
-          </radialGradient>
-          <mask id="m-luna"><rect width="100" height="100" fill="#fff"/><circle cx="62" cy="40" r="30" fill="#000"/></mask>
-        </defs>
-        <circle cx="46" cy="52" r="34" fill="url(#g-luna)" mask="url(#m-luna)"/>
-        <path d="M78 20 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z" fill="#fff6d5"/>
-        <circle cx="86" cy="58" r="2.5" fill="#fff6d5"/>
-      </svg>
       <h1>Musa</h1>
-      <p>Rondas mágicas para tus juegos de mesa</p>
+      <p>Rondas mágicas para tus juegos</p>
     </header>
 
     <section class="juegos" id="lista-juegos" aria-label="Juegos"></section>
@@ -43,7 +32,8 @@
 
     <footer class="pie">
       Acompañante no oficial, hecho en casa.<br>
-      Dixit es una marca registrada de Libellud. Risk es una marca registrada de Hasbro.
+      Los juegos y sus marcas pertenecen a sus dueños. Dixit es una marca registrada de Libellud; Risk, Monopoly y Uno,
+      de sus fabricantes.
     </footer>
   </main>
 
@@ -62,6 +52,9 @@
   <script src="comun/panel.js"></script>
   <script src="comun/reloj.js"></script>
   <script src="comun/ui.js"></script>
+  <script src="comun/reglas.js"></script>
+  <script src="comun/filtro.js"></script>
+  <script src="comun/azar.js"></script>
   <!-- Los juegos (CSS y JS) se cargan desde juegos/juegos.json -->
   <script>Musa.iniciar();</script>
 </body>

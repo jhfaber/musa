@@ -1,0 +1,113 @@
+{
+  "jugadores": "2 a 10",
+  "duracion": "20 min",
+  "necesitas": "el mazo de UNO (108 cartas).",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "**Quedarte sin cartas primero.**"
+      ]
+    },
+    {
+      "t": "Reparto",
+      "p": [
+        "7 cartas para cada jugador.",
+        "Se voltea una carta al centro y el resto es el mazo."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Juega una carta del **mismo color, número o símbolo** que la de arriba.",
+        "Si no tienes, **roba una**; si sirve, la puedes jugar."
+      ]
+    },
+    {
+      "t": "Cartas especiales",
+      "p": [
+        "**Salto:** el siguiente pierde su turno.",
+        "**Reversa:** cambia el sentido del juego.",
+        "**+2:** el siguiente roba 2 y pierde su turno.",
+        "**Comodín:** eliges el color.",
+        "**Comodín +4:** eliges el color y el siguiente roba 4 y pierde su turno. Solo se juega si **no tienes** ninguna carta del color de arriba."
+      ]
+    },
+    {
+      "t": "¡UNO!",
+      "p": [
+        "Cuando te quede **una sola carta**, grita ¡UNO!",
+        "Si te descubren sin haberlo dicho antes de que juegue el siguiente, **robas 2**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Cómo empieza",
+      "p": [
+        "El jugador a la izquierda del repartidor juega primero.",
+        "Si la primera carta es de acción, se aplica su efecto."
+      ]
+    },
+    {
+      "t": "Cartas de acción",
+      "p": [
+        "Se pueden jugar sobre cartas del mismo color o del mismo símbolo.",
+        "Los comodines se pueden jugar en cualquier momento (el +4, con la condición de arriba)."
+      ]
+    },
+    {
+      "t": "Comodín +4 y el desafío",
+      "p": [
+        "El jugador que lo recibe puede **desafiar** y revisar la mano de quien lo jugó.",
+        "Si tenía una carta del color de arriba, quien lo jugó **roba 4** en vez de ti.",
+        "Si no la tenía, quien desafió **roba 6** en total."
+      ]
+    },
+    {
+      "t": "Puntos (opcional)",
+      "p": [
+        "Al terminar cada mano, quien se queda sin cartas suma los puntos de las cartas de los demás.",
+        "Números: su valor. +2, Salto y Reversa: 20. Comodines: 50.",
+        "Gana quien llegue primero a 500 puntos."
+      ]
+    },
+    {
+      "t": "Reglas de la casa",
+      "p": [
+        "**No son oficiales**, pero se juegan mucho: acumular +2 sobre +2, o jugar varias cartas iguales a la vez.",
+        "Pónganse de acuerdo **antes** de empezar."
+      ]
+    },
+    {
+      "t": "🤪 Reglas locas: básicas",
+      "p": [
+        "El que **la cague**, se equivoque o se despiste, **pierde**.",
+        "**Colocar carta**: del mismo color, número o un comodín. Si no, ¡a robar, mijo!",
+        "**Si preguntan algo, responda**: nada de hacerse el loco. Si no responde, se castiga.",
+        "**Robar turno**: si tienes **exactamente la misma carta** que está en la mesa, la tiras y te robas el turno. 🔥",
+        "**Decir \"UNO\"**: si te queda una carta y no lo dices, te clavas **2 cartas** por bobo."
+      ]
+    },
+    {
+      "t": "🤪 Reglas locas: según la carta",
+      "p": [
+        "**+2**: se responde con otro +2, un +4, un retorno del mismo color o un prohibido. Todo se **acumula** para el que no tenga con qué defenderse.",
+        "**+4**: igual que el +2, pero más venenoso. Se devuelve con otro +4.",
+        "**0**: cambia tus cartas con **quien quieras**. Si vas perdiendo, ¡es tu venganza!",
+        "**1 · Palabra maldita**: elige una palabra y todos la dicen **al final de cada frase** durante esa ronda (ej.: \"entre mis piernas\"). Al que se le olvide… ¡bebe!",
+        "**3**: todos **golpean la mesa**. El último recoge **2 cartas**.",
+        "**7**: todos pasan su mano al siguiente, en el sentido del juego."
+      ]
+    },
+    {
+      "t": "🦖 Reglas locas: carta Velociraptor (dinosaurio)",
+      "p": [
+        "Se activa un **minijuego**: saca la siguiente carta y juégala como venga.",
+        "Las reglas del dinosaurio son **acumulativas**, pero solo duran **1 ronda**.",
+        "**Hablar con acento**: español, ñero, venezolano o chileno.",
+        "**Palabra intermedia**: poner una palabra entre cada palabra: \"estoy *aguardiente* dando *aguardiente* todo\"."
+      ]
+    }
+  ]
+}

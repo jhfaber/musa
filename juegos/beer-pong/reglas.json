@@ -1,0 +1,40 @@
+{
+  "jugadores": "2 equipos",
+  "duracion": "15 a 30 min",
+  "necesitas": "vasos, pelotas de ping pong y una mesa larga.",
+  "nota": "Solo para mayores de 18. Toma con moderación.",
+  "empezar": [
+    {
+      "t": "Arma la mesa",
+      "p": [
+        "Cada equipo pone sus vasos en **triángulo** en un extremo de la mesa."
+      ]
+    },
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Los equipos lanzan **por turnos, uno por uno, en fila**, dándole **mucho ritmo**.",
+        "Cada persona tiene **3 o 4 tiros**.",
+        "Se vale **un rebote**; en las rondas siguientes se va subiendo el nivel: varios rebotes y luego solo directo."
+      ]
+    },
+    {
+      "t": "Quién toma",
+      "p": [
+        "**Nadie mete** la bola: toman los dos.",
+        "**Alguien la mete**: la persona del equipo contrario toma **2 guaros**.",
+        "Si alguien ya no puede tomar más, **su equipo lo apoya**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Regla sana",
+      "p": [
+        "Fila y uno por uno: todos lanzan y nadie se queda sin jugar.",
+        "Cada quien toma lo que quiera y pueda; hay agua para el que la pida."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}
