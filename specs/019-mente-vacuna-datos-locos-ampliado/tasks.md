@@ -1,7 +1,7 @@
 # 019 — Tareas
 
-- [x] Ampliar `datos-locos.json` (120 preguntas)
-- [x] Service worker v97
+- [x] Ampliar `datos-locos.json` (25 de 4 opciones; las abiertas se quitaron a pedido de John)
+- [x] Service worker v98
 - [x] `npm test` y `npm run validar` sin errores
 - [ ] Marcar `Completada` aquí y en `specs/README.md` cuando John la apruebe
 
