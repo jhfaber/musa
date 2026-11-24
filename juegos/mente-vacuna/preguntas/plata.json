@@ -142,12 +142,12 @@
       ]
     },
     {
-      "q": "¿Qué prefieres con la plata?",
+      "q": "¿Qué comprarías sin pensarlo mucho?",
       "opciones": [
-        "Ahorrar todo",
-        "Disfrutar todo",
-        "Mitad y mitad",
-        "Depende del mes"
+        "Comida",
+        "Ropa o zapatos",
+        "Tecnología",
+        "Libros o cursos"
       ]
     },
     {
@@ -160,12 +160,12 @@
       ]
     },
     {
-      "q": "¿Qué pagarías primero con dinero extra?",
+      "q": "¿Qué harías con un dinero inesperado?",
       "opciones": [
-        "Una deuda",
-        "El arriendo",
-        "Un gusto",
-        "Un ahorro"
+        "Pagar una deuda",
+        "Darme un gusto",
+        "Ahorrarlo",
+        "Invertirlo"
       ]
     },
     {

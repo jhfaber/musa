@@ -34,21 +34,21 @@
       ]
     },
     {
-      "q": "¿Quién manda en una familia?",
+      "q": "¿Quién manda de verdad en una familia?",
       "opciones": [
         "La mamá",
         "El papá",
         "La abuela",
-        "Los hijos"
+        "El que paga"
       ]
     },
     {
-      "q": "¿Quién regaña más en la familia?",
+      "q": "¿A quién te cuesta más decirle que no?",
       "opciones": [
-        "La mamá",
-        "El papá",
-        "La abuela",
-        "El hermano mayor"
+        "A mamá",
+        "A papá",
+        "A la abuela",
+        "A un hermano"
       ]
     },
     {
@@ -151,12 +151,12 @@
       ]
     },
     {
-      "q": "¿Quién cocina mejor en tu familia?",
+      "q": "¿Quién se entera primero de los chismes de la familia?",
       "opciones": [
-        "Mamá",
-        "Papá",
+        "La mamá",
+        "Las tías",
         "La abuela",
-        "Un tío o tía"
+        "Los primos"
       ]
     },
     {
@@ -187,12 +187,12 @@
       ]
     },
     {
-      "q": "¿A quién llamas primero con una buena noticia?",
+      "q": "¿A quién le cuentas primero un secreto?",
       "opciones": [
         "A mamá",
         "A mi pareja",
         "A un amigo",
-        "A papá"
+        "A un hermano"
       ]
     },
     {

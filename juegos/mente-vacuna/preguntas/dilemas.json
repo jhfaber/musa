@@ -25,12 +25,12 @@
       ]
     },
     {
-      "q": "¿Qué preferirías perder?",
+      "q": "¿Qué sentido preferirías perder?",
       "opciones": [
-        "La memoria",
-        "La vista",
+        "La voz",
         "El oído",
-        "La voz"
+        "El gusto",
+        "El tacto"
       ]
     },
     {
@@ -72,10 +72,10 @@
     {
       "q": "¿Qué vida elegirías?",
       "opciones": [
-        "Fama sin privacidad",
-        "Plata con estrés",
-        "Humildad con paz",
-        "Anonimato y libertad"
+        "Famoso y sin privacidad",
+        "Millonario y solo",
+        "Pobre pero con tu familia unida",
+        "Exitoso pero sin tiempo libre"
       ]
     },
     {
@@ -142,12 +142,12 @@
       ]
     },
     {
-      "q": "¿Qué cambiarías de tu pasado?",
+      "q": "¿Qué parte de tu pasado borrarías?",
       "opciones": [
-        "Una decisión",
-        "Un amor",
-        "Un trabajo",
-        "Nada"
+        "Un amor que salió mal",
+        "Una pelea con un amigo",
+        "Una mala decisión de plata",
+        "Una vergüenza pública"
       ]
     },
     {
@@ -172,9 +172,9 @@
       "q": "¿Qué regalo preferirías?",
       "opciones": [
         "Un viaje",
-        "Dinero",
-        "Un aparato",
-        "Una experiencia"
+        "Un aparato que quieres",
+        "Una cena especial",
+        "Tiempo libre"
       ]
     },
     {

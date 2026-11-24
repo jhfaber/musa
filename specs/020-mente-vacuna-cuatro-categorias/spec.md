@@ -9,6 +9,14 @@
 Cuatro categorías nuevas con temas que dan conversación. **Todas son de 4 opciones** (nada abierto): John dijo que las
 abiertas nuevas le habían parecido muy abiertas (spec 019), así que aquí cada pregunta trae sus opciones.
 
+## Criterio: ninguna opción obvia
+
+John pidió (24-nov-2026): "estas preguntas deberían ser lo bastante controversiales para que la gente elija cosas
+diferentes, si colocas nada todos se van a ir por allí". Cada pregunta de 4 opciones debe repartir al grupo: nada de
+"Nada", "Mitad y mitad" ni "Depende", y cada opción trae una ganancia y un costo. Se reescribieron 10 preguntas que no
+cumplían (ej.: "¿Qué parte de tu pasado borrarías?" ahora ofrece cuatro cosas concretas, no "Nada"; "¿Qué vida elegirías?"
+ahora es "Famoso y sin privacidad", "Millonario y solo", etc.). Service worker v101.
+
 ## Qué cambia para el jugador
 
 | Categoría | Preguntas | Ejemplos |
