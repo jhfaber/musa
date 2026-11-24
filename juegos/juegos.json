@@ -195,7 +195,9 @@
         "preguntas/picantes.json",
         "preguntas/posiciones.json",
         "preguntas/fantasias.json",
-        "preguntas/filosoficas.json"
+        "preguntas/filosoficas.json",
+        "preguntas/en-pareja.json",
+        "preguntas/misterios.json"
       ]
     },
     {

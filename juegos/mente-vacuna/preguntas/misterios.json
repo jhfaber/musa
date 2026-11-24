@@ -1,0 +1,183 @@
+{
+  "id": "misterios",
+  "nombre": "Misterios",
+  "emoji": "🛸",
+  "acento": "#8fe3c0",
+  "descripcion": "Conspiraciones, extraterrestres y enigmas",
+  "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
+  "preguntas": [
+    "Algo que crees que nos ocultan.",
+    "Una teoría de conspiración que da risa.",
+    "Una teoría de conspiración que podría ser cierta.",
+    "Un misterio sin resolver que te fascina.",
+    "Algo que la humanidad todavía no explica.",
+    "Una prueba de que hay vida extraterrestre.",
+    "El lugar más misterioso del mundo.",
+    "Una leyenda urbana que te asustó.",
+    "Un animal mítico que te gustaría ver.",
+    "Una película sobre conspiraciones.",
+    "Lo que habría en el Área 51.",
+    "Una cosa que cambiaría si se supiera la verdad.",
+    "Lo primero que harías si llegaran los extraterrestres.",
+    "Una teoría sobre las pirámides.",
+    "Un misterio histórico sin resolver.",
+    "Un fantasma o aparición que conoces.",
+    "Una explicación para las luces en el cielo.",
+    "Un secreto que le gustaría conocer al mundo entero.",
+    "Algo que parece mentira pero es verdad.",
+    "Un invento que dicen que existe pero está oculto.",
+    {
+      "q": "¿El ser humano fue a la luna en 1969?",
+      "opciones": [
+        "Sí, fue real",
+        "No, fue un montaje",
+        "Sí, pero ocultan cosas",
+        "No estoy seguro"
+      ]
+    },
+    {
+      "q": "¿Cuándo pisó el humano la luna?",
+      "opciones": [
+        "En 1969, como cuentan",
+        "Más tarde y en secreto",
+        "Nunca ha pisado",
+        "Hay una base secreta"
+      ]
+    },
+    {
+      "q": "¿Existe una élite que controla el mundo?",
+      "opciones": [
+        "Sí",
+        "No",
+        "En parte",
+        "Son varias"
+      ]
+    },
+    {
+      "q": "¿Quién manda de verdad en el mundo?",
+      "opciones": [
+        "Los gobiernos",
+        "Las empresas",
+        "Una élite secreta",
+        "Nadie"
+      ]
+    },
+    {
+      "q": "¿Hay vida extraterrestre?",
+      "opciones": [
+        "Sí, y lo ocultan",
+        "Sí, pero lejos",
+        "No, estamos solos",
+        "No lo sabremos"
+      ]
+    },
+    {
+      "q": "¿Qué hay en el Área 51?",
+      "opciones": [
+        "Naves alienígenas",
+        "Armas secretas",
+        "Aviones militares",
+        "Nada especial"
+      ]
+    },
+    {
+      "q": "¿Existe el monstruo del lago Ness?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Fue un montaje",
+        "Es otro animal"
+      ]
+    },
+    {
+      "q": "¿Existe el Yeti o Pie Grande?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Es un oso",
+        "Es un cuento"
+      ]
+    },
+    {
+      "q": "¿Quién construyó las pirámides?",
+      "opciones": [
+        "Obreros egipcios",
+        "Una civilización perdida",
+        "Extraterrestres",
+        "Los faraones con ayuda"
+      ]
+    },
+    {
+      "q": "¿Qué es el Triángulo de las Bermudas?",
+      "opciones": [
+        "Un mito",
+        "Fenómenos naturales",
+        "Algo paranormal",
+        "Un secreto militar"
+      ]
+    },
+    {
+      "q": "¿Qué pasó con la Atlántida?",
+      "opciones": [
+        "Nunca existió",
+        "Se hundió en el mar",
+        "Está escondida",
+        "Fue otra ciudad"
+      ]
+    },
+    {
+      "q": "¿Estamos en una simulación?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Podría ser",
+        "¿Qué importa?"
+      ]
+    },
+    {
+      "q": "¿Hay viajeros del tiempo entre nosotros?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Podría ser",
+        "Ya vinieron"
+      ]
+    },
+    {
+      "q": "¿Qué es lo que más ocultan los gobiernos?",
+      "opciones": [
+        "Extraterrestres",
+        "Tecnología",
+        "Dinero",
+        "La verdad de la historia"
+      ]
+    },
+    {
+      "q": "¿Qué fenómeno inexplicable has visto?",
+      "opciones": [
+        "Luces en el cielo",
+        "Un fantasma",
+        "Un presentimiento",
+        "Nada"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo más impactante de descubrir?",
+      "opciones": [
+        "Vida alienígena",
+        "Otra dimensión",
+        "Que vivimos en simulación",
+        "Que hay fantasmas"
+      ]
+    },
+    {
+      "q": "¿Qué crees de los fantasmas?",
+      "opciones": [
+        "Existen",
+        "No existen",
+        "Es pura energía",
+        "Nunca he visto uno"
+      ]
+    }
+  ]
+}

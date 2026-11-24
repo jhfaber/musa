@@ -72,7 +72,8 @@ Lo que se decide sin ser una funcionalidad (qué herramienta, qué formato, qué
 | [014](014-mente-vacuna-posiciones-fantasias/spec.md) | Mente Vacuna: Posiciones y Fantasías | En curso |
 | [015](015-mente-vacuna-filosoficas/spec.md) | Mente Vacuna: preguntas filosóficas y más miedos | En curso |
 | [016](016-mente-vacuna-sin-filtro-18/spec.md) | Mente Vacuna: sin activación +18 | En curso |
+| [017](017-mente-vacuna-cuerpo-pareja-misterios/spec.md) | Mente Vacuna: cuerpo, En pareja, Misterios y más Filosóficas | En curso |
 
-Próxima spec: **017**.
+Próxima spec: **018**.
 
 Historia: la spec 005 nació como la 006 del proyecto Casa Inteligente y se movió aquí el 26-oct-2026.

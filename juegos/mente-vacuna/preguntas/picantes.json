@@ -264,6 +264,142 @@
         "Avisar sí, permiso no",
         "Depende del plan"
       ]
+    },
+    "La parte del cuerpo de una mujer que más le gusta a un hombre.",
+    "La parte del cuerpo de un hombre que más le gusta a una mujer.",
+    "Lo primero que un hombre mira de una mujer.",
+    "Lo primero que una mujer mira de un hombre.",
+    "La parte del cuerpo de una mujer que más enloquece a los hombres.",
+    "La parte del cuerpo de un hombre que más enloquece a las mujeres.",
+    "Una parte del cuerpo de una mujer que se ve bien con cualquier ropa.",
+    "Una parte del cuerpo de un hombre que luce con una camiseta ajustada.",
+    "La parte del cuerpo que más se nota en un traje de baño.",
+    "Una parte del cuerpo que te gusta de ti.",
+    "La parte del cuerpo que más le gusta a la gente de sí misma.",
+    "Una parte del cuerpo que todos admiran en un atleta.",
+    "Una parte del cuerpo que se mira con disimulo.",
+    "La parte del cuerpo más sensible.",
+    "La parte del cuerpo más sensual de un hombre.",
+    "La parte del cuerpo más sensual de una mujer.",
+    "Una parte del cuerpo donde un beso se siente mejor.",
+    "Una parte del cuerpo donde un masaje es perfecto.",
+    "El detalle físico que más enamora.",
+    {
+      "q": "¿Qué parte del cuerpo de una mujer le gusta más a un hombre?",
+      "opciones": [
+        "Senos",
+        "Cola",
+        "Piernas",
+        "Boca"
+      ]
+    },
+    {
+      "q": "¿Qué parte del cuerpo de un hombre le gusta más a una mujer?",
+      "opciones": [
+        "Espalda",
+        "Brazos",
+        "Abdomen",
+        "Manos"
+      ]
+    },
+    {
+      "q": "¿Qué es lo primero que un hombre mira de una mujer?",
+      "opciones": [
+        "Cara",
+        "Senos",
+        "Cola",
+        "Sonrisa"
+      ]
+    },
+    {
+      "q": "¿Qué es lo primero que una mujer mira de un hombre?",
+      "opciones": [
+        "Sonrisa",
+        "Ojos",
+        "Manos",
+        "Estatura"
+      ]
+    },
+    {
+      "q": "¿Qué parte de una mujer enloquece más a los hombres?",
+      "opciones": [
+        "Cola",
+        "Cintura",
+        "Labios",
+        "Mirada"
+      ]
+    },
+    {
+      "q": "¿Qué parte de un hombre enloquece más a las mujeres?",
+      "opciones": [
+        "Espalda",
+        "Hombros",
+        "Barba",
+        "Voz"
+      ]
+    },
+    {
+      "q": "¿Qué parte del cuerpo se besa mejor?",
+      "opciones": [
+        "Boca",
+        "Cuello",
+        "Orejas",
+        "Abdomen"
+      ]
+    },
+    {
+      "q": "¿Cuál es la parte más sensual de un hombre?",
+      "opciones": [
+        "Espalda",
+        "Manos",
+        "Brazos",
+        "Mirada"
+      ]
+    },
+    {
+      "q": "¿Cuál es la parte más sensual de una mujer?",
+      "opciones": [
+        "Cuello",
+        "Piernas",
+        "Cintura",
+        "Labios"
+      ]
+    },
+    {
+      "q": "¿Qué parte de tu cuerpo te gusta más?",
+      "opciones": [
+        "Sonrisa",
+        "Ojos",
+        "Piernas",
+        "Manos"
+      ]
+    },
+    {
+      "q": "¿Qué parte del cuerpo se mira con más disimulo?",
+      "opciones": [
+        "Cola",
+        "Senos",
+        "Piernas",
+        "Abdomen"
+      ]
+    },
+    {
+      "q": "¿Qué parte del cuerpo es la más sensible?",
+      "opciones": [
+        "Cuello",
+        "Orejas",
+        "Espalda",
+        "Pies"
+      ]
+    },
+    {
+      "q": "¿Dónde se siente mejor un masaje?",
+      "opciones": [
+        "Espalda",
+        "Pies",
+        "Cabeza",
+        "Cuello"
+      ]
     }
   ]
 }

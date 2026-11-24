@@ -165,6 +165,143 @@
         "Que fue valiente",
         "Que fue de buen corazón"
       ]
+    },
+    "Algo que nunca se debería dar por sentado.",
+    "La mayor lección que te dio la vida.",
+    "Lo que daría miedo saber del futuro.",
+    "Una cosa que todos buscamos.",
+    "Lo que más tiempo desperdicia la gente.",
+    "Algo que se entiende solo con los años.",
+    "Lo que hace valiente a una persona.",
+    "Lo que más pesa en la conciencia.",
+    "Una decisión que cambió tu vida.",
+    "Lo que dejarías si pudieras empezar de cero.",
+    "La diferencia entre estar vivo y vivir.",
+    "Algo que la gente confunde con la felicidad.",
+    "Una cosa que haría mejor al mundo.",
+    "Lo que significa una vida bien vivida.",
+    "Un lugar donde te sientes en paz.",
+    "Algo que nadie te puede quitar.",
+    "Lo que más extrañarías de estar vivo.",
+    "Una pregunta que nadie sabe responder.",
+    "Algo que le preguntarías al universo.",
+    "Lo que vale más que el dinero.",
+    {
+      "q": "¿Qué prefieres: una verdad dolorosa o una mentira feliz?",
+      "opciones": [
+        "Verdad dolorosa",
+        "Mentira feliz",
+        "Depende",
+        "Ninguna"
+      ]
+    },
+    {
+      "q": "¿Qué te daría más miedo saber?",
+      "opciones": [
+        "Cuándo vas a morir",
+        "Cómo vas a morir",
+        "Lo que dicen de ti",
+        "Tu futuro"
+      ]
+    },
+    {
+      "q": "¿Qué cambiaría más rápido tu vida?",
+      "opciones": [
+        "Ganar la lotería",
+        "Un gran amor",
+        "Perder a alguien",
+        "Un viaje largo"
+      ]
+    },
+    {
+      "q": "¿Cómo te gustaría vivir?",
+      "opciones": [
+        "Mucho tiempo",
+        "Intensamente",
+        "Con tranquilidad",
+        "Con propósito"
+      ]
+    },
+    {
+      "q": "¿Qué se debe perdonar siempre?",
+      "opciones": [
+        "Un error",
+        "Una traición",
+        "Un olvido",
+        "Nada"
+      ]
+    },
+    {
+      "q": "¿Cuál es la mayor mentira que nos contamos?",
+      "opciones": [
+        "Mañana lo hago",
+        "Estoy bien",
+        "No me importa",
+        "Yo no cambio"
+      ]
+    },
+    {
+      "q": "¿Qué es lo más valioso que tenemos?",
+      "opciones": [
+        "El tiempo",
+        "La salud",
+        "La familia",
+        "La libertad"
+      ]
+    },
+    {
+      "q": "¿Qué le da más sentido a la vida?",
+      "opciones": [
+        "Los hijos",
+        "El trabajo",
+        "El amor",
+        "La fe"
+      ]
+    },
+    {
+      "q": "¿Qué nos hace humanos?",
+      "opciones": [
+        "Pensar",
+        "Amar",
+        "Reír",
+        "Crear"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo peor que te quiten?",
+      "opciones": [
+        "La libertad",
+        "La memoria",
+        "La salud",
+        "Tus seres queridos"
+      ]
+    },
+    {
+      "q": "¿Hay vida después de la muerte?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Quizás",
+        "Es cuestión de fe"
+      ]
+    },
+    {
+      "q": "¿Cuándo se es de verdad adulto?",
+      "opciones": [
+        "Al pagar cuentas",
+        "Al perder a alguien",
+        "Al tener hijos",
+        "Nunca"
+      ]
+    },
+    {
+      "q": "¿Qué es la libertad?",
+      "opciones": [
+        "Hacer lo que quiero",
+        "No depender de nadie",
+        "Elegir mi camino",
+        "Estar en paz"
+      ]
     }
   ]
 }
