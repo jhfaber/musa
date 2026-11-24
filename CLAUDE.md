@@ -62,7 +62,7 @@ Todo código nuevo las sigue; el detalle y la lista de comprobación están en `
 - Lo visual importa: la interfaz de cada juego debe verse cuidada y práctica, como una app de verdad.
 
 ## Probar
-`node herramientas/servidor.js` → `http://<IP del PC>:8095/#dixit` (solo en la red de la casa).
+`npm run iniciar` (o `node herramientas/servidor.js`) → `http://<IP del PC>:8095/#dixit` (solo en la red de la casa). `npm run iniciar` se reinicia solo al cambiar archivos de la app.
 
 ## Publicar (para instalar en el celular)
 - `node herramientas/publicar.js` sube la app a **https://jhfaber.github.io/musa/** (repo público `jhfaber/musa`, rama `gh-pages`).

@@ -6,8 +6,8 @@
     {
       "label": "Iniciar Musa",
       "type": "shell",
-      "command": "node",
-      "args": ["herramientas/servidor.js"],
+      "command": "npm",
+      "args": ["run", "iniciar"],
       "options": { "cwd": "${workspaceFolder}" },
       "isBackground": true,
       "problemMatcher": {
