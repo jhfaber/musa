@@ -189,10 +189,9 @@
     {
       "q": "¿Qué es peor que se acabe?",
       "opciones": [
-        "La batería",
-        "El internet",
         "La plata",
-        "La comida"
+        "La comida",
+        "El agua"
       ]
     },
     {

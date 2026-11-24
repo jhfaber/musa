@@ -70,12 +70,12 @@ const REGLAS = {
       return [];
     }));
   },
-  'las preguntas de opciones traen exactamente 4 opciones cortas y distintas'(b) {
+  'las preguntas de opciones traen 3 o 4 opciones cortas y distintas'(b) {
     return b.categorias.flatMap((c) => c.preguntas.filter((p) => p && typeof p === 'object' && 'opciones' in p).flatMap((p) => {
       const o = p.opciones;
-      if (!Array.isArray(o) || o.length !== 4) return [`${c.id}: "${p.q}" → debe tener 4 opciones`];
+      if (!Array.isArray(o) || o.length < 3 || o.length > 4) return [`${c.id}: "${p.q}" → debe tener 3 o 4 opciones`];
       if (o.some((x) => typeof x !== 'string' || !x.trim() || x.length > 40)) return [`${c.id}: "${p.q}" → opción vacía o larga`];
-      if (new Set(o.map(normalizar)).size !== 4) return [`${c.id}: "${p.q}" → opciones repetidas`];
+      if (new Set(o.map(normalizar)).size !== o.length) return [`${c.id}: "${p.q}" → opciones repetidas`];
       return [];
     }));
   },

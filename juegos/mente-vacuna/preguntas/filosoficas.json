@@ -126,17 +126,7 @@
       "opciones": [
         "Sí",
         "No",
-        "Un poco",
         "Cada uno lo construye"
-      ]
-    },
-    {
-      "q": "¿Hay vida en otros planetas?",
-      "opciones": [
-        "Sí",
-        "No",
-        "Seguro",
-        "No lo sabremos"
       ]
     },
     {
@@ -187,15 +177,6 @@
     "Algo que le preguntarías al universo.",
     "Lo que vale más que el dinero.",
     {
-      "q": "¿Qué prefieres: una verdad dolorosa o una mentira feliz?",
-      "opciones": [
-        "Verdad dolorosa",
-        "Mentira feliz",
-        "Depende",
-        "Ninguna"
-      ]
-    },
-    {
       "q": "¿Qué te daría más miedo saber?",
       "opciones": [
         "Cuándo vas a morir",
@@ -227,8 +208,7 @@
       "opciones": [
         "Un error",
         "Una traición",
-        "Un olvido",
-        "Nada"
+        "Una mentira"
       ]
     },
     {
@@ -277,21 +257,12 @@
       ]
     },
     {
-      "q": "¿Hay vida después de la muerte?",
-      "opciones": [
-        "Sí",
-        "No",
-        "Quizás",
-        "Es cuestión de fe"
-      ]
-    },
-    {
       "q": "¿Cuándo se es de verdad adulto?",
       "opciones": [
         "Al pagar cuentas",
         "Al perder a alguien",
         "Al tener hijos",
-        "Nunca"
+        "Al independizarte"
       ]
     },
     {

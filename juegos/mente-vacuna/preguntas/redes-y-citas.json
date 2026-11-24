@@ -191,8 +191,7 @@
       "opciones": [
         "Un mensaje esa noche",
         "Otra cita",
-        "Silencio",
-        "Un meme"
+        "Silencio"
       ]
     },
     {
@@ -200,7 +199,7 @@
       "opciones": [
         "Respuestas de una palabra",
         "Desaparecer por días",
-        "Mandar solo memes",
+        "Pedirte fotos de entrada",
         "Hablar de su ex"
       ]
     }

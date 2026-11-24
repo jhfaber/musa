@@ -11,7 +11,6 @@
       "opciones": [
         "El celular",
         "El carro",
-        "La televisión",
         "Las vacaciones"
       ]
     },
@@ -38,8 +37,8 @@
       "opciones": [
         "Internet",
         "Música",
-        "Dulces",
-        "Café"
+        "Series y películas",
+        "Salir de fiesta"
       ]
     },
     {
@@ -47,8 +46,7 @@
       "opciones": [
         "Mucho frío",
         "Mucho calor",
-        "Mucha lluvia",
-        "Mucho viento"
+        "Mucha lluvia"
       ]
     },
     {
@@ -93,7 +91,7 @@
         "El desorden",
         "El ruido",
         "Las visitas",
-        "Que no pague"
+        "Que se coma tu comida"
       ]
     },
     {
@@ -155,7 +153,7 @@
       "opciones": [
         "Lluvia todo el tiempo",
         "Perder la maleta",
-        "Enfermarte",
+        "Un compañero insoportable",
         "Un hotel horrible"
       ]
     },
@@ -173,7 +171,7 @@
       "opciones": [
         "Un viaje",
         "Un aparato que quieres",
-        "Una cena especial",
+        "Un fin de semana de spa",
         "Tiempo libre"
       ]
     },
@@ -182,7 +180,6 @@
       "opciones": [
         "Redes sociales",
         "Alcohol",
-        "Dulces",
         "Series"
       ]
     },
@@ -208,9 +205,9 @@
       "q": "¿Qué perdonarías más fácil?",
       "opciones": [
         "Una mentira",
-        "Un olvido",
-        "Una grosería",
-        "Un plan cancelado"
+        "Una grosería en público",
+        "Olvidar tu cumpleaños",
+        "Dejarte plantado"
       ]
     },
     {

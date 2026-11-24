@@ -16,7 +16,7 @@ export function idDe(categoriaId, texto) {
 }
 
 // Una pregunta en el banco es un texto, { q, no } cuando tiene respuestas prohibidas por obvias,
-// o { q, opciones } cuando trae 4 posibles respuestas.
+// o { q, opciones } cuando trae 3 o 4 posibles respuestas.
 export const textoDe = p => (typeof p === 'string' ? p : p.q);
 
 // Orden de las opciones: barajado pero siempre el mismo para cada pregunta (sale del id), para que la más

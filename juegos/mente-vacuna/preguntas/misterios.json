@@ -130,8 +130,7 @@
       "opciones": [
         "Sí",
         "No",
-        "Podría ser",
-        "¿Qué importa?"
+        "No importa"
       ]
     },
     {
@@ -139,7 +138,6 @@
       "opciones": [
         "Sí",
         "No",
-        "Podría ser",
         "Ya vinieron"
       ]
     },
@@ -157,8 +155,8 @@
       "opciones": [
         "Luces en el cielo",
         "Un fantasma",
-        "Un presentimiento",
-        "Nada"
+        "Un presentimiento que se cumplió",
+        "Una sombra extraña"
       ]
     },
     {
@@ -175,8 +173,7 @@
       "opciones": [
         "Existen",
         "No existen",
-        "Es pura energía",
-        "Nunca he visto uno"
+        "Es pura energía"
       ]
     }
   ]

@@ -28,9 +28,9 @@
       "q": "¿Qué comprarías con la prima?",
       "opciones": [
         "Un viaje",
-        "Ropa",
         "Un aparato",
-        "Pagar deudas"
+        "Pagar deudas",
+        "Un regalo para la familia"
       ]
     },
     {
@@ -136,7 +136,7 @@
       "q": "¿Dónde guardarías una gran suma?",
       "opciones": [
         "En el banco",
-        "En el colchón",
+        "En dólares",
         "Invertida",
         "En un negocio"
       ]
