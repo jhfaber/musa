@@ -5,7 +5,6 @@
   "acento": "#7fb3ff",
   "descripcion": "Lo que todo el mundo sabe… o cree saber",
   "pista": "Una respuesta corta: un nombre, un lugar o una cosa.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Un país de Europa.",

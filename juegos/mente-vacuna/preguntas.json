@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Banco de preguntas de Mente Vacuna (spec 009). Una categoría agrupa preguntas del mismo tipo. Una pregunta es un texto o {q, no}: 'no' son respuestas prohibidas por obvias; 'pista' dice cómo responder; 'acento' es su color; 'adultos' es una categoría que arranca apagada.",
+  "_ayuda": "Banco de preguntas de Mente Vacuna (spec 009). Una categoría agrupa preguntas del mismo tipo. Una pregunta es un texto o {q, no}: 'no' son respuestas prohibidas por obvias; 'pista' dice cómo responder; 'acento' es su color.",
   "categorias": [
     {
       "id": "sobre-ti",
@@ -8,7 +8,6 @@
       "acento": "#f2c46b",
       "descripcion": "Gustos, manías y cosas tuyas: para conocerse",
       "pista": "Responde sobre ti, con una palabra o una frase corta.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Tu animal favorito.",
@@ -81,7 +80,6 @@
       "acento": "#ee8f7e",
       "descripcion": "¿Quién del grupo…? La respuesta es una persona de la mesa",
       "pista": "Escribe el nombre de una persona del grupo.",
-      "adultos": false,
       "preguntas": [
         "¿Quién del grupo es el más puntual?",
         "¿Quién es el más dormilón?",
@@ -126,7 +124,6 @@
       "acento": "#7fb3ff",
       "descripcion": "Lo que todo el mundo sabe… o cree saber",
       "pista": "Una respuesta corta: un nombre, un lugar o una cosa.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Un país de Europa.",
@@ -255,7 +252,6 @@
       "acento": "#6fd38b",
       "descripcion": "Fútbol y de todo un poco: opiniones de tribuna",
       "pista": "Una persona, un equipo o un deporte.",
-      "adultos": false,
       "preguntas": [
         "¿Quién es el mayor goleador de la historia?",
         "El mejor jugador de fútbol de todos los tiempos.",
@@ -321,7 +317,6 @@
       "acento": "#c79bff",
       "descripcion": "Rarezas, números y ocurrencias para sorprenderse",
       "pista": "Lo primero que se te ocurra.",
-      "adultos": false,
       "preguntas": [
         "Un animal que te daría miedo tener de mascota.",
         {
@@ -368,7 +363,6 @@
       "acento": "#5fd6d0",
       "descripcion": "Piensa lo que respondería la mayoría",
       "pista": "No digas lo que tú harías: escribe lo que haría la mayoría.",
-      "adultos": false,
       "preguntas": [
         "Lo primero que haría la mayoría si se encuentra una billetera llena de plata.",
         {
@@ -450,7 +444,6 @@
       "acento": "#ffa45c",
       "descripcion": "Sabores, antojos y platos",
       "pista": "Una comida o una bebida.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Un sabor de helado.",
@@ -524,7 +517,6 @@
       "acento": "#ff8fb4",
       "descripcion": "Películas, series, artistas y canciones",
       "pista": "Un título, un artista o un género.",
-      "adultos": false,
       "preguntas": [
         "Una película que todo el mundo ha visto.",
         "Una película de terror famosa.",
@@ -576,7 +568,6 @@
       "acento": "#a2acff",
       "descripcion": "Lo que asusta, lo que molesta y lo que repetimos",
       "pista": "Responde con lo que más se diría.",
-      "adultos": false,
       "preguntas": [
         "A qué se le tiene más miedo.",
         {
@@ -637,7 +628,6 @@
       "acento": "#6cc6ff",
       "descripcion": "Destinos, maletas y planes de escapada",
       "pista": "Un lugar, un destino o una cosa de viaje.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Una ciudad para visitar antes de morir.",
@@ -718,7 +708,6 @@
       "acento": "#ffc8a8",
       "descripcion": "Recuerdos de cuando éramos niños",
       "pista": "Lo primero que te recuerde a la infancia.",
-      "adultos": false,
       "preguntas": [
         "Un juego de recreo.",
         "Un dibujo animado de tu infancia.",
@@ -764,7 +753,6 @@
       "acento": "#ffe066",
       "descripcion": "Lo nuestro: comida, lugares, música y frases",
       "pista": "Algo de Colombia: un lugar, una comida, una persona o una frase.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Un plato típico colombiano.",
@@ -840,7 +828,6 @@
       "acento": "#9ee37d",
       "descripcion": "Bichos, plantas y paisajes",
       "pista": "Un animal, una planta o algo de la naturaleza.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Un animal de la selva.",
@@ -936,7 +923,6 @@
       "acento": "#dfe6f2",
       "descripcion": "Celulares, apps, redes y videojuegos",
       "pista": "Una app, una marca, un aparato o algo de internet.",
-      "adultos": false,
       "preguntas": [
         {
           "q": "Una red social.",
@@ -1013,7 +999,6 @@
       "acento": "#dcc6a0",
       "descripcion": "Oficina, colegio, universidad y jefes",
       "pista": "Una profesión, una situación o una cosa del trabajo o el estudio.",
-      "adultos": false,
       "preguntas": [
         "Una profesión que todos admiran.",
         "Una carrera universitaria.",
@@ -1054,7 +1039,6 @@
       "acento": "#ff9ed2",
       "descripcion": "Navidad, cumpleaños, bodas y rumba",
       "pista": "Algo de una fiesta o una celebración.",
-      "adultos": false,
       "preguntas": [
         "Una canción que no puede faltar en Navidad.",
         "Un disfraz de Halloween.",
@@ -1100,7 +1084,6 @@
       "acento": "#ff7b6b",
       "descripcion": "Preguntas para adultos, con humor y sin pasarse",
       "pista": "Responde con lo que más se diría. Solo mayores de 18.",
-      "adultos": true,
       "preguntas": [
         "Una mentira piadosa que todo el mundo dice.",
         "Una excusa para no salir con alguien.",

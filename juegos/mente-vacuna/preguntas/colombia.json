@@ -5,7 +5,6 @@
   "acento": "#ffe066",
   "descripcion": "Lo nuestro: comida, lugares, música y frases",
   "pista": "Algo de Colombia: un lugar, una comida, una persona o una frase.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Un plato típico colombiano.",

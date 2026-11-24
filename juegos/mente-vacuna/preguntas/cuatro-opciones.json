@@ -5,7 +5,6 @@
   "acento": "#ffd27a",
   "descripcion": "Una pregunta y 4 posibles respuestas",
   "pista": "Elige una de las 4 opciones.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Diga algo que se lleva a la playa.",

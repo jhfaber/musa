@@ -5,7 +5,6 @@
   "acento": "#ff8fb4",
   "descripcion": "Películas, series, artistas y canciones",
   "pista": "Un título, un artista o un género.",
-  "adultos": false,
   "preguntas": [
     "Una película que todo el mundo ha visto.",
     "Una película de terror famosa.",

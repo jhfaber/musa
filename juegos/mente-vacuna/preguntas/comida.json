@@ -5,7 +5,6 @@
   "acento": "#ffa45c",
   "descripcion": "Sabores, antojos y platos",
   "pista": "Una comida o una bebida.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Un sabor de helado.",

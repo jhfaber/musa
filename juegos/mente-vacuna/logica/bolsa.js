@@ -47,7 +47,7 @@ export function aplanar(banco) {
 }
 
 export function estadoInicial(banco) {
-  return { activas: banco.categorias.filter(c => !c.adultos).map(c => c.id), vistas: [], descartadas: [], historial: [] };
+  return { activas: banco.categorias.map(c => c.id), vistas: [], descartadas: [], historial: [] };
 }
 
 // Ajusta un estado guardado al banco actual: quita ids que ya no existen. Cero categorías activas es válido
@@ -144,16 +144,15 @@ export function alternar(estado, categoriaId) {
   return { ...estado, activas };
 }
 
-const publicas = banco => banco.categorias.filter(c => !c.adultos).map(c => c.id);
+const todas = banco => banco.categorias.map(c => c.id);
 
-// ¿Están prendidas todas las categorías para todo público?
-export const todasActivas = (estado, banco) => publicas(banco).every(id => estado.activas.includes(id));
+// ¿Están prendidas todas las categorías?
+export const todasActivas = (estado, banco) => todas(banco).every(id => estado.activas.includes(id));
 
-// Botón "Todas / Quitar todas": si ya están todas, las quita todas (también las +18);
-// si no, prende todas las de todo público (las +18 se activan aparte, a propósito).
+// Botón "Todas / Quitar todas": si ya están todas, las quita todas; si no, prende todas.
 export function alternarTodas(estado, banco) {
   if (todasActivas(estado, banco)) return { ...estado, activas: [] };
-  return { ...estado, activas: [...new Set([...publicas(banco), ...estado.activas])] };
+  return { ...estado, activas: todas(banco) };
 }
 
 // Volver a barajar: todo vuelve a la bolsa menos lo descartado.

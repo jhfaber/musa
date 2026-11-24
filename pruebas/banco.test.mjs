@@ -79,12 +79,6 @@ const REGLAS = {
       return [];
     }));
   },
-  'las categorías para adultos están marcadas y son booleanas'(b) {
-    return b.categorias.filter((c) => typeof c.adultos !== 'boolean').map((c) => `${c.id}: "adultos" debe ser true/false`);
-  },
-  'al menos una categoría es apta para todo público'(b) {
-    return b.categorias.some((c) => !c.adultos) ? [] : ['todas las categorías son +18'];
-  },
 };
 
 const bancos = todosLosBancos();

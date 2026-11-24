@@ -27,7 +27,6 @@ export function montarPreguntas(raiz, banco) {
     <div class="mv-cuenta"><span class="mv-cuenta-cat"></span><span class="mv-cuenta-num"></span></div>
     <div class="mv-mesa">
       <article class="mv-carta" aria-live="polite" aria-atomic="true"></article>
-      <div class="mv-hoja" hidden></div>
     </div>
     <p class="mv-aviso" role="status" hidden></p>
     <div class="mv-extra">
@@ -41,7 +40,6 @@ export function montarPreguntas(raiz, banco) {
 
   const $ = sel => raiz.querySelector(sel);
   const carta = $('.mv-carta');
-  const hoja = $('.mv-hoja');
 
   // ---------- Acciones: cada una pasa por el núcleo y termina en cambiar() ----------
 
@@ -73,8 +71,6 @@ export function montarPreguntas(raiz, banco) {
     recuperar: () => { estado = B.recuperarDescartadas(estado); nueva(); },
     todas: () => cambiarCategorias(B.alternarTodas(estado, banco)),
     filtro: () => abrirFiltro($('.mv-cats').hidden),
-    'adultos-si': () => { hoja.hidden = true; cambiarCategorias(B.alternar(estado, hoja.dataset.categoria)); },
-    'adultos-no': () => { hoja.hidden = true; },
   };
 
   // Al cambiar categorías: si la pregunta de la tarjeta ya no es de las activas, sale una de las que quedan
@@ -85,26 +81,7 @@ export function montarPreguntas(raiz, banco) {
     else cambiar(estado);
   }
 
-  function tocarCategoria(id) {
-    const c = categoria(id);
-    if (c.adultos && !estado.activas.includes(id)) return pedirConfirmacion(c);
-    cambiarCategorias(B.alternar(estado, id));
-  }
-
-  function pedirConfirmacion(c) {
-    hoja.dataset.categoria = c.id;
-    hoja.style.setProperty('--acento', c.acento);
-    hoja.innerHTML = `
-      <div class="mv-hoja-caja" role="dialog" aria-modal="true" aria-labelledby="mv-hoja-titulo">
-        <div class="mv-emoji" aria-hidden="true">${esc(c.emoji)}</div>
-        <h3 id="mv-hoja-titulo">${esc(c.nombre)} es para mayores de 18</h3>
-        <p>${esc(c.descripcion)}. ¿Todos en la mesa son mayores de edad?</p>
-        <button class="boton boton--principal" data-accion="adultos-si">Sí, activar</button>
-        <button class="boton boton--texto" data-accion="adultos-no">Mejor no</button>
-      </div>`;
-    hoja.hidden = false;
-    hoja.querySelector('[data-accion="adultos-no"]').focus();
-  }
+  const tocarCategoria = id => cambiarCategorias(B.alternar(estado, id));
 
   // Panel de categorías: cerrado muestra un resumen; abierto, todas las categorías en varias filas
   function abrirFiltro(abrir) {
@@ -127,15 +104,15 @@ export function montarPreguntas(raiz, banco) {
     $('.mv-cats').innerHTML = `
       <button class="mv-cat mv-cat--todas" data-accion="todas">${todas ? '✕ Quitar todas' : '✨ Todas'}</button>
       ${banco.categorias.map(c => `
-        <button class="mv-cat${c.adultos ? ' mv-cat--adultos' : ''}" data-categoria="${esc(c.id)}"
+        <button class="mv-cat" data-categoria="${esc(c.id)}"
           aria-pressed="${estado.activas.includes(c.id)}" style="--c:${esc(c.acento)}"
-          aria-label="${esc(c.nombre)}, ${c.preguntas.length} preguntas${c.adultos ? ', solo mayores de 18' : ''}">
+          aria-label="${esc(c.nombre)}, ${c.preguntas.length} preguntas">
           <span aria-hidden="true">${esc(c.emoji)}</span>${esc(c.nombre)}
-          <small class="mv-cat-n" aria-hidden="true">${c.adultos ? '+18 · ' : ''}${c.preguntas.length}</small>
+          <small class="mv-cat-n" aria-hidden="true">${c.preguntas.length}</small>
         </button>`).join('')}`;
     const activas = banco.categorias.filter(c => estado.activas.includes(c.id));
     $('.mv-filtro-resumen').innerHTML = !activas.length ? 'Ninguna'
-      : todas && activas.length === banco.categorias.filter(c => !c.adultos).length ? 'Todas'
+      : todas ? 'Todas'
       : `<span aria-hidden="true">${activas.slice(0, 6).map(c => esc(c.emoji)).join('')}${activas.length > 6 ? '…' : ''}</span> ${activas.length} de ${banco.categorias.length}`;
   }
 
@@ -208,9 +185,6 @@ export function montarPreguntas(raiz, banco) {
     ACCIONES[boton.dataset.accion]?.();
   });
 
-  raiz.addEventListener('keydown', evento => {
-    if (evento.key === 'Escape' && !hoja.hidden) ACCIONES['adultos-no']();
-  });
 
   // Deslizar la tarjeta: a la izquierda, nueva pregunta; a la derecha, la anterior
   let inicioX = null;

@@ -29,7 +29,6 @@
 .mv-cat:active { transform: scale(.95); }
 .mv-cat[aria-pressed="true"] { background: var(--c); border-color: var(--c); color: var(--noche); font-weight: 600; box-shadow: 0 4px 14px color-mix(in srgb, var(--c) 45%, transparent); }
 .mv-cat--todas { border-color: var(--oro-claro); color: var(--oro-claro); font-weight: 600; }
-.mv-cat--adultos:not([aria-pressed="true"]) { opacity: .7; }
 .mv-cat-n { padding: 1px 7px; border-radius: 999px; font-size: .72rem; font-weight: 600; background: rgba(255, 255, 255, .12); }
 .mv-cat[aria-pressed="true"] .mv-cat-n { background: rgba(27, 20, 70, .14); }
 
@@ -79,15 +78,6 @@
 .mv-vacia { flex: 1; display: grid; place-content: center; justify-items: center; gap: 18px; }
 .mv-recuperar { color: var(--violeta); border-color: var(--violeta); }
 .mv-carta .boton--principal.mv-recuperar { flex: none; padding: 14px 34px; color: var(--noche); }
-
-/* Confirmación +18, encima de la tarjeta */
-.mv-hoja { position: absolute; inset: 0; z-index: 6; display: grid; place-items: center; padding: 14px; border-radius: 26px; background: rgba(27, 20, 70, .78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-.mv-hoja[hidden] { display: none; }
-.mv-hoja-caja { display: grid; justify-items: center; gap: 10px; max-width: 320px; padding: 24px 20px 14px; border-radius: 22px; text-align: center; background: var(--papel); color: var(--tinta); box-shadow: 0 18px 40px rgba(0, 0, 0, .45), inset 0 0 0 2px var(--acento); }
-.mv-hoja-caja h3 { margin: 4px 0 0; font-family: var(--serif); font-weight: normal; font-size: 1.35rem; }
-.mv-hoja-caja p { margin: 0 0 6px; color: var(--tinta-suave); line-height: 1.4; }
-.mv-hoja-caja .boton--principal { width: 100%; }
-.mv-hoja-caja .boton--texto { color: var(--tinta-suave); }
 
 /* Aviso corto (barajar, descartar) */
 .mv-aviso { position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom, 0px)); z-index: 7; transform: translateX(-50%); margin: 0; padding: 10px 18px; border-radius: 999px; background: var(--oro-claro); color: var(--noche); font-size: .9rem; font-weight: 600; white-space: nowrap; box-shadow: 0 8px 22px rgba(0, 0, 0, .35); animation: mv-aviso .25s ease-out; }

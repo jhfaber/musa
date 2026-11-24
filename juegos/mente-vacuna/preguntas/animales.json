@@ -5,7 +5,6 @@
   "acento": "#9ee37d",
   "descripcion": "Bichos, plantas y paisajes",
   "pista": "Un animal, una planta o algo de la naturaleza.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Un animal de la selva.",

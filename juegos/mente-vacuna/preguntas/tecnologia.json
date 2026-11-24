@@ -5,7 +5,6 @@
   "acento": "#dfe6f2",
   "descripcion": "Celulares, apps, redes y videojuegos",
   "pista": "Una app, una marca, un aparato o algo de internet.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Una red social.",

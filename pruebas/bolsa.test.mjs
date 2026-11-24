@@ -16,11 +16,11 @@ function azarCon(semilla) {
   return () => { a = (a + 0x6d2b79f5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 }
 
-// Banco pequeño hecho a mano, con una categoría +18
+// Banco pequeño hecho a mano
 const MINI = { categorias: [
-  { id: 'a', adultos: false, preguntas: ['A1.', 'A2.', 'A3.'] },
-  { id: 'b', adultos: false, preguntas: ['B1.', { q: 'B2.', no: ['obvia'] }] },
-  { id: 'x', adultos: true, preguntas: ['X1.', 'X2.'] },
+  { id: 'a', preguntas: ['A1.', 'A2.', 'A3.'] },
+  { id: 'b', preguntas: ['B1.', { q: 'B2.', no: ['obvia'] }] },
+  { id: 'x', preguntas: ['X1.', 'X2.'] },
 ] };
 
 const bancosReales = () => bancosDeJuegos().map(({ nombre, banco }) => ({ nombre, banco }));
@@ -34,7 +34,7 @@ function sacarVarias(estado, items, azar, n) {
 
 for (const { nombre, banco } of [{ nombre: 'banco de prueba', banco: MINI }, ...bancosReales()]) {
   const items = B.aplanar(banco);
-  const publicas = items.filter(i => !banco.categorias.find(c => c.id === i.c).adultos);
+  const publicas = items;
 
   test(`${nombre} · los ids son únicos y estables`, () => {
     assert.equal(new Set(items.map(i => i.id)).size, items.length);
@@ -59,9 +59,9 @@ for (const { nombre, banco } of [{ nombre: 'banco de prueba', banco: MINI }, ...
     }
   });
 
-  test(`${nombre} · solo salen preguntas de las categorías activas; +18 arranca apagada`, () => {
+  test(`${nombre} · solo salen preguntas de las categorías activas; todas arrancan prendidas`, () => {
     const estado = B.estadoInicial(banco);
-    assert.ok(banco.categorias.filter(c => c.adultos).every(c => !estado.activas.includes(c.id)));
+    assert.deepEqual(estado.activas, banco.categorias.map(c => c.id));
     const una = banco.categorias[0].id;
     let soloUna = { ...estado, activas: [una] };
     const { ids } = sacarVarias(soloUna, items, azarCon(7), items.length * 2);
@@ -95,7 +95,7 @@ test('las respuestas prohibidas llegan con la pregunta y no cambian su id', () =
 
 test('las opciones salen barajadas, pero siempre en el mismo orden para la misma pregunta', () => {
   const opciones = ['uno', 'dos', 'tres', 'cuatro'];
-  const banco = { categorias: [{ id: 'o', adultos: false, preguntas: Array.from({ length: 40 }, (_, i) => ({ q: `P${i}.`, opciones })) }] };
+  const banco = { categorias: [{ id: 'o', preguntas: Array.from({ length: 40 }, (_, i) => ({ q: `P${i}.`, opciones })) }] };
   const a = B.aplanar(banco), b = B.aplanar(banco);
   assert.deepEqual(a.map(i => i.opciones), b.map(i => i.opciones), 'mismo orden siempre');
   assert.ok(a.every(i => [...i.opciones].sort().join() === [...opciones].sort().join()), 'no se pierde ni se repite ninguna');
@@ -116,7 +116,7 @@ test('pregunta anterior: vuelve a la de antes y no se pasa del inicio', () => {
 test('se pueden apagar todas las categorías y entonces no sale ninguna pregunta', () => {
   const items = B.aplanar(MINI);
   let estado = B.sacar(B.estadoInicial(MINI), items, azarCon(1)).estado;
-  estado = B.alternar(B.alternar(estado, 'a'), 'b');
+  estado = B.alternar(B.alternar(B.alternar(estado, 'a'), 'b'), 'x');
   assert.deepEqual(estado.activas, []);
   assert.equal(B.actual(estado, items), null, 'la pregunta en pantalla desaparece');
   assert.equal(B.sacar(estado, items, azarCon(2)).item, null);
@@ -132,11 +132,11 @@ test('al apagar una categoría, su pregunta deja de estar en pantalla y el conte
   assert.ok(item.c === 'a');
 });
 
-test('"Todas" prende las públicas sin las +18; si ya están todas, las quita todas', () => {
+test('"Todas" prende todas las categorías; si ya están todas, las quita todas', () => {
   let estado = B.alternarTodas({ ...B.estadoInicial(MINI), activas: ['a'] }, MINI);
-  assert.deepEqual([...estado.activas].sort(), ['a', 'b']);
+  assert.deepEqual([...estado.activas].sort(), ['a', 'b', 'x']);
   assert.ok(B.todasActivas(estado, MINI));
-  estado = B.alternarTodas(B.alternar(estado, 'x'), MINI);
+  estado = B.alternarTodas(estado, MINI);
   assert.deepEqual(estado.activas, []);
 });
 
@@ -160,7 +160,7 @@ test('el azar en los extremos (0 y casi 1) no se sale de la lista', () => {
 test('limpiar tolera basura: estado nulo, ids viejos y categorías que ya no existen', () => {
   for (const basura of [null, 'x', 42, {}, { activas: ['no-existe'], vistas: ['a:viejo'], historial: 'mal' }]) {
     const e = B.limpiar(basura, MINI);
-    assert.deepEqual(e.activas.sort(), ['a', 'b']);
+    assert.deepEqual(e.activas.sort(), ['a', 'b', 'x']);
     assert.deepEqual([e.vistas, e.descartadas, e.historial], [[], [], []]);
   }
 });

@@ -69,9 +69,10 @@ Lo que se decide sin ser una funcionalidad (qué herramienta, qué formato, qué
 | [011](011-categorias-de-juegos/spec.md) | Categorías de juegos en la portada | En curso |
 | [012](012-juegos-all-afters/spec.md) | Juegos de All-afters | En curso |
 | [013](013-portada-fondo-legible/spec.md) | Fondo de la portada más legible | En curso |
-| [014](014-mente-vacuna-posiciones-fantasias/spec.md) | Mente Vacuna: Posiciones y Fantasías (+18) | En curso |
+| [014](014-mente-vacuna-posiciones-fantasias/spec.md) | Mente Vacuna: Posiciones y Fantasías | En curso |
 | [015](015-mente-vacuna-filosoficas/spec.md) | Mente Vacuna: preguntas filosóficas y más miedos | En curso |
+| [016](016-mente-vacuna-sin-filtro-18/spec.md) | Mente Vacuna: sin activación +18 | En curso |
 
-Próxima spec: **016**.
+Próxima spec: **017**.
 
 Historia: la spec 005 nació como la 006 del proyecto Casa Inteligente y se movió aquí el 26-oct-2026.

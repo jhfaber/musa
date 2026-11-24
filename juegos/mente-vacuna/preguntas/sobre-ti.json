@@ -5,7 +5,6 @@
   "acento": "#f2c46b",
   "descripcion": "Gustos, manías y cosas tuyas: para conocerse",
   "pista": "Responde sobre ti, con una palabra o una frase corta.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Tu animal favorito.",

@@ -5,7 +5,6 @@
   "acento": "#6cc6ff",
   "descripcion": "Destinos, maletas y planes de escapada",
   "pista": "Un lugar, un destino o una cosa de viaje.",
-  "adultos": false,
   "preguntas": [
     {
       "q": "Una ciudad para visitar antes de morir.",

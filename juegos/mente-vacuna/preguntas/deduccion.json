@@ -5,7 +5,6 @@
   "acento": "#5fd6d0",
   "descripcion": "Piensa lo que respondería la mayoría",
   "pista": "No digas lo que tú harías: escribe lo que haría la mayoría.",
-  "adultos": false,
   "preguntas": [
     "Lo primero que haría la mayoría si se encuentra una billetera llena de plata.",
     {

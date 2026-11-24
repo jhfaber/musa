@@ -1,4 +1,4 @@
-# 014 — Mente Vacuna: Posiciones y Fantasías (para adultos)
+# 014 — Mente Vacuna: Posiciones y Fantasías
 
 - **Estado:** En curso
 - **Aprobada por John:** 24-nov-2026, en el chat: "agrega mas preguntas a mente vacuna, mas que todo al lado de las picantes, podemos añadir posiciones sexuales… fantasia sexual y 4 opciones etc, todas las variantes posibles para agregar, ya sea abiertas o cerradas"
@@ -12,7 +12,7 @@ escribe lo que más diría la gente) y **cerradas** (la pregunta trae 4 opciones
 
 ## Qué cambia para el jugador
 
-Dos categorías nuevas junto a 🔥 Picantes, **solo para mayores de 18** (arrancan apagadas, como las demás de adultos):
+Dos categorías nuevas junto a 🔥 Picantes. La app es para mayores, así que entran prendidas y sin confirmación ([016](../016-mente-vacuna-sin-filtro-18/spec.md)):
 
 | Categoría | Abiertas | Cerradas (4 opciones) |
 |---|---|---|
@@ -36,12 +36,12 @@ Preguntas explícitas o gráficas, y cambiar la categoría Picantes existente.
 
 ## Para tener en cuenta
 
-- Son para adultos que se llevan bien: la ficha del juego ya avisa que es +18.
+- La app es para mayores de edad (spec 016).
 - Hay una explícita opción de saltar o descartar una pregunta (ya existe en el juego).
 
 ## Cómo sabremos que está lista
 
-- [x] Las dos categorías aparecen junto a Picantes, apagadas por defecto.
+- [x] Las dos categorías aparecen junto a Picantes, prendidas por defecto.
 - [x] Hay preguntas abiertas y cerradas en cada una.
 - [x] `npm test` y `npm run validar` sin errores.
 - [ ] John las revisa en el celular → Completada.

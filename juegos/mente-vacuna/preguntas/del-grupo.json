@@ -5,7 +5,6 @@
   "acento": "#ee8f7e",
   "descripcion": "¿Quién del grupo…? La respuesta es una persona de la mesa",
   "pista": "Escribe el nombre de una persona del grupo.",
-  "adultos": false,
   "preguntas": [
     "¿Quién del grupo es el más puntual?",
     "¿Quién es el más dormilón?",
