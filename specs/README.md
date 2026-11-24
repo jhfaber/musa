@@ -68,7 +68,8 @@ Lo que se decide sin ser una funcionalidad (qué herramienta, qué formato, qué
 | [010](010-mente-vacuna-encuestas/spec.md) | Mente Vacuna: banco en varios archivos y preguntas de cuatro opciones | En curso |
 | [011](011-categorias-de-juegos/spec.md) | Categorías de juegos en la portada | En curso |
 | [012](012-juegos-all-afters/spec.md) | Juegos de All-afters | En curso |
+| [013](013-portada-fondo-legible/spec.md) | Fondo de la portada más legible | En curso |
 
-Próxima spec: **013**.
+Próxima spec: **014**.
 
 Historia: la spec 005 nació como la 006 del proyecto Casa Inteligente y se movió aquí el 26-oct-2026.
