@@ -13,13 +13,7 @@
         "vainilla"
       ]
     },
-    {
-      "q": "Una fruta que te encante.",
-      "no": [
-        "fresa",
-        "mango"
-      ]
-    },
+    "Una fruta que te encante.",
     {
       "q": "Un tipo de pizza.",
       "no": [
@@ -32,157 +26,48 @@
         "hamburguesa"
       ]
     },
-    {
-      "q": "El mejor acompañante del arroz.",
-      "no": [
-        "pollo",
-        "huevo"
-      ]
-    },
-    {
-      "q": "Una bebida para una fiesta.",
-      "no": [
-        "aguardiente",
-        "cerveza"
-      ]
-    },
-    {
-      "q": "Un postre.",
-      "no": [
-        "helado"
-      ]
-    },
-    {
-      "q": "Una verdura que no soportas.",
-      "no": [
-        "brócoli"
-      ]
-    },
-    {
-      "q": "Un desayuno perfecto.",
-      "no": [
-        "huevos"
-      ]
-    },
+    "El mejor acompañante del arroz.",
+    "Una bebida para una fiesta.",
+    "Un postre.",
+    "Una verdura que no soportas.",
+    "Un desayuno perfecto.",
     {
       "q": "Un snack para ver una película.",
       "no": [
         "crispetas"
       ]
     },
-    {
-      "q": "Una salsa.",
-      "no": [
-        "ají"
-      ]
-    },
-    {
-      "q": "Una sopa.",
-      "no": [
-        "ajiaco",
-        "sancocho"
-      ]
-    },
-    {
-      "q": "El mejor plato del mundo.",
-      "no": [
-        "bandeja paisa"
-      ]
-    },
+    "Una salsa.",
+    "Una sopa.",
+    "El mejor plato del mundo.",
     "Una comida que sabe mejor al día siguiente.",
-    {
-      "q": "Un condimento que no puede faltar.",
-      "no": [
-        "sal",
-        "ajo"
-      ]
-    },
-    {
-      "q": "Un ingrediente que arruina una pizza.",
-      "no": [
-        "piña"
-      ]
-    },
+    "Un condimento que no puede faltar.",
+    "Un ingrediente que arruina una pizza.",
     {
       "q": "Una bebida caliente.",
       "no": [
         "café"
       ]
     },
-    {
-      "q": "Una comida de la calle.",
-      "no": [
-        "empanada"
-      ]
-    },
+    "Una comida de la calle.",
     "Un plato que sabes cocinar.",
     "Una golosina de la infancia.",
-    {
-      "q": "Un jugo.",
-      "no": [
-        "naranja"
-      ]
-    },
-    {
-      "q": "Un tipo de pasta.",
-      "no": [
-        "espagueti"
-      ]
-    },
-    {
-      "q": "Una comida para una cita.",
-      "no": [
-        "pasta",
-        "sushi"
-      ]
-    },
-    {
-      "q": "Una comida de otro país.",
-      "no": [
-        "sushi",
-        "tacos"
-      ]
-    },
-    {
-      "q": "El ingrediente imprescindible de una hamburguesa.",
-      "no": [
-        "carne",
-        "queso"
-      ]
-    },
+    "Un jugo.",
+    "Un tipo de pasta.",
+    "Una comida para una cita.",
+    "Una comida de otro país.",
+    "El ingrediente imprescindible de una hamburguesa.",
     "Una comida que huele rico pero sabe feo.",
     "Una fruta difícil de pelar.",
-    {
-      "q": "Una comida que se come con las manos.",
-      "no": [
-        "pizza",
-        "hamburguesa"
-      ]
-    },
+    "Una comida que se come con las manos.",
     {
       "q": "Un restaurante de comida rápida.",
       "no": [
         "McDonald's"
       ]
     },
-    {
-      "q": "Lo que no puede faltar en Navidad.",
-      "no": [
-        "natilla",
-        "buñuelos"
-      ]
-    },
-    {
-      "q": "Un antojo de medianoche.",
-      "no": [
-        "pizza"
-      ]
-    },
-    {
-      "q": "Un sabor de gaseosa.",
-      "no": [
-        "cola"
-      ]
-    }
+    "Lo que no puede faltar en Navidad.",
+    "Un antojo de medianoche.",
+    "Un sabor de gaseosa."
   ]
 }

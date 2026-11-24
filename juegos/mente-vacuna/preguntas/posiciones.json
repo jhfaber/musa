@@ -6,52 +6,17 @@
   "descripcion": "Posiciones sexuales: comunes, raras y de película",
   "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
   "preguntas": [
-    {
-      "q": "La posición sexual más común.",
-      "no": [
-        "misionero"
-      ]
-    },
+    "La posición sexual más común.",
     "La posición sexual más extraña que has oído que existe.",
-    {
-      "q": "La posición sexual que todo el mundo dice que le gusta.",
-      "no": [
-        "misionero"
-      ]
-    },
+    "La posición sexual que todo el mundo dice que le gusta.",
     "Una posición sexual que suena bien pero en la práctica es un desastre.",
-    {
-      "q": "La posición sexual más cansada.",
-      "no": [
-        "de pie"
-      ]
-    },
-    {
-      "q": "La posición sexual más cómoda.",
-      "no": [
-        "cucharita"
-      ]
-    },
-    {
-      "q": "La posición sexual más romántica.",
-      "no": [
-        "misionero"
-      ]
-    },
-    {
-      "q": "La posición sexual que más se ve en las películas.",
-      "no": [
-        "misionero"
-      ]
-    },
+    "La posición sexual más cansada.",
+    "La posición sexual más cómoda.",
+    "La posición sexual más romántica.",
+    "La posición sexual que más se ve en las películas.",
     "Una posición sexual que sale en las películas y casi nadie usa.",
     "La posición sexual que da más pena pedir.",
-    {
-      "q": "La posición sexual que mejor sale en la mañana.",
-      "no": [
-        "cucharita"
-      ]
-    },
+    "La posición sexual que mejor sale en la mañana.",
     "La posición sexual para cuando estás muy cansado.",
     "La posición sexual más difícil de lograr sin lesionarse.",
     "La posición sexual con el nombre más gracioso.",
@@ -61,12 +26,7 @@
     "Una posición sexual que parece de circo.",
     "La posición sexual que más hace reír.",
     "Algo que se usa para probar una posición difícil.",
-    {
-      "q": "La posición sexual que nunca falla.",
-      "no": [
-        "misionero"
-      ]
-    },
+    "La posición sexual que nunca falla.",
     "El nombre que le pondrías a un cóctel de posición sexual.",
     "Una posición sexual que parece una clase de yoga.",
     {

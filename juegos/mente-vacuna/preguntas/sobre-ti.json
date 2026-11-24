@@ -12,32 +12,10 @@
         "perro"
       ]
     },
-    {
-      "q": "Tu color favorito.",
-      "no": [
-        "azul"
-      ]
-    },
-    {
-      "q": "Una comida que podrías comer todos los días.",
-      "no": [
-        "arroz",
-        "pizza"
-      ]
-    },
-    {
-      "q": "Tu mayor miedo.",
-      "no": [
-        "la muerte"
-      ]
-    },
-    {
-      "q": "El superpoder que te gustaría tener.",
-      "no": [
-        "volar",
-        "invisibilidad"
-      ]
-    },
+    "Tu color favorito.",
+    "Una comida que podrías comer todos los días.",
+    "Tu mayor miedo.",
+    "El superpoder que te gustaría tener.",
     {
       "q": "Una cosa que nunca falta en tu bolso o en tus bolsillos.",
       "no": [
@@ -47,32 +25,16 @@
       ]
     },
     "Una hora a la que te despiertas entre semana.",
-    {
-      "q": "Tu estación o época del año favorita.",
-      "no": [
-        "verano"
-      ]
-    },
+    "Tu estación o época del año favorita.",
     {
       "q": "La primera cosa que haces al despertar.",
       "no": [
         "mirar el celular"
       ]
     },
-    {
-      "q": "Un lugar al que irías de vacaciones mañana mismo.",
-      "no": [
-        "Cartagena"
-      ]
-    },
+    "Un lugar al que irías de vacaciones mañana mismo.",
     "Algo que coleccionabas de niño.",
-    {
-      "q": "El trabajo que soñabas tener de niño.",
-      "no": [
-        "doctor",
-        "astronauta"
-      ]
-    },
+    "El trabajo que soñabas tener de niño.",
     "Una manía tuya.",
     {
       "q": "La app que más usas en el celular.",
@@ -80,45 +42,20 @@
         "WhatsApp"
       ]
     },
-    {
-      "q": "Lo primero que harías si ganaras la lotería.",
-      "no": [
-        "comprar una casa"
-      ]
-    },
-    {
-      "q": "Tu postre favorito.",
-      "no": [
-        "helado"
-      ]
-    },
+    "Lo primero que harías si ganaras la lotería.",
+    "Tu postre favorito.",
     "Un talento oculto que tienes.",
     "La palabra que más repites.",
-    {
-      "q": "Tu plan perfecto de domingo.",
-      "no": [
-        "dormir"
-      ]
-    },
+    "Tu plan perfecto de domingo.",
     {
       "q": "Un objeto que no podrías dejar de usar ni un día.",
       "no": [
         "celular"
       ]
     },
-    {
-      "q": "Lo que más pereza te da hacer en casa.",
-      "no": [
-        "lavar platos"
-      ]
-    },
+    "Lo que más pereza te da hacer en casa.",
     "La mejor edad de la vida.",
-    {
-      "q": "Algo que te pone de buen humor al instante.",
-      "no": [
-        "la música"
-      ]
-    },
+    "Algo que te pone de buen humor al instante.",
     "Un apodo que has tenido.",
     {
       "q": "Lo que haces cuando no puedes dormir.",
@@ -126,26 +63,10 @@
         "ver el celular"
       ]
     },
-    {
-      "q": "Un deporte que te gustaría aprender.",
-      "no": [
-        "natación"
-      ]
-    },
+    "Un deporte que te gustaría aprender.",
     "La mejor etapa de tu vida hasta ahora.",
     "Un personaje famoso con el que te tomarías un café.",
-    {
-      "q": "Tu hora favorita del día.",
-      "no": [
-        "la noche"
-      ]
-    },
-    {
-      "q": "La prenda de ropa que más usas.",
-      "no": [
-        "jeans",
-        "camiseta"
-      ]
-    }
+    "Tu hora favorita del día.",
+    "La prenda de ropa que más usas."
   ]
 }

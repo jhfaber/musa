@@ -6,80 +6,19 @@
   "descripcion": "Películas, series, artistas y canciones",
   "pista": "Un título, un artista o un género.",
   "preguntas": [
-    {
-      "q": "Una película que todo el mundo ha visto.",
-      "no": [
-        "Titanic"
-      ]
-    },
-    {
-      "q": "Una película de terror famosa.",
-      "no": [
-        "It",
-        "El Aro"
-      ]
-    },
-    {
-      "q": "Un actor famoso.",
-      "no": [
-        "Tom Cruise"
-      ]
-    },
-    {
-      "q": "Una actriz famosa.",
-      "no": [
-        "Angelina Jolie"
-      ]
-    },
+    "Una película que todo el mundo ha visto.",
+    "Una película de terror famosa.",
+    "Un actor famoso.",
+    "Una actriz famosa.",
     "Una película que te hizo llorar.",
-    {
-      "q": "Una serie para ver en maratón.",
-      "no": [
-        "Breaking Bad",
-        "Stranger Things"
-      ]
-    },
+    "Una serie para ver en maratón.",
     "Una comedia que te hace reír.",
-    {
-      "q": "Un cantante famoso.",
-      "no": [
-        "Shakira"
-      ]
-    },
-    {
-      "q": "Una banda de rock famosa.",
-      "no": [
-        "Queen",
-        "Metallica"
-      ]
-    },
-    {
-      "q": "Una canción que todos cantan.",
-      "no": [
-        "Despacito"
-      ]
-    },
-    {
-      "q": "Un género musical.",
-      "no": [
-        "rock",
-        "reguetón"
-      ]
-    },
-    {
-      "q": "Una película animada.",
-      "no": [
-        "Shrek",
-        "El Rey León"
-      ]
-    },
-    {
-      "q": "Un villano de película.",
-      "no": [
-        "Darth Vader",
-        "Joker"
-      ]
-    },
+    "Un cantante famoso.",
+    "Una banda de rock famosa.",
+    "Una canción que todos cantan.",
+    "Un género musical.",
+    "Una película animada.",
+    "Un villano de película.",
     {
       "q": "Un superhéroe.",
       "no": [
@@ -87,26 +26,9 @@
         "Spider-Man"
       ]
     },
-    {
-      "q": "Una saga de películas.",
-      "no": [
-        "Harry Potter",
-        "Star Wars"
-      ]
-    },
-    {
-      "q": "Un director de cine famoso.",
-      "no": [
-        "Spielberg",
-        "Tarantino"
-      ]
-    },
-    {
-      "q": "Una canción para una fiesta.",
-      "no": [
-        "Despacito"
-      ]
-    },
+    "Una saga de películas.",
+    "Un director de cine famoso.",
+    "Una canción para una fiesta.",
     "Una canción de amor.",
     "Una canción de la que ya estás cansado.",
     "Un cantante que te gusta pero casi no lo dices.",
@@ -122,26 +44,8 @@
     "Una película que dura demasiado.",
     "Un musical famoso.",
     "Un instrumento que quieres aprender.",
-    {
-      "q": "Una película de Navidad.",
-      "no": [
-        "Mi pobre angelito",
-        "El Grinch"
-      ]
-    },
-    {
-      "q": "Un cantante de reguetón.",
-      "no": [
-        "J Balvin",
-        "Daddy Yankee"
-      ]
-    },
-    {
-      "q": "Un artista que todo el mundo conoce.",
-      "no": [
-        "Shakira",
-        "Michael Jackson"
-      ]
-    }
+    "Una película de Navidad.",
+    "Un cantante de reguetón.",
+    "Un artista que todo el mundo conoce."
   ]
 }

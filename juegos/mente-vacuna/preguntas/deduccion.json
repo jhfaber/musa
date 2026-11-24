@@ -6,51 +6,23 @@
   "descripcion": "Piensa lo que respondería la mayoría",
   "pista": "No digas lo que tú harías: escribe lo que haría la mayoría.",
   "preguntas": [
-    {
-      "q": "Lo primero que haría la mayoría si se encuentra una billetera llena de plata.",
-      "no": [
-        "devolverla",
-        "buscar al dueño"
-      ]
-    },
+    "Lo primero que haría la mayoría si se encuentra una billetera llena de plata.",
     {
       "q": "Lo que más se contesta cuando alguien pregunta \"¿cómo estás?\".",
       "no": [
         "bien"
       ]
     },
-    {
-      "q": "Lo que la mayoría responde cuando le preguntan \"¿qué quieres comer?\".",
-      "no": [
-        "pizza",
-        "lo que sea"
-      ]
-    },
+    "Lo que la mayoría responde cuando le preguntan \"¿qué quieres comer?\".",
     {
       "q": "La excusa que más se usa para llegar tarde.",
       "no": [
         "el trancón"
       ]
     },
-    {
-      "q": "Lo más típico que se regala en un cumpleaños.",
-      "no": [
-        "ropa"
-      ]
-    },
-    {
-      "q": "La comida que más se pide en un restaurante.",
-      "no": [
-        "hamburguesa",
-        "pizza"
-      ]
-    },
-    {
-      "q": "El primer lugar que se visita en una ciudad nueva.",
-      "no": [
-        "el centro"
-      ]
-    },
+    "Lo más típico que se regala en un cumpleaños.",
+    "La comida que más se pide en un restaurante.",
+    "El primer lugar que se visita en una ciudad nueva.",
     "La frase que más se repite en una reunión de trabajo.",
     "Lo primero que mira la gente al entrar a una casa ajena.",
     {
@@ -60,19 +32,8 @@
         "celular"
       ]
     },
-    {
-      "q": "La mentira más común.",
-      "no": [
-        "estoy bien",
-        "ya voy"
-      ]
-    },
-    {
-      "q": "El primer pensamiento de la mañana.",
-      "no": [
-        "cinco minutos más"
-      ]
-    },
+    "La mentira más común.",
+    "El primer pensamiento de la mañana.",
     {
       "q": "Lo que hace la mayoría dentro de un ascensor.",
       "no": [
@@ -85,13 +46,7 @@
         "celular"
       ]
     },
-    {
-      "q": "Lo que más se pide en una cafetería.",
-      "no": [
-        "café",
-        "tinto"
-      ]
-    },
+    "Lo que más se pide en una cafetería.",
     "Lo primero que hace la gente al llegar a un hotel.",
     {
       "q": "Lo que hace la mayoría en un semáforo largo.",
@@ -105,53 +60,13 @@
         "el clima"
       ]
     },
-    {
-      "q": "La razón número uno para no ir a un plan.",
-      "no": [
-        "estoy cansado",
-        "no tengo plata"
-      ]
-    },
-    {
-      "q": "La frase que más dice una mamá.",
-      "no": [
-        "¿ya comiste?"
-      ]
-    },
-    {
-      "q": "Lo que responde la mayoría a \"¿qué haces?\" cuando no hace nada.",
-      "no": [
-        "nada"
-      ]
-    },
-    {
-      "q": "Lo primero que se pierde en un viaje.",
-      "no": [
-        "la maleta",
-        "el pasaporte"
-      ]
-    },
-    {
-      "q": "El pasatiempo más común de la gente en casa.",
-      "no": [
-        "ver series",
-        "ver televisión"
-      ]
-    },
-    {
-      "q": "Una película que casi todo el mundo ha visto.",
-      "no": [
-        "Titanic",
-        "Avatar"
-      ]
-    },
-    {
-      "q": "Lo primero que se le ofrece a un invitado.",
-      "no": [
-        "agua",
-        "café"
-      ]
-    },
+    "La razón número uno para no ir a un plan.",
+    "La frase que más dice una mamá.",
+    "Lo que responde la mayoría a \"¿qué haces?\" cuando no hace nada.",
+    "Lo primero que se pierde en un viaje.",
+    "El pasatiempo más común de la gente en casa.",
+    "Una película que casi todo el mundo ha visto.",
+    "Lo primero que se le ofrece a un invitado.",
     "Lo que se pone la mayoría para una entrevista de trabajo.",
     {
       "q": "La palabra que más se usa en WhatsApp.",
@@ -159,12 +74,7 @@
         "jaja"
       ]
     },
-    {
-      "q": "Lo primero que hace un adulto al llegar a casa.",
-      "no": [
-        "quitarse los zapatos"
-      ]
-    },
+    "Lo primero que hace un adulto al llegar a casa.",
     "Lo que más se compra de más en el supermercado.",
     "La hora a la que la mayoría se va a dormir."
   ]

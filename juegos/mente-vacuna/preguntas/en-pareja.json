@@ -6,149 +6,28 @@
   "descripcion": "Lo que importa en una relación, sin pasarse",
   "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
   "preguntas": [
-    {
-      "q": "Lo más importante en un hombre dentro de una relación.",
-      "no": [
-        "lealtad",
-        "honestidad",
-        "respeto"
-      ]
-    },
-    {
-      "q": "Lo más importante en una mujer dentro de una relación.",
-      "no": [
-        "lealtad",
-        "honestidad",
-        "respeto"
-      ]
-    },
-    {
-      "q": "Una cualidad que todo hombre debería tener.",
-      "no": [
-        "respeto",
-        "honestidad"
-      ]
-    },
-    {
-      "q": "Una cualidad que toda mujer debería tener.",
-      "no": [
-        "respeto",
-        "honestidad"
-      ]
-    },
-    {
-      "q": "Lo que más valora un hombre en una pareja.",
-      "no": [
-        "amor",
-        "respeto"
-      ]
-    },
-    {
-      "q": "Lo que más valora una mujer en una pareja.",
-      "no": [
-        "amor",
-        "respeto"
-      ]
-    },
-    {
-      "q": "Lo que hace que una relación dure.",
-      "no": [
-        "comunicación",
-        "respeto",
-        "confianza"
-      ]
-    },
-    {
-      "q": "Lo que acaba con una relación.",
-      "no": [
-        "la infidelidad",
-        "la mentira"
-      ]
-    },
-    {
-      "q": "Algo que enamora de un hombre.",
-      "no": [
-        "la sonrisa"
-      ]
-    },
-    {
-      "q": "Algo que enamora de una mujer.",
-      "no": [
-        "la sonrisa"
-      ]
-    },
-    {
-      "q": "Lo que más molesta de un hombre en pareja.",
-      "no": [
-        "los celos"
-      ]
-    },
-    {
-      "q": "Lo que más molesta de una mujer en pareja.",
-      "no": [
-        "los celos"
-      ]
-    },
-    {
-      "q": "Una señal de que alguien es buena pareja.",
-      "no": [
-        "respeto",
-        "honestidad"
-      ]
-    },
-    {
-      "q": "Un detalle que enamora.",
-      "no": [
-        "flores"
-      ]
-    },
-    {
-      "q": "Lo más importante para casarse.",
-      "no": [
-        "amor"
-      ]
-    },
-    {
-      "q": "Una bandera roja en una pareja.",
-      "no": [
-        "los celos",
-        "la mentira"
-      ]
-    },
-    {
-      "q": "Una bandera verde en una pareja.",
-      "no": [
-        "respeto",
-        "honestidad"
-      ]
-    },
-    {
-      "q": "Lo que no se negocia en una relación.",
-      "no": [
-        "respeto",
-        "lealtad"
-      ]
-    },
-    {
-      "q": "Un gesto romántico que nunca pasa de moda.",
-      "no": [
-        "flores",
-        "cena"
-      ]
-    },
+    "Lo más importante en un hombre dentro de una relación.",
+    "Lo más importante en una mujer dentro de una relación.",
+    "Una cualidad que todo hombre debería tener.",
+    "Una cualidad que toda mujer debería tener.",
+    "Lo que más valora un hombre en una pareja.",
+    "Lo que más valora una mujer en una pareja.",
+    "Lo que hace que una relación dure.",
+    "Lo que acaba con una relación.",
+    "Algo que enamora de un hombre.",
+    "Algo que enamora de una mujer.",
+    "Lo que más molesta de un hombre en pareja.",
+    "Lo que más molesta de una mujer en pareja.",
+    "Una señal de que alguien es buena pareja.",
+    "Un detalle que enamora.",
+    "Lo más importante para casarse.",
+    "Una bandera roja en una pareja.",
+    "Una bandera verde en una pareja.",
+    "Lo que no se negocia en una relación.",
+    "Un gesto romántico que nunca pasa de moda.",
     "Lo que más se extraña de una pareja.",
-    {
-      "q": "Algo que una pareja debería hacer cada semana.",
-      "no": [
-        "una cena"
-      ]
-    },
-    {
-      "q": "Una pelea típica de pareja.",
-      "no": [
-        "los celos"
-      ]
-    },
+    "Algo que una pareja debería hacer cada semana.",
+    "Una pelea típica de pareja.",
     {
       "q": "¿Qué es lo más importante en un hombre?",
       "opciones": [

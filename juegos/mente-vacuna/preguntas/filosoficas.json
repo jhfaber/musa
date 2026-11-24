@@ -6,26 +6,9 @@
   "descripcion": "El sentido de la vida, el destino y lo que importa",
   "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
   "preguntas": [
-    {
-      "q": "El sentido de la vida, en una palabra.",
-      "no": [
-        "amor",
-        "felicidad"
-      ]
-    },
-    {
-      "q": "Lo que más importa en la vida.",
-      "no": [
-        "la familia",
-        "la salud"
-      ]
-    },
-    {
-      "q": "Lo que le da sentido a tu vida.",
-      "no": [
-        "la familia"
-      ]
-    },
+    "El sentido de la vida, en una palabra.",
+    "Lo que más importa en la vida.",
+    "Lo que le da sentido a tu vida.",
     "Algo que te gustaría haber sabido a los 18.",
     "Lo que crees que pasa después de la muerte.",
     "Una cosa que hace feliz a la gente.",
@@ -41,21 +24,9 @@
     "Lo que uno se lleva de esta vida.",
     "Lo que cambiarías del mundo si pudieras.",
     "Un arrepentimiento común al final de la vida.",
-    {
-      "q": "Algo que el dinero no puede comprar.",
-      "no": [
-        "amor",
-        "felicidad"
-      ]
-    },
+    "Algo que el dinero no puede comprar.",
     "Una razón para levantarse cada mañana.",
-    {
-      "q": "Lo que más paz te da.",
-      "no": [
-        "la familia",
-        "la naturaleza"
-      ]
-    },
+    "Lo que más paz te da.",
     "Lo que le dirías a tu yo de hace diez años.",
     "Lo que hace buena a una persona.",
     "Algo que parece importante y no lo es.",
@@ -179,13 +150,7 @@
     "Algo que nunca se debería dar por sentado.",
     "La mayor lección que te dio la vida.",
     "Lo que daría miedo saber del futuro.",
-    {
-      "q": "Una cosa que todos buscamos.",
-      "no": [
-        "felicidad",
-        "amor"
-      ]
-    },
+    "Una cosa que todos buscamos.",
     "Lo que más tiempo desperdicia la gente.",
     "Algo que se entiende solo con los años.",
     "Lo que hace valiente a una persona.",
@@ -196,29 +161,12 @@
     "Algo que la gente confunde con la felicidad.",
     "Una cosa que haría mejor al mundo.",
     "Lo que significa una vida bien vivida.",
-    {
-      "q": "Un lugar donde te sientes en paz.",
-      "no": [
-        "la playa",
-        "mi casa"
-      ]
-    },
-    {
-      "q": "Algo que nadie te puede quitar.",
-      "no": [
-        "los recuerdos"
-      ]
-    },
+    "Un lugar donde te sientes en paz.",
+    "Algo que nadie te puede quitar.",
     "Lo que más extrañarías de estar vivo.",
     "Una pregunta que nadie sabe responder.",
     "Algo que le preguntarías al universo.",
-    {
-      "q": "Lo que vale más que el dinero.",
-      "no": [
-        "la familia",
-        "el amor"
-      ]
-    },
+    "Lo que vale más que el dinero.",
     {
       "q": "¿Qué te daría más miedo saber?",
       "opciones": [

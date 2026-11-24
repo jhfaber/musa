@@ -6,12 +6,7 @@
   "descripcion": "Lo que asusta, lo que molesta y lo que repetimos",
   "pista": "Responde con lo que más se diría.",
   "preguntas": [
-    {
-      "q": "A qué se le tiene más miedo.",
-      "no": [
-        "la muerte"
-      ]
-    },
+    "A qué se le tiene más miedo.",
     {
       "q": "Un animal que da miedo.",
       "no": [
@@ -24,20 +19,10 @@
         "cucaracha"
       ]
     },
-    {
-      "q": "Un lugar que da miedo de noche.",
-      "no": [
-        "el cementerio"
-      ]
-    },
+    "Un lugar que da miedo de noche.",
     "Una manía que todos tenemos.",
     "Algo que te da escalofríos.",
-    {
-      "q": "Un miedo que da pena contar.",
-      "no": [
-        "a la oscuridad"
-      ]
-    },
+    "Un miedo que da pena contar.",
     "Lo peor que te puede pasar en un viaje.",
     {
       "q": "Una fobia común.",
@@ -48,42 +33,15 @@
     "Lo que más estrés te da.",
     "Algo que da pena hacer en público.",
     "Un sonido que no soportas.",
-    {
-      "q": "Una película que te dejó sin dormir.",
-      "no": [
-        "El Exorcista"
-      ]
-    },
-    {
-      "q": "Una superstición que conoces.",
-      "no": [
-        "gato negro",
-        "martes 13"
-      ]
-    },
+    "Una película que te dejó sin dormir.",
+    "Una superstición que conoces.",
     "Lo que más asco te da.",
-    {
-      "q": "Algo que da mala suerte.",
-      "no": [
-        "gato negro",
-        "espejo roto"
-      ]
-    },
+    "Algo que da mala suerte.",
     "Algo que revisas más de una vez antes de salir.",
     "Un olor que no soportas.",
-    {
-      "q": "Lo peor de ir al dentista.",
-      "no": [
-        "el dolor"
-      ]
-    },
+    "Lo peor de ir al dentista.",
     "Lo que nunca harías en una montaña rusa.",
-    {
-      "q": "Una cosa que asusta en la oscuridad.",
-      "no": [
-        "fantasmas"
-      ]
-    },
+    "Una cosa que asusta en la oscuridad.",
     "Un miedo de la infancia.",
     "Lo más vergonzoso que te puede pasar en una fiesta.",
     "Algo que te da ansiedad.",
@@ -94,28 +52,12 @@
       ]
     },
     "Lo que menos quisieras encontrar en tu cama.",
-    {
-      "q": "Un lugar donde no te quedarías solo.",
-      "no": [
-        "el cementerio"
-      ]
-    },
+    "Un lugar donde no te quedarías solo.",
     "Una situación en la que te da pena hablar.",
-    {
-      "q": "Un monstruo clásico.",
-      "no": [
-        "Drácula",
-        "Frankenstein"
-      ]
-    },
+    "Un monstruo clásico.",
     "Una cosa que te saca de quicio.",
     "Lo que más temes perder.",
-    {
-      "q": "El mayor miedo de la gente.",
-      "no": [
-        "la muerte"
-      ]
-    },
+    "El mayor miedo de la gente.",
     "Un miedo que aparece al hacerse adulto.",
     "Un miedo que nadie admite en voz alta.",
     "Lo que más miedo da del futuro.",

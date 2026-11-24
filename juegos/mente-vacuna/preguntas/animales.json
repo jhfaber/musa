@@ -12,26 +12,9 @@
         "mono"
       ]
     },
-    {
-      "q": "Un animal de granja.",
-      "no": [
-        "vaca",
-        "gallina"
-      ]
-    },
-    {
-      "q": "Un pájaro.",
-      "no": [
-        "águila",
-        "loro"
-      ]
-    },
-    {
-      "q": "Un animal que vuela pero no es pájaro.",
-      "no": [
-        "murciélago"
-      ]
-    },
+    "Un animal de granja.",
+    "Un pájaro.",
+    "Un animal que vuela pero no es pájaro.",
     {
       "q": "Un animal muy lento.",
       "no": [
@@ -50,140 +33,58 @@
         "pingüino"
       ]
     },
-    {
-      "q": "Una mascota rara.",
-      "no": [
-        "iguana",
-        "serpiente"
-      ]
-    },
+    "Una mascota rara.",
     {
       "q": "Un animal con rayas.",
       "no": [
         "cebra"
       ]
     },
-    {
-      "q": "Un animal con manchas.",
-      "no": [
-        "leopardo",
-        "jirafa",
-        "dálmata"
-      ]
-    },
+    "Un animal con manchas.",
     {
       "q": "Un animal nocturno.",
       "no": [
         "búho"
       ]
     },
-    {
-      "q": "Un reptil.",
-      "no": [
-        "serpiente"
-      ]
-    },
+    "Un reptil.",
     {
       "q": "Un animal que salta.",
       "no": [
         "canguro"
       ]
     },
-    {
-      "q": "Un animal en peligro de extinción.",
-      "no": [
-        "panda",
-        "tigre"
-      ]
-    },
+    "Un animal en peligro de extinción.",
     {
       "q": "Una flor.",
       "no": [
         "rosa"
       ]
     },
-    {
-      "q": "Un árbol.",
-      "no": [
-        "pino"
-      ]
-    },
+    "Un árbol.",
     {
       "q": "Un animal que da leche.",
       "no": [
         "vaca"
       ]
     },
-    {
-      "q": "Un insecto que no molesta.",
-      "no": [
-        "mariposa"
-      ]
-    },
-    {
-      "q": "Un animal que aparece en los cuentos.",
-      "no": [
-        "lobo"
-      ]
-    },
+    "Un insecto que no molesta.",
+    "Un animal que aparece en los cuentos.",
     "Un animal que sería buena mascota de oficina.",
-    {
-      "q": "Un animal muy inteligente.",
-      "no": [
-        "delfín"
-      ]
-    },
-    {
-      "q": "Un animal que da ternura.",
-      "no": [
-        "perro",
-        "gato"
-      ]
-    },
+    "Un animal muy inteligente.",
+    "Un animal que da ternura.",
     {
       "q": "Un animal del desierto.",
       "no": [
         "camello"
       ]
     },
-    {
-      "q": "Un fenómeno natural.",
-      "no": [
-        "terremoto"
-      ]
-    },
-    {
-      "q": "Un animal que vive en el río.",
-      "no": [
-        "pez"
-      ]
-    },
-    {
-      "q": "Un animal con cuernos.",
-      "no": [
-        "toro",
-        "venado"
-      ]
-    },
-    {
-      "q": "Un animal de zoológico.",
-      "no": [
-        "león",
-        "elefante"
-      ]
-    },
-    {
-      "q": "Un sonido de la naturaleza.",
-      "no": [
-        "lluvia"
-      ]
-    },
-    {
-      "q": "Un paisaje para relajarse.",
-      "no": [
-        "la playa"
-      ]
-    },
+    "Un fenómeno natural.",
+    "Un animal que vive en el río.",
+    "Un animal con cuernos.",
+    "Un animal de zoológico.",
+    "Un sonido de la naturaleza.",
+    "Un paisaje para relajarse.",
     {
       "q": "Un animal muy grande.",
       "no": [

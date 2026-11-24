@@ -66,20 +66,8 @@
         "Nueva York"
       ]
     },
-    {
-      "q": "Una capital del mundo.",
-      "no": [
-        "París",
-        "Londres"
-      ]
-    },
-    {
-      "q": "Un personaje famoso de la historia.",
-      "no": [
-        "Napoleón",
-        "Cleopatra"
-      ]
-    },
+    "Una capital del mundo.",
+    "Un personaje famoso de la historia.",
     {
       "q": "Un idioma, además del español.",
       "no": [
@@ -98,12 +86,7 @@
         "Torre Eiffel"
       ]
     },
-    {
-      "q": "Una de las maravillas del mundo.",
-      "no": [
-        "Muralla China"
-      ]
-    },
+    "Una de las maravillas del mundo.",
     {
       "q": "Una montaña famosa.",
       "no": [
@@ -117,98 +100,29 @@
         "ballena"
       ]
     },
-    {
-      "q": "Un hueso del cuerpo humano.",
-      "no": [
-        "fémur"
-      ]
-    },
+    "Un hueso del cuerpo humano.",
     {
       "q": "Un órgano del cuerpo.",
       "no": [
         "corazón"
       ]
     },
-    {
-      "q": "Un filósofo famoso.",
-      "no": [
-        "Platón",
-        "Sócrates"
-      ]
-    },
+    "Un filósofo famoso.",
     {
       "q": "Una moneda del mundo.",
       "no": [
         "dólar"
       ]
     },
-    {
-      "q": "Una marca de carros.",
-      "no": [
-        "Toyota",
-        "Chevrolet"
-      ]
-    },
-    {
-      "q": "Un invento que cambió el mundo.",
-      "no": [
-        "la rueda",
-        "internet"
-      ]
-    },
-    {
-      "q": "Un volcán famoso.",
-      "no": [
-        "Vesubio"
-      ]
-    },
-    {
-      "q": "Un país de Asia.",
-      "no": [
-        "China",
-        "Japón"
-      ]
-    },
-    {
-      "q": "Un tipo de baile.",
-      "no": [
-        "salsa",
-        "reguetón"
-      ]
-    },
-    {
-      "q": "Un deporte olímpico.",
-      "no": [
-        "atletismo",
-        "natación"
-      ]
-    },
-    {
-      "q": "Un personaje de la mitología.",
-      "no": [
-        "Zeus",
-        "Poseidón"
-      ]
-    },
-    {
-      "q": "Una sigla que todo el mundo conoce.",
-      "no": [
-        "ONU"
-      ]
-    },
-    {
-      "q": "Un mar famoso.",
-      "no": [
-        "Caribe",
-        "Mediterráneo"
-      ]
-    },
-    {
-      "q": "Un país de África.",
-      "no": [
-        "Egipto",
-        "Sudáfrica"
-      ]
-    }
+    "Una marca de carros.",
+    "Un invento que cambió el mundo.",
+    "Un volcán famoso.",
+    "Un país de Asia.",
+    "Un tipo de baile.",
+    "Un deporte olímpico.",
+    "Un personaje de la mitología.",
+    "Una sigla que todo el mundo conoce.",
+    "Un mar famoso.",
+    "Un país de África."
   ]
 }

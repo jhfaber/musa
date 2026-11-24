@@ -14,8 +14,11 @@ punto regalado, y una con una opción obvia no deja elegir. Al crecer el banco a
 
 Toda pregunta de Mente Vacuna, nueva o vieja, cumple estos criterios. Si no los cumple se **corrige o se elimina**.
 
-1. **Nada obvio.** Si una pregunta abierta tiene una respuesta que casi todos darían primero, esa respuesta va en
-   `no` (la lista de respuestas prohibidas, de 1 a 3). Ej.: "Un número del 1 al 10" prohíbe el 7.
+1. **Nada obvio.** Si una pregunta abierta tiene **una** respuesta que domina sola, esa respuesta puede ir en `no`
+   (la lista de respuestas prohibidas, de 1 a 3). Ej.: "Un número del 1 al 10" prohíbe el 7.
+   **Solo se prohíbe cuando sirve**: prohibir dos respuestas del mismo nivel (Messi y Cristiano) no arregla nada, porque
+   la gente pasa a la siguiente; y prohibir números o letras ("69", "100") no tiene sentido. Las prohibiciones nuevas se
+   le **presentan a John antes de aplicarlas**: él decide cuáles tienen sentido (ver spec 022).
 2. **Opciones del mismo peso.** Las opciones de una pregunta deben ser comparables en tamaño e importancia. Si una es
    mucho más chica, más grande o más fácil que las demás, la gente la elige sin pensar. Ej.: "¿A qué le dirías adiós por
    un año?" con *dulces*, *series*, *alcohol* y *redes sociales*: casi todos dicen *dulces* porque es lo más pequeño.

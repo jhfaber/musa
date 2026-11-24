@@ -12,39 +12,16 @@
         "París"
       ]
     },
-    {
-      "q": "Un país que quieres conocer.",
-      "no": [
-        "Japón",
-        "Italia"
-      ]
-    },
-    {
-      "q": "Una playa famosa.",
-      "no": [
-        "Copacabana",
-        "Cancún"
-      ]
-    },
-    {
-      "q": "Un destino para una luna de miel.",
-      "no": [
-        "Maldivas",
-        "Cancún"
-      ]
-    },
+    "Un país que quieres conocer.",
+    "Una playa famosa.",
+    "Un destino para una luna de miel.",
     {
       "q": "Lo imprescindible en una maleta.",
       "no": [
         "ropa"
       ]
     },
-    {
-      "q": "Un lugar para ir en vacaciones.",
-      "no": [
-        "la playa"
-      ]
-    },
+    "Un lugar para ir en vacaciones.",
     {
       "q": "Una isla.",
       "no": [
@@ -59,64 +36,24 @@
     },
     "Un lugar para ir de camping.",
     "Lo peor de viajar en avión.",
-    {
-      "q": "Un medio de transporte favorito.",
-      "no": [
-        "avión",
-        "carro"
-      ]
-    },
-    {
-      "q": "Un recuerdo típico que se trae de un viaje.",
-      "no": [
-        "imán"
-      ]
-    },
-    {
-      "q": "Un país con buena comida.",
-      "no": [
-        "Italia",
-        "México"
-      ]
-    },
+    "Un medio de transporte favorito.",
+    "Un recuerdo típico que se trae de un viaje.",
+    "Un país con buena comida.",
     "Una ciudad para perderse.",
     "Un lugar que parece de película.",
     "Un lugar con el que sueñas.",
-    {
-      "q": "Un país para vivir.",
-      "no": [
-        "España",
-        "Canadá"
-      ]
-    },
-    {
-      "q": "Un lugar frío.",
-      "no": [
-        "Alaska",
-        "Polo Norte"
-      ]
-    },
+    "Un país para vivir.",
+    "Un lugar frío.",
     {
       "q": "Una ciudad que nunca duerme.",
       "no": [
         "Nueva York"
       ]
     },
-    {
-      "q": "Una montaña para escalar.",
-      "no": [
-        "Everest"
-      ]
-    },
+    "Una montaña para escalar.",
     "Un lugar para un puente festivo.",
     "Lo primero que se hace al llegar a una playa.",
-    {
-      "q": "Un animal que quieres ver de cerca en un safari.",
-      "no": [
-        "león",
-        "elefante"
-      ]
-    },
+    "Un animal que quieres ver de cerca en un safari.",
     {
       "q": "Un museo famoso.",
       "no": [
@@ -126,43 +63,17 @@
     "Un destino para una despedida de soltero o soltera.",
     "Un lugar que da calma.",
     "Un país para ir de compras.",
-    {
-      "q": "Un lugar para ver la nieve.",
-      "no": [
-        "Suiza"
-      ]
-    },
-    {
-      "q": "Una cosa que se olvida siempre al viajar.",
-      "no": [
-        "el cargador"
-      ]
-    },
+    "Un lugar para ver la nieve.",
+    "Una cosa que se olvida siempre al viajar.",
     "La mejor forma de viajar.",
     "Un país donde se habla otro idioma.",
     "Un aeropuerto famoso.",
-    {
-      "q": "Algo que se compra en el aeropuerto.",
-      "no": [
-        "perfume"
-      ]
-    },
+    "Algo que se compra en el aeropuerto.",
     "Un plan para un viaje con amigos.",
     "Un lugar para ver el atardecer.",
     "Algo que no puede faltar en un viaje en carro.",
-    {
-      "q": "Una ciudad para ir a comer.",
-      "no": [
-        "Lima"
-      ]
-    },
-    {
-      "q": "Un país con playas lindas.",
-      "no": [
-        "Maldivas",
-        "México"
-      ]
-    },
+    "Una ciudad para ir a comer.",
+    "Un país con playas lindas.",
     "Lo mejor de quedarse en un hotel.",
     "Lo peor de volver de vacaciones."
   ]

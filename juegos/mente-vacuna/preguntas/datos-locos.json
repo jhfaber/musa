@@ -13,40 +13,11 @@
         "7"
       ]
     },
-    {
-      "q": "Un número del 1 al 100.",
-      "no": [
-        "69",
-        "100"
-      ]
-    },
-    {
-      "q": "Una letra del abecedario.",
-      "no": [
-        "A",
-        "Z"
-      ]
-    },
-    {
-      "q": "Un mes del año.",
-      "no": [
-        "diciembre",
-        "enero"
-      ]
-    },
-    {
-      "q": "Un día de la semana.",
-      "no": [
-        "viernes"
-      ]
-    },
-    {
-      "q": "Un animal que le ganaría a un oso en una pelea.",
-      "no": [
-        "gorila",
-        "león"
-      ]
-    },
+    "Un número del 1 al 100.",
+    "Una letra del abecedario.",
+    "Un mes del año.",
+    "Un día de la semana.",
+    "Un animal que le ganaría a un oso en una pelea.",
     "Un animal que sería buen superhéroe.",
     "Algo que se puede comer pero no se debería.",
     "Un animal raro que existe de verdad.",
@@ -56,60 +27,19 @@
     "Algo que se puede hacer en cinco segundos.",
     "La cosa más rara que has visto en la calle.",
     "Un nombre que no le pondrías a tu hijo.",
-    {
-      "q": "Un nombre que le pondrías a una mascota.",
-      "no": [
-        "Max",
-        "Luna"
-      ]
-    },
-    {
-      "q": "Algo que se rompe fácil.",
-      "no": [
-        "vidrio",
-        "huevo"
-      ]
-    },
+    "Un nombre que le pondrías a una mascota.",
+    "Algo que se rompe fácil.",
     "Un animal que sería buen presidente.",
-    {
-      "q": "Un trabajo que no existía hace treinta años.",
-      "no": [
-        "youtuber",
-        "influencer"
-      ]
-    },
-    {
-      "q": "Algo que cabe en un bolsillo.",
-      "no": [
-        "celular",
-        "llaves"
-      ]
-    },
+    "Un trabajo que no existía hace treinta años.",
+    "Algo que cabe en un bolsillo.",
     "Un animal que parece estar siempre enojado.",
     "La peor idea para un negocio.",
     "Algo que pesa más de lo que parece.",
     "Una cosa que se vuelve peligrosa si hay demasiada.",
-    {
-      "q": "El mejor invento de la humanidad.",
-      "no": [
-        "internet",
-        "la rueda"
-      ]
-    },
+    "El mejor invento de la humanidad.",
     "Un invento que sobra.",
-    {
-      "q": "Algo que siempre se pierde.",
-      "no": [
-        "llaves",
-        "celular"
-      ]
-    },
-    {
-      "q": "El mejor nombre para un barco.",
-      "no": [
-        "Titanic"
-      ]
-    },
+    "Algo que siempre se pierde.",
+    "El mejor nombre para un barco.",
     "Un animal que sería un pésimo mesero.",
     "Algo que huele a infancia.",
     {

@@ -6,132 +6,35 @@
   "descripcion": "Oficina, colegio, universidad y jefes",
   "pista": "Una profesión, una situación o una cosa del trabajo o el estudio.",
   "preguntas": [
-    {
-      "q": "Una profesión que todos admiran.",
-      "no": [
-        "médico",
-        "bombero"
-      ]
-    },
-    {
-      "q": "Una carrera universitaria.",
-      "no": [
-        "medicina",
-        "derecho"
-      ]
-    },
+    "Una profesión que todos admiran.",
+    "Una carrera universitaria.",
     "Un trabajo muy aburrido.",
     "Un trabajo soñado.",
     "Lo mejor de trabajar desde la casa.",
-    {
-      "q": "Lo peor de los lunes.",
-      "no": [
-        "madrugar"
-      ]
-    },
-    {
-      "q": "Algo que no puede faltar en un escritorio.",
-      "no": [
-        "computador"
-      ]
-    },
-    {
-      "q": "Una excusa para faltar al trabajo.",
-      "no": [
-        "enfermedad",
-        "cita médica"
-      ]
-    },
-    {
-      "q": "Lo que más se habla a la hora del almuerzo.",
-      "no": [
-        "el jefe"
-      ]
-    },
+    "Lo peor de los lunes.",
+    "Algo que no puede faltar en un escritorio.",
+    "Una excusa para faltar al trabajo.",
+    "Lo que más se habla a la hora del almuerzo.",
     "Un jefe famoso de película.",
-    {
-      "q": "Una profesión peligrosa.",
-      "no": [
-        "bombero",
-        "policía"
-      ]
-    },
-    {
-      "q": "Un trabajo que ya hacen los robots.",
-      "no": [
-        "fábrica"
-      ]
-    },
+    "Una profesión peligrosa.",
+    "Un trabajo que ya hacen los robots.",
     "Lo más difícil de un examen.",
     "Algo que se hace en una reunión aburrida.",
-    {
-      "q": "Una frase típica de un jefe.",
-      "no": [
-        "para ayer"
-      ]
-    },
+    "Una frase típica de un jefe.",
     "Lo que se compra con la primera quincena.",
     "Un trabajo de vacaciones.",
     "Una profesión que sale mucho en las series.",
-    {
-      "q": "Lo primero que se hace al llegar a la oficina.",
-      "no": [
-        "café"
-      ]
-    },
-    {
-      "q": "Un regalo para un compañero de trabajo.",
-      "no": [
-        "chocolates",
-        "tarjeta"
-      ]
-    },
-    {
-      "q": "Una habilidad que todo el mundo pone en la hoja de vida.",
-      "no": [
-        "trabajo en equipo",
-        "liderazgo"
-      ]
-    },
+    "Lo primero que se hace al llegar a la oficina.",
+    "Un regalo para un compañero de trabajo.",
+    "Una habilidad que todo el mundo pone en la hoja de vida.",
     "Un trabajo bien pagado que nadie quiere.",
-    {
-      "q": "Lo mejor del viernes.",
-      "no": [
-        "salir temprano",
-        "el fin de semana"
-      ]
-    },
-    {
-      "q": "Una materia difícil de la universidad.",
-      "no": [
-        "cálculo"
-      ]
-    },
-    {
-      "q": "Un lugar para estudiar.",
-      "no": [
-        "biblioteca"
-      ]
-    },
-    {
-      "q": "Lo más típico de una fiesta de oficina.",
-      "no": [
-        "amigo secreto"
-      ]
-    },
-    {
-      "q": "Algo que se hace para no dormirse en clase.",
-      "no": [
-        "café"
-      ]
-    },
+    "Lo mejor del viernes.",
+    "Una materia difícil de la universidad.",
+    "Un lugar para estudiar.",
+    "Lo más típico de una fiesta de oficina.",
+    "Algo que se hace para no dormirse en clase.",
     "Un trabajo que sería divertido por un día.",
     "Una profesión que sueñan los niños y casi nadie estudia.",
-    {
-      "q": "Una pregunta típica de una entrevista de trabajo.",
-      "no": [
-        "¿dónde te ves en 5 años?"
-      ]
-    }
+    "Una pregunta típica de una entrevista de trabajo."
   ]
 }
