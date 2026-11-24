@@ -31,5 +31,6 @@ que explique qué cambió.
 | [0003](0003-publicar-solo-a-pedido.md) | Publicar solo cuando John lo pida | Vigente |
 | [0004](0004-repo-de-juegos.md) | Musa es el repo de todos los juegos de John, de mesa y de otro tipo | Vigente |
 | [0005](0005-buenas-practicas.md) | Buenas prácticas y patrones de diseño (SOLID, Registry, Strategy…) | Vigente |
+| [0006](0006-criterios-preguntas-mente-vacuna.md) | Criterios de calidad de las preguntas de Mente Vacuna (nada obvio, opciones parejas) | Vigente |
 
-Próxima decisión: **0006**.
+Próxima decisión: **0007**.

@@ -35,6 +35,11 @@ Todo el detalle está en `specs/README.md`. Lo que no se puede olvidar:
 - En el celular se guardan aparte: la partida (`musa.dixit.v2`), los favoritos (`musa.dixit.favoritos.v1`) y los ajustes (`musa.dixit.ajustes.v1`).
 - Al cambiar archivos que se guardan para uso offline, subir la versión en `service-worker.js`.
 
+## Preguntas de Mente Vacuna (decisión 0006)
+Al escribir o revisar preguntas: **nada obvio** (si una abierta tiene una respuesta que todos darían, va en `no`),
+**opciones del mismo peso** (nada de "dulces" junto a "redes sociales"), **sin salidas evasivas** ("Nada", "Depende"),
+y si no se puede equilibrar, **3 opciones o eliminar la pregunta**. Las preguntas viejas de John no se tocan sin que lo pida.
+
 ## Risk (specs 005 y 006)
 - Reglamento de la casa *Risk Relámpago*; mapa normal y mapas propios en ⚙ (el LOTR puede ser otro mapa).
 - Flujo en una sola dirección: vistas → acción → `almacen.despachar` → `logica/reglas.js` (puro) → guardar → pintar.

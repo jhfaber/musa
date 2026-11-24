@@ -6,45 +6,142 @@
   "descripcion": "Fútbol y de todo un poco: opiniones de tribuna",
   "pista": "Una persona, un equipo o un deporte.",
   "preguntas": [
-    "¿Quién es el mayor goleador de la historia?",
-    "El mejor jugador de fútbol de todos los tiempos.",
-    "El mejor equipo de fútbol de la historia.",
+    {
+      "q": "¿Quién es el mayor goleador de la historia?",
+      "no": [
+        "Messi",
+        "Cristiano Ronaldo"
+      ]
+    },
+    {
+      "q": "El mejor jugador de fútbol de todos los tiempos.",
+      "no": [
+        "Messi",
+        "Maradona",
+        "Pelé"
+      ]
+    },
+    {
+      "q": "El mejor equipo de fútbol de la historia.",
+      "no": [
+        "Real Madrid",
+        "Barcelona"
+      ]
+    },
     "Un deporte que no te gusta ver.",
-    "El mejor deportista de la historia, de cualquier deporte.",
+    {
+      "q": "El mejor deportista de la historia, de cualquier deporte.",
+      "no": [
+        "Michael Jordan",
+        "Messi"
+      ]
+    },
     "Un deporte que nunca podrías practicar.",
-    "El mejor entrenador de la historia.",
+    {
+      "q": "El mejor entrenador de la historia.",
+      "no": [
+        "Guardiola",
+        "Alex Ferguson"
+      ]
+    },
     "Un equipo de fútbol que te cae mal.",
-    "Un deporte extremo.",
+    {
+      "q": "Un deporte extremo.",
+      "no": [
+        "paracaidismo",
+        "bungee"
+      ]
+    },
     "Un estadio famoso.",
-    "El mejor portero de la historia.",
-    "Un deporte de invierno.",
+    {
+      "q": "El mejor portero de la historia.",
+      "no": [
+        "Buffon",
+        "Neuer",
+        "Casillas"
+      ]
+    },
+    {
+      "q": "Un deporte de invierno.",
+      "no": [
+        "esquí"
+      ]
+    },
     {
       "q": "Un deporte que se juega con raqueta.",
       "no": [
         "tenis"
       ]
     },
-    "Un país que siempre es favorito en el Mundial.",
-    "Un tenista famoso.",
+    {
+      "q": "Un país que siempre es favorito en el Mundial.",
+      "no": [
+        "Brasil"
+      ]
+    },
+    {
+      "q": "Un tenista famoso.",
+      "no": [
+        "Federer",
+        "Nadal"
+      ]
+    },
     {
       "q": "Un jugador de baloncesto famoso.",
       "no": [
         "Michael Jordan"
       ]
     },
-    "Un atleta de pista famoso.",
-    "Un deporte que parece fácil pero no lo es.",
-    "Un jugador que te encantaría tener en tu equipo.",
+    {
+      "q": "Un atleta de pista famoso.",
+      "no": [
+        "Usain Bolt"
+      ]
+    },
+    {
+      "q": "Un deporte que parece fácil pero no lo es.",
+      "no": [
+        "golf"
+      ]
+    },
+    {
+      "q": "Un jugador que te encantaría tener en tu equipo.",
+      "no": [
+        "Messi"
+      ]
+    },
     "Lo mejor de ver un partido con amigos.",
     "Un deporte para hacer con amigos.",
-    "Un piloto de carreras famoso.",
+    {
+      "q": "Un piloto de carreras famoso.",
+      "no": [
+        "Hamilton",
+        "Schumacher"
+      ]
+    },
     "Lo que más se grita viendo un partido.",
-    "Una competencia deportiva famosa.",
+    {
+      "q": "Una competencia deportiva famosa.",
+      "no": [
+        "Mundial",
+        "Olimpiadas"
+      ]
+    },
     "El deporte más aburrido de ver.",
     "El deporte más difícil del mundo.",
     "Un ejercicio que todos odian hacer.",
-    "Un jugador de fútbol que ya se retiró y extrañas.",
-    "Un equipo que siempre está en la final.",
+    {
+      "q": "Un jugador de fútbol que ya se retiró y extrañas.",
+      "no": [
+        "Ronaldinho"
+      ]
+    },
+    {
+      "q": "Un equipo que siempre está en la final.",
+      "no": [
+        "Real Madrid"
+      ]
+    },
     "Una cosa que no puede faltar en un partido de barrio.",
     {
       "q": "Un deporte acuático.",
@@ -52,14 +149,41 @@
         "natación"
       ]
     },
-    "Un equipo de baloncesto.",
+    {
+      "q": "Un equipo de baloncesto.",
+      "no": [
+        "Lakers",
+        "Bulls"
+      ]
+    },
     "Una selección que siempre decepciona.",
-    "Un deporte que se juega en la playa.",
-    "Una celebración de gol famosa.",
+    {
+      "q": "Un deporte que se juega en la playa.",
+      "no": [
+        "voleibol"
+      ]
+    },
+    {
+      "q": "Una celebración de gol famosa.",
+      "no": [
+        "el Siuuu"
+      ]
+    },
     "Lo primero que se compra para empezar a hacer ejercicio.",
-    "Una camiseta de fútbol famosa.",
+    {
+      "q": "Una camiseta de fútbol famosa.",
+      "no": [
+        "Brasil",
+        "Barcelona"
+      ]
+    },
     "Un deporte que solo se ve en los Olímpicos.",
     "Un deporte para hacer en pareja.",
-    "La posición más difícil en el fútbol."
+    {
+      "q": "La posición más difícil en el fútbol.",
+      "no": [
+        "portero"
+      ]
+    }
   ]
 }

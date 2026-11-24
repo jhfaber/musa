@@ -18,7 +18,12 @@
         "Bogotá"
       ]
     },
-    "Una fruta colombiana.",
+    {
+      "q": "Una fruta colombiana.",
+      "no": [
+        "mango"
+      ]
+    },
     {
       "q": "Un cantante colombiano.",
       "no": [
@@ -37,24 +42,77 @@
         "Cartagena"
       ]
     },
-    "Una palabra muy colombiana.",
+    {
+      "q": "Una palabra muy colombiana.",
+      "no": [
+        "parce",
+        "chimba"
+      ]
+    },
     {
       "q": "Una bebida típica colombiana.",
       "no": [
         "aguardiente"
       ]
     },
-    "Un departamento de Colombia.",
-    "Una feria o carnaval colombiano.",
-    "Un río de Colombia.",
-    "Una telenovela colombiana.",
-    "Un dulce típico colombiano.",
+    {
+      "q": "Un departamento de Colombia.",
+      "no": [
+        "Antioquia",
+        "Cundinamarca"
+      ]
+    },
+    {
+      "q": "Una feria o carnaval colombiano.",
+      "no": [
+        "Carnaval de Barranquilla"
+      ]
+    },
+    {
+      "q": "Un río de Colombia.",
+      "no": [
+        "Magdalena"
+      ]
+    },
+    {
+      "q": "Una telenovela colombiana.",
+      "no": [
+        "Betty la fea"
+      ]
+    },
+    {
+      "q": "Un dulce típico colombiano.",
+      "no": [
+        "arequipe"
+      ]
+    },
     "Un recuerdo típico para llevar de Colombia.",
-    "Un equipo de fútbol colombiano.",
-    "Un animal típico de Colombia.",
+    {
+      "q": "Un equipo de fútbol colombiano.",
+      "no": [
+        "Nacional",
+        "Millonarios"
+      ]
+    },
+    {
+      "q": "Un animal típico de Colombia.",
+      "no": [
+        "cóndor"
+      ]
+    },
     "Un paseo de fin de semana desde Bogotá.",
-    "Un tipo de arepa.",
-    "Lo primero que le muestras a un extranjero en Colombia.",
+    {
+      "q": "Un tipo de arepa.",
+      "no": [
+        "de queso"
+      ]
+    },
+    {
+      "q": "Lo primero que le muestras a un extranjero en Colombia.",
+      "no": [
+        "el café"
+      ]
+    },
     "Una frase que solo entiende un colombiano.",
     {
       "q": "Un escritor colombiano.",
@@ -62,14 +120,61 @@
         "García Márquez"
       ]
     },
-    "Un deportista colombiano que no sea futbolista.",
-    "Una playa de Colombia.",
-    "Un pueblo bonito de Colombia.",
-    "Un postre de Navidad colombiano.",
-    "Un ritmo musical colombiano.",
+    {
+      "q": "Un deportista colombiano que no sea futbolista.",
+      "no": [
+        "Nairo Quintana",
+        "Egan Bernal"
+      ]
+    },
+    {
+      "q": "Una playa de Colombia.",
+      "no": [
+        "Santa Marta"
+      ]
+    },
+    {
+      "q": "Un pueblo bonito de Colombia.",
+      "no": [
+        "Villa de Leyva",
+        "Guatapé"
+      ]
+    },
+    {
+      "q": "Un postre de Navidad colombiano.",
+      "no": [
+        "natilla",
+        "buñuelos"
+      ]
+    },
+    {
+      "q": "Un ritmo musical colombiano.",
+      "no": [
+        "cumbia",
+        "vallenato"
+      ]
+    },
     "Lo que más se extraña de Colombia estando afuera.",
-    "Un antojo callejero colombiano.",
-    "Algo que siempre hay en una fiesta colombiana.",
-    "Un acompañante del ajiaco."
+    {
+      "q": "Un antojo callejero colombiano.",
+      "no": [
+        "empanada",
+        "arepa"
+      ]
+    },
+    {
+      "q": "Algo que siempre hay en una fiesta colombiana.",
+      "no": [
+        "aguardiente",
+        "música"
+      ]
+    },
+    {
+      "q": "Un acompañante del ajiaco.",
+      "no": [
+        "aguacate",
+        "arroz"
+      ]
+    }
   ]
 }

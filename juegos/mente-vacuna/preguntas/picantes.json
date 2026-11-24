@@ -9,24 +9,54 @@
     "Una mentira piadosa que todo el mundo dice.",
     "Una excusa para no salir con alguien.",
     "Algo que haces cuando estás solo en casa.",
-    "El mejor lugar para una primera cita.",
+    {
+      "q": "El mejor lugar para una primera cita.",
+      "no": [
+        "restaurante",
+        "cine"
+      ]
+    },
     "Lo peor que puede pasar en una primera cita.",
     "Una cosa que te enamora de alguien.",
     "Una señal de que no le gustas a alguien.",
-    "Un regalo para conquistar a alguien.",
+    {
+      "q": "Un regalo para conquistar a alguien.",
+      "no": [
+        "flores",
+        "chocolates"
+      ]
+    },
     "Lo que más molesta de una pareja.",
     "Una canción para ponerse romántico.",
     "Una cosa que nadie confiesa.",
-    "Un vicio que casi todos tenemos.",
+    {
+      "q": "Un vicio que casi todos tenemos.",
+      "no": [
+        "celular",
+        "café"
+      ]
+    },
     "Algo que haces y no cuentas.",
     "Algo de lo que te arrepientes después de una fiesta.",
     "Lo más tonto que se hace por amor.",
-    "Una bebida para animarse.",
+    {
+      "q": "Una bebida para animarse.",
+      "no": [
+        "aguardiente",
+        "cerveza"
+      ]
+    },
     "La peor forma de terminar una relación.",
     "Un secreto que todos guardamos.",
     "Algo que se ve en el celular de otro y no se debería ver.",
     "Una frase para coquetear.",
-    "El mejor lugar para dar un beso.",
+    {
+      "q": "El mejor lugar para dar un beso.",
+      "no": [
+        "la playa",
+        "el cine"
+      ]
+    },
     "Un defecto que perdonas.",
     "Un defecto que no perdonas.",
     "El peor regalo de cumpleaños.",
@@ -265,25 +295,123 @@
         "Depende del plan"
       ]
     },
-    "La parte del cuerpo de una mujer que más le gusta a un hombre.",
-    "La parte del cuerpo de un hombre que más le gusta a una mujer.",
-    "Lo primero que un hombre mira de una mujer.",
-    "Lo primero que una mujer mira de un hombre.",
-    "La parte del cuerpo de una mujer que más enloquece a los hombres.",
-    "La parte del cuerpo de un hombre que más enloquece a las mujeres.",
-    "Una parte del cuerpo de una mujer que se ve bien con cualquier ropa.",
-    "Una parte del cuerpo de un hombre que luce con una camiseta ajustada.",
-    "La parte del cuerpo que más se nota en un traje de baño.",
+    {
+      "q": "La parte del cuerpo de una mujer que más le gusta a un hombre.",
+      "no": [
+        "senos",
+        "cola"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo de un hombre que más le gusta a una mujer.",
+      "no": [
+        "espalda",
+        "brazos"
+      ]
+    },
+    {
+      "q": "Lo primero que un hombre mira de una mujer.",
+      "no": [
+        "la cara",
+        "los senos"
+      ]
+    },
+    {
+      "q": "Lo primero que una mujer mira de un hombre.",
+      "no": [
+        "los ojos",
+        "la sonrisa"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo de una mujer que más enloquece a los hombres.",
+      "no": [
+        "la cola",
+        "los senos"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo de un hombre que más enloquece a las mujeres.",
+      "no": [
+        "la espalda"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo de una mujer que se ve bien con cualquier ropa.",
+      "no": [
+        "las piernas"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo de un hombre que luce con una camiseta ajustada.",
+      "no": [
+        "los brazos"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo que más se nota en un traje de baño.",
+      "no": [
+        "la cola"
+      ]
+    },
     "Una parte del cuerpo que te gusta de ti.",
-    "La parte del cuerpo que más le gusta a la gente de sí misma.",
-    "Una parte del cuerpo que todos admiran en un atleta.",
-    "Una parte del cuerpo que se mira con disimulo.",
-    "La parte del cuerpo más sensible.",
-    "La parte del cuerpo más sensual de un hombre.",
-    "La parte del cuerpo más sensual de una mujer.",
-    "Una parte del cuerpo donde un beso se siente mejor.",
-    "Una parte del cuerpo donde un masaje es perfecto.",
-    "El detalle físico que más enamora.",
+    {
+      "q": "La parte del cuerpo que más le gusta a la gente de sí misma.",
+      "no": [
+        "los ojos"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo que todos admiran en un atleta.",
+      "no": [
+        "los brazos"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo que se mira con disimulo.",
+      "no": [
+        "la cola",
+        "los senos"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo más sensible.",
+      "no": [
+        "el cuello"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo más sensual de un hombre.",
+      "no": [
+        "la espalda"
+      ]
+    },
+    {
+      "q": "La parte del cuerpo más sensual de una mujer.",
+      "no": [
+        "el cuello",
+        "las piernas"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo donde un beso se siente mejor.",
+      "no": [
+        "la boca"
+      ]
+    },
+    {
+      "q": "Una parte del cuerpo donde un masaje es perfecto.",
+      "no": [
+        "la espalda"
+      ]
+    },
+    {
+      "q": "El detalle físico que más enamora.",
+      "no": [
+        "la sonrisa",
+        "los ojos"
+      ]
+    },
     {
       "q": "¿Qué parte del cuerpo de una mujer le gusta más a un hombre?",
       "opciones": [
@@ -341,10 +469,10 @@
     {
       "q": "¿Qué parte del cuerpo se besa mejor?",
       "opciones": [
-        "Boca",
         "Cuello",
         "Orejas",
-        "Abdomen"
+        "Abdomen",
+        "Hombros"
       ]
     },
     {
@@ -395,10 +523,10 @@
     {
       "q": "¿Dónde se siente mejor un masaje?",
       "opciones": [
-        "Espalda",
         "Pies",
         "Cabeza",
-        "Cuello"
+        "Cuello",
+        "Manos"
       ]
     }
   ]

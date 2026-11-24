@@ -77,7 +77,8 @@ Lo que se decide sin ser una funcionalidad (qué herramienta, qué formato, qué
 | [019](019-mente-vacuna-datos-locos-ampliado/spec.md) | Mente Vacuna: ampliar Datos locos | En curso |
 | [020](020-mente-vacuna-cuatro-categorias/spec.md) | Mente Vacuna: Dilemas, Redes y citas, Plata y Familia | En curso |
 | [021](021-mente-vacuna-opciones-equilibradas/spec.md) | Mente Vacuna: opciones de peso parecido (3 o 4) | En curso |
+| [022](022-mente-vacuna-revision-de-preguntas/spec.md) | Mente Vacuna: revisión de todas las preguntas (criterios 0006) | En curso |
 
-Próxima spec: **022**.
+Próxima spec: **023**.
 
 Historia: la spec 005 nació como la 006 del proyecto Casa Inteligente y se movió aquí el 26-oct-2026.
