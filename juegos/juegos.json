@@ -1,0 +1,752 @@
+{
+  "_ayuda": "Juegos de Musa en el orden del inicio. Cada uno vive en juegos/<id>/: se cargan sus .css y .js (o, si tiene entrada, ese módulo ES, que importa el resto) y el service worker guarda todos sus archivos para usarlos sin Internet. Los juegos con tipo \"reglas\" no llevan JS: su reglas.json lo lee el visor de comun/reglas.js (spec 008). \"categorias\" (spec 011): los tipos de juego de la portada; cada juego tiene de 1 a 3 (spec 028), solo cuando tenga mucho sentido. Una categoría con \"aparte\": true (All-afters) no entra en \"Todos\": sus juegos exclusivos solo se ven al abrirla o al buscarlos. \"imagen\" (spec 023): la portada del juego en la portada de Musa, un .webp de 360×480 dentro de su carpeta (también va en \"archivos\" para usarla sin Internet); \"imagen_origen\" dice de dónde salió (decisión 0007). Sin imagen se ve un color con la inicial. \"etiquetas\": false (spec 030): al abrir el juego no se muestran sus categorías (Risk, pantalla minimalista).",
+  "categorias": [
+    {
+      "id": "party",
+      "nombre": "Party",
+      "emoji": "🎉",
+      "descripcion": "Para grupos grandes, rápidos de explicar y de reírse"
+    },
+    {
+      "id": "estrategia",
+      "nombre": "Estrategia",
+      "emoji": "♟️",
+      "descripcion": "Se gana pensando a largo plazo"
+    },
+    {
+      "id": "cartas",
+      "nombre": "Cartas",
+      "emoji": "🃏",
+      "descripcion": "Se juegan con una baraja"
+    },
+    {
+      "id": "deduccion",
+      "nombre": "Deducción y engaño",
+      "emoji": "🕵️",
+      "descripcion": "Roles ocultos: mentir y descubrir al otro"
+    },
+    {
+      "id": "all-afters",
+      "nombre": "All-afters",
+      "emoji": "🪩",
+      "descripcion": "Juegos para los eventos de All-afters",
+      "aparte": true
+    }
+  ],
+  "juegos": [
+    {
+      "id": "dixit",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "dixit.css",
+        "dixit.js",
+        "categorias.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://upload.wikimedia.org/wikipedia/en/7/7b/Dixitgame.jpg"
+    },
+    {
+      "id": "risk",
+      "categorias": [
+        "estrategia"
+      ],
+      "etiquetas": false,
+      "entrada": "risk.js",
+      "archivos": [
+        "risk.css",
+        "risk.js",
+        "almacen.js",
+        "efectos.js",
+        "logica/reglas.js",
+        "logica/dados.js",
+        "logica/mapas.js",
+        "logica/historial.js",
+        "vistas/piezas.js",
+        "vistas/tablero.js",
+        "vistas/cuenta.js",
+        "vistas/preparar.js",
+        "vistas/fin.js",
+        "vistas/equipo.js",
+        "vistas/escuela.js",
+        "vistas/simulador.js",
+        "vistas/ajustes.js",
+        "vistas/ganadores.js",
+        "vistas/aviso.js",
+        "vistas/emblemas.js",
+        "img/guerreros.webp",
+        "img/dragones.webp",
+        "img/arqueros.webp",
+        "img/reyes.webp",
+        "img/no-muertos.webp",
+        "img/magos.webp",
+        "img/orcos.webp",
+        "img/jinetes.webp",
+        "img/trolls.webp",
+        "img/enanos.webp",
+        "img/todos.webp",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto del tablero que mandó John (img/portadas/risk.webp)"
+    },
+    {
+      "id": "risk-lotr",
+      "tipo": "reglas",
+      "nombre": "Risk El Señor de los Anillos",
+      "simbolo": "💍",
+      "descripcion": "Risk en la Tierra Media (LOTR) · Bien contra Mal",
+      "categorias": [
+        "estrategia"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/risk-lotr.webp)"
+    },
+    {
+      "id": "cacho",
+      "tipo": "reglas",
+      "nombre": "Cacho",
+      "simbolo": "🎲",
+      "descripcion": "Dados y mentiras: apuesta cantidad y palo o di ¡dudo!",
+      "categorias": [
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Perudo.jpg/330px-Perudo.jpg"
+    },
+    {
+      "id": "charada",
+      "tipo": "reglas",
+      "nombre": "Charada",
+      "simbolo": "🎭",
+      "descripcion": "Mímica · 4 o más jugadores",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/charada.webp)"
+    },
+    {
+      "id": "codenames-pictures",
+      "tipo": "reglas",
+      "nombre": "Codenames Pictures",
+      "simbolo": "🕵️",
+      "descripcion": "Pistas con imágenes · 2 equipos",
+      "categorias": [
+        "party",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Codenames_board_game.jpg/330px-Codenames_board_game.jpg"
+    },
+    {
+      "id": "el-que-piensa-pierde",
+      "tipo": "reglas",
+      "nombre": "El que piensa pierde",
+      "simbolo": "🧠",
+      "descripcion": "Palabras a toda velocidad · 2 a 5",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/el-que-piensa-pierde.png)"
+    },
+    {
+      "id": "ghost-blitz",
+      "tipo": "reglas",
+      "nombre": "Ghost Blitz",
+      "simbolo": "👻",
+      "descripcion": "Agarra la figura correcta · reflejos",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Geistesblitz_03.jpg/330px-Geistesblitz_03.jpg"
+    },
+    {
+      "id": "mente-vacuna",
+      "categorias": [
+        "party"
+      ],
+      "entrada": "mente-vacuna.js",
+      "archivos": [
+        "mente-vacuna.css",
+        "mente-vacuna.js",
+        "almacen.js",
+        "efectos.js",
+        "logica/bolsa.js",
+        "vistas/preguntas.js",
+        "reglas.json",
+        "preguntas/indice.json",
+        "preguntas/sobre-ti.json",
+        "preguntas/del-grupo.json",
+        "preguntas/cultura-general.json",
+        "preguntas/deporte.json",
+        "preguntas/datos-locos.json",
+        "preguntas/deduccion.json",
+        "preguntas/comida.json",
+        "preguntas/cine-musica.json",
+        "preguntas/miedos-y-manias.json",
+        "preguntas/viajes.json",
+        "preguntas/infancia.json",
+        "preguntas/colombia.json",
+        "preguntas/animales.json",
+        "preguntas/tecnologia.json",
+        "preguntas/trabajo.json",
+        "preguntas/fiestas.json",
+        "preguntas/cuatro-opciones.json",
+        "preguntas/picantes.json",
+        "preguntas/posiciones.json",
+        "preguntas/fantasias.json",
+        "preguntas/filosoficas.json",
+        "preguntas/en-pareja.json",
+        "preguntas/misterios.json",
+        "preguntas/dilemas.json",
+        "preguntas/redes-y-citas.json",
+        "preguntas/plata.json",
+        "preguntas/familia.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/mente-vacuna.png)"
+    },
+    {
+      "id": "monopoly-dados-y-tragos",
+      "tipo": "reglas",
+      "nombre": "Monopoly Dados y Tragos",
+      "simbolo": "🍹",
+      "descripcion": "Monopoly para adultos · los tragos son el dinero",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/monopoly-dados-y-tragos.webp)"
+    },
+    {
+      "id": "monopoly-superbanco",
+      "tipo": "reglas",
+      "nombre": "Monopoly Superbanco Electrónico",
+      "simbolo": "💳",
+      "descripcion": "Monopoly con tarjetas y unidad bancaria",
+      "categorias": [
+        "estrategia"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto del tablero que mandó John (img/portadas/monopoly-superbanco.webp)"
+    },
+    {
+      "id": "pictionary-adultos",
+      "tipo": "reglas",
+      "nombre": "Pictionary Solo para adultos",
+      "simbolo": "✏️",
+      "descripcion": "Dibuja y adivina · edición atrevida",
+      "categorias": [
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/pictionary-adultos.png)"
+    },
+    {
+      "id": "poker",
+      "tipo": "reglas",
+      "nombre": "Póker",
+      "simbolo": "🃏",
+      "descripcion": "Texas Hold'em · ranking de manos",
+      "categorias": [
+        "cartas",
+        "estrategia",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Imagen que mandó John (img/portadas/poker.webp)"
+    },
+    {
+      "id": "secret-hitler",
+      "tipo": "reglas",
+      "nombre": "Secret Hitler",
+      "simbolo": "🗳️",
+      "descripcion": "Roles ocultos · engaño y votación",
+      "categorias": [
+        "deduccion",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/secret-hitler.webp)"
+    },
+    {
+      "id": "uno-no-mercy",
+      "tipo": "reglas",
+      "nombre": "Uno No Mercy",
+      "simbolo": "😈",
+      "descripcion": "Uno sin piedad: robos que se acumulan",
+      "categorias": [
+        "cartas",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/uno-no-mercy.webp)"
+    },
+    {
+      "id": "uno-normal",
+      "tipo": "reglas",
+      "nombre": "Uno Normal",
+      "simbolo": "🟥",
+      "descripcion": "El clásico de cartas de colores",
+      "categorias": [
+        "cartas",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Imagen que mandó John (img/portadas/uno-normal.png)"
+    },
+    {
+      "id": "uno-super-mario",
+      "tipo": "reglas",
+      "nombre": "Uno Super Mario",
+      "simbolo": "🍄",
+      "descripcion": "Uno con la carta Superestrella",
+      "categorias": [
+        "cartas",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/uno-super-mario.png)"
+    },
+    {
+      "id": "rummi-q-cartas",
+      "tipo": "reglas",
+      "nombre": "Rummi-Q Cartas",
+      "simbolo": "🎴",
+      "descripcion": "Escaleras y grupos de colores · 2 a 4",
+      "categorias": [
+        "cartas",
+        "estrategia"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/rummi-q-cartas.png)"
+    },
+    {
+      "id": "trio",
+      "tipo": "reglas",
+      "nombre": "Trio",
+      "simbolo": "🥑",
+      "descripcion": "Memoria y suerte: junta tres cartas iguales · 3 a 6",
+      "categorias": [
+        "cartas",
+        "estrategia"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Foto de la caja que mandó John (img/portadas/trio.webp)"
+    },
+    {
+      "id": "zombie-kittens",
+      "tipo": "reglas",
+      "nombre": "Zombie Kittens",
+      "simbolo": "🧟",
+      "descripcion": "Gatitos zombi · el último en pie",
+      "categorias": [
+        "cartas",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://upload.wikimedia.org/wikipedia/en/a/a6/Exploding_Kittens.png"
+    },
+    {
+      "id": "triqui-botellas",
+      "tipo": "reglas",
+      "nombre": "Triqui con botellas",
+      "simbolo": "🍾",
+      "descripcion": "Triqui gigante con cinta y papeles de colores · 2 equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/330px-Tic_tac_toe.svg.png"
+    },
+    {
+      "id": "musicologo",
+      "tipo": "reglas",
+      "nombre": "Musicólogo",
+      "simbolo": "🎵",
+      "descripcion": "Adivina la canción · equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Mads_Clausen%2C_karaoke%2C_new_york%2C_H%C3%A4ng_me_p%C3%A5_party_-_Silja_Symphony_-_20240917_-_27.jpg/500px-Mads_Clausen%2C_karaoke%2C_new_york%2C_H%C3%A4ng_me_p%C3%A5_party_-_Silja_Symphony_-_20240917_-_27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "torre-de-vasos",
+      "tipo": "reglas",
+      "nombre": "Torre de vasos",
+      "simbolo": "🥤",
+      "descripcion": "Baja la pirámide sin tumbar la pelota",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Sport-Stacking.jpg/330px-Sport-Stacking.jpg"
+    },
+    {
+      "id": "salta-triqui",
+      "tipo": "reglas",
+      "nombre": "Salta triqui",
+      "simbolo": "🦘",
+      "descripcion": "Carrera de saltos y triqui en el piso · 2 equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Hopscotch_in_California.jpg/330px-Hopscotch_in_California.jpg"
+    },
+    {
+      "id": "llena-la-bomba",
+      "tipo": "reglas",
+      "nombre": "Llena la bomba",
+      "simbolo": "🎈",
+      "descripcion": "Apila vasos usando solo bombas infladas",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Congrats_bqt.jpg/330px-Congrats_bqt.jpg"
+    },
+    {
+      "id": "sopla-la-bomba",
+      "tipo": "reglas",
+      "nombre": "Sopla la bomba",
+      "simbolo": "💨",
+      "descripcion": "Infla la bomba para tumbar el vaso",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/InflatableBalloons.jpg/330px-InflatableBalloons.jpg"
+    },
+    {
+      "id": "serpentinas",
+      "tipo": "reglas",
+      "nombre": "Serpentinas",
+      "simbolo": "🎊",
+      "descripcion": "Tumba las bolas del vaso con serpentina",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "tortazos",
+      "tipo": "reglas",
+      "nombre": "Tortazos",
+      "simbolo": "💦",
+      "descripcion": "Agua en la boca y poses ridículas: el que se ríe pierde",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "beer-pong",
+      "tipo": "reglas",
+      "nombre": "Beer pong",
+      "simbolo": "🍺",
+      "descripcion": "Mete la bola en los vasos del otro equipo · 2 equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Beer_pong_cups.jpg/500px-Beer_pong_cups.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "pura-mierda",
+      "tipo": "reglas",
+      "nombre": "Pura mierda",
+      "simbolo": "💩",
+      "descripcion": "Apuesta cuántos nombres sabes de un tema · equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "charadas-random",
+      "tipo": "reglas",
+      "nombre": "Charadas con palabras random",
+      "simbolo": "🤪",
+      "descripcion": "Mímica con palabras al azar · equipos",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Game_of_Charades_-_01.jpg/330px-Game_of_Charades_-_01.jpg"
+    },
+    {
+      "id": "contacto",
+      "tipo": "reglas",
+      "nombre": "Contacto",
+      "simbolo": "🤝",
+      "descripcion": "Desbloquea la palabra letra por letra",
+      "categorias": [
+        "all-afters",
+        "party",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Scrabble-letters-modern-nederlands.jpg/500px-Scrabble-letters-modern-nederlands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "cafe-o-tinto",
+      "tipo": "reglas",
+      "nombre": "Café o tinto",
+      "simbolo": "☕",
+      "descripcion": "Adivina la palabra eligiendo entre dos opciones",
+      "categorias": [
+        "all-afters",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/500px-A_small_cup_of_coffee.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "palabra-entremetida",
+      "tipo": "reglas",
+      "nombre": "Palabra entremetida",
+      "simbolo": "🍍",
+      "descripcion": "Repite una palabra loca después de cada palabra",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/AnanasComosusOnPlant.jpg/500px-AnanasComosusOnPlant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "pregunta-consignada",
+      "tipo": "reglas",
+      "nombre": "Pregunta consignada",
+      "simbolo": "😏",
+      "descripcion": "Preguntas que terminan con una consigna atrevida",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/TruthOrDare.png/500px-TruthOrDare.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "conteo-perfecto",
+      "tipo": "reglas",
+      "nombre": "Conteo perfecto",
+      "simbolo": "🔢",
+      "descripcion": "Cuenten hasta el final sin chocarse",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Children%27s_number_blocks_being_used_for_learning_to_count_-_51069936953.jpg/330px-Children%27s_number_blocks_being_used_for_learning_to_count_-_51069936953.jpg"
+    },
+    {
+      "id": "simon-dice",
+      "tipo": "reglas",
+      "nombre": "Simón dice (al revés)",
+      "simbolo": "🙃",
+      "descripcion": "Haz lo contrario de lo que dice el director",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Simon_Says_%286101891636%29.jpg/500px-Simon_Says_%286101891636%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "quien-es-mas-probable",
+      "tipo": "reglas",
+      "nombre": "¿Quién es más probable que…?",
+      "simbolo": "👉",
+      "descripcion": "A la cuenta de 3, todos señalan",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "quien-soy-yo",
+      "tipo": "reglas",
+      "nombre": "¿Quién soy yo?",
+      "simbolo": "🤳",
+      "descripcion": "Celular en la frente: adivina qué eres",
+      "categorias": [
+        "all-afters",
+        "party",
+        "deduccion"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "Imagen que mandó John (img/portadas/quien-soy-yo.png)"
+    },
+    {
+      "id": "linea-mortal",
+      "tipo": "reglas",
+      "nombre": "Línea mortal",
+      "simbolo": "🎯",
+      "descripcion": "Lanza y acércate a la línea sin pasarte",
+      "categorias": [
+        "all-afters"
+      ],
+      "archivos": [
+        "reglas.json"
+      ]
+    },
+    {
+      "id": "minijuegos",
+      "tipo": "reglas",
+      "nombre": "Minijuegos",
+      "simbolo": "🃏",
+      "descripcion": "Saca una carta y se activa un minijuego · 3 o más",
+      "categorias": [
+        "all-afters",
+        "party"
+      ],
+      "archivos": [
+        "reglas.json",
+        "portada.webp"
+      ],
+      "imagen": "portada.webp",
+      "imagen_origen": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/AcetoFive.JPG/330px-AcetoFive.JPG"
+    }
+  ]
+}

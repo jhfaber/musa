@@ -1,0 +1,25 @@
+{
+  "jugadores": "3 o más",
+  "duracion": "10 min",
+  "necesitas": "un celular.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Una persona se pone el **celular en la frente** con una foto o palabra que ella **no ve**.",
+        "Los demás le dan **pistas** o responden sus preguntas de sí o no.",
+        "Tiene que **adivinar qué es** antes de que se acabe el tiempo."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ideas",
+      "p": [
+        "Personajes, animales, famosos, películas…",
+        "Se puede jugar por equipos y contar cuántas adivinan en 1 minuto."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

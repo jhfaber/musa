@@ -1,0 +1,32 @@
+{
+  "_ayuda": "Banco de Mente Vacuna (specs 009 y 010): una categoría por archivo, en este orden. Para agregar una categoría: crea <id>.json en esta carpeta, agrégalo aquí y en juegos.json. Una pregunta es un texto, {q, no} con respuestas prohibidas por obvias, o {q, opciones} con 3 o 4 posibles respuestas (3 cuando no hay una cuarta de peso parecido).",
+  "categorias": [
+    "sobre-ti",
+    "del-grupo",
+    "cultura-general",
+    "deporte",
+    "datos-locos",
+    "deduccion",
+    "comida",
+    "cine-musica",
+    "miedos-y-manias",
+    "viajes",
+    "infancia",
+    "colombia",
+    "animales",
+    "tecnologia",
+    "trabajo",
+    "fiestas",
+    "cuatro-opciones",
+    "picantes",
+    "posiciones",
+    "fantasias",
+    "filosoficas",
+    "en-pareja",
+    "misterios",
+    "dilemas",
+    "redes-y-citas",
+    "plata",
+    "familia"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "jugadores": "2 equipos en fila",
+  "duracion": "10 a 15 min",
+  "necesitas": "papeles o cinta para marcar el camino.",
+  "empezar": [
+    {
+      "t": "Arma el juego",
+      "p": [
+        "Pon **papeles en el piso** formando un camino entre los dos equipos.",
+        "Cada equipo hace una fila en un extremo."
+      ]
+    },
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "A la señal, un jugador de cada equipo sale **saltando** por el camino.",
+        "Donde se encuentran, juegan **triqui** (piedra, papel o tijera si quieren algo rápido).",
+        "El que pierde **se sale**; sale el siguiente de su equipo y el ganador sigue avanzando.",
+        "Gana el equipo que llega al otro extremo."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Si pisas fuera de los papeles, vuelves al inicio."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

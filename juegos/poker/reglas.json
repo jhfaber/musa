@@ -1,0 +1,117 @@
+{
+  "jugadores": "2 a 10",
+  "duracion": "30 min o más",
+  "necesitas": "baraja inglesa de 52 cartas, fichas y una ficha de repartidor.",
+  "nota": "Aquí va Texas Hold'em, la forma más común. Si juegas otra variante, dime cuál.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Ganar fichas: con la **mejor mano de 5 cartas**, o haciendo que todos los demás se retiren."
+      ]
+    },
+    {
+      "t": "Cartas",
+      "p": [
+        "Cada jugador recibe **2 cartas** tapadas, solo para él.",
+        "En la mesa salen **5 cartas comunes**: 3 (flop), 1 (turn) y 1 (river).",
+        "Tu mano son las 5 mejores cartas entre tus 2 y las 5 de la mesa."
+      ]
+    },
+    {
+      "t": "Apuestas",
+      "p": [
+        "Hay una ronda de apuestas antes del flop, otra tras el flop, otra tras el turn y otra tras el river.",
+        "En tu turno: **pasar** (si nadie ha apostado), **igualar**, **subir** o **retirarte**."
+      ]
+    },
+    {
+      "t": "Ciegas",
+      "p": [
+        "Los dos jugadores a la izquierda del repartidor ponen apuestas obligatorias: ciega pequeña y ciega grande.",
+        "El repartidor rota a la izquierda cada mano."
+      ]
+    },
+    {
+      "t": "Final",
+      "p": [
+        "Los que quedan muestran sus cartas: gana la mejor mano y se lleva el bote."
+      ]
+    },
+    {
+      "t": "Orden de las manos (de mejor a peor)",
+      "p": [
+        "Escalera real",
+        "Escalera de color",
+        "Póker (4 iguales)",
+        "Full (trío y pareja)",
+        "Color (5 del mismo palo)",
+        "Escalera (5 seguidas)",
+        "Trío",
+        "Doble pareja",
+        "Pareja",
+        "Carta alta"
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Una mano, paso a paso",
+      "p": [
+        "Se ponen las ciegas y se reparten 2 cartas a cada uno.",
+        "Primera ronda de apuestas (empieza quien está a la izquierda de la ciega grande).",
+        "Flop: 3 cartas comunes boca arriba; segunda ronda.",
+        "Turn: 1 carta más; tercera ronda.",
+        "River: la última carta; cuarta ronda.",
+        "Showdown: se muestran las cartas y se reparte el bote."
+      ]
+    },
+    {
+      "t": "Acciones",
+      "p": [
+        "**Pasar:** no apostar, solo si nadie ha apostado antes.",
+        "**Apostar o subir:** poner fichas; los demás deben igualarlas o retirarse.",
+        "**Igualar:** poner lo mismo que el que apostó.",
+        "**Retirarte:** botas tus cartas y pierdes lo que pusiste.",
+        "**All-in:** apostar todas tus fichas."
+      ]
+    },
+    {
+      "t": "All-in y botes laterales",
+      "p": [
+        "Si te quedas sin fichas para igualar, entras con todo lo que tienes.",
+        "Lo que apostaron los demás de más va a un bote aparte, y tú solo compites por el bote que alcanzaste a igualar."
+      ]
+    },
+    {
+      "t": "Empates",
+      "p": [
+        "Si dos manos del mismo tipo empatan, gana la que tenga las cartas más altas.",
+        "Si siguen iguales, se **reparte el bote**."
+      ]
+    },
+    {
+      "t": "Orden de las manos",
+      "p": [
+        "Escalera real: 10, J, Q, K, A del mismo palo.",
+        "Escalera de color: 5 seguidas del mismo palo.",
+        "Póker: 4 cartas iguales.",
+        "Full: 3 iguales y 2 iguales.",
+        "Color: 5 del mismo palo.",
+        "Escalera: 5 seguidas, de cualquier palo.",
+        "Trío: 3 iguales.",
+        "Doble pareja.",
+        "Pareja.",
+        "Carta alta: ninguna de las anteriores."
+      ]
+    },
+    {
+      "t": "Buenos modales",
+      "p": [
+        "No se enseñan las cartas tapadas hasta el showdown.",
+        "No se comenta la mano mientras se juega.",
+        "Se apuesta en orden, sin tocar las fichas antes del turno."
+      ]
+    }
+  ]
+}

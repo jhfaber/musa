@@ -1,0 +1,81 @@
+{
+  "id": "cine-musica",
+  "nombre": "Cine y música",
+  "emoji": "🎬",
+  "acento": "#ff8fb4",
+  "descripcion": "Películas, series, artistas y canciones",
+  "pista": "Un título, un artista o un género.",
+  "preguntas": [
+    {
+      "q": "Una película que todo el mundo ha visto.",
+      "no": [
+        "Titanic"
+      ]
+    },
+    "Una película de terror famosa.",
+    {
+      "q": "Un actor famoso.",
+      "no": [
+        "Tom Cruise"
+      ]
+    },
+    {
+      "q": "Una actriz famosa.",
+      "no": [
+        "Angelina Jolie"
+      ]
+    },
+    "Una película que te hizo llorar.",
+    "Una serie para ver en maratón.",
+    "Una comedia que te hace reír.",
+    {
+      "q": "Un cantante famoso.",
+      "no": [
+        "Shakira"
+      ]
+    },
+    "Una banda de rock famosa.",
+    {
+      "q": "Una canción que todos cantan.",
+      "no": [
+        "Despacito"
+      ]
+    },
+    "Un género musical.",
+    "Una película animada.",
+    "Un villano de película.",
+    {
+      "q": "Un superhéroe.",
+      "no": [
+        "Batman",
+        "Spider-Man"
+      ]
+    },
+    "Una saga de películas.",
+    "Un director de cine famoso.",
+    {
+      "q": "Una canción para una fiesta.",
+      "no": [
+        "Despacito"
+      ]
+    },
+    "Una canción de amor.",
+    "Una canción de la que ya estás cansado.",
+    "Un cantante que te gusta pero casi no lo dices.",
+    "Un baile de moda.",
+    "Un reality de televisión.",
+    {
+      "q": "Una plataforma de streaming.",
+      "no": [
+        "Netflix"
+      ]
+    },
+    "Un personaje de serie que te cae mal.",
+    "Una película que dura demasiado.",
+    "Un musical famoso.",
+    "Un instrumento que quieres aprender.",
+    "Una película de Navidad.",
+    "Un cantante de reguetón.",
+    "Un artista que todo el mundo conoce."
+  ]
+}

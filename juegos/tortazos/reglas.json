@@ -1,0 +1,25 @@
+{
+  "jugadores": "parejas",
+  "duracion": "10 min",
+  "necesitas": "agua y vasos.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Dos personas se llenan **la boca de agua**.",
+        "Se ponen en **posiciones ridículas** y se dan **tortazos suaves**, por turnos.",
+        "**Pierde** el que se ríe o bota el agua."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Cuidado",
+      "p": [
+        "Tortazos **suaves y con la mano abierta**, nunca en los ojos ni los oídos.",
+        "Mejor jugarlo donde se pueda mojar el piso."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

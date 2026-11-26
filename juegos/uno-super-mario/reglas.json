@@ -1,0 +1,98 @@
+{
+  "jugadores": "2 a 10",
+  "duracion": "20 min",
+  "necesitas": "el mazo UNO Super Mario (112 cartas).",
+  "nota": "Si tu \"Uno de Mario\" es la edición **Mario Kart** (con objetos en las esquinas de las cartas), dímelo: es otra versión.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "**Quedarte sin cartas primero.**"
+      ]
+    },
+    {
+      "t": "Reparto",
+      "p": [
+        "7 cartas para cada jugador.",
+        "Se voltea una carta al centro y el resto es el mazo."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Juega una carta del **mismo color, número o símbolo** que la de arriba.",
+        "Si no tienes, **roba una**; si sirve, la puedes jugar."
+      ]
+    },
+    {
+      "t": "Cartas especiales",
+      "p": [
+        "**Salto:** el siguiente pierde su turno.",
+        "**Reversa:** cambia el sentido del juego.",
+        "**+2:** el siguiente roba 2 y pierde su turno.",
+        "**Comodín:** eliges el color.",
+        "**Comodín +4:** eliges el color y el siguiente roba 4 y pierde su turno. Solo se juega si **no tienes** ninguna carta del color de arriba."
+      ]
+    },
+    {
+      "t": "Carta Superestrella",
+      "p": [
+        "Tras un **+2 o un +4** que te echen, juega la Superestrella y **devuélvele el efecto** a quien lo jugó: él roba 2 o 4.",
+        "Es la carta nueva de esta edición."
+      ]
+    },
+    {
+      "t": "¡UNO!",
+      "p": [
+        "Cuando te quede **una sola carta**, grita ¡UNO!",
+        "Si te descubren sin haberlo dicho antes de que juegue el siguiente, **robas 2**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Cómo empieza",
+      "p": [
+        "El jugador a la izquierda del repartidor juega primero.",
+        "Si la primera carta es de acción, se aplica su efecto."
+      ]
+    },
+    {
+      "t": "Cartas de acción",
+      "p": [
+        "Se pueden jugar sobre cartas del mismo color o del mismo símbolo.",
+        "Los comodines se pueden jugar en cualquier momento (el +4, con la condición de arriba)."
+      ]
+    },
+    {
+      "t": "Cartas propias de Mario",
+      "p": [
+        "**Superestrella:** devuelve un +2 o un +4 a quien lo jugó.",
+        "Dos **cartas personalizables**: se les puede escribir una regla de la casa, si acuerdan."
+      ]
+    },
+    {
+      "t": "Comodín +4 y el desafío",
+      "p": [
+        "El jugador que lo recibe puede **desafiar** y revisar la mano de quien lo jugó.",
+        "Si tenía una carta del color de arriba, quien lo jugó **roba 4** en vez de ti.",
+        "Si no la tenía, quien desafió **roba 6** en total."
+      ]
+    },
+    {
+      "t": "Puntos (opcional)",
+      "p": [
+        "Al terminar cada mano, quien se queda sin cartas suma los puntos de las cartas de los demás.",
+        "Números: su valor. +2, Salto y Reversa: 20. Comodines: 50.",
+        "Gana quien llegue primero a 500 puntos."
+      ]
+    },
+    {
+      "t": "Reglas de la casa",
+      "p": [
+        "**No son oficiales**, pero se juegan mucho: acumular +2 sobre +2, o jugar varias cartas iguales a la vez.",
+        "Pónganse de acuerdo **antes** de empezar."
+      ]
+    }
+  ]
+}

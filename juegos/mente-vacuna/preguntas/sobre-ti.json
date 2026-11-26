@@ -1,0 +1,127 @@
+{
+  "id": "sobre-ti",
+  "nombre": "Sobre ti",
+  "emoji": "🧑",
+  "acento": "#f2c46b",
+  "descripcion": "Gustos, manías y cosas tuyas: para conocerse",
+  "pista": "Responde sobre ti, con una palabra o una frase corta.",
+  "preguntas": [
+    {
+      "q": "Tu animal favorito.",
+      "no": [
+        "perro"
+      ]
+    },
+    {
+      "q": "Tu color favorito.",
+      "no": [
+        "azul"
+      ]
+    },
+    "Una comida que podrías comer todos los días.",
+    {
+      "q": "Tu mayor miedo.",
+      "no": [
+        "la muerte"
+      ]
+    },
+    "El superpoder que te gustaría tener.",
+    {
+      "q": "Una cosa que nunca falta en tu bolso o en tus bolsillos.",
+      "no": [
+        "celular",
+        "llaves",
+        "billetera"
+      ]
+    },
+    "Una hora a la que te despiertas entre semana.",
+    {
+      "q": "Tu estación o época del año favorita.",
+      "no": [
+        "verano"
+      ]
+    },
+    {
+      "q": "La primera cosa que haces al despertar.",
+      "no": [
+        "mirar el celular"
+      ]
+    },
+    {
+      "q": "Un lugar al que irías de vacaciones mañana mismo.",
+      "no": [
+        "Cartagena"
+      ]
+    },
+    "Algo que coleccionabas de niño.",
+    "El trabajo que soñabas tener de niño.",
+    "Una manía tuya.",
+    {
+      "q": "La app que más usas en el celular.",
+      "no": [
+        "WhatsApp"
+      ]
+    },
+    {
+      "q": "Lo primero que harías si ganaras la lotería.",
+      "no": [
+        "comprar una casa"
+      ]
+    },
+    {
+      "q": "Tu postre favorito.",
+      "no": [
+        "helado"
+      ]
+    },
+    "Un talento oculto que tienes.",
+    "La palabra que más repites.",
+    {
+      "q": "Tu plan perfecto de domingo.",
+      "no": [
+        "dormir"
+      ]
+    },
+    {
+      "q": "Un objeto que no podrías dejar de usar ni un día.",
+      "no": [
+        "celular"
+      ]
+    },
+    {
+      "q": "Lo que más pereza te da hacer en casa.",
+      "no": [
+        "lavar platos"
+      ]
+    },
+    "La mejor edad de la vida.",
+    {
+      "q": "Algo que te pone de buen humor al instante.",
+      "no": [
+        "la música"
+      ]
+    },
+    "Un apodo que has tenido.",
+    {
+      "q": "Lo que haces cuando no puedes dormir.",
+      "no": [
+        "ver el celular"
+      ]
+    },
+    {
+      "q": "Un deporte que te gustaría aprender.",
+      "no": [
+        "natación"
+      ]
+    },
+    "La mejor etapa de tu vida hasta ahora.",
+    "Un personaje famoso con el que te tomarías un café.",
+    {
+      "q": "Tu hora favorita del día.",
+      "no": [
+        "la noche"
+      ]
+    },
+    "La prenda de ropa que más usas."
+  ]
+}

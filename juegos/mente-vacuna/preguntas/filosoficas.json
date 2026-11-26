@@ -1,0 +1,279 @@
+{
+  "id": "filosoficas",
+  "nombre": "Filosóficas",
+  "emoji": "🤔",
+  "acento": "#9fd4ff",
+  "descripcion": "El sentido de la vida, el destino y lo que importa",
+  "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
+  "preguntas": [
+    "El sentido de la vida, en una palabra.",
+    "Lo que más importa en la vida.",
+    {
+      "q": "Lo que le da sentido a tu vida.",
+      "no": [
+        "la familia"
+      ]
+    },
+    "Algo que te gustaría haber sabido a los 18.",
+    "Lo que crees que pasa después de la muerte.",
+    "Una cosa que hace feliz a la gente.",
+    "Lo que significa ser feliz.",
+    "Algo por lo que lo darías todo.",
+    "Lo que más te cuesta perdonar.",
+    "Una pregunta que te haces antes de dormir.",
+    "El mejor consejo que te han dado.",
+    "Algo que la gente deja para después y se arrepiente.",
+    "Una mentira que nos contamos a nosotros mismos.",
+    "Lo que más valoras en un amigo.",
+    "Una verdad incómoda de la vida.",
+    "Lo que uno se lleva de esta vida.",
+    "Lo que cambiarías del mundo si pudieras.",
+    "Un arrepentimiento común al final de la vida.",
+    "Algo que el dinero no puede comprar.",
+    "Una razón para levantarse cada mañana.",
+    "Lo que más paz te da.",
+    "Lo que le dirías a tu yo de hace diez años.",
+    "Lo que hace buena a una persona.",
+    "Algo que parece importante y no lo es.",
+    "Lo que le da valor a una vida.",
+    {
+      "q": "¿Cuál es el sentido de la vida?",
+      "opciones": [
+        "Ser feliz",
+        "Amar y ser amado",
+        "Dejar huella",
+        "Disfrutar el presente"
+      ]
+    },
+    {
+      "q": "¿Qué pasa después de la muerte?",
+      "opciones": [
+        "Nada",
+        "Reencarnación",
+        "Cielo o infierno",
+        "Nos volvemos energía"
+      ]
+    },
+    {
+      "q": "¿Qué da más felicidad?",
+      "opciones": [
+        "El amor",
+        "El dinero",
+        "La salud",
+        "La libertad"
+      ]
+    },
+    {
+      "q": "¿Qué es peor?",
+      "opciones": [
+        "Morir joven",
+        "Vivir solo",
+        "Vivir sin propósito",
+        "Vivir arrepentido"
+      ]
+    },
+    {
+      "q": "¿Qué cambiarías del mundo?",
+      "opciones": [
+        "La desigualdad",
+        "La violencia",
+        "La contaminación",
+        "La corrupción"
+      ]
+    },
+    {
+      "q": "¿De qué se arrepiente más la gente al final de la vida?",
+      "opciones": [
+        "No haber viajado",
+        "No haber amado más",
+        "Trabajar demasiado",
+        "No estar con la familia"
+      ]
+    },
+    {
+      "q": "¿Qué hace buena a una persona?",
+      "opciones": [
+        "La honestidad",
+        "La bondad",
+        "La humildad",
+        "La empatía"
+      ]
+    },
+    {
+      "q": "¿Qué da más paz?",
+      "opciones": [
+        "La naturaleza",
+        "La música",
+        "La oración",
+        "El silencio"
+      ]
+    },
+    {
+      "q": "¿Qué es el éxito?",
+      "opciones": [
+        "Ser feliz",
+        "Tener dinero",
+        "Tener familia",
+        "Hacer lo que amas"
+      ]
+    },
+    {
+      "q": "¿Existe el destino?",
+      "opciones": [
+        "Sí",
+        "No",
+        "Cada uno lo construye"
+      ]
+    },
+    {
+      "q": "¿Qué es el amor?",
+      "opciones": [
+        "Una decisión",
+        "Una química",
+        "Un compromiso",
+        "Un cariño que cuida"
+      ]
+    },
+    {
+      "q": "¿Qué es lo que más cuesta soltar?",
+      "opciones": [
+        "Un amor",
+        "Un rencor",
+        "Un recuerdo",
+        "Una costumbre"
+      ]
+    },
+    {
+      "q": "¿Qué te gustaría que dijeran de ti al final?",
+      "opciones": [
+        "Que fue buena gente",
+        "Que nos hizo reír",
+        "Que fue valiente",
+        "Que fue de buen corazón"
+      ]
+    },
+    "Algo que nunca se debería dar por sentado.",
+    "La mayor lección que te dio la vida.",
+    "Lo que daría miedo saber del futuro.",
+    "Una cosa que todos buscamos.",
+    "Lo que más tiempo desperdicia la gente.",
+    "Algo que se entiende solo con los años.",
+    "Lo que hace valiente a una persona.",
+    "Lo que más pesa en la conciencia.",
+    "Una decisión que cambió tu vida.",
+    "Lo que dejarías si pudieras empezar de cero.",
+    "La diferencia entre estar vivo y vivir.",
+    "Algo que la gente confunde con la felicidad.",
+    "Una cosa que haría mejor al mundo.",
+    "Lo que significa una vida bien vivida.",
+    "Un lugar donde te sientes en paz.",
+    {
+      "q": "Algo que nadie te puede quitar.",
+      "no": [
+        "los recuerdos"
+      ]
+    },
+    "Lo que más extrañarías de estar vivo.",
+    "Una pregunta que nadie sabe responder.",
+    "Algo que le preguntarías al universo.",
+    "Lo que vale más que el dinero.",
+    {
+      "q": "¿Qué te daría más miedo saber?",
+      "opciones": [
+        "Cuándo vas a morir",
+        "Cómo vas a morir",
+        "Lo que dicen de ti",
+        "Tu futuro"
+      ]
+    },
+    {
+      "q": "¿Qué cambiaría más rápido tu vida?",
+      "opciones": [
+        "Ganar la lotería",
+        "Un gran amor",
+        "Perder a alguien",
+        "Un viaje largo"
+      ]
+    },
+    {
+      "q": "¿Cómo te gustaría vivir?",
+      "opciones": [
+        "Mucho tiempo",
+        "Intensamente",
+        "Con tranquilidad",
+        "Con propósito"
+      ]
+    },
+    {
+      "q": "¿Qué se debe perdonar siempre?",
+      "opciones": [
+        "Un error",
+        "Una traición",
+        "Una mentira"
+      ]
+    },
+    {
+      "q": "¿Cuál es la mayor mentira que nos contamos?",
+      "opciones": [
+        "Mañana lo hago",
+        "Estoy bien",
+        "No me importa",
+        "Yo no cambio"
+      ]
+    },
+    {
+      "q": "¿Qué es lo más valioso que tenemos?",
+      "opciones": [
+        "El tiempo",
+        "La salud",
+        "La familia",
+        "La libertad"
+      ]
+    },
+    {
+      "q": "¿Qué le da más sentido a la vida?",
+      "opciones": [
+        "Los hijos",
+        "El trabajo",
+        "El amor",
+        "La fe"
+      ]
+    },
+    {
+      "q": "¿Qué nos hace humanos?",
+      "opciones": [
+        "Pensar",
+        "Amar",
+        "Reír",
+        "Crear"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo peor que te quiten?",
+      "opciones": [
+        "La libertad",
+        "La memoria",
+        "La salud",
+        "Tus seres queridos"
+      ]
+    },
+    {
+      "q": "¿Cuándo se es de verdad adulto?",
+      "opciones": [
+        "Al pagar cuentas",
+        "Al perder a alguien",
+        "Al tener hijos",
+        "Al independizarte"
+      ]
+    },
+    {
+      "q": "¿Qué es la libertad?",
+      "opciones": [
+        "Hacer lo que quiero",
+        "No depender de nadie",
+        "Elegir mi camino",
+        "Estar en paz"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "jugadores": "2 a 5",
+  "duracion": "15 min",
+  "necesitas": "el mazo de 61 cartas (con 3 jugadores, solo las cartas **sin huella de pata**).",
+  "nota": "Aquí va la base que comparte con Exploding Kittens. Las reglas de los zombis (volver de la muerte) las dejo por completar con el manual de la caja.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Ser el **último jugador vivo**.",
+        "Los eliminados siguen en la partida como zombis hasta el final."
+      ]
+    },
+    {
+      "t": "Preparación",
+      "p": [
+        "3 jugadores: solo cartas sin huella de pata (33 cartas). 4 o 5: todas.",
+        "Saca los **Gatitos Zombi** y dale uno a cada jugador; los que sobren vuelven al mazo.",
+        "Cada uno recibe 7 cartas más su Gatito Zombi (8 en total) y las mira en secreto."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Juega las cartas de acción que quieras (también puedes no jugar ninguna).",
+        "Termina **robando una carta** del mazo."
+      ]
+    },
+    {
+      "t": "Cartas que ya conocemos",
+      "p": [
+        "**Salto:** terminas tu turno sin robar.",
+        "**Ataque:** no robas y el siguiente juega **dos turnos**.",
+        "**Ver el futuro:** miras las 3 cartas de arriba del mazo.",
+        "**Dos gatos iguales:** juégalos juntos y le robas una carta al azar a otro jugador."
+      ]
+    },
+    {
+      "t": "Gatito Zombi",
+      "p": [
+        "Es la carta más poderosa del juego.",
+        "Aunque puedas usarlo, **no estás obligado**: a veces conviene morir para dejar de robar un rato."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Si robas un gatito explosivo",
+      "p": [
+        "Quedas eliminado, salvo que puedas evitarlo.",
+        "Pendiente: cómo cambia el Gatito Zombi lo que pasa después de la explosión. Revísalo en el manual."
+      ]
+    },
+    {
+      "t": "Los zombis",
+      "p": [
+        "Los eliminados no se van: siguen jugando hasta que haya un ganador.",
+        "Pendiente: qué pueden hacer exactamente. Está en el manual y en la sección \"Zombie Apocalypse\"."
+      ]
+    },
+    {
+      "t": "Mezclar con Exploding Kittens",
+      "p": [
+        "Zombie Kittens es independiente, pero se puede combinar con otras versiones de Exploding Kittens.",
+        "Al mezclar, deja los gatitos explosivos que sean **uno menos que los jugadores**."
+      ]
+    },
+    {
+      "t": "Fin de la partida",
+      "p": [
+        "Gana el último jugador que sigue vivo."
+      ]
+    }
+  ]
+}

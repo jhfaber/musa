@@ -1,0 +1,111 @@
+{
+  "id": "deduccion",
+  "nombre": "Deducción",
+  "emoji": "🔎",
+  "acento": "#5fd6d0",
+  "descripcion": "Piensa lo que respondería la mayoría",
+  "pista": "No digas lo que tú harías: escribe lo que haría la mayoría.",
+  "preguntas": [
+    "Lo primero que haría la mayoría si se encuentra una billetera llena de plata.",
+    {
+      "q": "Lo que más se contesta cuando alguien pregunta \"¿cómo estás?\".",
+      "no": [
+        "bien"
+      ]
+    },
+    "Lo que la mayoría responde cuando le preguntan \"¿qué quieres comer?\".",
+    {
+      "q": "La excusa que más se usa para llegar tarde.",
+      "no": [
+        "el trancón"
+      ]
+    },
+    {
+      "q": "Lo más típico que se regala en un cumpleaños.",
+      "no": [
+        "ropa"
+      ]
+    },
+    "La comida que más se pide en un restaurante.",
+    {
+      "q": "El primer lugar que se visita en una ciudad nueva.",
+      "no": [
+        "el centro"
+      ]
+    },
+    "La frase que más se repite en una reunión de trabajo.",
+    "Lo primero que mira la gente al entrar a una casa ajena.",
+    {
+      "q": "Lo que más se olvida al salir de casa.",
+      "no": [
+        "llaves",
+        "celular"
+      ]
+    },
+    "La mentira más común.",
+    {
+      "q": "El primer pensamiento de la mañana.",
+      "no": [
+        "cinco minutos más"
+      ]
+    },
+    {
+      "q": "Lo que hace la mayoría dentro de un ascensor.",
+      "no": [
+        "mirar el celular"
+      ]
+    },
+    {
+      "q": "El objeto que la gente más revisa durante el día.",
+      "no": [
+        "celular"
+      ]
+    },
+    "Lo que más se pide en una cafetería.",
+    "Lo primero que hace la gente al llegar a un hotel.",
+    {
+      "q": "Lo que hace la mayoría en un semáforo largo.",
+      "no": [
+        "mirar el celular"
+      ]
+    },
+    {
+      "q": "El tema de conversación cuando no hay tema.",
+      "no": [
+        "el clima"
+      ]
+    },
+    "La razón número uno para no ir a un plan.",
+    {
+      "q": "La frase que más dice una mamá.",
+      "no": [
+        "¿ya comiste?"
+      ]
+    },
+    {
+      "q": "Lo que responde la mayoría a \"¿qué haces?\" cuando no hace nada.",
+      "no": [
+        "nada"
+      ]
+    },
+    "Lo primero que se pierde en un viaje.",
+    "El pasatiempo más común de la gente en casa.",
+    "Una película que casi todo el mundo ha visto.",
+    "Lo primero que se le ofrece a un invitado.",
+    "Lo que se pone la mayoría para una entrevista de trabajo.",
+    {
+      "q": "La palabra que más se usa en WhatsApp.",
+      "no": [
+        "jaja"
+      ]
+    },
+    {
+      "q": "Lo primero que hace un adulto al llegar a casa.",
+      "no": [
+        "quitarse los zapatos"
+      ]
+    },
+    "Lo que más se compra de más en el supermercado.",
+    "La hora a la que la mayoría se va a dormir."
+  ]
+}

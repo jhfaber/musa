@@ -1,0 +1,30 @@
+{
+  "jugadores": "3 o más",
+  "duracion": "10 a 15 min",
+  "nota": "Para mayores de 18.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Alguien hace **cualquier pregunta** y la termina con una **consigna**.",
+        "La otra persona debe contestar algo, **sin repetir** respuestas.",
+        "Pierde el que se queda callado o repite."
+      ]
+    },
+    {
+      "t": "Consignas",
+      "p": [
+        "Entre mis piernas · conmigo mirando · sobre la mesa · mientras te muerden la oreja · después del juego · cuando ya no quede nadie sobrio."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Se pueden inventar consignas nuevas."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

@@ -1,0 +1,23 @@
+{
+  "jugadores": "4 o más",
+  "duracion": "10 a 15 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Alguien hace una pregunta: \"¿Quién es más probable que sea **el rey del jacuzzi**?\".",
+        "A la cuenta de **3**, todos **señalan** a una persona.",
+        "El más señalado **pierde** la ronda."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ideas",
+      "p": [
+        "En la categoría 👥 Del grupo de Mente Vacuna hay preguntas que sirven para este juego."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

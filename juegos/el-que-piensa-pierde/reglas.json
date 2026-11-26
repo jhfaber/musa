@@ -1,0 +1,39 @@
+{
+  "jugadores": "2 a 5",
+  "duracion": "10 a 30 min",
+  "nota": "Es un juego de cartas de palabras con 5 modos de juego (con sílabas, temas y letras). Todavía no tengo las reglas de cada modo: pásame una foto del manual o cuéntame cómo los juegas y las completo.",
+  "empezar": [
+    {
+      "t": "Qué es",
+      "p": [
+        "Un juego rápido de palabras: gana el que reacciona sin pensar demasiado.",
+        "Tiene **5 modos de juego** distintos.",
+        "Se usan cartas con sílabas, temas y letras."
+      ]
+    },
+    {
+      "t": "Para empezar a jugar",
+      "p": [
+        "Mira el modo que van a jugar en el manual de la caja.",
+        "Pendiente: las reglas de cada modo, por completar."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Datos de la caja",
+      "p": [
+        "De 2 a 5 jugadores.",
+        "Partidas cortas, de 10 a 30 minutos.",
+        "Recomendado desde los 8 años."
+      ]
+    },
+    {
+      "t": "Modos de juego",
+      "p": [
+        "Pendiente: nombre y reglas de cada uno de los 5 modos.",
+        "Cuando me pases el manual, las agrego aquí."
+      ]
+    }
+  ]
+}

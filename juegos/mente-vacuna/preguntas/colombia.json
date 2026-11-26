@@ -1,0 +1,120 @@
+{
+  "id": "colombia",
+  "nombre": "Colombia",
+  "emoji": "🇨🇴",
+  "acento": "#ffe066",
+  "descripcion": "Lo nuestro: comida, lugares, música y frases",
+  "pista": "Algo de Colombia: un lugar, una comida, una persona o una frase.",
+  "preguntas": [
+    {
+      "q": "Un plato típico colombiano.",
+      "no": [
+        "bandeja paisa"
+      ]
+    },
+    {
+      "q": "Una ciudad de Colombia.",
+      "no": [
+        "Bogotá"
+      ]
+    },
+    {
+      "q": "Una fruta colombiana.",
+      "no": [
+        "mango"
+      ]
+    },
+    {
+      "q": "Un cantante colombiano.",
+      "no": [
+        "Shakira"
+      ]
+    },
+    {
+      "q": "Un futbolista colombiano.",
+      "no": [
+        "James"
+      ]
+    },
+    {
+      "q": "Un lugar turístico de Colombia.",
+      "no": [
+        "Cartagena"
+      ]
+    },
+    "Una palabra muy colombiana.",
+    {
+      "q": "Una bebida típica colombiana.",
+      "no": [
+        "aguardiente"
+      ]
+    },
+    "Un departamento de Colombia.",
+    {
+      "q": "Una feria o carnaval colombiano.",
+      "no": [
+        "Carnaval de Barranquilla"
+      ]
+    },
+    {
+      "q": "Un río de Colombia.",
+      "no": [
+        "Magdalena"
+      ]
+    },
+    {
+      "q": "Una telenovela colombiana.",
+      "no": [
+        "Betty la fea"
+      ]
+    },
+    {
+      "q": "Un dulce típico colombiano.",
+      "no": [
+        "arequipe"
+      ]
+    },
+    "Un recuerdo típico para llevar de Colombia.",
+    "Un equipo de fútbol colombiano.",
+    {
+      "q": "Un animal típico de Colombia.",
+      "no": [
+        "cóndor"
+      ]
+    },
+    "Un paseo de fin de semana desde Bogotá.",
+    {
+      "q": "Un tipo de arepa.",
+      "no": [
+        "de queso"
+      ]
+    },
+    {
+      "q": "Lo primero que le muestras a un extranjero en Colombia.",
+      "no": [
+        "el café"
+      ]
+    },
+    "Una frase que solo entiende un colombiano.",
+    {
+      "q": "Un escritor colombiano.",
+      "no": [
+        "García Márquez"
+      ]
+    },
+    "Un deportista colombiano que no sea futbolista.",
+    {
+      "q": "Una playa de Colombia.",
+      "no": [
+        "Santa Marta"
+      ]
+    },
+    "Un pueblo bonito de Colombia.",
+    "Un postre de Navidad colombiano.",
+    "Un ritmo musical colombiano.",
+    "Lo que más se extraña de Colombia estando afuera.",
+    "Un antojo callejero colombiano.",
+    "Algo que siempre hay en una fiesta colombiana.",
+    "Un acompañante del ajiaco."
+  ]
+}

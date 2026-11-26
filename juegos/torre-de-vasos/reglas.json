@@ -1,0 +1,31 @@
+{
+  "jugadores": "2 o más",
+  "duracion": "5 min",
+  "necesitas": "vasos plásticos y una pelota de ping pong.",
+  "empezar": [
+    {
+      "t": "Arma la torre",
+      "p": [
+        "Haz una **pirámide de vasos** en triángulo.",
+        "Pon una **pelota de ping pong** en la punta."
+      ]
+    },
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Hay que **bajar todos los vasos** hasta dejarlos apilados en una sola torre, sin que se caiga la pelota.",
+        "Gana el que lo logra más rápido."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Si la pelota se cae, empiezas de nuevo.",
+        "Se puede jugar contrarreloj o dos personas al tiempo, cada una con su torre."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

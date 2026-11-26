@@ -1,0 +1,59 @@
+{
+  "jugadores": "2 a 4",
+  "duracion": "1 hora",
+  "necesitas": "tablero, unidad bancaria electrónica, tarjetas bancarias, fichas, 1 dado, títulos de propiedad, cartas de Fortuna y tarjetas de referencia.",
+  "nota": "Funciona como el Monopoly clásico, pero el dinero vive en la tarjeta de cada jugador y lo mueve la unidad bancaria. Las teclas exactas de la unidad no las tengo: están en las tarjetas de referencia de la caja.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Igual que en el Monopoly clásico: quedarte con más dinero y propiedades, y arruinar a los demás."
+      ]
+    },
+    {
+      "t": "Preparación",
+      "p": [
+        "Cada jugador toma una ficha y una **tarjeta bancaria**.",
+        "Se pone el dinero inicial en cada tarjeta con la unidad.",
+        "Todos empiezan en Salida."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Tira el dado (en esta caja hay **uno solo**) y avanza.",
+        "Propiedad sin dueño: la compras con tu tarjeta en la unidad.",
+        "Propiedad con dueño: pagas la renta con tu tarjeta."
+      ]
+    },
+    {
+      "t": "Ventaja",
+      "p": [
+        "No hay billetes: todo se paga y se cobra con la unidad."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Qué hace la unidad",
+      "p": [
+        "Guarda el saldo de cada tarjeta.",
+        "Sirve para comprar propiedades, pagar rentas y cobrar sin billetes.",
+        "Los pasos exactos (qué botón apretar) están en las **tarjetas de referencia**."
+      ]
+    },
+    {
+      "t": "Lo demás",
+      "p": [
+        "La cárcel, las cartas de Fortuna y construir funcionan, en general, como en el Monopoly clásico.",
+        "Si alguna regla es distinta, manda la tarjeta de referencia."
+      ]
+    },
+    {
+      "t": "Por completar",
+      "p": [
+        "Cuándo termina la partida y cómo se gana en esta versión."
+      ]
+    }
+  ]
+}

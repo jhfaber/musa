@@ -1,0 +1,23 @@
+{
+  "jugadores": "2 equipos",
+  "duracion": "15 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Una persona saca una **palabra al azar** y la actúa **sin hablar**.",
+        "Su equipo tiene **1 minuto** para adivinarla.",
+        "Si aciertan, punto. Gana el equipo con más puntos."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ideas",
+      "p": [
+        "Las palabras más raras son las más divertidas: objetos, acciones, personajes."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

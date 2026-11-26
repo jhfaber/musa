@@ -1,0 +1,71 @@
+{
+  "jugadores": "2 a 8",
+  "duracion": "20 min",
+  "necesitas": "las 5 figuras (fantasma blanco, botella verde, libro azul, ratón gris y sillón rojo) y el mazo de cartas.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Agarrar **primero** la figura correcta para quedarte la carta. Gana quien tenga más cartas cuando se acabe el mazo."
+      ]
+    },
+    {
+      "t": "Preparación",
+      "p": [
+        "Las 5 figuras en el centro de la mesa, al alcance de todos.",
+        "El mazo boca abajo."
+      ]
+    },
+    {
+      "t": "Cada ronda",
+      "p": [
+        "Alguien voltea la carta de arriba.",
+        "Todos juegan a la vez: **no hay turnos**."
+      ]
+    },
+    {
+      "t": "Qué agarrar",
+      "p": [
+        "**Si un objeto de la carta está pintado de su color de verdad** (fantasma blanco, botella verde, libro azul, ratón gris, sillón rojo): agarra esa figura.",
+        "**Si ningún objeto tiene su color de verdad:** agarra la figura que **no sale en la carta ni por la forma ni por el color**."
+      ]
+    },
+    {
+      "t": "Si te equivocas",
+      "p": [
+        "Pierdes una de las cartas que ya habías ganado."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Cómo leer la carta",
+      "p": [
+        "Cada carta muestra dos objetos, con colores que a veces son los de verdad y a veces no.",
+        "Mira primero si algún objeto trae su color real: si sí, ese es.",
+        "Si ninguno lo trae, busca el objeto que falta: el que no aparece ni en forma ni en color."
+      ]
+    },
+    {
+      "t": "Quién se lleva la carta",
+      "p": [
+        "El primero que agarra la figura correcta se queda la carta, boca abajo, en su pila.",
+        "Se voltea otra carta y se repite."
+      ]
+    },
+    {
+      "t": "Errores",
+      "p": [
+        "Agarrar una figura equivocada te cuesta una carta de tu pila.",
+        "Si todavía no tienes cartas, no pierdes nada."
+      ]
+    },
+    {
+      "t": "Fin de la partida",
+      "p": [
+        "Cuando se acaba el mazo, cada uno cuenta sus cartas.",
+        "Gana quien tenga más."
+      ]
+    }
+  ]
+}

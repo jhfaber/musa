@@ -1,0 +1,61 @@
+{
+  "jugadores": "3 a 6",
+  "duracion": "15 min",
+  "necesitas": "el mazo de Trio (36 cartas: del 1 al 12, tres de cada número).",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Juntar **tríos**: tres cartas del **mismo número**.",
+        "Gana quien consiga **3 tríos**, o **el trío de 7** de una vez."
+      ]
+    },
+    {
+      "t": "Reparto",
+      "p": [
+        "**3 jugadores:** 9 cartas cada uno y 9 al centro.",
+        "**4:** 7 cada uno y 8 al centro. **5:** 6 cada uno y 6 al centro. **6:** 5 cada uno y 6 al centro.",
+        "Las del centro van **boca abajo**, revueltas. Cada uno **ordena su mano de menor a mayor** y no la muestra."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Revela cartas **una por una**. Cada vez eliges:",
+        "Pedirle a cualquier jugador (tú incluido) su carta **más baja** o **más alta**, o voltear **una carta del centro**.",
+        "Las cartas reveladas quedan a la vista de todos."
+      ]
+    },
+    {
+      "t": "¿Sigues o fallas?",
+      "p": [
+        "Si la carta es **igual** a las que ya revelaste en este turno, sigues.",
+        "Si sale una **distinta**, fallas: todas vuelven a su lugar (a la mano de su dueño o boca abajo al centro) y pasa el turno.",
+        "Si juntas **tres iguales**, ganas ese trío: lo pones boca arriba frente a ti y termina tu turno."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Más baja y más alta",
+      "p": [
+        "Si un jugador tiene **dos cartas iguales** como la más baja (o la más alta), muestra solo una.",
+        "Cuando le piden la más baja o la más alta **dos veces** en el mismo turno, muestra la siguiente."
+      ]
+    },
+    {
+      "t": "Memoria",
+      "p": [
+        "Lo importante es **acordarse** de lo que se reveló: qué número tiene cada uno en las puntas y qué hay en cada carta del centro.",
+        "Las cartas vuelven a su sitio exacto, así que sirven las pistas de turnos anteriores."
+      ]
+    },
+    {
+      "t": "🌶️ Modo picante",
+      "p": [
+        "Para jugadores con experiencia: también se gana con **dos tríos enlazados**, es decir, que **sumen o resten 7** (ej.: 2 y 5, o 3 y 10).",
+        "El trío de 7 sigue ganando de una vez."
+      ]
+    }
+  ]
+}

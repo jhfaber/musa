@@ -1,0 +1,95 @@
+{
+  "id": "trabajo",
+  "nombre": "Trabajo y estudio",
+  "emoji": "💼",
+  "acento": "#dcc6a0",
+  "descripcion": "Oficina, colegio, universidad y jefes",
+  "pista": "Una profesión, una situación o una cosa del trabajo o el estudio.",
+  "preguntas": [
+    "Una profesión que todos admiran.",
+    "Una carrera universitaria.",
+    "Un trabajo muy aburrido.",
+    "Un trabajo soñado.",
+    "Lo mejor de trabajar desde la casa.",
+    {
+      "q": "Lo peor de los lunes.",
+      "no": [
+        "madrugar"
+      ]
+    },
+    {
+      "q": "Algo que no puede faltar en un escritorio.",
+      "no": [
+        "computador"
+      ]
+    },
+    "Una excusa para faltar al trabajo.",
+    {
+      "q": "Lo que más se habla a la hora del almuerzo.",
+      "no": [
+        "el jefe"
+      ]
+    },
+    "Un jefe famoso de película.",
+    "Una profesión peligrosa.",
+    {
+      "q": "Un trabajo que ya hacen los robots.",
+      "no": [
+        "fábrica"
+      ]
+    },
+    "Lo más difícil de un examen.",
+    "Algo que se hace en una reunión aburrida.",
+    {
+      "q": "Una frase típica de un jefe.",
+      "no": [
+        "para ayer"
+      ]
+    },
+    "Lo que se compra con la primera quincena.",
+    "Un trabajo de vacaciones.",
+    "Una profesión que sale mucho en las series.",
+    {
+      "q": "Lo primero que se hace al llegar a la oficina.",
+      "no": [
+        "café"
+      ]
+    },
+    "Un regalo para un compañero de trabajo.",
+    "Una habilidad que todo el mundo pone en la hoja de vida.",
+    "Un trabajo bien pagado que nadie quiere.",
+    "Lo mejor del viernes.",
+    {
+      "q": "Una materia difícil de la universidad.",
+      "no": [
+        "cálculo"
+      ]
+    },
+    {
+      "q": "Un lugar para estudiar.",
+      "no": [
+        "biblioteca"
+      ]
+    },
+    {
+      "q": "Lo más típico de una fiesta de oficina.",
+      "no": [
+        "amigo secreto"
+      ]
+    },
+    {
+      "q": "Algo que se hace para no dormirse en clase.",
+      "no": [
+        "café"
+      ]
+    },
+    "Un trabajo que sería divertido por un día.",
+    "Una profesión que sueñan los niños y casi nadie estudia.",
+    {
+      "q": "Una pregunta típica de una entrevista de trabajo.",
+      "no": [
+        "¿dónde te ves en 5 años?"
+      ]
+    }
+  ]
+}

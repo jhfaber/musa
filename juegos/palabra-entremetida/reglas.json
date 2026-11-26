@@ -1,0 +1,23 @@
+{
+  "jugadores": "3 o más",
+  "duracion": "10 min",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Se elige una **palabra loca** (ej.: \"piña\").",
+        "Todo lo que digas debe llevar esa palabra **después de cada palabra**: \"Voy *piña* al *piña* baño *piña*\".",
+        "Pierde el que se equivoca o se ríe."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Ideas",
+      "p": [
+        "Cambiar la palabra en cada ronda."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

@@ -1,0 +1,79 @@
+{
+  "jugadores": "2 a 4",
+  "duracion": "30 min",
+  "necesitas": "el mazo de Rummi-Q Cartas.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "**Quedarte sin cartas primero**, bajándolas a la mesa en combinaciones."
+      ]
+    },
+    {
+      "t": "Reparto",
+      "p": [
+        "**14 cartas** para cada jugador.",
+        "El resto va boca abajo: es el mazo para robar."
+      ]
+    },
+    {
+      "t": "Combinaciones",
+      "p": [
+        "**Grupo:** 3 o 4 cartas del **mismo número** y **colores distintos** (ej.: 7 rojo, 7 azul, 7 amarillo).",
+        "**Escalera:** 3 o más números **seguidos** del **mismo color** (ej.: 4, 5, 6 azul). El 1 no va después del 13."
+      ]
+    },
+    {
+      "t": "Primera bajada",
+      "p": [
+        "Tus primeras combinaciones deben sumar **al menos 30 puntos** (cada carta vale su número), solo con cartas de tu mano.",
+        "Hasta que no bajes, **no puedes tocar** lo que hay en la mesa."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "Baja combinaciones nuevas o **agrega cartas** a las que ya están en la mesa.",
+        "Si no puedes (o no quieres) jugar, **roba una carta** y pasa."
+      ]
+    },
+    {
+      "t": "Comodín",
+      "p": [
+        "La carta de la cara **reemplaza cualquier carta** en un grupo o una escalera."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Mover la mesa",
+      "p": [
+        "Después de tu primera bajada puedes **reorganizar** lo que hay en la mesa: separar combinaciones, juntarlas o pasar cartas de una a otra.",
+        "Al terminar tu turno **todas** las combinaciones deben quedar válidas y tienes que haber puesto **al menos una carta tuya**.",
+        "Si no lo logras, devuelve todo como estaba y **roba 3 cartas**."
+      ]
+    },
+    {
+      "t": "Quitar un comodín de la mesa",
+      "p": [
+        "Puedes cambiar un comodín de la mesa por la carta que reemplaza (de tu mano).",
+        "El comodín que te llevas lo tienes que usar **en ese mismo turno** en una combinación nueva."
+      ]
+    },
+    {
+      "t": "Si se acaba el mazo",
+      "p": [
+        "Se sigue jugando sin robar.",
+        "Si nadie puede jugar, se acaba la mano y gana quien tenga **menos puntos** en la mano."
+      ]
+    },
+    {
+      "t": "Puntos (varias manos)",
+      "p": [
+        "Cada jugador **resta** lo que le quedó en la mano: los números valen lo que dicen y el comodín, **30**.",
+        "Quien ganó la mano **suma** todo lo que restaron los demás.",
+        "Jueguen las manos que acuerden; gana quien tenga más puntos al final."
+      ]
+    }
+  ]
+}

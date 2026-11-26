@@ -1,0 +1,103 @@
+{
+  "jugadores": "2 a 4",
+  "duracion": "6 a 9 rondas",
+  "necesitas": "el tablero de Risk El Señor de los Anillos. Para el reloj, las tropas de cada turno y los dados, abre Risk Relámpago en Musa.",
+  "pie": "Reglas de la casa: Risk LOTR – Juego Relámpago.",
+  "empezar": [
+    {
+      "t": "Objetivo",
+      "p": [
+        "Dominar la Tierra Media: al final gana quien sume más **territorios y puntos por regiones**.",
+        "Con el **Modo Anillo**, se juega **Bien contra Mal**: el Bien gana si el anillo llega al Monte del Destino.",
+        "Se puede jugar **por equipos**, como en Risk Relámpago."
+      ]
+    },
+    {
+      "t": "Preparación",
+      "p": [
+        "Repartan las cartas de territorio **parejas** (las que sobran, a los últimos turnos) y pongan **1 soldado** en cada territorio.",
+        "**4 cartas** por jugador y **20 unidades** para empezar. En la segunda ronda llegan 30 más."
+      ]
+    },
+    {
+      "t": "Tu turno",
+      "p": [
+        "**Refuerzos → Ataque → Reagrupar → Reclamar cartas**, con reloj.",
+        "Recibes **7 tropas** más las de tus regiones completas: cada turno que sigues teniendo una región, su bono se multiplica (×1, ×2, ×3…). Si la pierdes, vuelve a cero."
+      ]
+    },
+    {
+      "t": "Atacar",
+      "p": [
+        "Solo a territorios **aledaños**. Para tirar 3 dados necesitas 4 unidades: siempre queda 1.",
+        "Se comparan los dados de mayor a menor. **El empate lo gana el defensor.**"
+      ]
+    },
+    {
+      "t": "Cartas",
+      "p": [
+        "Conquistaste 1 territorio: **1 carta**; 2: **2 cartas**; 3 o más: **3 cartas** (máximo 5 en la mano).",
+        "En la **última ronda** no se reclaman cartas."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Unidades",
+      "p": [
+        "👤 Soldado **1** · 🐎 Caballería **5** · 🧨 Artillería **10**.",
+        "Se cambian entre sí al reforzar y al reagrupar."
+      ]
+    },
+    {
+      "t": "Ataque y castigo",
+      "p": [
+        "El defensor tira hasta 2 dados.",
+        "Si tiras más dados de los permitidos, **pierdes 1 soldado y repites el tiro**.",
+        "Al conquistar puedes mover todas tus unidades menos 1."
+      ]
+    },
+    {
+      "t": "Reagrupar",
+      "p": [
+        "Mueve unidades entre territorios **conectados**, dejando al menos 1 en cada uno."
+      ]
+    },
+    {
+      "t": "👑 Líder",
+      "p": [
+        "Suma **+1 al dado más alto** cuando ataca o defiende desde su territorio (con 2 líderes, +2).",
+        "Se compra con unidades; el costo y el máximo por equipo se ven en ⚙ de Risk Relámpago."
+      ]
+    },
+    {
+      "t": "🏰 Fortalezas",
+      "p": [
+        "Una fortaleza suma **+1 al dado más alto del defensor**.",
+        "**Fortalezas doradas** (opcional): +3 tropas por fortaleza y por turno desde la ronda 3.",
+        "Al conquistar: +3 cartas por fortaleza dorada y +1 por sitio de poder."
+      ]
+    },
+    {
+      "t": "💍 Modo Anillo",
+      "p": [
+        "Al final de cada turno se tira el dado del anillo: con **3 o más** avanza una región (con **5 o más** en las regiones marcadas con dado).",
+        "Si llega al **Monte del Destino**, el anillo se destruye y **gana el Bien**.",
+        "**Gana el Mal** si junta **20 unidades** durante una ronda en la región donde está el anillo."
+      ]
+    },
+    {
+      "t": "Equipo ausente",
+      "p": [
+        "Si un equipo no está, su turno se salta.",
+        "Si lo atacan, otro equipo (que no sea el atacante) tira por él; si no hay quién, se defiende siempre con **4 y 2**."
+      ]
+    },
+    {
+      "t": "Alianzas",
+      "p": [
+        "Se puede hacer un pozo de cartas entre aliados: **quien rompe la alianza lo pierde**."
+      ]
+    }
+  ]
+}

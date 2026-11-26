@@ -1,0 +1,126 @@
+{
+  "id": "tecnologia",
+  "nombre": "Tecnología e internet",
+  "emoji": "📱",
+  "acento": "#dfe6f2",
+  "descripcion": "Celulares, apps, redes y videojuegos",
+  "pista": "Una app, una marca, un aparato o algo de internet.",
+  "preguntas": [
+    {
+      "q": "Una red social.",
+      "no": [
+        "Instagram"
+      ]
+    },
+    {
+      "q": "Una marca de celular.",
+      "no": [
+        "Apple",
+        "Samsung"
+      ]
+    },
+    "Un videojuego famoso.",
+    {
+      "q": "Una consola de videojuegos.",
+      "no": [
+        "PlayStation"
+      ]
+    },
+    {
+      "q": "Una app para pedir comida.",
+      "no": [
+        "Rappi"
+      ]
+    },
+    {
+      "q": "Una contraseña típica que todos usan.",
+      "no": [
+        "123456"
+      ]
+    },
+    {
+      "q": "Un emoji que todos usan.",
+      "no": [
+        "carita de risa"
+      ]
+    },
+    "Lo primero que se busca en Google.",
+    {
+      "q": "Un creador de contenido famoso.",
+      "no": [
+        "MrBeast"
+      ]
+    },
+    {
+      "q": "Una app de mensajes.",
+      "no": [
+        "WhatsApp"
+      ]
+    },
+    "Algo que se hace con el celular en el baño.",
+    "Una marca de computador.",
+    {
+      "q": "Un invento tecnológico reciente.",
+      "no": [
+        "ChatGPT"
+      ]
+    },
+    "Un aparato de la casa que no puede faltar.",
+    {
+      "q": "Lo que más se ve en TikTok.",
+      "no": [
+        "bailes"
+      ]
+    },
+    "Un juego del celular.",
+    "Una empresa de tecnología.",
+    {
+      "q": "Lo peor que le puede pasar a un celular.",
+      "no": [
+        "que se caiga"
+      ]
+    },
+    "Un accesorio para el celular.",
+    "Una palabra de internet que usan los jóvenes.",
+    "Algo que hace la inteligencia artificial.",
+    {
+      "q": "Lo que hace la gente cuando se va el internet.",
+      "no": [
+        "reiniciar el router"
+      ]
+    },
+    "Un aparato que ya nadie usa.",
+    {
+      "q": "Una app de música.",
+      "no": [
+        "Spotify"
+      ]
+    },
+    {
+      "q": "Un tipo de video que siempre se vuelve viral.",
+      "no": [
+        "gatos"
+      ]
+    },
+    "La primera app que se abre en la mañana.",
+    {
+      "q": "Algo que siempre se olvida cargar.",
+      "no": [
+        "celular"
+      ]
+    },
+    "Un nombre típico para la red wifi.",
+    {
+      "q": "Una plataforma para ver videos.",
+      "no": [
+        "YouTube"
+      ]
+    },
+    {
+      "q": "Lo más molesto de una videollamada.",
+      "no": [
+        "no te oigo"
+      ]
+    }
+  ]
+}

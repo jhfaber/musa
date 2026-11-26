@@ -1,0 +1,142 @@
+{
+  "id": "miedos-y-manias",
+  "nombre": "Miedos y manías",
+  "emoji": "😱",
+  "acento": "#a2acff",
+  "descripcion": "Lo que asusta, lo que molesta y lo que repetimos",
+  "pista": "Responde con lo que más se diría.",
+  "preguntas": [
+    {
+      "q": "A qué se le tiene más miedo.",
+      "no": [
+        "la muerte"
+      ]
+    },
+    {
+      "q": "Un animal que da miedo.",
+      "no": [
+        "serpiente"
+      ]
+    },
+    {
+      "q": "Un bicho que odias.",
+      "no": [
+        "cucaracha"
+      ]
+    },
+    {
+      "q": "Un lugar que da miedo de noche.",
+      "no": [
+        "el cementerio"
+      ]
+    },
+    "Una manía que todos tenemos.",
+    "Algo que te da escalofríos.",
+    {
+      "q": "Un miedo que da pena contar.",
+      "no": [
+        "a la oscuridad"
+      ]
+    },
+    "Lo peor que te puede pasar en un viaje.",
+    {
+      "q": "Una fobia común.",
+      "no": [
+        "arañas"
+      ]
+    },
+    "Lo que más estrés te da.",
+    "Algo que da pena hacer en público.",
+    "Un sonido que no soportas.",
+    {
+      "q": "Una película que te dejó sin dormir.",
+      "no": [
+        "El Exorcista"
+      ]
+    },
+    "Una superstición que conoces.",
+    "Lo que más asco te da.",
+    "Algo que da mala suerte.",
+    "Algo que revisas más de una vez antes de salir.",
+    "Un olor que no soportas.",
+    {
+      "q": "Lo peor de ir al dentista.",
+      "no": [
+        "el dolor"
+      ]
+    },
+    "Lo que nunca harías en una montaña rusa.",
+    {
+      "q": "Una cosa que asusta en la oscuridad.",
+      "no": [
+        "fantasmas"
+      ]
+    },
+    "Un miedo de la infancia.",
+    "Lo más vergonzoso que te puede pasar en una fiesta.",
+    "Algo que te da ansiedad.",
+    {
+      "q": "Un insecto que te haría correr.",
+      "no": [
+        "cucaracha"
+      ]
+    },
+    "Lo que menos quisieras encontrar en tu cama.",
+    {
+      "q": "Un lugar donde no te quedarías solo.",
+      "no": [
+        "el cementerio"
+      ]
+    },
+    "Una situación en la que te da pena hablar.",
+    "Un monstruo clásico.",
+    "Una cosa que te saca de quicio.",
+    "Lo que más temes perder.",
+    {
+      "q": "El mayor miedo de la gente.",
+      "no": [
+        "la muerte"
+      ]
+    },
+    "Un miedo que aparece al hacerse adulto.",
+    "Un miedo que nadie admite en voz alta.",
+    "Lo que más miedo da del futuro.",
+    "Un miedo que se supera con el tiempo.",
+    {
+      "q": "¿Cuál es el mayor miedo de la gente?",
+      "opciones": [
+        "La muerte",
+        "La soledad",
+        "El fracaso",
+        "La pobreza"
+      ]
+    },
+    {
+      "q": "¿Qué da más miedo?",
+      "opciones": [
+        "Las alturas",
+        "La oscuridad",
+        "Los espacios cerrados",
+        "Hablar en público"
+      ]
+    },
+    {
+      "q": "¿Qué da más miedo del futuro?",
+      "opciones": [
+        "Quedarse solo",
+        "No tener dinero",
+        "Enfermarse",
+        "Que el mundo empeore"
+      ]
+    },
+    {
+      "q": "¿Qué miedo es el más difícil de superar?",
+      "opciones": [
+        "Las alturas",
+        "La soledad",
+        "El fracaso",
+        "Hablar en público"
+      ]
+    }
+  ]
+}

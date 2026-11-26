@@ -1,0 +1,140 @@
+{
+  "id": "animales",
+  "nombre": "Animales y naturaleza",
+  "emoji": "🐾",
+  "acento": "#9ee37d",
+  "descripcion": "Bichos, plantas y paisajes",
+  "pista": "Un animal, una planta o algo de la naturaleza.",
+  "preguntas": [
+    {
+      "q": "Un animal de la selva.",
+      "no": [
+        "mono"
+      ]
+    },
+    "Un animal de granja.",
+    "Un pájaro.",
+    {
+      "q": "Un animal que vuela pero no es pájaro.",
+      "no": [
+        "murciélago"
+      ]
+    },
+    {
+      "q": "Un animal muy lento.",
+      "no": [
+        "tortuga"
+      ]
+    },
+    {
+      "q": "Un animal muy rápido.",
+      "no": [
+        "guepardo"
+      ]
+    },
+    {
+      "q": "Un animal que vive en la nieve.",
+      "no": [
+        "pingüino"
+      ]
+    },
+    "Una mascota rara.",
+    {
+      "q": "Un animal con rayas.",
+      "no": [
+        "cebra"
+      ]
+    },
+    "Un animal con manchas.",
+    {
+      "q": "Un animal nocturno.",
+      "no": [
+        "búho"
+      ]
+    },
+    {
+      "q": "Un reptil.",
+      "no": [
+        "serpiente"
+      ]
+    },
+    {
+      "q": "Un animal que salta.",
+      "no": [
+        "canguro"
+      ]
+    },
+    "Un animal en peligro de extinción.",
+    {
+      "q": "Una flor.",
+      "no": [
+        "rosa"
+      ]
+    },
+    {
+      "q": "Un árbol.",
+      "no": [
+        "pino"
+      ]
+    },
+    {
+      "q": "Un animal que da leche.",
+      "no": [
+        "vaca"
+      ]
+    },
+    {
+      "q": "Un insecto que no molesta.",
+      "no": [
+        "mariposa"
+      ]
+    },
+    {
+      "q": "Un animal que aparece en los cuentos.",
+      "no": [
+        "lobo"
+      ]
+    },
+    "Un animal que sería buena mascota de oficina.",
+    {
+      "q": "Un animal muy inteligente.",
+      "no": [
+        "delfín"
+      ]
+    },
+    "Un animal que da ternura.",
+    {
+      "q": "Un animal del desierto.",
+      "no": [
+        "camello"
+      ]
+    },
+    {
+      "q": "Un fenómeno natural.",
+      "no": [
+        "terremoto"
+      ]
+    },
+    "Un animal que vive en el río.",
+    "Un animal con cuernos.",
+    "Un animal de zoológico.",
+    {
+      "q": "Un sonido de la naturaleza.",
+      "no": [
+        "lluvia"
+      ]
+    },
+    {
+      "q": "Un paisaje para relajarse.",
+      "no": [
+        "la playa"
+      ]
+    },
+    {
+      "q": "Un animal muy grande.",
+      "no": [
+        "elefante"
+      ]
+    }
+  ]
+}

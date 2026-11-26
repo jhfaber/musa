@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Musa</title>
+  <meta name="description" content="Rondas mágicas y reglas rápidas para tus juegos">
+  <meta name="theme-color" content="#1b1446">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="iconos/icono-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="iconos/icono-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Musa">
+  <link rel="stylesheet" href="comun/base.css">
+  <link rel="stylesheet" href="comun/reglas.css">
+</head>
+<body>
+  <div class="cielo" aria-hidden="true"></div>
+
+  <!-- Inicio: lista de juegos -->
+  <main id="pantalla-inicio" class="pantalla">
+    <!-- Portada tipo tienda (spec 023): la luna arriba, el 🎲 al lado del título y el buscador pegado arriba al bajar -->
+    <header class="portada-cabecera">
+      <div>
+        <h1>Musa</h1>
+        <p>Rondas mágicas para tus juegos</p>
+      </div>
+      <button id="boton-azar" class="portada-azar" aria-label="Elegir un juego al azar" title="Juego al azar">🎲</button>
+    </header>
+
+    <section class="juegos" id="lista-juegos" aria-label="Juegos"></section>
+
+    <div id="aviso-instalar" class="aviso-instalar" hidden></div>
+
+    <footer class="pie">
+      Acompañante no oficial, hecho en casa.<br>
+      Los juegos y sus marcas pertenecen a sus dueños. Dixit es una marca registrada de Libellud; Risk, Monopoly y Uno,
+      de sus fabricantes.
+    </footer>
+  </main>
+
+  <!-- Pantalla de un juego -->
+  <main id="pantalla-juego" class="pantalla" hidden>
+    <header class="barra">
+      <a href="#" class="boton-icono" aria-label="Volver al inicio">←</a>
+      <h2 id="titulo-juego"></h2>
+      <span id="accion-juego" class="accion-juego"></span>
+    </header>
+    <div id="categorias-juego" class="categorias-juego"></div>
+    <div id="contenido-juego"></div>
+  </main>
+
+  <script src="comun/app.js"></script>
+  <script src="comun/guardar.js"></script>
+  <script src="comun/panel.js"></script>
+  <script src="comun/reloj.js"></script>
+  <script src="comun/ui.js"></script>
+  <script src="comun/reglas.js"></script>
+  <script src="comun/filtro.js"></script>
+  <script src="comun/azar.js"></script>
+  <!-- Los juegos (CSS y JS) se cargan desde juegos/juegos.json -->
+  <script>Musa.iniciar();</script>
+</body>
+</html>

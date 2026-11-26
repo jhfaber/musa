@@ -1,0 +1,30 @@
+{
+  "jugadores": "2 equipos",
+  "duracion": "10 min",
+  "necesitas": "cinta adhesiva y papeles de dos colores (o botellas).",
+  "empezar": [
+    {
+      "t": "Arma el tablero",
+      "p": [
+        "Con **cinta adhesiva** en el piso o en una mesa, haz el tablero de triqui (3 × 3)."
+      ]
+    },
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Cada equipo tiene **papeles de un color**.",
+        "Por turnos, un jugador pone un papel en una casilla vacía.",
+        "Gana el primer equipo que hace **3 en línea**."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Variantes",
+      "p": [
+        "Se puede jugar con botellas como fichas, o con turnos cronometrados para darle ritmo."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}

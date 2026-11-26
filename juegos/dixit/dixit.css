@@ -1,0 +1,149 @@
+/* Dixit: lo propio del juego. Lo compartido (carta, botones, chips, panel, reloj) está en comun/base.css */
+
+.dixit { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+
+/* Categoría y lentes */
+.carta-cadena .reto {
+  margin-left: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 600;
+  background: var(--oro);
+  color: var(--tinta);
+}
+.carta-simbolo { font-size: 2.2rem; line-height: 1; margin-top: 10px; }
+.carta-titulo + .carta-descripcion { margin-bottom: 12px; }
+.carta-aviso {
+  align-self: center;
+  margin: 0 0 auto;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+  background: rgba(233, 138, 122, .22);
+  color: #8a3b2e;
+}
+.carta-ejemplo em, .lente-ejemplos em { display: inline-block; margin: 2px 4px; }
+.carta-ejemplo em + em::before, .lente-ejemplos em + em::before { content: "· "; margin-left: -4px; opacity: .6; }
+
+.sello {
+  width: 38px;
+  height: 38px;
+  margin: -10px auto;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--tinta);
+  background: var(--oro);
+  box-shadow: 0 0 0 4px var(--noche), 0 6px 14px rgba(10, 5, 30, .45);
+}
+
+.lente {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  text-align: left;
+  color: var(--tinta);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(255, 255, 255, .55), transparent 45%),
+    var(--oro-claro);
+  box-shadow: 0 12px 28px rgba(10, 5, 30, .4), inset 0 0 0 1.5px var(--oro);
+}
+.lente-simbolo {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #fbe7b5, var(--oro));
+}
+.lente-texto { min-width: 0; }
+.lente-cabeza { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-suave); }
+.lente-titulo { font-family: var(--serif); font-weight: normal; font-size: 1.25rem; line-height: 1.15; margin: 2px 0; }
+.lente-descripcion { margin: 0; font-size: .88rem; line-height: 1.35; }
+.lente-ejemplos { margin: 4px 0 0; font-family: var(--serif); font-style: italic; color: var(--tinta-suave); font-size: .82rem; line-height: 1.35; }
+.lente-ejemplos em { margin: 0 2px 0 0; }
+.mesa--girar .lente, .mesa--girar .sello { animation: girar .6s .12s cubic-bezier(.2, .8, .3, 1.1) both; }
+
+.cambios { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; }
+
+/* Dixit compacto: categoría + 2 lentes y el botón deben caber en un celular sin bajar */
+.dixit .carta:not(.carta--dorso) { min-height: 0; padding: 18px 18px 16px; }
+.dixit .carta-titulo { font-size: 2rem; margin: 6px 0 6px; }
+.dixit .carta-descripcion { font-size: 1.02rem; line-height: 1.4; }
+.dixit .carta-ejemplo { margin-top: 12px; padding-top: 10px; font-size: .9rem; }
+.dixit .sello { width: 32px; height: 32px; margin: -8px auto; font-size: .9rem; }
+.dixit .ronda { font-size: .85rem; }
+
+/* Catálogo: botón de cada lente que muestra con qué categorías se asocia */
+.cat-ver {
+  display: block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 600;
+  border: 1px solid var(--violeta);
+  border-radius: 999px;
+  background: none;
+  color: var(--violeta);
+  cursor: pointer;
+}
+.cat-ver[aria-expanded="true"] { background: var(--violeta); color: var(--papel); }
+.cat-asociadas td { background: rgba(122, 90, 158, .08); }
+.cat-chip { display: inline-block; margin: 3px 4px 3px 0; padding: 3px 9px; border-radius: 999px; font-size: .78rem; background: #fff; border: 1px solid rgba(44, 33, 64, .15); }
+
+/* Favoritos: estrella en la esquina de la carta (no la hace crecer) */
+.carta-fav {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--tinta-suave);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.carta-fav--activa { color: #d9a21b; }
+
+/* Menús de Dixit (ajustes, catálogo): la portada detrás, en color y oscurecida, bajo el degradado violeta
+   semitransparente; el texto suelto va en tarjetas para que se lea (como en los menús de Risk) */
+body[data-juego="dixit"] .catalogo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../../comun/img/portada.webp') 50% 20% / cover no-repeat, var(--noche);
+  filter: grayscale(.2) brightness(.75);
+}
+body[data-juego="dixit"] .catalogo-fondo { background: rgba(10, 5, 30, .25); backdrop-filter: none; }
+body[data-juego="dixit"] .catalogo-panel {
+  background: linear-gradient(170deg, rgba(27, 20, 70, .62), rgba(59, 42, 110, .62));
+}
+body[data-juego="dixit"] .catalogo :is(section.ajuste, .catalogo-resumen) {
+  background: rgba(18, 13, 44, .78);
+  border: 1px solid rgba(255, 246, 213, .14);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+}
+body[data-juego="dixit"] .catalogo section.ajuste > .catalogo-subtitulo:first-child { margin-top: 0; }
+body[data-juego="dixit"] .catalogo :not(section.ajuste) > .catalogo-subtitulo {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(18, 13, 44, .78);
+}

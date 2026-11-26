@@ -1,0 +1,275 @@
+{
+  "id": "datos-locos",
+  "nombre": "Datos locos",
+  "emoji": "🤯",
+  "acento": "#c79bff",
+  "descripcion": "Rarezas, números y ocurrencias para sorprenderse",
+  "pista": "Lo primero que se te ocurra.",
+  "preguntas": [
+    "Un animal que te daría miedo tener de mascota.",
+    {
+      "q": "Un número del 1 al 10.",
+      "no": [
+        "7"
+      ]
+    },
+    "Un número del 1 al 100.",
+    "Una letra del abecedario.",
+    "Un mes del año.",
+    "Un día de la semana.",
+    "Un animal que le ganaría a un oso en una pelea.",
+    "Un animal que sería buen superhéroe.",
+    "Algo que se puede comer pero no se debería.",
+    "Un animal raro que existe de verdad.",
+    "Un objeto que todo el mundo tiene en casa pero nadie usa.",
+    "Un superpoder inútil.",
+    "Un color que no combina con nada.",
+    "Algo que se puede hacer en cinco segundos.",
+    "La cosa más rara que has visto en la calle.",
+    "Un nombre que no le pondrías a tu hijo.",
+    "Un nombre que le pondrías a una mascota.",
+    "Algo que se rompe fácil.",
+    "Un animal que sería buen presidente.",
+    "Un trabajo que no existía hace treinta años.",
+    "Algo que cabe en un bolsillo.",
+    "Un animal que parece estar siempre enojado.",
+    "La peor idea para un negocio.",
+    "Algo que pesa más de lo que parece.",
+    "Una cosa que se vuelve peligrosa si hay demasiada.",
+    "El mejor invento de la humanidad.",
+    "Un invento que sobra.",
+    "Algo que siempre se pierde.",
+    {
+      "q": "El mejor nombre para un barco.",
+      "no": [
+        "Titanic"
+      ]
+    },
+    "Un animal que sería un pésimo mesero.",
+    "Algo que huele a infancia.",
+    {
+      "q": "¿Qué preferirías poder hacer?",
+      "opciones": [
+        "Volar",
+        "Ser invisible",
+        "Leer mentes",
+        "Viajar en el tiempo"
+      ]
+    },
+    {
+      "q": "¿Qué animal te gustaría ser?",
+      "opciones": [
+        "Águila",
+        "Delfín",
+        "Gato",
+        "León"
+      ]
+    },
+    {
+      "q": "¿Qué superpoder inútil elegirías?",
+      "opciones": [
+        "Hablar con las plantas",
+        "Saber la hora exacta",
+        "Cambiar el color del pelo",
+        "Oler la lluvia antes"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo mejor de ser invisible?",
+      "opciones": [
+        "Entrar gratis a todo",
+        "Escuchar chismes",
+        "Hacer bromas",
+        "Viajar sin pagar"
+      ]
+    },
+    {
+      "q": "¿Qué harías con un millón de dólares?",
+      "opciones": [
+        "Una casa",
+        "Un viaje",
+        "Un negocio",
+        "Invertirlo"
+      ]
+    },
+    {
+      "q": "¿A qué época viajarías?",
+      "opciones": [
+        "Los dinosaurios",
+        "El antiguo Egipto",
+        "El futuro",
+        "Tu infancia"
+      ]
+    },
+    {
+      "q": "¿Qué comida comerías el resto de tu vida?",
+      "opciones": [
+        "Pizza",
+        "Arroz con pollo",
+        "Hamburguesa",
+        "Pasta"
+      ]
+    },
+    {
+      "q": "¿Qué lugar elegirías para vivir?",
+      "opciones": [
+        "La playa",
+        "La montaña",
+        "La ciudad",
+        "El campo"
+      ]
+    },
+    {
+      "q": "¿Qué es lo mejor de un domingo?",
+      "opciones": [
+        "Dormir",
+        "Almorzar en familia",
+        "No hacer nada",
+        "Ver películas"
+      ]
+    },
+    {
+      "q": "¿Qué objeto llevarías a una isla desierta?",
+      "opciones": [
+        "Un cuchillo",
+        "Un encendedor",
+        "Un libro",
+        "Una cuerda"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo peor de quedarse sin internet?",
+      "opciones": [
+        "Sin redes",
+        "Sin música",
+        "Sin series",
+        "Sin mensajes"
+      ]
+    },
+    {
+      "q": "¿Qué sabor de helado es el más raro?",
+      "opciones": [
+        "Aguacate",
+        "Maíz",
+        "Queso",
+        "Ajo"
+      ]
+    },
+    {
+      "q": "¿Qué deporte olímpico inventarías?",
+      "opciones": [
+        "Carrera de meseros",
+        "Lanzamiento de chancla",
+        "Maratón de sueño",
+        "Pelea de almohadas"
+      ]
+    },
+    {
+      "q": "¿Qué harías si fueras presidente por un día?",
+      "opciones": [
+        "Subir salarios",
+        "Dar feriados",
+        "Bajar impuestos",
+        "Cambiar las leyes"
+      ]
+    },
+    {
+      "q": "¿Qué trabajo sería el más divertido?",
+      "opciones": [
+        "Probador de comida",
+        "Guía de viajes",
+        "Actor",
+        "Youtuber"
+      ]
+    },
+    {
+      "q": "¿Qué hora del día es la mejor?",
+      "opciones": [
+        "La mañana",
+        "La tarde",
+        "La noche",
+        "La madrugada"
+      ]
+    },
+    {
+      "q": "¿Qué es peor que se acabe?",
+      "opciones": [
+        "La plata",
+        "La comida",
+        "El agua"
+      ]
+    },
+    {
+      "q": "¿Qué es lo que más se pierde?",
+      "opciones": [
+        "Las llaves",
+        "El celular",
+        "Un cargador",
+        "Un guante"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo más raro?",
+      "opciones": [
+        "Un perro que maúlla",
+        "Un gato que ladra",
+        "Un pez que camina",
+        "Un pájaro que nada"
+      ]
+    },
+    {
+      "q": "¿Qué sería lo más incómodo?",
+      "opciones": [
+        "Olvidar un nombre",
+        "Escribir al chat equivocado",
+        "Tropezar en público",
+        "Hablar con un ex"
+      ]
+    },
+    {
+      "q": "¿Qué dicho colombiano te encanta?",
+      "opciones": [
+        "Qué chévere",
+        "Parce",
+        "Dar papaya",
+        "Estar en las nubes"
+      ]
+    },
+    {
+      "q": "¿Qué estación elegirías para siempre?",
+      "opciones": [
+        "Verano",
+        "Invierno",
+        "Primavera",
+        "Otoño"
+      ]
+    },
+    {
+      "q": "¿Qué serías en una película?",
+      "opciones": [
+        "El héroe",
+        "El villano",
+        "El gracioso",
+        "El misterioso"
+      ]
+    },
+    {
+      "q": "¿Qué hábito raro tiene la gente?",
+      "opciones": [
+        "Hablar solo",
+        "Morderse las uñas",
+        "Cantar en la ducha",
+        "Oler los libros"
+      ]
+    },
+    {
+      "q": "¿Qué dejarías para siempre?",
+      "opciones": [
+        "El café",
+        "El azúcar",
+        "Las redes",
+        "La carne"
+      ]
+    }
+  ]
+}

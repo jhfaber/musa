@@ -1,0 +1,217 @@
+{
+  "id": "posiciones",
+  "nombre": "Posiciones",
+  "emoji": "🛏️",
+  "acento": "#ff9fbd",
+  "descripcion": "Posiciones sexuales: comunes, raras y de película",
+  "pista": "Responde con lo que más se diría, o elige una de las 4 opciones.",
+  "preguntas": [
+    {
+      "q": "La posición sexual más común.",
+      "no": [
+        "misionero"
+      ]
+    },
+    "La posición sexual más extraña que has oído que existe.",
+    {
+      "q": "La posición sexual que todo el mundo dice que le gusta.",
+      "no": [
+        "misionero"
+      ]
+    },
+    "Una posición sexual que suena bien pero en la práctica es un desastre.",
+    {
+      "q": "La posición sexual más cansada.",
+      "no": [
+        "de pie"
+      ]
+    },
+    {
+      "q": "La posición sexual más cómoda.",
+      "no": [
+        "cucharita"
+      ]
+    },
+    {
+      "q": "La posición sexual más romántica.",
+      "no": [
+        "misionero"
+      ]
+    },
+    {
+      "q": "La posición sexual que más se ve en las películas.",
+      "no": [
+        "misionero"
+      ]
+    },
+    "Una posición sexual que sale en las películas y casi nadie usa.",
+    "La posición sexual que da más pena pedir.",
+    {
+      "q": "La posición sexual que mejor sale en la mañana.",
+      "no": [
+        "cucharita"
+      ]
+    },
+    "La posición sexual para cuando estás muy cansado.",
+    "La posición sexual más difícil de lograr sin lesionarse.",
+    "La posición sexual con el nombre más gracioso.",
+    "Una posición sexual que casi todos intentan una sola vez.",
+    "La posición sexual que le recomendarías a una pareja que está empezando.",
+    "Una posición que crees que le gusta a tu pareja y no es así.",
+    "Una posición sexual que parece de circo.",
+    "La posición sexual que más hace reír.",
+    "Algo que se usa para probar una posición difícil.",
+    {
+      "q": "La posición sexual que nunca falla.",
+      "no": [
+        "misionero"
+      ]
+    },
+    "El nombre que le pondrías a un cóctel de posición sexual.",
+    "Una posición sexual que parece una clase de yoga.",
+    {
+      "q": "¿Cuál es la posición sexual más común?",
+      "opciones": [
+        "Misionero",
+        "Perrito",
+        "Vaquera",
+        "Cucharita"
+      ]
+    },
+    {
+      "q": "¿Cuál es la posición sexual favorita de la mayoría?",
+      "opciones": [
+        "Vaquera",
+        "Misionero",
+        "Perrito",
+        "De lado"
+      ]
+    },
+    {
+      "q": "¿Cuál es la posición sexual más romántica?",
+      "opciones": [
+        "Misionero",
+        "Cucharita",
+        "Sentados frente a frente",
+        "De pie y abrazados"
+      ]
+    },
+    {
+      "q": "¿Cuál es la posición sexual más cómoda?",
+      "opciones": [
+        "Cucharita",
+        "Misionero",
+        "Vaquera",
+        "Sentados"
+      ]
+    },
+    {
+      "q": "¿Cuál es la posición sexual más cansada?",
+      "opciones": [
+        "De pie",
+        "Perrito",
+        "Vaquera invertida",
+        "La carretilla"
+      ]
+    },
+    {
+      "q": "¿Cuál es la posición sexual más extraña?",
+      "opciones": [
+        "La carretilla",
+        "El pretzel",
+        "La mariposa",
+        "El loto"
+      ]
+    },
+    {
+      "q": "Elige una posición sexual poco común para probar.",
+      "opciones": [
+        "La mariposa",
+        "El columpio",
+        "La tijera",
+        "El pretzel"
+      ]
+    },
+    {
+      "q": "¿Cuál posición sexual es la más difícil de lograr?",
+      "opciones": [
+        "La carretilla",
+        "El loto",
+        "De pie y en el aire",
+        "El pretzel"
+      ]
+    },
+    {
+      "q": "¿Cuál posición sexual se ve más en las películas?",
+      "opciones": [
+        "Vaquera",
+        "Misionero",
+        "Contra la pared",
+        "Sobre la mesa"
+      ]
+    },
+    {
+      "q": "¿Cuál posición sexual sale mejor en la mañana?",
+      "opciones": [
+        "Cucharita",
+        "Misionero",
+        "Vaquera",
+        "De lado"
+      ]
+    },
+    {
+      "q": "¿Cuál posición sexual tiene el nombre más gracioso?",
+      "opciones": [
+        "La carretilla",
+        "El pretzel",
+        "La mariposa",
+        "La tijera"
+      ]
+    },
+    {
+      "q": "¿Qué posición sexual probarías primero?",
+      "opciones": [
+        "El columpio",
+        "La mariposa",
+        "La tijera",
+        "El loto"
+      ]
+    },
+    {
+      "q": "¿Cuál posición sexual es mejor para principiantes?",
+      "opciones": [
+        "Misionero",
+        "Cucharita",
+        "Vaquera",
+        "De lado"
+      ]
+    },
+    {
+      "q": "¿En qué lugar se estrena mejor una posición nueva?",
+      "opciones": [
+        "La cocina",
+        "El sofá",
+        "La ducha",
+        "Un hotel"
+      ]
+    },
+    {
+      "q": "Elige tu posición sexual favorita.",
+      "opciones": [
+        "Misionero",
+        "Vaquera",
+        "Perrito",
+        "Cucharita"
+      ]
+    },
+    {
+      "q": "¿Cuál posición sexual dura más antes de cansarse?",
+      "opciones": [
+        "Cucharita",
+        "Misionero",
+        "Sentados",
+        "De lado"
+      ]
+    }
+  ]
+}

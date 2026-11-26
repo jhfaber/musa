@@ -1,0 +1,128 @@
+{
+  "id": "comida",
+  "nombre": "Comida y bebida",
+  "emoji": "🍕",
+  "acento": "#ffa45c",
+  "descripcion": "Sabores, antojos y platos",
+  "pista": "Una comida o una bebida.",
+  "preguntas": [
+    {
+      "q": "Un sabor de helado.",
+      "no": [
+        "chocolate",
+        "vainilla"
+      ]
+    },
+    "Una fruta que te encante.",
+    {
+      "q": "Un tipo de pizza.",
+      "no": [
+        "hawaiana"
+      ]
+    },
+    {
+      "q": "Una comida rápida.",
+      "no": [
+        "hamburguesa"
+      ]
+    },
+    "El mejor acompañante del arroz.",
+    "Una bebida para una fiesta.",
+    {
+      "q": "Un postre.",
+      "no": [
+        "helado"
+      ]
+    },
+    {
+      "q": "Una verdura que no soportas.",
+      "no": [
+        "brócoli"
+      ]
+    },
+    {
+      "q": "Un desayuno perfecto.",
+      "no": [
+        "huevos"
+      ]
+    },
+    {
+      "q": "Un snack para ver una película.",
+      "no": [
+        "crispetas"
+      ]
+    },
+    {
+      "q": "Una salsa.",
+      "no": [
+        "ají"
+      ]
+    },
+    "Una sopa.",
+    {
+      "q": "El mejor plato del mundo.",
+      "no": [
+        "bandeja paisa"
+      ]
+    },
+    "Una comida que sabe mejor al día siguiente.",
+    "Un condimento que no puede faltar.",
+    {
+      "q": "Un ingrediente que arruina una pizza.",
+      "no": [
+        "piña"
+      ]
+    },
+    {
+      "q": "Una bebida caliente.",
+      "no": [
+        "café"
+      ]
+    },
+    {
+      "q": "Una comida de la calle.",
+      "no": [
+        "empanada"
+      ]
+    },
+    "Un plato que sabes cocinar.",
+    "Una golosina de la infancia.",
+    {
+      "q": "Un jugo.",
+      "no": [
+        "naranja"
+      ]
+    },
+    {
+      "q": "Un tipo de pasta.",
+      "no": [
+        "espagueti"
+      ]
+    },
+    "Una comida para una cita.",
+    "Una comida de otro país.",
+    "El ingrediente imprescindible de una hamburguesa.",
+    "Una comida que huele rico pero sabe feo.",
+    "Una fruta difícil de pelar.",
+    "Una comida que se come con las manos.",
+    {
+      "q": "Un restaurante de comida rápida.",
+      "no": [
+        "McDonald's"
+      ]
+    },
+    "Lo que no puede faltar en Navidad.",
+    {
+      "q": "Un antojo de medianoche.",
+      "no": [
+        "pizza"
+      ]
+    },
+    {
+      "q": "Un sabor de gaseosa.",
+      "no": [
+        "cola"
+      ]
+    }
+  ]
+}

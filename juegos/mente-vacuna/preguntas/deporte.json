@@ -1,0 +1,121 @@
+{
+  "id": "deporte",
+  "nombre": "Deporte",
+  "emoji": "⚽",
+  "acento": "#6fd38b",
+  "descripcion": "Fútbol y de todo un poco: opiniones de tribuna",
+  "pista": "Una persona, un equipo o un deporte.",
+  "preguntas": [
+    {
+      "q": "¿Quién es el mayor goleador de la historia?",
+      "no": [
+        "Messi",
+        "Cristiano Ronaldo"
+      ]
+    },
+    "El mejor jugador de fútbol de todos los tiempos.",
+    "El mejor equipo de fútbol de la historia.",
+    "Un deporte que no te gusta ver.",
+    "El mejor deportista de la historia, de cualquier deporte.",
+    "Un deporte que nunca podrías practicar.",
+    "El mejor entrenador de la historia.",
+    "Un equipo de fútbol que te cae mal.",
+    "Un deporte extremo.",
+    "Un estadio famoso.",
+    "El mejor portero de la historia.",
+    {
+      "q": "Un deporte de invierno.",
+      "no": [
+        "esquí"
+      ]
+    },
+    {
+      "q": "Un deporte que se juega con raqueta.",
+      "no": [
+        "tenis"
+      ]
+    },
+    {
+      "q": "Un país que siempre es favorito en el Mundial.",
+      "no": [
+        "Brasil"
+      ]
+    },
+    "Un tenista famoso.",
+    {
+      "q": "Un jugador de baloncesto famoso.",
+      "no": [
+        "Michael Jordan"
+      ]
+    },
+    {
+      "q": "Un atleta de pista famoso.",
+      "no": [
+        "Usain Bolt"
+      ]
+    },
+    {
+      "q": "Un deporte que parece fácil pero no lo es.",
+      "no": [
+        "golf"
+      ]
+    },
+    {
+      "q": "Un jugador que te encantaría tener en tu equipo.",
+      "no": [
+        "Messi"
+      ]
+    },
+    "Lo mejor de ver un partido con amigos.",
+    "Un deporte para hacer con amigos.",
+    "Un piloto de carreras famoso.",
+    "Lo que más se grita viendo un partido.",
+    "Una competencia deportiva famosa.",
+    "El deporte más aburrido de ver.",
+    "El deporte más difícil del mundo.",
+    "Un ejercicio que todos odian hacer.",
+    {
+      "q": "Un jugador de fútbol que ya se retiró y extrañas.",
+      "no": [
+        "Ronaldinho"
+      ]
+    },
+    {
+      "q": "Un equipo que siempre está en la final.",
+      "no": [
+        "Real Madrid"
+      ]
+    },
+    "Una cosa que no puede faltar en un partido de barrio.",
+    {
+      "q": "Un deporte acuático.",
+      "no": [
+        "natación"
+      ]
+    },
+    "Un equipo de baloncesto.",
+    "Una selección que siempre decepciona.",
+    {
+      "q": "Un deporte que se juega en la playa.",
+      "no": [
+        "voleibol"
+      ]
+    },
+    {
+      "q": "Una celebración de gol famosa.",
+      "no": [
+        "el Siuuu"
+      ]
+    },
+    "Lo primero que se compra para empezar a hacer ejercicio.",
+    "Una camiseta de fútbol famosa.",
+    "Un deporte que solo se ve en los Olímpicos.",
+    "Un deporte para hacer en pareja.",
+    {
+      "q": "La posición más difícil en el fútbol.",
+      "no": [
+        "portero"
+      ]
+    }
+  ]
+}

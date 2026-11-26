@@ -1,0 +1,25 @@
+{
+  "jugadores": "2 o más",
+  "duracion": "5 min",
+  "necesitas": "bombas y vasos plásticos.",
+  "empezar": [
+    {
+      "t": "Cómo se juega",
+      "p": [
+        "Infla una **bomba** dentro de un vaso hasta que lo agarre.",
+        "Levanta el vaso con la bomba y **apílalo** sobre otro.",
+        "**Solo se pueden usar las bombas**, nunca las manos sobre los vasos.",
+        "Gana el primero que arma su torre."
+      ]
+    }
+  ],
+  "reglamento": [
+    {
+      "t": "Reglas",
+      "p": [
+        "Si un vaso se cae, se recoge solo con la bomba."
+      ]
+    }
+  ],
+  "pie": "Reglas de la casa para los eventos de All-afters."
+}
